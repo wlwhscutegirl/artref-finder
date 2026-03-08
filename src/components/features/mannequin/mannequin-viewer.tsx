@@ -180,8 +180,8 @@ export function MannequinViewer({
           camera={{ position: cameraPosition || [0, 1.5, 3], fov: 50 }}
           shadows={perfShadows}
           dpr={perfDpr}
-          /* 성능 최적화: 상태 변경 시에만 렌더링 (매 프레임 X) */
-          frameloop="demand"
+          /* always: 초기 렌더링 보장 (demand 모드에서 첫 프레임 누락 방지) */
+          frameloop="always"
           style={{ touchAction: 'none' }}
         >
           <Suspense fallback={null}>
