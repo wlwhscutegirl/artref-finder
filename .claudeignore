@@ -1,0 +1,23 @@
+# 빌드 산출물
+.next/
+out/
+dist/
+
+# 의존성
+node_modules/
+
+# 환경변수 (실제 값)
+.env.local
+.env.production
+
+# 대용량/바이너리
+public/models/*.glb
+public/models/*.gltf
+*.png
+*.jpg
+*.ico
+
+# 에디터/OS
+.DS_Store
+Thumbs.db
+.vscode/
