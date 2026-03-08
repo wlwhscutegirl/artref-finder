@@ -218,7 +218,15 @@ export function useMannequinSearch(
   cameraFov?: number | null,
 ): MannequinSearchState {
   // === bkend 이미지 데이터 (폴백: sample-data) ===
-  const { images: rawImages, isLoading: isImagesLoading, hasNextPage, fetchNextPage, isFetchingNextPage } = useImages();
+  // limit=200으로 넉넉히 로드 (DB 241개 기준 첫 페이지에서 대부분 가져옴)
+  const { images: rawImages, isLoading: isImagesLoading, hasNextPage, fetchNextPage, isFetchingNextPage } = useImages({ limit: 200 });
+
+  // === 다음 페이지 자동 로드 (전체 이미지를 가져올 때까지) ===
+  useEffect(() => {
+    if (hasNextPage && !isFetchingNextPage && !isImagesLoading) {
+      fetchNextPage();
+    }
+  }, [hasNextPage, isFetchingNextPage, isImagesLoading, fetchNextPage]);
 
   // === 실제 포즈 벡터 백그라운드 추출 (합성 벡터 → 진짜 MediaPipe 벡터) ===
   const [allImages, extractionProgress] = useRealPoseExtraction(rawImages);
