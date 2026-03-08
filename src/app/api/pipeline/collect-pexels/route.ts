@@ -7,7 +7,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { searchPexelsPhotos, type PexelsPhoto } from '@/lib/pexels-client';
 import { extractTagsFromDescription } from '@/lib/unsplash-tag-mapper';
-import { createImage } from '@/lib/image-service';
+import { createImage, findByUnsplashId } from '@/lib/image-service';
 import type { ImageCategory, ReferenceImage } from '@/types';
 
 /** 수집 요청 바디 */
@@ -91,9 +91,18 @@ export async function POST(request: NextRequest) {
       savedIds: [],
     };
 
-    // 2. 각 사진 순차 처리
+    // 2. 각 사진 순차 처리 (중복 체크 포함)
     for (const photo of searchResult.photos) {
       try {
+        const pexelsId = `pexels-${photo.id}`;
+
+        // 중복 체크: 이미 DB에 있으면 스킵
+        const existing = await findByUnsplashId(pexelsId);
+        if (existing) {
+          result.skipped++;
+          continue;
+        }
+
         // 태그 추출 (alt 텍스트에서) + 스마트 쿼리 메타데이터 병합
         const baseTags = extractTagsFromDescription(photo.alt, photo.alt);
         // extraTags에서 중복 제거 후 병합 (샷타입, 포즈태그 자동 부여)
