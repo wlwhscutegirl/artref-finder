@@ -86,7 +86,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
       }
       onClose();
     } catch (err: any) {
-      setError(err.message || (mode === 'signin' ? '로그인에 실패했습니다' : '회원가입에 실패했습니다'));
+      setError(err.message || (mode === 'signin' ? '로그인에 실패했어요' : '회원가입에 실패했어요'));
     }
   }, [mode, email, password, name, login, register, onClose]);
 
@@ -140,7 +140,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
             {/* 이름 (회원가입 시만) */}
             {mode === 'signup' && (
               <div>
-                <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                <label className="block text-xs text-gray-400 uppercase tracking-wider mb-1">
                   이름
                 </label>
                 <input
@@ -156,7 +156,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
 
             {/* 이메일 */}
             <div>
-              <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+              <label className="block text-xs text-gray-400 uppercase tracking-wider mb-1">
                 이메일
               </label>
               <input
@@ -171,7 +171,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
 
             {/* 비밀번호 */}
             <div>
-              <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+              <label className="block text-xs text-gray-400 uppercase tracking-wider mb-1">
                 비밀번호
               </label>
               <input
@@ -185,7 +185,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
               />
               {/* 회원가입 시 비밀번호 요구사항 안내 */}
               {mode === 'signup' && (
-                <p className="text-[10px] text-gray-300 mt-1">
+                <p className="text-xs text-gray-300 mt-1">
                   8자 이상, 대소문자 + 숫자 + 특수문자 포함
                 </p>
               )}

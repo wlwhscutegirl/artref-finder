@@ -15,6 +15,7 @@
 import Link from 'next/link';
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import { Logo } from '@/components/ui/logo';
 
 /**
  * below-the-fold 섹션 (지연 로딩 대상)
@@ -31,13 +32,8 @@ export default function LandingPage() {
           ==================================================== */}
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-          {/* 로고 */}
-          <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold text-lg">ArtRef</span>
-          </div>
+          {/* 로고 — 돋보기 'a' + rtRef */}
+          <Logo size={32} />
 
           {/* 내비 링크 */}
           <div className="hidden md:flex items-center gap-6 text-sm text-gray-500">

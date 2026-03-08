@@ -263,23 +263,23 @@ export function MannequinViewer({
 
       {/* 좌우반전 표시 */}
       {isFlipped && (
-        <div className="absolute top-3 left-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 left-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-xs font-medium text-white">
           반전됨
         </div>
       )}
 
       {/* 선택된 관절 표시 */}
       {selectedJoint && (
-        <div className="absolute top-3 right-3 px-2 py-1 bg-amber-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 right-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-xs font-medium text-white">
           {JOINT_LABELS[selectedJoint]}
         </div>
       )}
 
       {/* 안내 힌트 (터치 기기와 데스크탑 분기) */}
-      <div className="absolute bottom-3 left-3 text-[10px] text-gray-400">
+      <div className="absolute bottom-3 left-3 text-xs text-gray-400">
         {(perfIsMobile || perfIsTablet)
           ? '터치: 회전 | 핀치: 줌 | 관절 탭: 선택'
-          : '드래그: 회전 | 관절 클릭: 선택 | ESC: 해제'}
+          : '드래그: 회전 | 관절 클릭: 선택 | ESC: 취소'}
       </div>
     </div>
   );

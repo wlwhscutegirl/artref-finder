@@ -9,6 +9,7 @@
 import { useState, useMemo, useCallback, useRef } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import {
   DndContext,
   closestCenter,
@@ -115,7 +116,7 @@ export default function CollectionDetailPage() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center text-gray-400">
         <div className="text-5xl mb-4">📁</div>
-        <p className="text-lg font-medium mb-2">컬렉션을 찾을 수 없습니다</p>
+        <p className="text-lg font-medium mb-2">컬렉션을 찾을 수 없어요</p>
         <Link href="/collections">
           <Button variant="secondary" size="sm">
             컬렉션 목록으로
@@ -147,11 +148,9 @@ export default function CollectionDetailPage() {
       {/* 상단 바 */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+          <Link href="/" className="flex items-center">
+            <Logo size={28} />
           </Link>
           <div className="flex items-center gap-3">
             <Link
@@ -292,7 +291,7 @@ export default function CollectionDetailPage() {
           ) : (
             <div className="flex flex-col items-center justify-center py-20 text-gray-400">
               <div className="text-5xl mb-4 opacity-50">🖼️</div>
-              <p className="text-base font-medium mb-1">이 컬렉션은 비어있습니다</p>
+              <p className="text-base font-medium mb-1">아직 이미지가 없어요</p>
               <p className="text-sm mb-6">레퍼런스를 검색해서 이 컬렉션에 추가해보세요</p>
               <Link href="/search">
                 <Button size="sm">레퍼런스 검색하기</Button>

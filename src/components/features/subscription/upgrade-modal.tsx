@@ -220,7 +220,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
             <div className="p-3.5 rounded-xl bg-orange-50 border border-gray-300">
               <div className="flex items-center gap-1.5 mb-2">
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">현재</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-neutral-700 text-gray-600">
+                <span className="px-1.5 py-0.5 rounded-full text-xs font-semibold bg-neutral-700 text-gray-600">
                   {PLAN_DISPLAY_NAMES[currentPlan]}
                 </span>
               </div>
@@ -244,7 +244,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
               </div>
               <div className="flex items-center gap-1.5 mb-2">
                 <span className="text-xs font-medium text-orange-400 uppercase tracking-wider">업그레이드</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-orange-500/20 text-orange-300">
+                <span className="px-1.5 py-0.5 rounded-full text-xs font-semibold bg-orange-500/20 text-orange-300">
                   {PLAN_DISPLAY_NAMES[recommendedPlan]}
                 </span>
               </div>

@@ -62,7 +62,7 @@ export function ShareButton({
 
       {/* 비활성 툴팁 */}
       {showTooltip && disabled && (
-        <div className="absolute top-full right-0 mt-1 px-2 py-1 bg-orange-50 border border-gray-300 rounded text-[10px] text-gray-500 whitespace-nowrap z-50">
+        <div className="absolute top-full right-0 mt-1 px-2 py-1 bg-orange-50 border border-gray-300 rounded text-xs text-gray-500 whitespace-nowrap z-50">
           {disabledMessage}
         </div>
       )}

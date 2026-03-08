@@ -263,12 +263,12 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <p className="text-sm font-medium truncate">{image.title}</p>
                 <div className="flex flex-wrap gap-1 mt-1">
                   {(image.tags ?? []).slice(0, 3).map((tag) => (
-                    <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-full">
+                    <span key={tag} className="text-xs px-1.5 py-0.5 bg-white/20 rounded-full">
                       #{tag}
                     </span>
                   ))}
                   {(image.tags ?? []).length > 3 && (
-                    <span className="text-[10px] px-1.5 py-0.5 bg-white/20 rounded-full">
+                    <span className="text-xs px-1.5 py-0.5 bg-white/20 rounded-full">
                       +{image.tags.length - 3}
                     </span>
                   )}
@@ -503,7 +503,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 {/* 키보드 단축키 안내 */}
                 <div className="pt-3 border-t border-gray-200">
                   <p className="text-xs text-gray-400 mb-2">단축키</p>
-                  <div className="grid grid-cols-2 gap-1 text-[10px] text-gray-400">
+                  <div className="grid grid-cols-2 gap-1 text-xs text-gray-400">
                     <span>← → 이전/다음</span>
                     <span>F 좌우반전</span>
                     <span>ESC 닫기</span>

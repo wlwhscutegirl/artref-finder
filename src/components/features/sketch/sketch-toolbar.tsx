@@ -90,7 +90,7 @@ export function SketchToolbar({
 
       {/* 선 굵기 슬라이더 */}
       <div className="flex items-center gap-2">
-        <span className="text-[10px] text-gray-400">굵기</span>
+        <span className="text-xs text-gray-400">굵기</span>
         <input
           type="range"
           min={1}

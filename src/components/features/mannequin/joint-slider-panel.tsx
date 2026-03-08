@@ -66,8 +66,8 @@ export function JointSliderPanel() {
       {/* 헤더: 관절 이름 + 닫기/리셋 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-          <span className="text-xs font-semibold text-amber-600">
+          <div className="w-2 h-2 rounded-full bg-orange-500 animate-pulse" />
+          <span className="text-xs font-semibold text-orange-600">
             {jointLabel}
           </span>
         </div>
@@ -75,7 +75,7 @@ export function JointSliderPanel() {
           {/* 이 관절만 초기화 */}
           <button
             onClick={handleResetJoint}
-            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="이 관절 회전 초기화"
           >
             리셋
@@ -83,7 +83,7 @@ export function JointSliderPanel() {
           {/* 전체 초기화 */}
           <button
             onClick={resetPose}
-            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="전체 포즈 초기화"
           >
             전체 리셋
@@ -91,7 +91,7 @@ export function JointSliderPanel() {
           {/* 관절 선택 해제 */}
           <button
             onClick={() => selectJoint(null)}
-            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="관절 선택 해제 (ESC)"
           >
             닫기
@@ -105,7 +105,7 @@ export function JointSliderPanel() {
         return (
           <div key={axis.label} className="flex items-center gap-2">
             {/* 축 라벨 */}
-            <span className={`w-4 text-center text-[10px] font-bold ${axis.textColor}`}>
+            <span className={`w-4 text-center text-xs font-bold ${axis.textColor}`}>
               {axis.label}
             </span>
 
@@ -123,7 +123,7 @@ export function JointSliderPanel() {
             />
 
             {/* 각도 수치 표시 */}
-            <span className="w-10 text-right text-[10px] text-gray-500 tabular-nums">
+            <span className="w-10 text-right text-xs text-gray-500 tabular-nums">
               {deg}°
             </span>
           </div>

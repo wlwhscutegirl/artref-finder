@@ -13,6 +13,7 @@
 
 import { useState, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
+import { LogoIcon } from '@/components/ui/logo';
 import { STORAGE_KEYS } from '@/lib/constants';
 
 // ============================================
@@ -90,9 +91,9 @@ function Step1({
     <div className="space-y-5">
       {/* 환영 메시지 */}
       <div className="text-center">
-        {/* 브랜드 로고 아이콘 */}
-        <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-base font-bold text-white">
-          A
+        {/* 브랜드 로고 아이콘 — LogoIcon 컴포넌트 사용 */}
+        <div className="flex justify-center mb-3">
+          <LogoIcon size={48} />
         </div>
         <h2 className="text-lg font-bold text-gray-900">
           환영합니다!
@@ -335,7 +336,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
             {/* 닫기 버튼 */}
             <button
               onClick={markDone}
-              className="text-[10px] text-gray-300 hover:text-gray-500 cursor-pointer transition-colors"
+              className="text-xs text-gray-300 hover:text-gray-500 cursor-pointer transition-colors"
               aria-label="온보딩 건너뛰기"
             >
               건너뛰기
@@ -362,7 +363,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
             </div>
 
             {/* 스텝 텍스트 */}
-            <span className="text-[10px] text-gray-400 tabular-nums">
+            <span className="text-xs text-gray-400 tabular-nums">
               {step + 1} / {TOTAL_STEPS}
             </span>
           </div>

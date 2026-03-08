@@ -8,6 +8,7 @@
 import { useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { decodeShareUrl } from '@/lib/moodboard-export';
 import { SAMPLE_IMAGES } from '@/lib/sample-data';
 import { ColorPalette } from '@/components/features/collection/color-palette';
@@ -61,13 +62,11 @@ function SharedCollectionContent() {
       {/* 상단 바 */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+          <Link href="/" className="flex items-center">
+            <Logo size={28} />
           </Link>
-          <span className="text-[10px] px-2 py-1 bg-orange-600/20 text-orange-300 rounded-full">
+          <span className="text-xs px-2 py-1 bg-orange-600/20 text-orange-300 rounded-full">
             공유된 무드보드
           </span>
         </div>
@@ -114,7 +113,7 @@ function SharedCollectionContent() {
                   {annotation && (annotation.memo || annotation.customTags?.length > 0) && (
                     <div className="p-2 bg-white/90 border-t border-gray-300/50">
                       {annotation.memo && (
-                        <p className="text-[10px] text-gray-600 line-clamp-2 mb-1">
+                        <p className="text-xs text-gray-600 line-clamp-2 mb-1">
                           {annotation.memo}
                         </p>
                       )}
@@ -138,7 +137,7 @@ function SharedCollectionContent() {
           </div>
         ) : (
           <div className="flex flex-col items-center justify-center py-20 text-gray-400">
-            <p className="text-base">이미지가 없습니다</p>
+            <p className="text-base">아직 이미지가 없어요</p>
           </div>
         )}
       </div>

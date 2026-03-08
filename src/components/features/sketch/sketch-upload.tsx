@@ -105,7 +105,7 @@ export function SketchUpload({ onUpload }: SketchUploadProps) {
           <br />
           <span className="text-amber-400 underline">클릭하여 업로드</span>
         </p>
-        <p className="text-[10px] text-gray-300">PNG, JPEG, WebP · 최대 5MB</p>
+        <p className="text-xs text-gray-300">PNG, JPEG, WebP · 최대 5MB</p>
 
         {/* 숨겨진 파일 input */}
         <input

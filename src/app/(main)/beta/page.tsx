@@ -12,6 +12,7 @@
 
 import { useState, type FormEvent } from 'react';
 import Link from 'next/link';
+import { Logo, LogoIcon } from '@/components/ui/logo';
 import { bkend } from '@/lib/bkend';
 
 /** 베타 신청 데이터 타입 */
@@ -122,11 +123,9 @@ export default function BetaPage() {
       <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* 로고 — 홈으로 이동 */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold text-lg">ArtRef</span>
+          {/* 로고 컴포넌트 (일반 헤더용 size=32) */}
+          <Link href="/" className="flex items-center">
+            <Logo size={32} />
           </Link>
 
           {/* 인증 버튼 */}
@@ -243,13 +242,13 @@ export default function BetaPage() {
 
           {/* 성공 메시지 — 제출 완료 시 폼 대신 표시 */}
           {isSuccess ? (
-            <div className="rounded-2xl bg-gray-50 border border-emerald-500/30 p-10 text-center">
-              {/* 완료 아이콘 */}
-              <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-3xl mx-auto mb-5">
+            <div className="rounded-2xl bg-gray-50 border border-orange-500/30 p-10 text-center">
+              {/* 완료 아이콘 (orange 통일) */}
+              <div className="w-16 h-16 rounded-full bg-orange-500/10 flex items-center justify-center text-3xl mx-auto mb-5">
                 ✓
               </div>
-              <h3 className="text-xl font-bold text-emerald-400 mb-3">
-                신청이 완료되었습니다!
+              <h3 className="text-xl font-bold text-orange-500 mb-3">
+                신청이 완료됐어요!
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 베타 테스트 준비가 되면 입력하신 이메일로 안내드리겠습니다.
@@ -368,10 +367,9 @@ export default function BetaPage() {
       <footer className="py-10 px-4 border-t border-gray-200">
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           {/* 브랜드 */}
+          {/* 푸터 로고 */}
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
+            <LogoIcon size={24} />
             <span className="font-medium text-gray-500">ArtRef Finder</span>
           </div>
 

@@ -8,6 +8,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { fetchUnextractedImages, updateImage } from '@/lib/image-service';
 import { inferLightDirection, inferCameraAngle } from '@/lib/unsplash-vector-heuristics';
 import { classifyImage } from '@/lib/safety-filter';
@@ -276,11 +277,9 @@ export default function BatchExtractPage() {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
-                A
-              </div>
-              <span className="font-semibold text-sm">ArtRef</span>
+            {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+            <Link href="/" className="flex items-center">
+              <Logo size={28} />
             </Link>
             <span className="text-gray-300">|</span>
             <span className="text-sm text-gray-500">벡터 추출</span>

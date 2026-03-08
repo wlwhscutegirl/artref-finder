@@ -235,7 +235,7 @@ export default function BelowTheFold() {
             {/* Pro 플랜 — 강조 */}
             <div className="relative rounded-2xl bg-white/90 border border-orange-500/60 p-7 flex flex-col ring-1 ring-orange-500/15">
               {/* 추천 뱃지 */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-orange-600 text-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-xs font-bold bg-orange-600 text-white">
                 추천
               </div>
 
@@ -327,7 +327,7 @@ export default function BelowTheFold() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           {/* 브랜드 */}
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
               A
             </div>
             <span className="font-medium text-gray-500">ArtRef Finder</span>

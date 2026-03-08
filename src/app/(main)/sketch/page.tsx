@@ -8,6 +8,7 @@
 
 import { useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { ModeTabs } from '@/components/ui/mode-tabs';
 import { DrawingCanvas, type DrawingCanvasHandle, type DrawingTool } from '@/components/features/sketch/drawing-canvas';
 import { SketchToolbar } from '@/components/features/sketch/sketch-toolbar';
@@ -76,14 +77,14 @@ export default function SketchSearchPage() {
       // 캔버스 또는 직접 전달된 dataURL 사용
       const dataUrl = directDataUrl || canvasRef.current?.toDataURL();
       if (!dataUrl) {
-        setExtractionError('캔버스가 비어 있습니다.');
+        setExtractionError('캔버스가 비어 있어요.');
         return;
       }
 
       // 스케치 → 포즈 벡터 추출
       const result = await sketchToPose(dataUrl);
       if (!result) {
-        setExtractionError('사람 형체를 인식할 수 없습니다. 더 뚜렷하게 그려보세요.');
+        setExtractionError('사람 형체를 인식하지 못했어요. 더 뚜렷하게 그려보세요.');
         setPoseVector(null);
         setJointWeights(null);
         setConfidence(null);
@@ -95,7 +96,7 @@ export default function SketchSearchPage() {
       setJointWeights(result.jointWeights);
       setConfidence(result.confidence);
     } catch {
-      setExtractionError('포즈 추출 중 오류가 발생했습니다.');
+      setExtractionError('포즈 추출 중 문제가 생겼어요.');
     } finally {
       setIsExtracting(false);
     }
@@ -108,11 +109,9 @@ export default function SketchSearchPage() {
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-4">
             {/* 로고 */}
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
-                A
-              </div>
-              <span className="font-semibold text-sm">ArtRef</span>
+            {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+            <Link href="/" className="flex items-center">
+              <Logo size={28} />
             </Link>
 
             {/* 모드 탭 */}
@@ -137,7 +136,7 @@ export default function SketchSearchPage() {
           <div className="space-y-4">
             {/* 안내 문구 */}
             <div className="text-center">
-              <h1 className="text-lg font-bold text-amber-400">드로잉 모드</h1>
+              <h1 className="text-lg font-bold text-orange-400">드로잉 모드</h1>
               <p className="text-xs text-gray-400 mt-1">
                 원하는 포즈를 그리면 AI가 유사한 실사 레퍼런스를 찾아줍니다
               </p>
@@ -176,7 +175,7 @@ export default function SketchSearchPage() {
             <button
               onClick={() => handleSearch()}
               disabled={isExtracting}
-              className="w-full py-3 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all text-white"
+              className="w-full py-3 bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-500 hover:to-orange-400 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all text-white"
             >
               {isExtracting ? (
                 <span className="flex items-center justify-center gap-2">
@@ -195,7 +194,7 @@ export default function SketchSearchPage() {
               </div>
             )}
             {confidence !== null && (
-              <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg text-xs text-amber-400 text-center">
+              <div className="p-3 bg-orange-500/10 border border-orange-500/20 rounded-lg text-xs text-orange-400 text-center">
                 포즈 인식 완료 · 신뢰도 {Math.round(confidence * 100)}%
               </div>
             )}
@@ -207,12 +206,12 @@ export default function SketchSearchPage() {
             <div className="flex items-center justify-between">
               <h2 className="text-sm font-medium text-gray-600">
                 {isActive
-                  ? `유사 레퍼런스 ${rankedImages.length}건`
+                  ? `비슷한 이미지 ${rankedImages.length}개 찾았어요`
                   : '캔버스에 포즈를 그리고 검색해보세요'}
               </h2>
               {isActive && confidence !== null && (
-                <span className="text-[10px] px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-full">
-                  포즈 매칭 활성
+                <span className="text-xs px-2 py-0.5 bg-orange-500/10 text-orange-400 rounded-full">
+                  포즈 매칭 중이에요
                 </span>
               )}
             </div>

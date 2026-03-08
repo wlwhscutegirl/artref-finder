@@ -11,8 +11,9 @@ import type { DeviceGrade } from '@/lib/device-detector';
 
 /** 품질 등급 UI 정보 */
 const QUALITY_INFO: Record<DeviceGrade, { label: string; desc: string; color: string }> = {
-  high: { label: '고품질', desc: '그림자 + HDRI + 고해상도', color: 'text-emerald-400' },
-  medium: { label: '중간', desc: '그림자 + HDRI (해상도 축소)', color: 'text-amber-400' },
+  /* 품질 등급 색상 orange 계열로 통일 */
+  high: { label: '고품질', desc: '그림자 + HDRI + 고해상도', color: 'text-orange-400' },
+  medium: { label: '중간', desc: '그림자 + HDRI (해상도 축소)', color: 'text-orange-500' },
   low: { label: '성능 우선', desc: '그림자/HDRI 비활성 + 2D 모드', color: 'text-red-400' },
 };
 
@@ -45,7 +46,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
     <div className="space-y-2">
       {/* 감지된 등급 표시 */}
       {detectedGrade && (
-        <div className="flex items-center gap-2 text-[10px] text-gray-400">
+        <div className="flex items-center gap-2 text-xs text-gray-400">
           <span>감지된 등급:</span>
           <span className={QUALITY_INFO[detectedGrade].color}>
             {QUALITY_INFO[detectedGrade].label}
@@ -66,7 +67,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
             if (detectedGrade) setQuality(detectedGrade);
           }}
           title="감지된 등급으로 자동 설정"
-          className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
+          className={`flex-1 px-2 py-1.5 rounded text-xs font-medium transition-colors cursor-pointer ${
             detectedGrade && qualityLevel === detectedGrade
               ? 'bg-orange-600 text-white'
               : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
@@ -82,7 +83,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               key={level}
               onClick={() => setQuality(level)}
               title={info.desc}
-              className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
+              className={`flex-1 px-2 py-1.5 rounded text-xs font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
                   : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
@@ -102,7 +103,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
             <button
               key={mode}
               onClick={() => setRenderMode(mode)}
-              className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
+              className={`flex-1 px-2 py-1.5 rounded text-xs font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
                   : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
@@ -118,7 +119,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
       {renderMode === '3d' && (
         <div className="space-y-1.5 pt-1 border-t border-gray-200">
           {/* 그림자 토글 */}
-          <label className="flex items-center justify-between text-[10px] cursor-pointer">
+          <label className="flex items-center justify-between text-xs cursor-pointer">
             <span className="text-gray-500">그림자</span>
             <button
               onClick={toggleShadows}
@@ -135,7 +136,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           </label>
 
           {/* HDRI 토글 */}
-          <label className="flex items-center justify-between text-[10px] cursor-pointer">
+          <label className="flex items-center justify-between text-xs cursor-pointer">
             <span className="text-gray-500">HDRI 환경맵</span>
             <button
               onClick={toggleHdri}
@@ -152,7 +153,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           </label>
 
           {/* DPR 슬라이더 */}
-          <div className="flex items-center justify-between text-[10px]">
+          <div className="flex items-center justify-between text-xs">
             <span className="text-gray-500">해상도 (DPR)</span>
             <div className="flex items-center gap-1">
               <input
@@ -169,7 +170,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           </div>
 
           {/* 자동 다운그레이드 토글 */}
-          <label className="flex items-center justify-between text-[10px] cursor-pointer">
+          <label className="flex items-center justify-between text-xs cursor-pointer">
             <span className="text-gray-500">자동 품질 조절</span>
             <button
               onClick={toggleAutoDowngrade}

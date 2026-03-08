@@ -87,7 +87,7 @@ export function MaterialFilterCards({
     <div className="space-y-3">
       {/* 퀵 필터 (인기 태그 조합) */}
       <div>
-        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+        <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           퀵 필터
         </p>
         <div className="flex flex-wrap gap-1.5">
@@ -99,7 +99,7 @@ export function MaterialFilterCards({
                 key={filter.label}
                 onClick={() => applyQuickFilter(filter.tags)}
                 className={`
-                  inline-flex items-center gap-1 px-2 py-1 rounded-lg text-[10px] font-medium
+                  inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium
                   transition-colors cursor-pointer border
                   ${isActive
                     ? 'bg-orange-600/20 border-orange-500/40 text-orange-300'
@@ -117,7 +117,7 @@ export function MaterialFilterCards({
 
       {/* 소재/텍스처 카드 */}
       <div>
-        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+        <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           소재 {selectedMaterialCount > 0 && <span className="text-orange-400">({selectedMaterialCount})</span>}
         </p>
         <div className="grid grid-cols-4 gap-1.5">
@@ -148,7 +148,7 @@ export function MaterialFilterCards({
 
       {/* 배경 카드 */}
       <div>
-        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
+        <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           배경 {selectedBgCount > 0 && <span className="text-orange-400">({selectedBgCount})</span>}
         </p>
         <div className="grid grid-cols-4 gap-1.5">

@@ -121,7 +121,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
                   <span className="text-xs text-amber-600 font-medium">
                     오늘 검색 {dailyUsage}/{dailyLimit}회 사용
                   </span>
-                  <span className="text-[10px] text-amber-400/60 ml-2">
+                  <span className="text-xs text-amber-400/60 ml-2">
                     {Math.round(progressPercent)}%
                   </span>
                 </div>
@@ -138,7 +138,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
             <div className="flex items-center gap-2 shrink-0">
               <Link
                 href="/pricing"
-                className="px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-600 border border-amber-500/30 transition-colors"
+                className="px-2.5 py-1 rounded-lg text-xs font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-600 border border-amber-500/30 transition-colors"
               >
                 업그레이드
               </Link>

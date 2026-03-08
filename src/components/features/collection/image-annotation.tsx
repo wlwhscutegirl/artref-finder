@@ -83,7 +83,7 @@ export function ImageAnnotationEditor({
 
         {/* 메모 텍스트 */}
         <div className="mb-3">
-          <label className="text-[10px] text-gray-400 uppercase tracking-wider mb-1 block">
+          <label className="text-xs text-gray-400 uppercase tracking-wider mb-1 block">
             메모 ({memo.length}/200)
           </label>
           <textarea
@@ -98,7 +98,7 @@ export function ImageAnnotationEditor({
 
         {/* 커스텀 태그 */}
         <div className="mb-4">
-          <label className="text-[10px] text-gray-400 uppercase tracking-wider mb-1 block">
+          <label className="text-xs text-gray-400 uppercase tracking-wider mb-1 block">
             태그 ({customTags.length}/5)
           </label>
           {/* 태그 목록 */}
@@ -107,7 +107,7 @@ export function ImageAnnotationEditor({
               {customTags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-orange-500/20 text-orange-300"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-orange-500/20 text-orange-300"
                 >
                   #{tag}
                   <button

@@ -10,6 +10,7 @@
 
 import { useState, useCallback, useRef } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { RECOMMENDED_QUERIES, getRateLimitState } from '@/lib/unsplash-client';
 import { PEXELS_RECOMMENDED_QUERIES, getPexelsRateLimitState } from '@/lib/pexels-client';
 import { migrateImagesToCloud, type MigrationResult } from '@/lib/image-migration';
@@ -281,11 +282,9 @@ export default function PipelineDashboardPage() {
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
-                A
-              </div>
-              <span className="font-semibold text-sm">ArtRef</span>
+            {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+            <Link href="/" className="flex items-center">
+              <Logo size={28} />
             </Link>
             <span className="text-gray-300">|</span>
             <span className="text-sm text-gray-500">수집 파이프라인</span>
@@ -637,7 +636,7 @@ export default function PipelineDashboardPage() {
                        job.status === 'error' ? 'x' : '.'}
                     </span>
                     {/* 소스 뱃지 */}
-                    <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
+                    <span className={`px-1.5 py-0.5 rounded text-xs font-medium ${
                       job.source === 'unsplash' ? 'bg-orange-50 text-gray-500' :
                       'bg-orange-900/30 text-orange-400'
                     }`}>

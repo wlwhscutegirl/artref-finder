@@ -539,18 +539,18 @@ export function Mannequin2D({ className = '', bodyType = null }: Mannequin2DProp
 
       {/* 선택된 관절 표시 */}
       {selectedJoint && (
-        <div className="absolute top-3 right-3 px-2 py-1 bg-amber-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 right-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-xs font-medium text-white">
           {JOINT_LABELS[selectedJoint]}
         </div>
       )}
 
       {/* 2D 모드 배지 */}
-      <div className="absolute top-3 left-3 px-2 py-1 bg-amber-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+      <div className="absolute top-3 left-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-xs font-medium text-white">
         2D 모드
       </div>
 
       {/* 안내 */}
-      <div className="absolute bottom-3 left-3 text-[10px] text-gray-400">
+      <div className="absolute bottom-3 left-3 text-xs text-gray-400">
         관절 드래그: 포즈 변경 | 클릭: 선택
       </div>
     </div>

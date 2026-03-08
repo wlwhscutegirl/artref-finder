@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { Providers } from "@/lib/providers";
 import { JsonLd } from "@/components/seo/json-ld";
 import "./globals.css";
@@ -108,6 +109,8 @@ export default function RootLayout({
         {/* 구조화된 데이터 (JSON-LD): SoftwareApplication 스키마 */}
         <JsonLd />
         <Providers>{children}</Providers>
+        {/* Vercel Analytics — 방문자 수/페이지 조회수 자동 집계 */}
+        <Analytics />
       </body>
     </html>
   );

@@ -81,7 +81,7 @@ export function LayoutSwitcher({
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors cursor-pointer"
       >
         <span>{currentLabel}</span>
-        <span className="text-[10px]">▾</span>
+        <span className="text-xs">▾</span>
       </button>
 
       {/* 드롭다운 메뉴 */}

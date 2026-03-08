@@ -41,13 +41,13 @@ export function AnatomyLegend() {
           </p>
           <div className="flex items-center gap-2">
             {/* 다중 선택 힌트 */}
-            <span className="text-[10px] text-gray-300">
+            <span className="text-xs text-gray-300">
               Ctrl+클릭 다중선택
             </span>
             {hasSelection() && (
               <button
                 onClick={resetSelection}
-                className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+                className="text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
               >
                 전체 보기
               </button>
@@ -75,7 +75,7 @@ export function AnatomyLegend() {
                 style={{ backgroundColor: group.color }}
               />
               {/* 근육 이름 + 부위 */}
-              <span className="text-[10px] text-gray-600 leading-tight">
+              <span className="text-xs text-gray-600 leading-tight">
                 {group.label}
                 <span className="text-gray-400 ml-0.5">
                   {group.description}
@@ -94,14 +94,14 @@ export function AnatomyLegend() {
           className="w-full flex items-center justify-between px-3 py-2 cursor-pointer"
         >
           <div className="flex items-center gap-1.5">
-            <span className={`text-[10px] text-gray-400 transition-transform ${expanded ? 'rotate-90' : ''}`}>
+            <span className={`text-xs text-gray-400 transition-transform ${expanded ? 'rotate-90' : ''}`}>
               ▸
             </span>
             <span className="text-[11px] font-medium text-gray-600">
               근육 그룹
             </span>
             {selectedMuscles.size > 0 && (
-              <span className="text-[10px] text-orange-400">
+              <span className="text-xs text-orange-400">
                 {selectedMuscles.size}개
               </span>
             )}
@@ -109,9 +109,9 @@ export function AnatomyLegend() {
           {hasSelection() && (
             <span
               onClick={(e) => { e.stopPropagation(); resetSelection(); }}
-              className="text-[10px] text-gray-400"
+              className="text-xs text-gray-400"
             >
-              초기화
+              다시 시작
             </span>
           )}
         </button>
@@ -122,7 +122,7 @@ export function AnatomyLegend() {
             {MUSCLE_GROUPS.filter((g) => selectedMuscles.has(g.id)).map((group) => (
               <span
                 key={group.id}
-                className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px]"
+                className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs"
                 style={{ backgroundColor: group.color + '25', color: group.color }}
               >
                 <span
@@ -139,7 +139,7 @@ export function AnatomyLegend() {
         {expanded && (
           <div className="px-3 pb-2.5 space-y-1.5">
             {/* 다중 선택 힌트 */}
-            <p className="text-[10px] text-gray-300">
+            <p className="text-xs text-gray-300">
               탭: 단독 선택 · 길게 누르기: 추가 선택
             </p>
             {/* 가로 플렉스 래핑 칩 (모바일에서 작은 크기) */}
@@ -153,7 +153,7 @@ export function AnatomyLegend() {
                     e.preventDefault();
                     toggleMuscle(group.id, true);
                   }}
-                  className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-[10px] cursor-pointer transition-all ${
+                  className={`inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs cursor-pointer transition-all ${
                     isSelected(group.id)
                       ? 'ring-1 ring-white/30'
                       : isDimmed(group.id)

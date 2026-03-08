@@ -7,6 +7,7 @@
 
 import { useMemo } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { STORAGE_KEYS } from '@/lib/constants';
 import { useAuthStore } from '@/stores/auth-store';
 import { useSearchHistory } from '@/hooks/useSearchHistory';
@@ -44,11 +45,9 @@ export default function DashboardPage() {
       {/* 헤더 */}
       <header className="border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-12 flex items-center justify-between">
-          <Link href="/search" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
-            <span className="text-sm font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-12 헤더용 size=28) */}
+          <Link href="/search" className="flex items-center">
+            <Logo size={28} />
           </Link>
           <div className="flex items-center gap-3">
             <Link
@@ -103,7 +102,7 @@ export default function DashboardPage() {
             label="컬렉션"
             value={collectionCount}
             icon="📁"
-            color="from-cyan-500/20 to-cyan-600/10"
+            color="from-orange-500/20 to-orange-600/10"
           />
         </div>
 
@@ -113,7 +112,7 @@ export default function DashboardPage() {
             <h2 className="text-sm font-semibold mb-3">자주 사용한 태그 Top 10</h2>
             {popularTags.length === 0 ? (
               <p className="text-xs text-gray-400 py-4 text-center">
-                검색 기록이 없습니다
+                아직 검색 기록이 없어요
               </p>
             ) : (
               <div className="space-y-1.5">
@@ -124,7 +123,7 @@ export default function DashboardPage() {
 
                   return (
                     <div key={item.tag} className="flex items-center gap-2">
-                      <span className="text-[10px] text-gray-400 w-4 text-right">
+                      <span className="text-xs text-gray-400 w-4 text-right">
                         {index + 1}
                       </span>
                       <div className="flex-1 relative">
@@ -140,7 +139,7 @@ export default function DashboardPage() {
                           >
                             #{item.tag}
                           </Link>
-                          <span className="text-[10px] text-gray-400">{item.count}회</span>
+                          <span className="text-xs text-gray-400">{item.count}회</span>
                         </div>
                       </div>
                     </div>
@@ -157,7 +156,7 @@ export default function DashboardPage() {
               {recentSearches.length > 0 && (
                 <button
                   onClick={clearHistory}
-                  className="text-[10px] text-gray-400 hover:text-red-400 cursor-pointer transition-colors"
+                  className="text-xs text-gray-400 hover:text-red-400 cursor-pointer transition-colors"
                 >
                   전체 삭제
                 </button>
@@ -165,7 +164,7 @@ export default function DashboardPage() {
             </div>
             {recentSearches.length === 0 ? (
               <p className="text-xs text-gray-400 py-4 text-center">
-                검색 기록이 없습니다
+                아직 검색 기록이 없어요
               </p>
             ) : (
               <div className="space-y-1.5 max-h-[360px] overflow-y-auto">
@@ -180,28 +179,28 @@ export default function DashboardPage() {
                         {entry.tags.slice(0, 5).map((tag) => (
                           <span
                             key={tag}
-                            className="text-[10px] px-1.5 py-0.5 rounded-full bg-orange-500/15 text-orange-300"
+                            className="text-xs px-1.5 py-0.5 rounded-full bg-orange-500/15 text-orange-300"
                           >
                             #{tag}
                           </span>
                         ))}
                         {entry.tags.length > 5 && (
-                          <span className="text-[10px] text-gray-400">
+                          <span className="text-xs text-gray-400">
                             +{entry.tags.length - 5}
                           </span>
                         )}
                       </div>
-                      <span className="text-[10px] text-gray-300 shrink-0 ml-2">
+                      <span className="text-xs text-gray-300 shrink-0 ml-2">
                         {entry.resultCount}건
                       </span>
                     </div>
-                    <div className="flex items-center gap-2 text-[10px] text-gray-400">
+                    <div className="flex items-center gap-2 text-xs text-gray-400">
                       <span>{formatTimestamp(entry.timestamp)}</span>
                       {entry.poseMatchUsed && (
-                        <span className="text-amber-400/60">포즈매칭</span>
+                        <span className="text-orange-400/60">포즈매칭</span>
                       )}
                       {entry.category && (
-                        <span className="text-cyan-400/60">{entry.category}</span>
+                        <span className="text-orange-400/60">{entry.category}</span>
                       )}
                     </div>
                   </Link>
@@ -219,11 +218,11 @@ export default function DashboardPage() {
           </div>
           <div className="bg-gray-50/80 border border-gray-200 rounded-xl p-4 text-center">
             <p className="text-xs text-gray-400 mb-1">평균 검색 결과</p>
-            <p className="text-xl font-bold text-cyan-400">{stats.avgResultCount}건</p>
+            <p className="text-xl font-bold text-orange-400">{stats.avgResultCount}건</p>
           </div>
           <div className="bg-gray-50/80 border border-gray-200 rounded-xl p-4 text-center">
             <p className="text-xs text-gray-400 mb-1">현재 플랜</p>
-            <p className="text-xl font-bold text-amber-400 capitalize">
+            <p className="text-xl font-bold text-orange-400 capitalize">
               {user?.plan || 'Free'}
             </p>
           </div>
@@ -249,7 +248,7 @@ function StatCard({
     <div className={`bg-gradient-to-br ${color} border border-gray-200 rounded-xl p-4`}>
       <div className="flex items-center gap-2 mb-2">
         <span className="text-lg">{icon}</span>
-        <p className="text-[10px] text-gray-500 uppercase tracking-wider">{label}</p>
+        <p className="text-xs text-gray-500 uppercase tracking-wider">{label}</p>
       </div>
       <p className="text-2xl font-bold">{value}</p>
     </div>

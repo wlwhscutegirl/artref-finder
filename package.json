@@ -17,6 +17,7 @@
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
     "@tanstack/react-query": "^5.90.21",
+    "@vercel/analytics": "^1.6.1",
     "html2canvas": "^1.4.1",
     "lz-string": "^1.5.0",
     "next": "16.1.6",

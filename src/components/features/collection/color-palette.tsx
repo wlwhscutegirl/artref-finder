@@ -68,7 +68,7 @@ export function ColorPalette({ images, maxColors = 8 }: ColorPaletteProps) {
 
   return (
     <div className="flex items-center gap-2 px-3 py-2 bg-orange-50/50 rounded-lg">
-      <span className="text-[10px] text-gray-400 shrink-0">🎨 팔레트</span>
+      <span className="text-xs text-gray-400 shrink-0">🎨 팔레트</span>
       {loading ? (
         <div className="flex gap-1">
           {Array.from({ length: maxColors }).map((_, i) => (

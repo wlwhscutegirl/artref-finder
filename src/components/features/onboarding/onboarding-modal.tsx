@@ -182,10 +182,10 @@ export function OnboardingModal() {
         <div className="p-6">
           {/* 스텝 표시 */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] text-gray-400 uppercase tracking-wider font-medium">
+            <span className="text-xs text-gray-400 uppercase tracking-wider font-medium">
               시작 가이드
             </span>
-            <span className="text-[10px] text-gray-400">
+            <span className="text-xs text-gray-400">
               {step + 1} / {STEPS.length}
             </span>
           </div>
@@ -239,7 +239,7 @@ export function OnboardingModal() {
 
             <button
               onClick={handleClose}
-              className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+              className="text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             >
               건너뛰기
             </button>

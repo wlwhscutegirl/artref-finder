@@ -90,7 +90,7 @@ export function UpgradeBanner({
               Pro 플랜 보기
             </Link>
           )}
-          <span className="text-[10px] text-red-400/60">
+          <span className="text-xs text-red-400/60">
             오늘 사용: {limit}/{limit}회
           </span>
         </div>
@@ -108,7 +108,7 @@ export function UpgradeBanner({
           <p className="text-xs font-medium text-amber-600">
             오늘 검색 {remaining}회 남았습니다
           </p>
-          <p className="text-[10px] text-amber-400/70 mt-0.5">
+          <p className="text-xs text-amber-400/70 mt-0.5">
             {upgradeDescription}
           </p>
         </div>
@@ -116,7 +116,7 @@ export function UpgradeBanner({
         <div className="flex items-center gap-2">
           <Link
             href="/pricing"
-            className="px-2 py-1 rounded text-[10px] font-semibold
+            className="px-2 py-1 rounded text-xs font-semibold
               bg-amber-600/80 text-white hover:bg-amber-500 transition-colors"
           >
             {isFreePlan ? 'Lite 보기' : 'Pro 보기'}

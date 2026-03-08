@@ -45,7 +45,7 @@ function LightSlider({
 }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[10px] text-gray-400 w-8 shrink-0">{label}</span>
+      <span className="text-xs text-gray-400 w-8 shrink-0">{label}</span>
       <input
         type="range"
         min={min}
@@ -58,7 +58,7 @@ function LightSlider({
           background: `linear-gradient(to right, ${color} ${((value - min) / (max - min)) * 100}%, #404040 ${((value - min) / (max - min)) * 100}%)`,
         }}
       />
-      <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">{displayValue}</span>
+      <span className="text-xs text-gray-500 w-10 text-right shrink-0">{displayValue}</span>
     </div>
   );
 }
@@ -91,7 +91,7 @@ export function MultiLightController({
               key={light.id}
               className={`p-2 rounded-lg border transition-colors ${
                 light.enabled
-                  ? 'border-amber-500/30 bg-amber-500/5'
+                  ? 'border-orange-500/30 bg-orange-500/5'
                   : 'border-gray-200 bg-gray-50/30 opacity-50'
               }`}
             >
@@ -102,7 +102,7 @@ export function MultiLightController({
                   <span
                     className={`text-[9px] font-bold px-1.5 py-0.5 rounded ${
                       light.role === 'key'
-                        ? 'bg-amber-500/20 text-amber-400'
+                        ? 'bg-orange-500/20 text-orange-400'
                         : light.role === 'fill'
                           ? 'bg-blue-500/20 text-blue-400'
                           : 'bg-purple-500/20 text-purple-400'
@@ -123,7 +123,7 @@ export function MultiLightController({
                     onClick={() => onToggleLight(light.id)}
                     className={`w-5 h-5 rounded-full text-[8px] font-bold cursor-pointer transition-colors ${
                       light.enabled
-                        ? 'bg-amber-500 text-black'
+                        ? 'bg-orange-500 text-black'
                         : 'bg-neutral-700 text-gray-400'
                     }`}
                   >
@@ -133,7 +133,7 @@ export function MultiLightController({
                   {light.role !== 'key' && (
                     <button
                       onClick={() => onRemoveLight(light.id)}
-                      className="text-[10px] text-gray-300 hover:text-red-400 cursor-pointer transition-colors"
+                      className="text-xs text-gray-300 hover:text-red-400 cursor-pointer transition-colors"
                     >
                       ✕
                     </button>
@@ -195,7 +195,7 @@ export function MultiLightController({
               {!lights.some((l) => l.role === 'fill') && (
                 <button
                   onClick={() => onAddLight('fill')}
-                  className="flex-1 px-2 py-1 text-[10px] text-blue-400 border border-blue-500/20 rounded hover:bg-blue-500/10 cursor-pointer transition-colors"
+                  className="flex-1 px-2 py-1 text-xs text-blue-400 border border-blue-500/20 rounded hover:bg-blue-500/10 cursor-pointer transition-colors"
                 >
                   + 필라이트
                 </button>
@@ -203,7 +203,7 @@ export function MultiLightController({
               {!lights.some((l) => l.role === 'back') && (
                 <button
                   onClick={() => onAddLight('back')}
-                  className="flex-1 px-2 py-1 text-[10px] text-purple-400 border border-purple-500/20 rounded hover:bg-purple-500/10 cursor-pointer transition-colors"
+                  className="flex-1 px-2 py-1 text-xs text-purple-400 border border-purple-500/20 rounded hover:bg-purple-500/10 cursor-pointer transition-colors"
                 >
                   + 백라이트
                 </button>

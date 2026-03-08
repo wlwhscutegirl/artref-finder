@@ -127,7 +127,7 @@ export function SaveToCollectionModal({
         <div className="px-5 py-3 max-h-60 overflow-y-auto space-y-1">
           {collections.length === 0 && !isCreating && (
             <p className="text-sm text-gray-400 py-4 text-center">
-              아직 컬렉션이 없습니다. 새로 만들어보세요!
+              아직 컬렉션이 없어요. 새로 만들어보세요!
             </p>
           )}
 

@@ -91,7 +91,7 @@ export function SortableImageCard({
           {onAnnotationEdit && (
             <button
               onClick={(e) => { e.stopPropagation(); onAnnotationEdit(image._id); }}
-              className="w-6 h-6 rounded bg-black/60 text-[10px] text-white flex items-center justify-center hover:bg-black/80 cursor-pointer"
+              className="w-6 h-6 rounded bg-black/60 text-xs text-white flex items-center justify-center hover:bg-black/80 cursor-pointer"
               title="메모 편집"
             >
               📝
@@ -101,7 +101,7 @@ export function SortableImageCard({
           {onRemove && (
             <button
               onClick={(e) => { e.stopPropagation(); onRemove(image._id); }}
-              className="w-6 h-6 rounded bg-black/60 text-[10px] text-red-400 flex items-center justify-center hover:bg-red-600/80 hover:text-white cursor-pointer"
+              className="w-6 h-6 rounded bg-black/60 text-xs text-red-400 flex items-center justify-center hover:bg-red-600/80 hover:text-white cursor-pointer"
               title="컬렉션에서 제거"
             >
               ✕
@@ -114,7 +114,7 @@ export function SortableImageCard({
       {annotation && (annotation.memo || annotation.customTags.length > 0) && (
         <div className="p-2 bg-white/90 border-t border-gray-300/50">
           {annotation.memo && (
-            <p className="text-[10px] text-gray-600 line-clamp-2 mb-1">
+            <p className="text-xs text-gray-600 line-clamp-2 mb-1">
               {annotation.memo}
             </p>
           )}

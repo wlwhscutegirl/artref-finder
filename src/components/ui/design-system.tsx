@@ -13,6 +13,7 @@
  */
 
 import { tokens } from '@/styles/design-tokens';
+import { Logo, LogoIcon } from '@/components/ui/logo';
 
 // ============================================================
 // 내부 유틸: 섹션 래퍼
@@ -62,7 +63,7 @@ function ColorChip({
         className={`w-16 h-16 rounded-xl ${colorClass} ${borderClass ?? ''} flex items-end justify-end`}
       />
       {/* 토큰명 */}
-      <span className="text-[10px] text-gray-400 text-center leading-tight">{label}</span>
+      <span className="text-xs text-gray-400 text-center leading-tight">{label}</span>
     </div>
   );
 }
@@ -191,23 +192,23 @@ function TypographySection() {
       <SubSection title="Heading Scale">
         <div className="space-y-4">
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.hero</span>
+            <span className="text-xs text-gray-300 font-mono block mb-1">heading.hero</span>
             <p className="text-4xl font-bold leading-tight text-gray-900">포즈, 조명, 앵글</p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h1</span>
+            <span className="text-xs text-gray-300 font-mono block mb-1">heading.h1</span>
             <p className="text-3xl font-bold text-gray-900">페이지 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h2</span>
+            <span className="text-xs text-gray-300 font-mono block mb-1">heading.h2</span>
             <p className="text-2xl font-bold text-gray-900">섹션 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h3</span>
+            <span className="text-xs text-gray-300 font-mono block mb-1">heading.h3</span>
             <p className="text-xl font-semibold text-gray-900">카드/패널 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h4</span>
+            <span className="text-xs text-gray-300 font-mono block mb-1">heading.h4</span>
             <p className="text-lg font-semibold text-gray-900">서브섹션 제목</p>
           </div>
         </div>
@@ -217,19 +218,19 @@ function TypographySection() {
       <SubSection title="Body Scale">
         <div className="space-y-3">
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.lg</span>
+            <span className="text-xs text-gray-300 font-mono block mb-0.5">body.lg</span>
             <p className="text-lg leading-relaxed text-gray-500">
               핀터레스트에서 끝없이 스크롤하지 마세요.
             </p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.default</span>
+            <span className="text-xs text-gray-300 font-mono block mb-0.5">body.default</span>
             <p className="text-sm leading-relaxed text-gray-500">
               3D 마네킹으로 원하는 포즈를 잡고, 조명 방향을 설정하면 정확히 일치하는 실사 레퍼런스를 찾아줍니다.
             </p>
           </div>
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.sm</span>
+            <span className="text-xs text-gray-300 font-mono block mb-0.5">body.sm</span>
             <p className="text-xs leading-relaxed text-gray-500">
               초보자 / 빠른 검색이 필요할 때 추천
             </p>
@@ -241,20 +242,20 @@ function TypographySection() {
       <SubSection title="Caption & Label">
         <div className="space-y-3">
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-gray-300 font-mono w-36">label.section</span>
+            <span className="text-xs text-gray-300 font-mono w-36">label.section</span>
             <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">카테고리</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-gray-300 font-mono w-36">label.input</span>
+            <span className="text-xs text-gray-300 font-mono w-36">label.input</span>
             <span className="text-sm font-medium text-gray-600">이메일</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-gray-300 font-mono w-36">caption.default</span>
+            <span className="text-xs text-gray-300 font-mono w-36">caption.default</span>
             <span className="text-xs text-gray-400">결제 시스템은 준비 중입니다</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-gray-300 font-mono w-36">caption.xs</span>
-            <span className="text-[10px] text-gray-300">그림에 익숙한 중급+ 아티스트 추천</span>
+            <span className="text-xs text-gray-300 font-mono w-36">caption.xs</span>
+            <span className="text-xs text-gray-300">그림에 익숙한 중급+ 아티스트 추천</span>
           </div>
         </div>
       </SubSection>
@@ -363,11 +364,11 @@ function TagSection() {
       <SubSection title="Status Badge">
         <div className="flex flex-wrap gap-2">
           {/* 브랜드 뱃지 */}
-          <span className="px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
+          <span className="px-3 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
             추천
           </span>
           {/* 경고 뱃지 */}
-          <span className="px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+          <span className="px-3 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white">
             학생 인증
           </span>
           {/* 정보 칩 */}
@@ -394,7 +395,7 @@ function InputSection() {
         <div className="space-y-4 max-w-sm">
           {/* 기본 입력 */}
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-2">default</span>
+            <span className="text-xs text-gray-300 font-mono block mb-2">default</span>
             <div className="w-full">
               <label className="block text-sm font-medium text-gray-600 mb-1.5">이메일</label>
               <input
@@ -408,7 +409,7 @@ function InputSection() {
 
           {/* 에러 상태 */}
           <div>
-            <span className="text-[10px] text-gray-300 font-mono block mb-2">error state</span>
+            <span className="text-xs text-gray-300 font-mono block mb-2">error state</span>
             <div className="w-full">
               <label className="block text-sm font-medium text-gray-600 mb-1.5">비밀번호</label>
               <input
@@ -495,7 +496,7 @@ function SpacingRadiusSection() {
                 className={`w-16 h-16 bg-orange-600/30 border border-orange-500/50 ${item.cls}`}
               />
               {/* 레이블 */}
-              <span className="text-[10px] text-gray-300 text-center whitespace-pre-line font-mono">
+              <span className="text-xs text-gray-300 text-center whitespace-pre-line font-mono">
                 {item.label}
               </span>
             </div>
@@ -524,7 +525,7 @@ function StatusBannerSection() {
           {/* 경고 배너 */}
           <div className="p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
             <p className="text-xs font-medium text-amber-600">오늘 검색 5회 남았습니다</p>
-            <p className="text-[10px] text-amber-400/70 mt-0.5">무제한 검색 + 고급 필터가 ₩4,900/월!</p>
+            <p className="text-xs text-amber-400/70 mt-0.5">무제한 검색 + 고급 필터가 ₩4,900/월!</p>
           </div>
 
           {/* 정보 인라인 */}
@@ -552,26 +553,20 @@ function BrandSection() {
     <Section title="Brand">
       <SubSection title="Logo Mark Sizes">
         <div className="flex items-end gap-6">
-          {/* 소형 */}
+          {/* 소형 — LogoIcon 컴포넌트 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
-            <span className="text-[10px] text-gray-300">24px (Nav compact)</span>
+            <LogoIcon size={24} />
+            <span className="text-xs text-gray-300">24px (Nav compact)</span>
           </div>
-          {/* 중형 */}
+          {/* 중형 — Logo 컴포넌트 (아이콘+텍스트) */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
-              A
-            </div>
-            <span className="text-[10px] text-gray-300">32px (Nav default)</span>
+            <Logo size={32} />
+            <span className="text-xs text-gray-300">32px (Nav default)</span>
           </div>
-          {/* 대형 */}
+          {/* 대형 — Logo 컴포넌트 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold text-white">
-              A
-            </div>
-            <span className="text-[10px] text-gray-300">40px (Auth)</span>
+            <Logo size={40} />
+            <span className="text-xs text-gray-300">40px (Auth)</span>
           </div>
         </div>
       </SubSection>
@@ -608,17 +603,12 @@ export function DesignSystemDocs() {
       <header className="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            {/* 브랜드 로고 */}
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
-              A
-            </div>
-            <div>
-              <span className="font-semibold">ArtRef</span>
-              <span className="ml-2 text-xs text-gray-400">Design System</span>
-            </div>
+            {/* 브랜드 로고 — Logo 컴포넌트 사용 */}
+            <Logo size={32} />
+            <span className="text-xs text-gray-400">Design System</span>
           </div>
           {/* 버전 뱃지 */}
-          <span className="text-[10px] text-gray-300 font-mono">
+          <span className="text-xs text-gray-300 font-mono">
             Phase 5 — Dark Theme Only
           </span>
         </div>

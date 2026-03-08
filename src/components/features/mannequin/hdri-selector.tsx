@@ -43,9 +43,9 @@ export function HdriSelector({
         </span>
         <button
           onClick={onToggle}
-          className={`px-2 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors ${
+          className={`px-2 py-0.5 rounded text-xs font-medium cursor-pointer transition-colors ${
             hdri.enabled
-              ? 'bg-emerald-600 text-white'
+              ? 'bg-orange-600 text-white'
               : 'bg-orange-50 text-gray-400 hover:bg-orange-100'
           }`}
         >
@@ -63,7 +63,7 @@ export function HdriSelector({
                 onClick={() => onPresetChange(preset.id)}
                 className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg text-center cursor-pointer transition-colors ${
                   hdri.preset === preset.id
-                    ? 'bg-emerald-500/20 border border-emerald-500/40 text-emerald-300'
+                    ? 'bg-orange-500/20 border border-orange-500/40 text-orange-300'
                     : 'bg-orange-50/50 border border-gray-200 text-gray-400 hover:bg-orange-50 hover:text-gray-500'
                 }`}
               >
@@ -75,7 +75,7 @@ export function HdriSelector({
 
           {/* 회전 슬라이더 */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-gray-400 w-8 shrink-0">회전</span>
+            <span className="text-xs text-gray-400 w-8 shrink-0">회전</span>
             <input
               type="range"
               min={0}
@@ -85,17 +85,17 @@ export function HdriSelector({
               onChange={(e) => onUpdate({ rotation: Number(e.target.value) })}
               className="flex-1 h-1 appearance-none rounded-full cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #10b981 ${(hdri.rotation / 360) * 100}%, #404040 ${(hdri.rotation / 360) * 100}%)`,
+                background: `linear-gradient(to right, #f97316 ${(hdri.rotation / 360) * 100}%, #404040 ${(hdri.rotation / 360) * 100}%)`,
               }}
             />
-            <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">
+            <span className="text-xs text-gray-500 w-10 text-right shrink-0">
               {Math.round(hdri.rotation)}°
             </span>
           </div>
 
           {/* 노출 슬라이더 */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-gray-400 w-8 shrink-0">노출</span>
+            <span className="text-xs text-gray-400 w-8 shrink-0">노출</span>
             <input
               type="range"
               min={0}
@@ -105,10 +105,10 @@ export function HdriSelector({
               onChange={(e) => onUpdate({ exposure: Number(e.target.value) })}
               className="flex-1 h-1 appearance-none rounded-full cursor-pointer"
               style={{
-                background: `linear-gradient(to right, #10b981 ${(hdri.exposure / 2) * 100}%, #404040 ${(hdri.exposure / 2) * 100}%)`,
+                background: `linear-gradient(to right, #f97316 ${(hdri.exposure / 2) * 100}%, #404040 ${(hdri.exposure / 2) * 100}%)`,
               }}
             />
-            <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">
+            <span className="text-xs text-gray-500 w-10 text-right shrink-0">
               {hdri.exposure.toFixed(1)}
             </span>
           </div>

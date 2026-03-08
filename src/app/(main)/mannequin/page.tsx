@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { ModeTabs } from '@/components/ui/mode-tabs';
 import { ResizablePanel } from '@/components/ui/resizable-panel';
 import { SearchFilters } from '@/components/features/search/search-filters';
@@ -123,9 +124,10 @@ export default function SearchPage() {
             title="남성 체형"
             aria-pressed={presets.bodyType === 'male'}
             aria-label="남성 체형"
-            className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
+            /* 터치 타겟 48px 확보 */
+            className={`min-w-[48px] min-h-[48px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 ${
               presets.bodyType === 'male'
-                ? 'bg-blue-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
             }`}
           >
@@ -140,9 +142,10 @@ export default function SearchPage() {
             title="여성 체형"
             aria-pressed={presets.bodyType === 'female'}
             aria-label="여성 체형"
-            className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500/50 ${
+            /* 터치 타겟 48px 확보 */
+            className={`min-w-[48px] min-h-[48px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 ${
               presets.bodyType === 'female'
-                ? 'bg-pink-600 text-white'
+                ? 'bg-orange-700 text-white'
                 : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
             }`}
           >
@@ -200,15 +203,15 @@ export default function SearchPage() {
             disabled={search.remainingExtractions === 0}
             remainingExtractions={search.remainingExtractions}
           />
-          {/* 추출된 포즈 벡터 활성 표시 */}
+          {/* 추출된 포즈 벡터 활성 표시 (orange 통일) */}
           {search.extractedPoseVector && (
-            <div className="mt-1.5 flex items-center justify-between px-2 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">
-              <span className="text-[10px] text-emerald-400">이미지 포즈 검색 활성</span>
+            <div className="mt-1.5 flex items-center justify-between px-2 py-1 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+              <span className="text-xs text-orange-400">이미지 포즈로 검색 중이에요</span>
               <button
                 onClick={search.clearExtractedPose}
-                className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer"
+                className="text-xs text-gray-400 hover:text-gray-600 cursor-pointer"
               >
-                해제
+                취소
               </button>
             </div>
           )}
@@ -228,13 +231,13 @@ export default function SearchPage() {
           onSelect={(preset) => presets.handleCameraSelect(preset, search.selectedTags, search.setSelectedTags)}
         />
 
-        {/* 기즈모 기반 태그 추천 패널 - 자동 적용 (debounce 500ms) */}
+        {/* 기즈모 기반 태그 추천 패널 - 자동 적용 (debounce 500ms, orange 통일, 친근한 카피) */}
         {search.gizmoSuggestedTags.length > 0 && (
-          <div className="p-2 bg-amber-500/10 border border-amber-500/20 rounded-lg">
-            <p className="text-[10px] text-amber-400 font-medium mb-1">포즈 기반 추천 태그</p>
+          <div className="p-2 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+            <p className="text-xs text-orange-400 font-medium mb-1">이 포즈엔 이런 태그가 잘 맞아요</p>
             <div className="flex flex-wrap gap-1">
               {search.gizmoSuggestedTags.map((tag) => (
-                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-amber-500/20 rounded-full text-amber-600">
+                <span key={tag} className="text-xs px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-500">
                   #{tag}
                 </span>
               ))}
@@ -242,13 +245,13 @@ export default function SearchPage() {
           </div>
         )}
 
-        {/* 자유 카메라 앵글 자동 감지 태그 - 자동 적용 (debounce 500ms) */}
+        {/* 자유 카메라 앵글 자동 감지 태그 - 자동 적용 (debounce 500ms, orange 통일) */}
         {search.cameraAngleTags.length > 0 && !presets.selectedCameraId && (
-          <div className="p-2 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">
-            <p className="text-[10px] text-cyan-400 font-medium mb-1">감지된 카메라 앵글</p>
+          <div className="p-2 bg-orange-500/10 border border-orange-500/20 rounded-lg">
+            <p className="text-xs text-orange-400 font-medium mb-1">카메라 앵글이 감지됐어요</p>
             <div className="flex flex-wrap gap-1">
               {search.cameraAngleTags.map((tag) => (
-                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-cyan-500/20 rounded-full text-cyan-300">
+                <span key={tag} className="text-xs px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-400">
                   #{tag}
                 </span>
               ))}
@@ -259,10 +262,10 @@ export default function SearchPage() {
         {/* 광원 → 태그 자동 연동 패널 - 자동 적용 (debounce 500ms) */}
         {search.lightSuggestedTags.length > 0 && (
           <div className="p-2 bg-orange-500/10 border border-orange-500/20 rounded-lg">
-            <p className="text-[10px] text-orange-400 font-medium mb-1">광원 기반 추천 태그</p>
+            <p className="text-xs text-orange-400 font-medium mb-1">조명에 맞는 태그예요</p>
             <div className="flex flex-wrap gap-1">
               {search.lightSuggestedTags.map((tag) => (
-                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-300">
+                <span key={tag} className="text-xs px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-400">
                   #{tag}
                 </span>
               ))}
@@ -323,12 +326,13 @@ export default function SearchPage() {
       {/* 결과 헤더 + 활성 태그 표시 */}
       <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 py-3">
         <div className="flex items-center justify-between mb-2">
+          {/* 결과 헤더: 친근한 마이크로카피 */}
           <h2 className="text-sm font-semibold">
-            레퍼런스 <span className="text-orange-400">{search.displayImages.length}</span>건
-            {/* 실제 포즈 벡터 추출 진행 표시 */}
+            <span className="text-orange-400">{search.displayImages.length}</span>개 찾았어요
+            {/* 포즈 벡터 추출 진행 표시 (orange 통일) */}
             {search.extractionProgress.isExtracting && (
-              <span className="ml-2 text-[10px] text-emerald-400 font-normal animate-pulse">
-                포즈 분석 중 {search.extractionProgress.completed}/{search.extractionProgress.total}장 ({search.extractionProgress.percent}%) — 완료 후 매칭 정확도 UP
+              <span className="ml-2 text-xs text-orange-400 font-normal animate-pulse">
+                포즈 분석 중 {search.extractionProgress.completed}/{search.extractionProgress.total}장 ({search.extractionProgress.percent}%)
               </span>
             )}
           </h2>
@@ -344,15 +348,15 @@ export default function SearchPage() {
               threshold={search.similarityThreshold}
               onThresholdChange={search.setSimilarityThreshold}
             />
-            {/* 샷 타입 매칭 활성 표시 */}
+            {/* 샷 타입 매칭 활성 표시 (orange 통일) */}
             {search.isShotTypeActive && controls.currentShotTypeLabel && (
-              <span className="text-[10px] px-1.5 py-0.5 bg-cyan-500/15 text-cyan-400 rounded">
+              <span className="text-xs px-1.5 py-0.5 bg-orange-500/15 text-orange-400 rounded">
                 {controls.currentShotTypeLabel}
               </span>
             )}
-            {/* 조명 매칭 활성 표시 (Phase 5) */}
+            {/* 조명 매칭 활성 표시 (orange 통일) */}
             {search.isLightActive && (
-              <span className="text-[10px] px-1.5 py-0.5 bg-amber-500/15 text-amber-400 rounded">
+              <span className="text-xs px-1.5 py-0.5 bg-orange-500/15 text-orange-400 rounded">
                 조명 매칭
               </span>
             )}
@@ -362,9 +366,9 @@ export default function SearchPage() {
                   search.setSelectedTags([]);
                   presets.resetPresets();
                 }}
-                className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer"
+                className="text-xs text-gray-400 hover:text-gray-600 cursor-pointer"
               >
-                초기화
+                다시 시작
               </button>
             )}
           </div>
@@ -376,7 +380,7 @@ export default function SearchPage() {
             {search.selectedTags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-orange-500/15 text-orange-300"
+                className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-orange-500/15 text-orange-400"
               >
                 #{tag}
                 <button
@@ -426,11 +430,9 @@ export default function SearchPage() {
       {/* 상단 바 */}
       <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1920px] mx-auto px-4 h-12 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
-            <span className="text-sm font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-12 헤더용 size=28) */}
+          <Link href="/" className="flex items-center">
+            <Logo size={28} />
           </Link>
 
           {/* 모드 전환 탭 */}
@@ -464,7 +466,7 @@ export default function SearchPage() {
                 <span className="text-[11px] text-gray-500">{user.name}</span>
                 <button
                   onClick={() => logout()}
-                  className="px-2 py-1 rounded text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+                  className="px-2 py-1 rounded text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
                 >
                   로그아웃
                 </button>
@@ -537,7 +539,8 @@ function MobileTabView({
       <div className="flex border-b border-gray-200 shrink-0">
         <button
           onClick={() => setActiveTab('mannequin')}
-          className={`flex-1 py-2.5 text-xs font-medium text-center cursor-pointer transition-colors ${
+          /* 탭 바 터치 타겟 48px 확보: py-3 + text-sm */
+          className={`flex-1 py-3 text-sm font-medium text-center cursor-pointer transition-colors ${
             activeTab === 'mannequin'
               ? 'text-orange-400 border-b-2 border-orange-500'
               : 'text-gray-400 hover:text-gray-600'
@@ -547,7 +550,7 @@ function MobileTabView({
         </button>
         <button
           onClick={() => setActiveTab('results')}
-          className={`flex-1 py-2.5 text-xs font-medium text-center cursor-pointer transition-colors ${
+          className={`flex-1 py-3 text-sm font-medium text-center cursor-pointer transition-colors ${
             activeTab === 'results'
               ? 'text-orange-400 border-b-2 border-orange-500'
               : 'text-gray-400 hover:text-gray-600'

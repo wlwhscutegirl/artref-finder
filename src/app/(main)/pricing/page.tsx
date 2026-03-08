@@ -9,6 +9,7 @@
 
 import { useState, useCallback } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { useAuthStore } from '@/stores/auth-store';
 import { useSubscriptionStore } from '@/stores/subscription-store';
 import { useCheckout } from '@/hooks/use-checkout';
@@ -319,11 +320,9 @@ export default function PricingPage() {
       {/* 헤더 */}
       <header className="border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between">
-          <Link href="/search" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
-              A
-            </div>
-            <span className="text-sm font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-12 헤더용 size=28) */}
+          <Link href="/search" className="flex items-center">
+            <Logo size={28} />
           </Link>
           <Link
             href="/search"
@@ -408,14 +407,14 @@ export default function PricingPage() {
                 >
                   {/* 추천 뱃지 */}
                   {plan.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
                       추천
                     </div>
                   )}
 
                   {/* 학생 인증 뱃지 */}
                   {plan.requiresVerification && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-xs font-bold bg-gradient-to-r from-amber-500 to-orange-500 text-white">
                       학생 인증
                     </div>
                   )}
@@ -433,7 +432,7 @@ export default function PricingPage() {
                     </div>
                     {/* 연간 결제 시 원래 가격 취소선 표시 */}
                     {billingCycle === 'annual' && plan.monthlyPrice > 0 && (
-                      <p className="text-[10px] text-gray-300 line-through mt-0.5">
+                      <p className="text-xs text-gray-300 line-through mt-0.5">
                         {formatPrice(plan.monthlyPrice)}/월
                       </p>
                     )}
@@ -485,7 +484,7 @@ export default function PricingPage() {
 
                   {/* 다운그레이드 안내 */}
                   {PLAN_ORDER[plan.id] < PLAN_ORDER[currentPlan] && isAuthenticated && (
-                    <p className="text-[10px] text-gray-300 text-center mt-1.5">
+                    <p className="text-xs text-gray-300 text-center mt-1.5">
                       고객센터를 통해 요청하세요
                     </p>
                   )}
@@ -506,18 +505,18 @@ export default function PricingPage() {
             <div className="grid grid-cols-3 gap-4 mb-6">
               {/* 현재 플랜 */}
               <div className="p-3 rounded-xl bg-orange-50/50">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">현재 플랜</p>
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">현재 플랜</p>
                 <p className="text-sm font-semibold text-gray-900 capitalize">
                   {subscription.plan}
                   {subscription.billingCycle === 'annual' && (
-                    <span className="ml-1.5 text-[10px] text-orange-400 font-normal">연간</span>
+                    <span className="ml-1.5 text-xs text-orange-400 font-normal">연간</span>
                   )}
                 </p>
               </div>
 
               {/* 구독 상태 */}
               <div className="p-3 rounded-xl bg-orange-50/50">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">구독 상태</p>
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">구독 상태</p>
                 <p className={`text-sm font-semibold ${isCanceled ? 'text-amber-400' : 'text-green-400'}`}>
                   {isCanceled ? '취소 예약됨' : '활성'}
                 </p>
@@ -525,7 +524,7 @@ export default function PricingPage() {
 
               {/* 다음 결제일 / 만료일 */}
               <div className="p-3 rounded-xl bg-orange-50/50">
-                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
+                <p className="text-xs text-gray-400 uppercase tracking-wider mb-1">
                   {isCanceled ? '서비스 종료일' : '다음 결제일'}
                 </p>
                 <p className="text-sm font-semibold text-gray-900">

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import { Logo } from '@/components/ui/logo';
 import { useCollectionStore } from '@/stores/collection-store';
 import { CollectionCard } from '@/components/features/collection/collection-card';
 import { Button } from '@/components/ui/button';
@@ -45,11 +46,9 @@ export default function CollectionsPage() {
       {/* 상단 바 */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
-              A
-            </div>
-            <span className="font-semibold">ArtRef</span>
+          {/* 로고 컴포넌트 (h-14 헤더용 size=28) */}
+          <Link href="/" className="flex items-center">
+            <Logo size={28} />
           </Link>
           <div className="flex items-center gap-3">
             <Link
@@ -152,7 +151,7 @@ export default function CollectionsPage() {
           // 빈 상태
           <div className="flex flex-col items-center justify-center py-20 text-gray-400">
             <div className="text-5xl mb-4 opacity-50">📁</div>
-            <p className="text-base font-medium mb-1">아직 컬렉션이 없습니다</p>
+            <p className="text-base font-medium mb-1">아직 컬렉션이 없어요</p>
             <p className="text-sm mb-6">레퍼런스를 검색하고 컬렉션에 저장해보세요</p>
             <div className="flex gap-3">
               <Button onClick={() => setIsCreating(true)} size="sm">

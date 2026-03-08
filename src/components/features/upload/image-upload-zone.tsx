@@ -120,7 +120,7 @@ export function ImageUploadZone({
     // 33 → 17 관절 매핑
     const mappedJoints = mapLandmarksToJoints(result.landmarks);
     if (mappedJoints.length !== 17) {
-      setErrorMessage('관절 매핑에 실패했습니다.');
+      setErrorMessage('관절 매핑에 실패했어요.');
       setState('error');
       return;
     }
@@ -218,11 +218,11 @@ export function ImageUploadZone({
           <p className="text-xs text-gray-500">
             사진을 드래그하거나 클릭하여 업로드
           </p>
-          <p className="text-[10px] text-gray-300 mt-1">
+          <p className="text-xs text-gray-300 mt-1">
             JPG, PNG, WebP (최대 10MB)
           </p>
           {remainingExtractions !== undefined && remainingExtractions !== -1 && (
-            <p className="text-[10px] text-gray-400 mt-1">
+            <p className="text-xs text-gray-400 mt-1">
               오늘 남은 횟수: {remainingExtractions}회
             </p>
           )}
@@ -266,7 +266,7 @@ export function ImageUploadZone({
           </div>
 
           {/* 메타 정보 */}
-          <div className="px-3 py-2 bg-orange-50/50 flex items-center justify-between text-[10px] text-gray-400">
+          <div className="px-3 py-2 bg-orange-50/50 flex items-center justify-between text-xs text-gray-400">
             <span>신뢰도: {Math.round(confidence * 100)}%</span>
             <span>{processingTime}ms</span>
           </div>
@@ -293,7 +293,7 @@ export function ImageUploadZone({
           <div className="px-3 pb-2">
             <button
               onClick={handleReset}
-              className="w-full text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
+              className="w-full text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             >
               다른 사진 선택
             </button>

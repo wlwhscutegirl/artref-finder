@@ -82,9 +82,9 @@ export function PoseMatchIndicator({
         className={`
           flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
           transition-colors duration-200 cursor-pointer
-          focus:outline-none focus:ring-2 focus:ring-amber-500/50
+          focus:outline-none focus:ring-2 focus:ring-orange-500/50
           ${enabled
-            ? 'bg-amber-600 text-white hover:bg-amber-500'
+            ? 'bg-orange-600 text-white hover:bg-orange-500'
             : 'bg-orange-50 text-gray-500 hover:bg-orange-100 hover:text-gray-600'
           }
         `}
@@ -101,7 +101,7 @@ export function PoseMatchIndicator({
       {isActive && (
         <div className="flex items-center gap-2">
           {/* 매칭 결과 수 */}
-          <span className="text-xs text-amber-600 font-medium tabular-nums">
+          <span className="text-xs text-orange-600 font-medium tabular-nums">
             {matchedCount}<span className="text-gray-400">/{totalCount}</span>
           </span>
 
@@ -120,7 +120,7 @@ export function PoseMatchIndicator({
                 <div className="bg-cyan-500 transition-all duration-300" style={{ width: `${(dist.good / total) * 100}%` }} />
               )}
               {dist.moderate > 0 && (
-                <div className="bg-amber-500 transition-all duration-300" style={{ width: `${(dist.moderate / total) * 100}%` }} />
+                <div className="bg-orange-500 transition-all duration-300" style={{ width: `${(dist.moderate / total) * 100}%` }} />
               )}
               {dist.low > 0 && (
                 <div className="bg-neutral-600 transition-all duration-300" style={{ width: `${(dist.low / total) * 100}%` }} />
@@ -136,10 +136,10 @@ export function PoseMatchIndicator({
                   key={preset.value}
                   onClick={() => onThresholdChange(preset.value)}
                   aria-label={`최소 유사도 ${preset.label}`}
-                  className={`px-1.5 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors duration-150
-                    focus:outline-none focus:ring-1 focus:ring-amber-500/50
+                  className={`px-1.5 py-0.5 rounded text-xs font-medium cursor-pointer transition-colors duration-150
+                    focus:outline-none focus:ring-1 focus:ring-orange-500/50
                     ${threshold === preset.value
-                      ? 'bg-amber-100 text-amber-600'
+                      ? 'bg-orange-100 text-orange-600'
                       : 'text-gray-400 hover:text-gray-600'
                     }
                   `}

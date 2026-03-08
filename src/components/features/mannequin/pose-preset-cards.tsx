@@ -58,7 +58,7 @@ export function PosePresetCards({
               >
                 <path d={preset.silhouette} />
               </svg>
-              <span className="text-[10px] font-medium leading-tight">
+              <span className="text-xs font-medium leading-tight">
                 {preset.label}
               </span>
             </button>
@@ -97,7 +97,7 @@ export function PosePresetCards({
                 >
                   <path d={preset.silhouette} />
                 </svg>
-                <span className="text-[10px] font-medium leading-tight">
+                <span className="text-xs font-medium leading-tight">
                   {preset.label}
                 </span>
               </button>
