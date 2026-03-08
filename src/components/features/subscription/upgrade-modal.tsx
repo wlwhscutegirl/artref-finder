@@ -180,7 +180,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
         role="dialog"
         aria-modal="true"
         aria-labelledby="upgrade-modal-title"
-        className="relative w-[90%] max-w-md bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-[90%] max-w-md bg-gray-50 border border-gray-300 rounded-2xl shadow-2xl overflow-hidden"
       >
 
         {/* 상단 브랜드 그라디언트 바 */}
@@ -190,7 +190,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           {/* 닫기 버튼 */}
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 text-neutral-500 hover:text-neutral-300 transition-colors cursor-pointer"
+            className="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors cursor-pointer"
             aria-label="모달 닫기"
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -208,8 +208,8 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
                 />
               </svg>
             </div>
-            <h2 id="upgrade-modal-title" className="text-lg font-bold text-white">한도에 도달했습니다</h2>
-            <p className="text-xs text-neutral-400 mt-1">
+            <h2 id="upgrade-modal-title" className="text-lg font-bold text-gray-900">한도에 도달했습니다</h2>
+            <p className="text-xs text-gray-500 mt-1">
               {featureLabel} {currentLimitText}를 모두 사용했습니다 ({current}/{limit === -1 ? '∞' : limit})
             </p>
           </div>
@@ -217,17 +217,17 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           {/* 플랜 비교 카드 */}
           <div className="grid grid-cols-2 gap-3 mb-5">
             {/* 현재 플랜 */}
-            <div className="p-3.5 rounded-xl bg-neutral-800 border border-neutral-700">
+            <div className="p-3.5 rounded-xl bg-gray-100 border border-gray-300">
               <div className="flex items-center gap-1.5 mb-2">
-                <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">현재</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-neutral-700 text-neutral-300">
+                <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">현재</span>
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-neutral-700 text-gray-600">
                   {PLAN_DISPLAY_NAMES[currentPlan]}
                 </span>
               </div>
               <ul className="space-y-1">
                 {PLAN_HIGHLIGHTS[currentPlan].map((item) => (
-                  <li key={item} className="text-[11px] text-neutral-400 flex items-center gap-1">
-                    <span className="text-neutral-600">•</span>
+                  <li key={item} className="text-[11px] text-gray-500 flex items-center gap-1">
+                    <span className="text-gray-300">•</span>
                     {item}
                   </li>
                 ))}
@@ -262,7 +262,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           </div>
 
           {/* 기능 차이 강조 문구 */}
-          <p className="text-xs text-center text-neutral-400 mb-4">
+          <p className="text-xs text-center text-gray-500 mb-4">
             {PLAN_DISPLAY_NAMES[recommendedPlan]} 플랜으로 업그레이드하면{' '}
             <span className="text-orange-400 font-medium">{featureLabel} {recommendedLimitText}</span>
             {feature === 'dailySearch' ? ' 이용 가능' : '으로 확장'}합니다
@@ -273,7 +273,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
             {/* 나중에 버튼 */}
             <button
               onClick={onClose}
-              className="flex-1 py-2.5 rounded-lg text-sm font-medium text-neutral-400 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 hover:text-neutral-200 transition-colors cursor-pointer"
+              className="flex-1 py-2.5 rounded-lg text-sm font-medium text-gray-500 bg-gray-100 hover:bg-gray-200 border border-gray-300 hover:text-gray-700 transition-colors cursor-pointer"
             >
               나중에
             </button>

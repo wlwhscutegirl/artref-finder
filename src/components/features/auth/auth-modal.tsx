@@ -107,7 +107,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="auth-modal-title"
-        className="relative w-[90%] max-w-sm bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-[90%] max-w-sm bg-gray-50 border border-gray-300 rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* 상단 그라데이션 */}
         <div className="h-1 bg-gradient-to-r from-orange-500 to-amber-500" />
@@ -115,13 +115,13 @@ export function AuthModal({ onClose }: AuthModalProps) {
         <div className="p-6">
           {/* 로고 + 제목 */}
           <div className="text-center mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold mx-auto mb-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white mx-auto mb-3">
               A
             </div>
-            <h2 id="auth-modal-title" className="text-lg font-bold text-white">
+            <h2 id="auth-modal-title" className="text-lg font-bold text-gray-900">
               {mode === 'signin' ? '로그인' : '회원가입'}
             </h2>
-            <p className="text-[11px] text-neutral-500 mt-1">
+            <p className="text-[11px] text-gray-400 mt-1">
               {mode === 'signin'
                 ? '계정에 로그인하여 포즈를 클라우드에 저장하세요'
                 : '무료 계정을 만들고 시작하세요'}
@@ -140,7 +140,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
             {/* 이름 (회원가입 시만) */}
             {mode === 'signup' && (
               <div>
-                <label className="block text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
+                <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   이름
                 </label>
                 <input
@@ -149,14 +149,14 @@ export function AuthModal({ onClose }: AuthModalProps) {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="이름을 입력하세요"
                   required
-                  className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
             )}
 
             {/* 이메일 */}
             <div>
-              <label className="block text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
+              <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                 이메일
               </label>
               <input
@@ -165,13 +165,13 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email@example.com"
                 required
-                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
 
             {/* 비밀번호 */}
             <div>
-              <label className="block text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
+              <label className="block text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                 비밀번호
               </label>
               <input
@@ -181,11 +181,11 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 placeholder="••••••••"
                 required
                 minLength={8}
-                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
               />
               {/* 회원가입 시 비밀번호 요구사항 안내 */}
               {mode === 'signup' && (
-                <p className="text-[10px] text-neutral-600 mt-1">
+                <p className="text-[10px] text-gray-300 mt-1">
                   8자 이상, 대소문자 + 숫자 + 특수문자 포함
                 </p>
               )}
@@ -209,7 +209,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
           <div className="mt-4 text-center">
             <button
               onClick={toggleMode}
-              className="text-[11px] text-neutral-500 hover:text-orange-400 cursor-pointer transition-colors"
+              className="text-[11px] text-gray-400 hover:text-orange-400 cursor-pointer transition-colors"
             >
               {mode === 'signin'
                 ? '계정이 없으신가요? 회원가입'

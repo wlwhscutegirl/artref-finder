@@ -35,7 +35,7 @@ export function PosePresetCards({
     <div className="space-y-3">
       {/* 전신 포즈 프리셋 */}
       <div>
-        <p className="text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider">
+        <p className="text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider">
           전신 포즈
         </p>
         <div className="grid grid-cols-4 gap-1.5">
@@ -47,7 +47,7 @@ export function PosePresetCards({
               className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                 selectedPoseId === preset.id
                   ? 'border-orange-500 bg-orange-500/15 text-orange-300'
-                  : 'border-neutral-700 bg-neutral-800/50 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
+                  : 'border-gray-300 bg-gray-100/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
               }`}
             >
               {/* 실루엣 아이콘 */}
@@ -70,7 +70,7 @@ export function PosePresetCards({
       <div>
         <button
           onClick={() => setShowHand(!showHand)}
-          className="flex items-center gap-1 text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider hover:text-neutral-300 cursor-pointer transition-colors"
+          className="flex items-center gap-1 text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider hover:text-gray-600 cursor-pointer transition-colors"
         >
           <span className={`transition-transform ${showHand ? 'rotate-90' : ''}`}>
             ▸
@@ -87,7 +87,7 @@ export function PosePresetCards({
                 className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                   selectedHandId === preset.id
                     ? 'border-orange-500 bg-orange-500/15 text-orange-300'
-                    : 'border-neutral-700 bg-neutral-800/50 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
+                    : 'border-gray-300 bg-gray-100/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
                 }`}
               >
                 <svg

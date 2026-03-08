@@ -45,7 +45,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
     <div className="space-y-2">
       {/* 감지된 등급 표시 */}
       {detectedGrade && (
-        <div className="flex items-center gap-2 text-[10px] text-neutral-500">
+        <div className="flex items-center gap-2 text-[10px] text-gray-400">
           <span>감지된 등급:</span>
           <span className={QUALITY_INFO[detectedGrade].color}>
             {QUALITY_INFO[detectedGrade].label}
@@ -69,7 +69,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
             detectedGrade && qualityLevel === detectedGrade
               ? 'bg-orange-600 text-white'
-              : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
           }`}
         >
           자동
@@ -85,7 +85,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
-                  : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
             >
               {info.label}
@@ -105,7 +105,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
-                  : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
             >
               {mode === '3d' ? '3D 뷰어' : '2D 뷰어'}
@@ -116,10 +116,10 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
 
       {/* 개별 설정 (3D 모드에서만 표시) */}
       {renderMode === '3d' && (
-        <div className="space-y-1.5 pt-1 border-t border-neutral-800">
+        <div className="space-y-1.5 pt-1 border-t border-gray-200">
           {/* 그림자 토글 */}
           <label className="flex items-center justify-between text-[10px] cursor-pointer">
-            <span className="text-neutral-400">그림자</span>
+            <span className="text-gray-500">그림자</span>
             <button
               onClick={toggleShadows}
               className={`w-8 h-4 rounded-full transition-colors ${
@@ -136,7 +136,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
 
           {/* HDRI 토글 */}
           <label className="flex items-center justify-between text-[10px] cursor-pointer">
-            <span className="text-neutral-400">HDRI 환경맵</span>
+            <span className="text-gray-500">HDRI 환경맵</span>
             <button
               onClick={toggleHdri}
               className={`w-8 h-4 rounded-full transition-colors ${
@@ -153,7 +153,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
 
           {/* DPR 슬라이더 */}
           <div className="flex items-center justify-between text-[10px]">
-            <span className="text-neutral-400">해상도 (DPR)</span>
+            <span className="text-gray-500">해상도 (DPR)</span>
             <div className="flex items-center gap-1">
               <input
                 type="range"
@@ -164,13 +164,13 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
                 onChange={(e) => setDpr(parseFloat(e.target.value))}
                 className="w-16 h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
               />
-              <span className="text-neutral-500 w-6 text-right tabular-nums">{dpr}x</span>
+              <span className="text-gray-400 w-6 text-right tabular-nums">{dpr}x</span>
             </div>
           </div>
 
           {/* 자동 다운그레이드 토글 */}
           <label className="flex items-center justify-between text-[10px] cursor-pointer">
-            <span className="text-neutral-400">자동 품질 조절</span>
+            <span className="text-gray-500">자동 품질 조절</span>
             <button
               onClick={toggleAutoDowngrade}
               className={`w-8 h-4 rounded-full transition-colors ${

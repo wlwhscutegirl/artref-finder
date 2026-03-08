@@ -30,7 +30,7 @@ interface PaymentResult {
 // useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function PaymentSuccessPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-orange-500" /></div>}>
+    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-orange-500" /></div>}>
       <PaymentSuccessContent />
     </Suspense>
   );
@@ -130,11 +130,11 @@ function PaymentSuccessContent() {
           <div className="space-y-4">
             {/* 로딩 스피너 */}
             {/* 다크 테마 로딩 스피너 */}
-            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-orange-500" />
-            <h1 className="text-xl font-semibold text-neutral-100">
+            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-gray-300 border-t-orange-500" />
+            <h1 className="text-xl font-semibold text-gray-900">
               {result.message}
             </h1>
-            <p className="text-sm text-neutral-500">
+            <p className="text-sm text-gray-400">
               잠시만 기다려주세요. 결제를 확인하고 있습니다.
             </p>
           </div>
@@ -162,10 +162,10 @@ function PaymentSuccessContent() {
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-neutral-100">
+              <h1 className="text-2xl font-bold text-gray-900">
                 결제 완료
               </h1>
-              <p className="text-neutral-400">
+              <p className="text-gray-500">
                 구독이 활성화되었습니다. 이제 모든 기능을 이용할 수 있습니다.
               </p>
             </div>
@@ -202,12 +202,12 @@ function PaymentSuccessContent() {
             </div>
 
             <div className="space-y-2">
-              <h1 className="text-2xl font-bold text-neutral-100">
+              <h1 className="text-2xl font-bold text-gray-900">
                 결제 승인 실패
               </h1>
-              <p className="text-neutral-400">{result.message}</p>
+              <p className="text-gray-500">{result.message}</p>
               {result.errorCode && (
-                <p className="text-xs text-neutral-600">
+                <p className="text-xs text-gray-300">
                   오류 코드: {result.errorCode}
                 </p>
               )}
@@ -216,7 +216,7 @@ function PaymentSuccessContent() {
             {/* 다시 시도 버튼 */}
             <button
               onClick={() => router.push('/pricing')}
-              className="inline-flex items-center justify-center rounded-lg bg-neutral-800 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-neutral-700 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-gray-100 px-6 py-3 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             >
               다시 시도하기
             </button>

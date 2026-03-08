@@ -78,7 +78,7 @@ export function LayoutSwitcher({
       {/* 트리거 버튼 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors cursor-pointer"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors cursor-pointer"
       >
         <span>{currentLabel}</span>
         <span className="text-[10px]">▾</span>
@@ -86,7 +86,7 @@ export function LayoutSwitcher({
 
       {/* 드롭다운 메뉴 */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-1 w-40 bg-neutral-900 border border-neutral-700 rounded-lg shadow-xl overflow-hidden z-50">
+        <div className="absolute top-full right-0 mt-1 w-40 bg-gray-50 border border-gray-300 rounded-lg shadow-xl overflow-hidden z-50">
           {LAYOUT_OPTIONS.map((option) => {
             const isSelected = option.id === currentId;
             const isDisabled = option.layout === 'freeform' && freeformDisabled;
@@ -100,14 +100,14 @@ export function LayoutSwitcher({
                   isSelected
                     ? 'bg-orange-600/20 text-orange-300'
                     : isDisabled
-                      ? 'text-neutral-600 cursor-not-allowed'
-                      : 'text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300'
+                      ? 'text-gray-300 cursor-not-allowed'
+                      : 'text-gray-500 hover:bg-gray-100 hover:text-gray-600'
                 }`}
               >
                 <span className="text-sm">{option.icon}</span>
                 <span>{option.label}</span>
                 {isSelected && <span className="ml-auto text-orange-400">✓</span>}
-                {isDisabled && <span className="ml-auto text-[9px] text-neutral-600">PRO</span>}
+                {isDisabled && <span className="ml-auto text-[9px] text-gray-300">PRO</span>}
               </button>
             );
           })}

@@ -30,7 +30,7 @@ const ERROR_MESSAGES: Record<string, string> = {
 // useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function PaymentFailPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="animate-pulse text-neutral-400">로딩 중...</div></div>}>
+    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="animate-pulse text-gray-500">로딩 중...</div></div>}>
       <PaymentFailContent />
     </Suspense>
   );
@@ -71,12 +71,12 @@ function PaymentFailContent() {
 
           {/* 에러 메시지 */}
           <div className="space-y-2">
-            <h1 className="text-2xl font-bold text-neutral-100">
+            <h1 className="text-2xl font-bold text-gray-900">
               결제 실패
             </h1>
-            <p className="text-neutral-400">{displayMessage}</p>
+            <p className="text-gray-500">{displayMessage}</p>
             {/* 개발 시 원본 에러 코드 표시 */}
-            <p className="text-xs text-neutral-600">
+            <p className="text-xs text-gray-300">
               오류 코드: {errorCode}
             </p>
           </div>
@@ -94,7 +94,7 @@ function PaymentFailContent() {
             {/* 홈으로 버튼 */}
             <button
               onClick={() => router.push('/')}
-              className="inline-flex items-center justify-center rounded-lg border border-neutral-700 px-6 py-3 text-sm font-medium text-neutral-400 transition-colors hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             >
               홈으로 돌아가기
             </button>

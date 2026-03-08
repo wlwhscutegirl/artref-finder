@@ -109,15 +109,15 @@ export function SaveToCollectionModal({
         role="dialog"
         aria-modal="true"
         aria-labelledby="save-collection-modal-title"
-        className="w-full max-w-sm bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden"
+        className="w-full max-w-sm bg-gray-50 border border-gray-200 rounded-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* 헤더 */}
-        <div className="flex items-center justify-between px-5 py-4 border-b border-neutral-800">
+        <div className="flex items-center justify-between px-5 py-4 border-b border-gray-200">
           <h3 id="save-collection-modal-title" className="font-semibold">컬렉션에 저장</h3>
           <button
             onClick={onClose}
-            className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-neutral-800 transition-colors cursor-pointer text-neutral-400"
+            className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors cursor-pointer text-gray-500"
           >
             &times;
           </button>
@@ -126,7 +126,7 @@ export function SaveToCollectionModal({
         {/* 컬렉션 목록 */}
         <div className="px-5 py-3 max-h-60 overflow-y-auto space-y-1">
           {collections.length === 0 && !isCreating && (
-            <p className="text-sm text-neutral-500 py-4 text-center">
+            <p className="text-sm text-gray-400 py-4 text-center">
               아직 컬렉션이 없습니다. 새로 만들어보세요!
             </p>
           )}
@@ -140,7 +140,7 @@ export function SaveToCollectionModal({
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors cursor-pointer ${
                   isInCollection
                     ? 'bg-orange-600/20 border border-orange-500/30'
-                    : 'hover:bg-neutral-800 border border-transparent'
+                    : 'hover:bg-gray-100 border border-transparent'
                 }`}
               >
                 {/* 체크박스 */}
@@ -148,7 +148,7 @@ export function SaveToCollectionModal({
                   className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
                     isInCollection
                       ? 'bg-orange-600 border-orange-600'
-                      : 'border-neutral-600'
+                      : 'border-gray-400'
                   }`}
                 >
                   {isInCollection && (
@@ -161,7 +161,7 @@ export function SaveToCollectionModal({
                 {/* 컬렉션 정보 */}
                 <div className="min-w-0 flex-1">
                   <p className="text-sm font-medium truncate">{col.name}</p>
-                  <p className="text-xs text-neutral-500">{col.imageIds.length}장</p>
+                  <p className="text-xs text-gray-400">{col.imageIds.length}장</p>
                 </div>
               </button>
             );
@@ -169,7 +169,7 @@ export function SaveToCollectionModal({
         </div>
 
         {/* 새 컬렉션 생성 */}
-        <div className="px-5 py-3 border-t border-neutral-800">
+        <div className="px-5 py-3 border-t border-gray-200">
           {isCreating ? (
             <div className="flex gap-2">
               <Input

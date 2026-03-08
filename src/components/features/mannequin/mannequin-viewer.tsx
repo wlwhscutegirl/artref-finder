@@ -245,7 +245,7 @@ export function MannequinViewer({
       </div>
 
       {/* 멀티 라이트 컨트롤 오버레이 */}
-      <div className="absolute top-12 right-2 w-56 max-h-[60%] overflow-y-auto bg-neutral-950/90 backdrop-blur-sm rounded-lg p-2 space-y-2 border border-neutral-800">
+      <div className="absolute top-12 right-2 w-56 max-h-[60%] overflow-y-auto bg-white/95 backdrop-blur-sm rounded-lg p-2 space-y-2 border border-gray-200">
         <MultiLightController
           lights={lights}
           onAddLight={addLight}
@@ -276,7 +276,7 @@ export function MannequinViewer({
       )}
 
       {/* 안내 힌트 (터치 기기와 데스크탑 분기) */}
-      <div className="absolute bottom-3 left-3 text-[10px] text-neutral-500">
+      <div className="absolute bottom-3 left-3 text-[10px] text-gray-400">
         {(perfIsMobile || perfIsTablet)
           ? '터치: 회전 | 핀치: 줌 | 관절 탭: 선택'
           : '드래그: 회전 | 관절 클릭: 선택 | ESC: 해제'}

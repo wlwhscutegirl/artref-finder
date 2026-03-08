@@ -17,7 +17,7 @@ interface CameraPresetBarProps {
 export function CameraPresetBar({ selectedId, onSelect }: CameraPresetBarProps) {
   return (
     <div>
-      <p className="text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider">
+      <p className="text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider">
         카메라 앵글
       </p>
       <div className="flex flex-wrap gap-1">
@@ -29,7 +29,7 @@ export function CameraPresetBar({ selectedId, onSelect }: CameraPresetBarProps) 
             className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer ${
               selectedId === preset.id
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300'
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
             }`}
           >
             {preset.label}

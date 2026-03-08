@@ -67,8 +67,8 @@ export function ColorPalette({ images, maxColors = 8 }: ColorPaletteProps) {
   if (images.length === 0) return null;
 
   return (
-    <div className="flex items-center gap-2 px-3 py-2 bg-neutral-800/50 rounded-lg">
-      <span className="text-[10px] text-neutral-500 shrink-0">🎨 팔레트</span>
+    <div className="flex items-center gap-2 px-3 py-2 bg-gray-100/50 rounded-lg">
+      <span className="text-[10px] text-gray-400 shrink-0">🎨 팔레트</span>
       {loading ? (
         <div className="flex gap-1">
           {Array.from({ length: maxColors }).map((_, i) => (
@@ -82,11 +82,11 @@ export function ColorPalette({ images, maxColors = 8 }: ColorPaletteProps) {
               key={hex}
               onClick={() => handleCopy(hex)}
               title={`${hex} — 클릭하여 복사`}
-              className="w-5 h-5 rounded-full border border-neutral-600 hover:scale-125 transition-transform cursor-pointer relative"
+              className="w-5 h-5 rounded-full border border-gray-400 hover:scale-125 transition-transform cursor-pointer relative"
               style={{ backgroundColor: hex }}
             >
               {copiedHex === hex && (
-                <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] text-emerald-400 whitespace-nowrap bg-neutral-900 px-1 rounded">
+                <span className="absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] text-emerald-400 whitespace-nowrap bg-gray-50 px-1 rounded">
                   복사됨
                 </span>
               )}

@@ -87,7 +87,7 @@ export default function BelowTheFold() {
       {/* ====================================================
           3. 핵심 기능 소개 — 구체적 시나리오 중심
           ==================================================== */}
-      <section id="features" className="py-24 px-4 border-t border-neutral-800">
+      <section id="features" className="py-24 px-4 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
 
           {/* 섹션 헤더 */}
@@ -95,7 +95,7 @@ export default function BelowTheFold() {
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               레퍼런스 찾기, 이렇게 달라집니다
             </h2>
-            <p className="text-neutral-400 max-w-lg mx-auto">
+            <p className="text-gray-500 max-w-lg mx-auto">
               포즈를 말로 설명하지 마세요. 직접 만들고, AI가 찾게 하세요.
             </p>
           </div>
@@ -105,7 +105,7 @@ export default function BelowTheFold() {
             {FEATURES.map((feature) => (
               <div
                 key={feature.title}
-                className={`group p-8 rounded-2xl bg-neutral-900 border border-neutral-800 ${feature.accentBorder} transition-all`}
+                className={`group p-8 rounded-2xl bg-gray-50 border border-gray-200 ${feature.accentBorder} transition-all`}
               >
                 {/* 기능 이름 */}
                 <h3 className={`text-xl font-semibold mb-4 ${feature.accentText} transition-colors`}>
@@ -115,17 +115,17 @@ export default function BelowTheFold() {
                 {/* Before / After — 구체적 시나리오 */}
                 <div className="space-y-2 mb-4">
                   <div className="flex items-start gap-2 text-sm">
-                    <span className="text-neutral-600 shrink-0 font-mono text-xs mt-0.5">전</span>
-                    <span className="text-neutral-500 line-through decoration-neutral-700">{feature.before}</span>
+                    <span className="text-gray-300 shrink-0 font-mono text-xs mt-0.5">전</span>
+                    <span className="text-gray-400 line-through decoration-neutral-700">{feature.before}</span>
                   </div>
                   <div className="flex items-start gap-2 text-sm">
                     <span className="text-orange-400 shrink-0 font-mono text-xs mt-0.5">후</span>
-                    <span className="text-neutral-200">{feature.after}</span>
+                    <span className="text-gray-700">{feature.after}</span>
                   </div>
                 </div>
 
                 {/* 상세 설명 */}
-                <p className="text-neutral-400 text-sm leading-relaxed mb-5">
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">
                   {feature.details}
                 </p>
 
@@ -146,13 +146,13 @@ export default function BelowTheFold() {
       {/* ====================================================
           4. 이런 분들에게 추천 — 타겟 유저 명시
           ==================================================== */}
-      <section id="for-who" className="py-24 px-4 border-t border-neutral-800">
+      <section id="for-who" className="py-24 px-4 border-t border-gray-200">
         <div className="max-w-4xl mx-auto">
 
           {/* 섹션 헤더 */}
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">이런 분들이 쓰고 있어요</h2>
-            <p className="text-neutral-400">
+            <p className="text-gray-500">
               그림 그리는 사람이라면 누구나, 레퍼런스 찾는 고통을 알고 있습니다
             </p>
           </div>
@@ -162,10 +162,10 @@ export default function BelowTheFold() {
             {TARGET_USERS.map((user) => (
               <div
                 key={user.title}
-                className={`p-6 rounded-2xl bg-neutral-900/60 border ${user.accent} transition-colors`}
+                className={`p-6 rounded-2xl bg-gray-50/60 border ${user.accent} transition-colors`}
               >
-                <h3 className="text-lg font-semibold text-white mb-2">{user.title}</h3>
-                <p className="text-sm text-neutral-400 leading-relaxed">{user.description}</p>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">{user.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{user.description}</p>
               </div>
             ))}
           </div>
@@ -175,27 +175,27 @@ export default function BelowTheFold() {
       {/* ====================================================
           5. 가격 비교 섹션 — Free / Pro (정직한 표현)
           ==================================================== */}
-      <section id="pricing" className="py-24 px-4 border-t border-neutral-800">
+      <section id="pricing" className="py-24 px-4 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
 
           {/* 섹션 헤더 */}
           <div className="text-center mb-14">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4">심플한 가격</h2>
-            <p className="text-neutral-400">무료로 충분히 써보고, 필요할 때 업그레이드하세요</p>
+            <p className="text-gray-500">무료로 충분히 써보고, 필요할 때 업그레이드하세요</p>
           </div>
 
           {/* Free / Pro 2열 비교 */}
           <div className="grid sm:grid-cols-2 gap-5">
 
             {/* Free 플랜 */}
-            <div className="rounded-2xl bg-neutral-900 border border-neutral-800 p-7 flex flex-col">
+            <div className="rounded-2xl bg-gray-50 border border-gray-200 p-7 flex flex-col">
               {/* 플랜명 */}
-              <h3 className="text-lg font-bold text-neutral-300 mb-1">Free</h3>
+              <h3 className="text-lg font-bold text-gray-600 mb-1">Free</h3>
               {/* 가격 */}
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-bold text-white">무료</span>
+                <span className="text-3xl font-bold text-gray-900">무료</span>
               </div>
-              <p className="text-xs text-neutral-500 mb-6">기간 제한 없음</p>
+              <p className="text-xs text-gray-400 mb-6">기간 제한 없음</p>
 
               {/* 주요 기능 목록 */}
               <ul className="space-y-2.5 flex-1 mb-7 text-sm">
@@ -207,7 +207,7 @@ export default function BelowTheFold() {
                   '태그 기반 검색',
                   '포즈 벡터 매칭',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-neutral-300">
+                  <li key={item} className="flex items-start gap-2 text-gray-600">
                     <span className="text-green-400 shrink-0 mt-0.5">✓</span>
                     {item}
                   </li>
@@ -216,7 +216,7 @@ export default function BelowTheFold() {
                   '카메라 앵글 벡터 매칭',
                   '고급 소재/배경 필터',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-neutral-600">
+                  <li key={item} className="flex items-start gap-2 text-gray-300">
                     <span className="shrink-0 mt-0.5">—</span>
                     {item}
                   </li>
@@ -226,14 +226,14 @@ export default function BelowTheFold() {
               {/* CTA */}
               <Link
                 href="/register"
-                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-neutral-800 hover:bg-neutral-700 text-neutral-300 transition-colors"
+                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
               >
                 무료로 시작하기
               </Link>
             </div>
 
             {/* Pro 플랜 — 강조 */}
-            <div className="relative rounded-2xl bg-neutral-900/80 border border-orange-500/60 p-7 flex flex-col ring-1 ring-orange-500/15">
+            <div className="relative rounded-2xl bg-white/90 border border-orange-500/60 p-7 flex flex-col ring-1 ring-orange-500/15">
               {/* 추천 뱃지 */}
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-orange-600 text-white">
                 추천
@@ -245,10 +245,10 @@ export default function BelowTheFold() {
               </h3>
               {/* 가격 */}
               <div className="flex items-baseline gap-1 mb-1">
-                <span className="text-3xl font-bold text-white">₩9,900</span>
-                <span className="text-xs text-neutral-500">/월</span>
+                <span className="text-3xl font-bold text-gray-900">₩9,900</span>
+                <span className="text-xs text-gray-400">/월</span>
               </div>
-              <p className="text-xs text-neutral-500 mb-6">연간 결제 시 ₩7,920/월</p>
+              <p className="text-xs text-gray-400 mb-6">연간 결제 시 ₩7,920/월</p>
 
               {/* 주요 기능 목록 */}
               <ul className="space-y-2.5 flex-1 mb-7 text-sm">
@@ -263,7 +263,7 @@ export default function BelowTheFold() {
                   '고급 소재/배경 필터',
                   '우선 지원',
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-neutral-300">
+                  <li key={item} className="flex items-start gap-2 text-gray-600">
                     <span className="text-green-400 shrink-0 mt-0.5">✓</span>
                     {item}
                   </li>
@@ -281,7 +281,7 @@ export default function BelowTheFold() {
           </div>
 
           {/* 전체 가격 페이지 링크 */}
-          <p className="text-center mt-6 text-sm text-neutral-500">
+          <p className="text-center mt-6 text-sm text-gray-400">
             Student · Team 플랜이 궁금하신가요?{' '}
             <Link href="/pricing" className="text-orange-400 hover:text-orange-300 transition-colors underline underline-offset-2">
               전체 가격표 보기
@@ -293,7 +293,7 @@ export default function BelowTheFold() {
       {/* ====================================================
           6. 최종 CTA 섹션 — 절제된 디자인
           ==================================================== */}
-      <section className="py-24 px-4 border-t border-neutral-800">
+      <section className="py-24 px-4 border-t border-gray-200">
         <div className="max-w-2xl mx-auto text-center">
 
           {/* 헤드라인 — 구체적 가치 */}
@@ -301,7 +301,7 @@ export default function BelowTheFold() {
             레퍼런스 찾는 시간,<br />
             그림에 쓰세요
           </h2>
-          <p className="text-neutral-400 mb-10 leading-relaxed">
+          <p className="text-gray-500 mb-10 leading-relaxed">
             3D 마네킹 → AI 매칭 → 실사 레퍼런스.
             <br className="hidden sm:block" />
             가입하고 바로 사용해보세요.
@@ -310,27 +310,27 @@ export default function BelowTheFold() {
           {/* CTA 버튼 — 과도한 그라디언트 shadow 제거 */}
           <Link
             href="/register"
-            className="inline-block px-10 py-4 rounded-xl font-semibold text-base bg-orange-600 hover:bg-orange-500 transition-colors"
+            className="inline-block px-10 py-4 rounded-xl font-semibold text-base bg-orange-600 hover:bg-orange-500 text-white transition-colors"
           >
             무료 계정 만들기
           </Link>
 
           {/* 부연 설명 */}
-          <p className="mt-4 text-xs text-neutral-600">신용카드 불필요 · 언제든 해지 가능</p>
+          <p className="mt-4 text-xs text-gray-300">신용카드 불필요 · 언제든 해지 가능</p>
         </div>
       </section>
 
       {/* ====================================================
           7. 푸터
           ==================================================== */}
-      <footer className="py-10 px-4 border-t border-neutral-800">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+      <footer className="py-10 px-4 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           {/* 브랜드 */}
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
-            <span className="font-medium text-neutral-400">ArtRef Finder</span>
+            <span className="font-medium text-gray-500">ArtRef Finder</span>
           </div>
 
           {/* 슬로건 */}
@@ -338,8 +338,8 @@ export default function BelowTheFold() {
 
           {/* 링크 */}
           <div className="flex items-center gap-4 text-xs">
-            <Link href="/pricing" className="hover:text-neutral-300 transition-colors">가격</Link>
-            <a href="mailto:support@artref.app" className="hover:text-neutral-300 transition-colors">문의</a>
+            <Link href="/pricing" className="hover:text-gray-600 transition-colors">가격</Link>
+            <a href="mailto:support@artref.app" className="hover:text-gray-600 transition-colors">문의</a>
           </div>
         </div>
       </footer>

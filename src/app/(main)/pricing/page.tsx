@@ -51,7 +51,7 @@ const PLANS: PlanInfo[] = [
     priceNote: '영원히',
     description: '취미 작가를 위한 기본 플랜',
     color: 'from-neutral-600 to-neutral-700',
-    borderColor: 'border-neutral-700',
+    borderColor: 'border-gray-300',
     features: {
       '일일 검색': '100회',
       '컬렉션': '5개',
@@ -315,19 +315,19 @@ export default function PricingPage() {
   const isCanceled = subscription?.status === 'canceled';
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* 헤더 */}
-      <header className="border-b border-neutral-800">
+      <header className="border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between">
           <Link href="/search" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
             <span className="text-sm font-semibold">ArtRef</span>
           </Link>
           <Link
             href="/search"
-            className="text-xs text-neutral-400 hover:text-neutral-300 transition-colors"
+            className="text-xs text-gray-500 hover:text-gray-600 transition-colors"
           >
             검색으로 돌아가기
           </Link>
@@ -341,7 +341,7 @@ export default function PricingPage() {
           <h1 className="text-3xl font-bold mb-3">
             나에게 맞는 플랜을 선택하세요
           </h1>
-          <p className="text-neutral-400 text-sm">
+          <p className="text-gray-500 text-sm">
             모든 플랜에서 3D 포즈 매칭과 태그 검색을 사용할 수 있습니다
           </p>
         </div>
@@ -349,7 +349,7 @@ export default function PricingPage() {
         {/* 월간/연간 토글 */}
         <div className="flex items-center justify-center gap-3 mb-10">
           <span
-            className={`text-sm ${billingCycle === 'monthly' ? 'text-white font-semibold' : 'text-neutral-500'}`}
+            className={`text-sm ${billingCycle === 'monthly' ? 'text-gray-900 font-semibold' : 'text-gray-400'}`}
           >
             월간
           </span>
@@ -370,7 +370,7 @@ export default function PricingPage() {
             />
           </button>
           <span
-            className={`text-sm ${billingCycle === 'annual' ? 'text-white font-semibold' : 'text-neutral-500'}`}
+            className={`text-sm ${billingCycle === 'annual' ? 'text-gray-900 font-semibold' : 'text-gray-400'}`}
           >
             연간
             <span className="ml-1 text-xs text-orange-400 font-semibold">20% 할인</span>
@@ -401,8 +401,8 @@ export default function PricingPage() {
                   className={`
                     relative rounded-2xl border p-5 flex flex-col
                     ${plan.highlighted
-                      ? `${plan.borderColor} bg-neutral-900/80 ring-1 ring-orange-500/20`
-                      : `${plan.borderColor} bg-neutral-900/40`
+                      ? `${plan.borderColor} bg-white/90 ring-1 ring-orange-500/20`
+                      : `${plan.borderColor} bg-gray-50/40`
                     }
                   `}
                 >
@@ -428,16 +428,16 @@ export default function PricingPage() {
                     <div className="mt-2 flex items-baseline gap-1">
                       <span className="text-2xl font-bold">{formatPrice(displayPrice)}</span>
                       {plan.monthlyPrice > 0 && (
-                        <span className="text-xs text-neutral-500">{plan.priceNote}</span>
+                        <span className="text-xs text-gray-400">{plan.priceNote}</span>
                       )}
                     </div>
                     {/* 연간 결제 시 원래 가격 취소선 표시 */}
                     {billingCycle === 'annual' && plan.monthlyPrice > 0 && (
-                      <p className="text-[10px] text-neutral-600 line-through mt-0.5">
+                      <p className="text-[10px] text-gray-300 line-through mt-0.5">
                         {formatPrice(plan.monthlyPrice)}/월
                       </p>
                     )}
-                    <p className="text-xs text-neutral-400 mt-1">{plan.description}</p>
+                    <p className="text-xs text-gray-500 mt-1">{plan.description}</p>
                   </div>
 
                   {/* 기능 목록 */}
@@ -447,13 +447,13 @@ export default function PricingPage() {
                       const isEnabled = value !== false;
                       return (
                         <li key={featureKey} className="flex items-center gap-1.5 text-[11px]">
-                          <span className={isEnabled ? 'text-green-400' : 'text-neutral-600'}>
+                          <span className={isEnabled ? 'text-green-400' : 'text-gray-300'}>
                             {isEnabled ? '✓' : '—'}
                           </span>
-                          <span className={isEnabled ? 'text-neutral-300' : 'text-neutral-600'}>
+                          <span className={isEnabled ? 'text-gray-600' : 'text-gray-300'}>
                             {featureKey}
                             {typeof value === 'string' && (
-                              <span className="ml-1 text-neutral-500">({value})</span>
+                              <span className="ml-1 text-gray-400">({value})</span>
                             )}
                           </span>
                         </li>
@@ -468,10 +468,10 @@ export default function PricingPage() {
                     className={`
                       w-full py-2 rounded-xl text-xs font-semibold transition-all
                       ${isDisabled
-                        ? 'bg-neutral-800 text-neutral-500 cursor-default'
+                        ? 'bg-gray-100 text-gray-400 cursor-default'
                         : plan.highlighted
                           ? 'bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-500 hover:to-amber-500 cursor-pointer'
-                          : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700 cursor-pointer'
+                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer'
                       }
                       ${isThisLoading && !isDisabled ? 'opacity-70 cursor-wait' : ''}
                     `}
@@ -485,7 +485,7 @@ export default function PricingPage() {
 
                   {/* 다운그레이드 안내 */}
                   {PLAN_ORDER[plan.id] < PLAN_ORDER[currentPlan] && isAuthenticated && (
-                    <p className="text-[10px] text-neutral-600 text-center mt-1.5">
+                    <p className="text-[10px] text-gray-300 text-center mt-1.5">
                       고객센터를 통해 요청하세요
                     </p>
                   )}
@@ -499,15 +499,15 @@ export default function PricingPage() {
         {/* 구독 관리 섹션 (로그인한 유료 유저에게만 표시) */}
         {/* ============================================ */}
         {isPaidUser && subscription && (
-          <div className="mt-12 p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40">
-            <h2 className="text-sm font-semibold text-neutral-200 mb-4">내 구독 관리</h2>
+          <div className="mt-12 p-6 rounded-2xl border border-gray-200 bg-gray-50/40">
+            <h2 className="text-sm font-semibold text-gray-700 mb-4">내 구독 관리</h2>
 
             {/* 구독 상세 정보 */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               {/* 현재 플랜 */}
-              <div className="p-3 rounded-xl bg-neutral-800/50">
-                <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">현재 플랜</p>
-                <p className="text-sm font-semibold text-white capitalize">
+              <div className="p-3 rounded-xl bg-gray-100/50">
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">현재 플랜</p>
+                <p className="text-sm font-semibold text-gray-900 capitalize">
                   {subscription.plan}
                   {subscription.billingCycle === 'annual' && (
                     <span className="ml-1.5 text-[10px] text-orange-400 font-normal">연간</span>
@@ -516,19 +516,19 @@ export default function PricingPage() {
               </div>
 
               {/* 구독 상태 */}
-              <div className="p-3 rounded-xl bg-neutral-800/50">
-                <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">구독 상태</p>
+              <div className="p-3 rounded-xl bg-gray-100/50">
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">구독 상태</p>
                 <p className={`text-sm font-semibold ${isCanceled ? 'text-amber-400' : 'text-green-400'}`}>
                   {isCanceled ? '취소 예약됨' : '활성'}
                 </p>
               </div>
 
               {/* 다음 결제일 / 만료일 */}
-              <div className="p-3 rounded-xl bg-neutral-800/50">
-                <p className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1">
+              <div className="p-3 rounded-xl bg-gray-100/50">
+                <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   {isCanceled ? '서비스 종료일' : '다음 결제일'}
                 </p>
-                <p className="text-sm font-semibold text-white">
+                <p className="text-sm font-semibold text-gray-900">
                   {subscription.expiresAt
                     ? formatDate(subscription.expiresAt)
                     : '—'
@@ -547,7 +547,7 @@ export default function PricingPage() {
             {/* 구독 취소 버튼 (이미 취소된 경우 숨김) */}
             {!isCanceled && (
               <div className="flex items-center justify-between">
-                <p className="text-[11px] text-neutral-500">
+                <p className="text-[11px] text-gray-400">
                   구독을 취소해도 현재 결제 주기가 끝날 때까지 서비스를 이용할 수 있습니다.
                 </p>
                 <button
@@ -555,7 +555,7 @@ export default function PricingPage() {
                   disabled={isCanceling}
                   className="
                     ml-4 shrink-0 px-4 py-1.5 rounded-lg text-xs font-medium
-                    border border-neutral-700 text-neutral-400
+                    border border-gray-300 text-gray-500
                     hover:border-red-500/50 hover:text-red-400
                     disabled:opacity-50 disabled:cursor-not-allowed
                     transition-colors cursor-pointer
@@ -576,7 +576,7 @@ export default function PricingPage() {
         )}
 
         {/* FAQ / 안내 */}
-        <div className="text-center text-xs text-neutral-500 mt-8">
+        <div className="text-center text-xs text-gray-400 mt-8">
           <p>
             학생 인증은 대학교 이메일(.ac.kr, .edu) 또는 학생증 사본으로 가능합니다
           </p>

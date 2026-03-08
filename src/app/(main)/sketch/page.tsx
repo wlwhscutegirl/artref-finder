@@ -102,14 +102,14 @@ export default function SketchSearchPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* 헤더 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-4">
             {/* 로고 */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
                 A
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
@@ -120,10 +120,10 @@ export default function SketchSearchPage() {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link href="/collections" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/collections" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               컬렉션
             </Link>
-            <Link href="/dashboard" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/dashboard" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               대시보드
             </Link>
           </div>
@@ -138,7 +138,7 @@ export default function SketchSearchPage() {
             {/* 안내 문구 */}
             <div className="text-center">
               <h1 className="text-lg font-bold text-amber-400">드로잉 모드</h1>
-              <p className="text-xs text-neutral-500 mt-1">
+              <p className="text-xs text-gray-400 mt-1">
                 원하는 포즈를 그리면 AI가 유사한 실사 레퍼런스를 찾아줍니다
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function SketchSearchPage() {
             <button
               onClick={() => handleSearch()}
               disabled={isExtracting}
-              className="w-full py-3 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all"
+              className="w-full py-3 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all text-white"
             >
               {isExtracting ? (
                 <span className="flex items-center justify-center gap-2">
@@ -205,7 +205,7 @@ export default function SketchSearchPage() {
           <div className="space-y-4">
             {/* 결과 헤더 */}
             <div className="flex items-center justify-between">
-              <h2 className="text-sm font-medium text-neutral-300">
+              <h2 className="text-sm font-medium text-gray-600">
                 {isActive
                   ? `유사 레퍼런스 ${rankedImages.length}건`
                   : '캔버스에 포즈를 그리고 검색해보세요'}
@@ -219,7 +219,7 @@ export default function SketchSearchPage() {
 
             {/* 검색 전 가이드 */}
             {!isActive && (
-              <div className="flex flex-col items-center justify-center py-20 text-neutral-600">
+              <div className="flex flex-col items-center justify-center py-20 text-gray-300">
                 <span className="text-6xl mb-4">✏️</span>
                 <p className="text-sm mb-2">왼쪽 캔버스에 포즈를 그려보세요</p>
                 <p className="text-xs text-neutral-700">

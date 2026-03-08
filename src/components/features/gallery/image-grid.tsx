@@ -64,7 +64,7 @@ function getSimilarityBadge(score: number | undefined): {
   return {
     text: `${percent}%`,
     bgColor: 'bg-neutral-700/40',
-    textColor: 'text-neutral-400',
+    textColor: 'text-gray-500',
     ringColor: 'ring-neutral-600/30',
     tier: 'low',
   };
@@ -201,7 +201,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
     return (
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="aspect-[3/4] rounded-xl bg-neutral-800 animate-pulse" />
+          <div key={i} className="aspect-[3/4] rounded-xl bg-gray-100 animate-pulse" />
         ))}
       </div>
     );
@@ -210,9 +210,9 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
   // 결과 없음
   if (images.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center py-20 text-neutral-500">
+      <div className="flex flex-col items-center justify-center py-20 text-gray-400">
         {/* 검색 아이콘 (SVG) */}
-        <svg className="w-10 h-10 mb-4 text-neutral-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <svg className="w-10 h-10 mb-4 text-gray-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
           <circle cx="11" cy="11" r="8" />
           <path d="m21 21-4.3-4.3" />
         </svg>
@@ -232,7 +232,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
             onClick={() => openModal(index)}
             draggable={true}
             onDragStart={(e) => handleDragStart(e, image)}
-            className={`group relative aspect-[3/4] rounded-xl overflow-hidden bg-neutral-800 cursor-pointer transition-all duration-200
+            className={`group relative aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 cursor-pointer transition-all duration-200
               ${(() => {
                 const badge = getSimilarityBadge((image as ScoredImage).similarityScore);
                 if (!badge) return '';
@@ -284,16 +284,16 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
         <div className="mt-6 flex flex-col items-center gap-3">
           {/* 추가 페이지 로딩 중 인디케이터 */}
           {isFetchingNextPage && (
-            <div className="flex items-center gap-2 text-neutral-500">
+            <div className="flex items-center gap-2 text-gray-400">
               {/* 스피너 애니메이션 */}
-              <div className="w-5 h-5 border-2 border-neutral-700 border-t-orange-500 rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-gray-300 border-t-orange-500 rounded-full animate-spin" />
               <span className="text-sm">이미지 불러오는 중...</span>
             </div>
           )}
 
           {/* 더 이상 결과 없음 메시지 */}
           {!hasNextPage && images.length > 0 && (
-            <p className="text-sm text-neutral-600 py-4">
+            <p className="text-sm text-gray-300 py-4">
               모든 레퍼런스를 불러왔습니다
             </p>
           )}
@@ -319,11 +319,11 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
           onClick={closeModal}
         >
           <div
-            className="relative max-w-5xl w-full max-h-[90vh] bg-neutral-900 rounded-2xl border border-neutral-800 overflow-hidden flex flex-col md:flex-row"
+            className="relative max-w-5xl w-full max-h-[90vh] bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden flex flex-col md:flex-row"
             onClick={(e) => e.stopPropagation()}
           >
             {/* 이미지 영역 */}
-            <div className="flex-1 min-h-[300px] md:min-h-0 bg-neutral-950 flex items-center justify-center relative overflow-hidden">
+            <div className="flex-1 min-h-[300px] md:min-h-0 bg-white flex items-center justify-center relative overflow-hidden">
               {/* 이전 버튼 (44px 최소 터치 타겟) */}
               {selectedIndex > 0 && (
                 <button
@@ -369,7 +369,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                   onClick={() => setIsFlipped(!isFlipped)}
                   title="좌우 반전 (F키)"
                   className={`px-2 py-1 rounded text-xs cursor-pointer transition-colors ${
-                    isFlipped ? 'bg-orange-600 text-white' : 'text-neutral-400 hover:text-white'
+                    isFlipped ? 'bg-orange-600 text-white' : 'text-gray-500 hover:text-white'
                   }`}
                 >
                   ↔ 반전
@@ -378,25 +378,25 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <button
                   onClick={() => setZoomLevel(Math.max(0.5, zoomLevel - 0.25))}
                   disabled={zoomLevel <= 0.5}
-                  className="px-2 py-1 rounded text-xs text-neutral-400 hover:text-white disabled:opacity-30 cursor-pointer"
+                  className="px-2 py-1 rounded text-xs text-gray-500 hover:text-white disabled:opacity-30 cursor-pointer"
                 >
                   -
                 </button>
-                <span className="text-xs text-neutral-400 min-w-[3ch] text-center">
+                <span className="text-xs text-gray-500 min-w-[3ch] text-center">
                   {Math.round(zoomLevel * 100)}%
                 </span>
                 {/* 확대 */}
                 <button
                   onClick={() => setZoomLevel(Math.min(3, zoomLevel + 0.25))}
                   disabled={zoomLevel >= 3}
-                  className="px-2 py-1 rounded text-xs text-neutral-400 hover:text-white disabled:opacity-30 cursor-pointer"
+                  className="px-2 py-1 rounded text-xs text-gray-500 hover:text-white disabled:opacity-30 cursor-pointer"
                 >
                   +
                 </button>
                 {/* 원본 크기 리셋 */}
                 <button
                   onClick={() => { setZoomLevel(1); setIsFlipped(false); }}
-                  className="px-2 py-1 rounded text-xs text-neutral-400 hover:text-white cursor-pointer"
+                  className="px-2 py-1 rounded text-xs text-gray-500 hover:text-white cursor-pointer"
                 >
                   리셋
                 </button>
@@ -406,7 +406,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <button
                   onClick={handleDownload}
                   disabled={isDownloading}
-                  className="px-2 py-1 rounded text-xs text-neutral-400 hover:text-white disabled:opacity-50 cursor-pointer"
+                  className="px-2 py-1 rounded text-xs text-gray-500 hover:text-white disabled:opacity-50 cursor-pointer"
                   title="이미지 다운로드"
                 >
                   {isDownloading ? '저장 중...' : '↓ 저장'}
@@ -414,19 +414,19 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
               </div>
 
               {/* 이미지 카운터 */}
-              <div className="absolute top-3 left-3 px-2 py-1 bg-black/60 rounded text-xs text-neutral-400">
+              <div className="absolute top-3 left-3 px-2 py-1 bg-black/60 rounded text-xs text-gray-500">
                 {selectedIndex + 1} / {images.length}
               </div>
             </div>
 
             {/* 정보 패널 */}
-            <div className="w-full md:w-72 p-5 border-t md:border-t-0 md:border-l border-neutral-800 overflow-y-auto">
+            <div className="w-full md:w-72 p-5 border-t md:border-t-0 md:border-l border-gray-200 overflow-y-auto">
               <h3 className="font-semibold text-lg mb-3">{selectedImage.title}</h3>
 
               <div className="space-y-3">
                 {/* 카테고리 */}
                 <div>
-                  <p className="text-xs text-neutral-500 mb-1.5">카테고리</p>
+                  <p className="text-xs text-gray-400 mb-1.5">카테고리</p>
                   <span className="px-2 py-1 bg-orange-500/10 text-orange-400 rounded text-xs">
                     {selectedImage.category}
                   </span>
@@ -434,13 +434,13 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
 
                 {/* 태그 (툴팁 포함) */}
                 <div>
-                  <p className="text-xs text-neutral-500 mb-1.5">태그</p>
+                  <p className="text-xs text-gray-400 mb-1.5">태그</p>
                   <div className="flex flex-wrap gap-1.5">
                     {(selectedImage.tags ?? []).map((tag) => (
                       <span
                         key={tag}
                         title={getTagTooltip(tag)}
-                        className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-neutral-800 text-neutral-300 cursor-help"
+                        className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 cursor-help"
                       >
                         #{tag}
                       </span>
@@ -450,8 +450,8 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
 
                 {/* 유사도 분석 (포즈 매칭 활성 시 표시) */}
                 {(selectedImage as ScoredImage).similarityScore !== undefined && (
-                  <div className="pt-3 border-t border-neutral-800">
-                    <p className="text-xs text-neutral-500 mb-2">유사도 분석</p>
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className="text-xs text-gray-400 mb-2">유사도 분석</p>
                     {/* 종합 점수 */}
                     {(() => {
                       const badge = getSimilarityBadge((selectedImage as ScoredImage).similarityScore);
@@ -467,9 +467,9 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                         <div>
                           <div className="flex items-center justify-between text-[11px] mb-0.5">
                             <span className="text-orange-400">포즈</span>
-                            <span className="text-neutral-400 tabular-nums">{Math.round((selectedImage as ScoredImage).poseSimilarity! * 100)}%</span>
+                            <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).poseSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-orange-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).poseSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -478,9 +478,9 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                         <div>
                           <div className="flex items-center justify-between text-[11px] mb-0.5">
                             <span className="text-blue-400">카메라</span>
-                            <span className="text-neutral-400 tabular-nums">{Math.round((selectedImage as ScoredImage).cameraSimilarity! * 100)}%</span>
+                            <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).cameraSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).cameraSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -489,9 +489,9 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                         <div>
                           <div className="flex items-center justify-between text-[11px] mb-0.5">
                             <span className="text-amber-400">조명</span>
-                            <span className="text-neutral-400 tabular-nums">{Math.round((selectedImage as ScoredImage).lightSimilarity! * 100)}%</span>
+                            <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).lightSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                             <div className="h-full bg-amber-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).lightSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -501,9 +501,9 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 )}
 
                 {/* 키보드 단축키 안내 */}
-                <div className="pt-3 border-t border-neutral-800">
-                  <p className="text-xs text-neutral-500 mb-2">단축키</p>
-                  <div className="grid grid-cols-2 gap-1 text-[10px] text-neutral-500">
+                <div className="pt-3 border-t border-gray-200">
+                  <p className="text-xs text-gray-400 mb-2">단축키</p>
+                  <div className="grid grid-cols-2 gap-1 text-[10px] text-gray-400">
                     <span>← → 이전/다음</span>
                     <span>F 좌우반전</span>
                     <span>ESC 닫기</span>
@@ -511,7 +511,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 </div>
 
                 {/* 컬렉션 저장 + 다운로드 */}
-                <div className="pt-3 border-t border-neutral-800 space-y-2">
+                <div className="pt-3 border-t border-gray-200 space-y-2">
                   <button
                     onClick={() => setShowSaveModal(true)}
                     className="w-full py-2 px-3 bg-orange-600 hover:bg-orange-500 rounded-lg text-sm font-medium transition-colors cursor-pointer"
@@ -522,7 +522,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                   <button
                     onClick={handleDownload}
                     disabled={isDownloading}
-                    className="w-full py-2 px-3 bg-neutral-800 hover:bg-neutral-700 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors cursor-pointer text-neutral-300"
+                    className="w-full py-2 px-3 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors cursor-pointer text-gray-600"
                   >
                     {isDownloading ? '다운로드 중...' : '이미지 다운로드'}
                   </button>

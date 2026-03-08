@@ -85,7 +85,7 @@ export function UpgradeBanner({
             <Link
               href="/pricing"
               className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold
-                bg-neutral-800 text-neutral-300 hover:bg-neutral-700 transition-all"
+                bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all"
             >
               Pro 플랜 보기
             </Link>

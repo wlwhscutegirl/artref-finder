@@ -16,7 +16,7 @@ import { Button } from '@/components/ui/button';
 /** Suspense 경계로 감싼 기본 export */
 export default function SharedCollectionPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-neutral-500">로딩 중...</div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center text-gray-400">로딩 중...</div>}>
       <SharedCollectionContent />
     </Suspense>
   );
@@ -44,7 +44,7 @@ function SharedCollectionContent() {
   // 잘못된 URL
   if (!sharedCollection) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-neutral-500">
+      <div className="min-h-screen flex flex-col items-center justify-center text-gray-400">
         <div className="text-5xl mb-4">🔗</div>
         <p className="text-lg font-medium mb-2">잘못된 공유 링크입니다</p>
         <Link href="/search">
@@ -59,10 +59,10 @@ function SharedCollectionContent() {
   return (
     <div className="min-h-screen">
       {/* 상단 바 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
               A
             </div>
             <span className="font-semibold">ArtRef</span>
@@ -78,9 +78,9 @@ function SharedCollectionContent() {
         <div className="mb-6">
           <h1 className="text-2xl font-bold">{sharedCollection.name}</h1>
           {sharedCollection.description && (
-            <p className="text-sm text-neutral-500 mt-1">{sharedCollection.description}</p>
+            <p className="text-sm text-gray-400 mt-1">{sharedCollection.description}</p>
           )}
-          <p className="text-xs text-neutral-600 mt-1">
+          <p className="text-xs text-gray-300 mt-1">
             {images.length}장 | 읽기 전용
           </p>
         </div>
@@ -101,7 +101,7 @@ function SharedCollectionContent() {
               return (
                 <div
                   key={img._id}
-                  className="rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700/50"
+                  className="rounded-lg overflow-hidden bg-gray-100 border border-gray-300/50"
                 >
                   <div className="aspect-[4/5]">
                     <img
@@ -112,9 +112,9 @@ function SharedCollectionContent() {
                   </div>
                   {/* 어노테이션 표시 */}
                   {annotation && (annotation.memo || annotation.customTags?.length > 0) && (
-                    <div className="p-2 bg-neutral-900/90 border-t border-neutral-700/50">
+                    <div className="p-2 bg-white/90 border-t border-gray-300/50">
                       {annotation.memo && (
-                        <p className="text-[10px] text-neutral-300 line-clamp-2 mb-1">
+                        <p className="text-[10px] text-gray-600 line-clamp-2 mb-1">
                           {annotation.memo}
                         </p>
                       )}
@@ -137,7 +137,7 @@ function SharedCollectionContent() {
             })}
           </div>
         ) : (
-          <div className="flex flex-col items-center justify-center py-20 text-neutral-500">
+          <div className="flex flex-col items-center justify-center py-20 text-gray-400">
             <p className="text-base">이미지가 없습니다</p>
           </div>
         )}

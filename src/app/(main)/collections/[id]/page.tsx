@@ -113,7 +113,7 @@ export default function CollectionDetailPage() {
   // 컬렉션이 없으면 404
   if (!collection) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center text-neutral-500">
+      <div className="min-h-screen flex flex-col items-center justify-center text-gray-400">
         <div className="text-5xl mb-4">📁</div>
         <p className="text-lg font-medium mb-2">컬렉션을 찾을 수 없습니다</p>
         <Link href="/collections">
@@ -145,10 +145,10 @@ export default function CollectionDetailPage() {
   return (
     <div className="min-h-screen">
       {/* 상단 바 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
               A
             </div>
             <span className="font-semibold">ArtRef</span>
@@ -156,13 +156,13 @@ export default function CollectionDetailPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/search"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
             >
               검색
             </Link>
             <Link
               href="/collections"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
             >
               내 컬렉션
             </Link>
@@ -174,7 +174,7 @@ export default function CollectionDetailPage() {
         {/* 뒤로가기 */}
         <Link
           href="/collections"
-          className="inline-flex items-center gap-1 text-sm text-neutral-500 hover:text-neutral-300 transition-colors mb-4"
+          className="inline-flex items-center gap-1 text-sm text-gray-400 hover:text-gray-600 transition-colors mb-4"
         >
           ← 컬렉션 목록
         </Link>
@@ -205,9 +205,9 @@ export default function CollectionDetailPage() {
                   {collection.name}
                 </h1>
                 {collection.description && (
-                  <p className="text-sm text-neutral-500 mt-1">{collection.description}</p>
+                  <p className="text-sm text-gray-400 mt-1">{collection.description}</p>
                 )}
-                <p className="text-xs text-neutral-600 mt-1">
+                <p className="text-xs text-gray-300 mt-1">
                   {collectionImages.length}장 | 마지막 수정{' '}
                   {new Date(collection.updatedAt).toLocaleDateString('ko-KR')}
                 </p>
@@ -290,7 +290,7 @@ export default function CollectionDetailPage() {
               </SortableContext>
             </DndContext>
           ) : (
-            <div className="flex flex-col items-center justify-center py-20 text-neutral-500">
+            <div className="flex flex-col items-center justify-center py-20 text-gray-400">
               <div className="text-5xl mb-4 opacity-50">🖼️</div>
               <p className="text-base font-medium mb-1">이 컬렉션은 비어있습니다</p>
               <p className="text-sm mb-6">레퍼런스를 검색해서 이 컬렉션에 추가해보세요</p>

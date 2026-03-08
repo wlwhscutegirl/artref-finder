@@ -114,16 +114,16 @@ export default function BetaPage() {
   };
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
 
       {/* ====================================================
           내비게이션 바 (랜딩페이지와 동일한 스타일)
           ==================================================== */}
-      <nav className="fixed top-0 w-full z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* 로고 — 홈으로 이동 */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
               A
             </div>
             <span className="font-semibold text-lg">ArtRef</span>
@@ -133,13 +133,13 @@ export default function BetaPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/login"
-              className="px-4 py-2 text-sm text-neutral-300 hover:text-white transition-colors"
+              className="px-4 py-2 text-sm text-gray-600 hover:text-gray-900 transition-colors"
             >
               로그인
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-500 rounded-lg font-medium transition-colors"
+              className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-500 rounded-lg font-medium transition-colors text-white"
             >
               무료로 시작
             </Link>
@@ -177,14 +177,14 @@ export default function BetaPage() {
               ArtRef 베타 테스터를
             </span>
             <br />
-            <span className="text-white">모집합니다</span>
+            <span className="text-gray-900">모집합니다</span>
           </h1>
 
           {/* 서브 카피 */}
-          <p className="text-lg text-neutral-400 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
             AI 기반 실사 레퍼런스 검색 엔진의 첫 번째 사용자가 되어주세요.
             <br className="hidden sm:block" />
-            여러분의 피드백으로 <span className="text-neutral-200 font-medium">더 나은 도구</span>를 함께 만들어갑니다.
+            여러분의 피드백으로 <span className="text-gray-700 font-medium">더 나은 도구</span>를 함께 만들어갑니다.
           </p>
         </div>
       </section>
@@ -198,7 +198,7 @@ export default function BetaPage() {
           {/* 섹션 헤더 */}
           <div className="text-center mb-12">
             <h2 className="text-2xl font-bold mb-3">베타 테스터 혜택</h2>
-            <p className="text-neutral-400 text-sm">참여해주시는 분들께 특별한 혜택을 드립니다</p>
+            <p className="text-gray-500 text-sm">참여해주시는 분들께 특별한 혜택을 드립니다</p>
           </div>
 
           {/* 혜택 카드 3개 그리드 */}
@@ -208,7 +208,7 @@ export default function BetaPage() {
               return (
                 <div
                   key={benefit.title}
-                  className={`group p-6 rounded-2xl bg-neutral-900 border border-neutral-800 ${style.hoverBorder} transition-all`}
+                  className={`group p-6 rounded-2xl bg-gray-50 border border-gray-200 ${style.hoverBorder} transition-all`}
                 >
                   {/* 아이콘 */}
                   <div className={`w-12 h-12 rounded-xl ${style.iconBg} flex items-center justify-center text-2xl mb-4`}>
@@ -219,7 +219,7 @@ export default function BetaPage() {
                     {benefit.title}
                   </h3>
                   {/* 혜택 설명 */}
-                  <p className="text-neutral-400 text-sm leading-relaxed">
+                  <p className="text-gray-500 text-sm leading-relaxed">
                     {benefit.description}
                   </p>
                 </div>
@@ -232,18 +232,18 @@ export default function BetaPage() {
       {/* ====================================================
           3. 가입 폼 섹션
           ==================================================== */}
-      <section className="py-16 px-4 border-t border-neutral-800">
+      <section className="py-16 px-4 border-t border-gray-200">
         <div className="max-w-lg mx-auto">
 
           {/* 섹션 헤더 */}
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold mb-3">베타 테스터 신청</h2>
-            <p className="text-neutral-400 text-sm">아래 양식을 작성하여 베타 프로그램에 참여하세요</p>
+            <p className="text-gray-500 text-sm">아래 양식을 작성하여 베타 프로그램에 참여하세요</p>
           </div>
 
           {/* 성공 메시지 — 제출 완료 시 폼 대신 표시 */}
           {isSuccess ? (
-            <div className="rounded-2xl bg-neutral-900 border border-emerald-500/30 p-10 text-center">
+            <div className="rounded-2xl bg-gray-50 border border-emerald-500/30 p-10 text-center">
               {/* 완료 아이콘 */}
               <div className="w-16 h-16 rounded-full bg-emerald-500/10 flex items-center justify-center text-3xl mx-auto mb-5">
                 ✓
@@ -251,7 +251,7 @@ export default function BetaPage() {
               <h3 className="text-xl font-bold text-emerald-400 mb-3">
                 신청이 완료되었습니다!
               </h3>
-              <p className="text-neutral-400 text-sm leading-relaxed mb-6">
+              <p className="text-gray-500 text-sm leading-relaxed mb-6">
                 베타 테스트 준비가 되면 입력하신 이메일로 안내드리겠습니다.
                 <br />
                 관심을 가져주셔서 감사합니다.
@@ -259,7 +259,7 @@ export default function BetaPage() {
               {/* 홈으로 돌아가기 */}
               <Link
                 href="/"
-                className="inline-block px-6 py-2.5 rounded-xl text-sm font-semibold bg-neutral-800 hover:bg-neutral-700 text-neutral-300 transition-colors"
+                className="inline-block px-6 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
               >
                 홈으로 돌아가기
               </Link>
@@ -268,11 +268,11 @@ export default function BetaPage() {
             /* 가입 폼 */
             <form
               onSubmit={handleSubmit}
-              className="rounded-2xl bg-neutral-900 border border-neutral-800 p-8 space-y-5"
+              className="rounded-2xl bg-gray-50 border border-gray-200 p-8 space-y-5"
             >
               {/* 이름 입력 */}
               <div>
-                <label htmlFor="beta-name" className="block text-sm font-medium text-neutral-300 mb-1.5">
+                <label htmlFor="beta-name" className="block text-sm font-medium text-gray-600 mb-1.5">
                   이름 <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -282,13 +282,13 @@ export default function BetaPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="홍길동"
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 />
               </div>
 
               {/* 이메일 입력 */}
               <div>
-                <label htmlFor="beta-email" className="block text-sm font-medium text-neutral-300 mb-1.5">
+                <label htmlFor="beta-email" className="block text-sm font-medium text-gray-600 mb-1.5">
                   이메일 <span className="text-red-400">*</span>
                 </label>
                 <input
@@ -298,13 +298,13 @@ export default function BetaPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="artist@example.com"
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 />
               </div>
 
               {/* 직업 선택 */}
               <div>
-                <label htmlFor="beta-occupation" className="block text-sm font-medium text-neutral-300 mb-1.5">
+                <label htmlFor="beta-occupation" className="block text-sm font-medium text-gray-600 mb-1.5">
                   직업 <span className="text-red-400">*</span>
                 </label>
                 <select
@@ -312,7 +312,7 @@ export default function BetaPage() {
                   required
                   value={occupation}
                   onChange={(e) => setOccupation(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 >
                   {OCCUPATION_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
@@ -324,7 +324,7 @@ export default function BetaPage() {
 
               {/* 한줄 소개 */}
               <div>
-                <label htmlFor="beta-intro" className="block text-sm font-medium text-neutral-300 mb-1.5">
+                <label htmlFor="beta-intro" className="block text-sm font-medium text-gray-600 mb-1.5">
                   한줄 소개
                 </label>
                 <textarea
@@ -333,7 +333,7 @@ export default function BetaPage() {
                   value={introduction}
                   onChange={(e) => setIntroduction(e.target.value)}
                   placeholder="어떤 작업을 주로 하시나요? ArtRef에 기대하는 점이 있다면 알려주세요."
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150 resize-none"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150 resize-none"
                 />
               </div>
 
@@ -348,13 +348,13 @@ export default function BetaPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-xl font-semibold text-base bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 transition-all shadow-lg shadow-orange-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 rounded-xl font-semibold text-base text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 transition-all shadow-lg shadow-orange-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '신청 중...' : '베타 테스터 신청하기'}
               </button>
 
               {/* 안내 문구 */}
-              <p className="text-center text-xs text-neutral-600">
+              <p className="text-center text-xs text-gray-300">
                 입력하신 정보는 베타 프로그램 운영 목적으로만 사용됩니다.
               </p>
             </form>
@@ -365,14 +365,14 @@ export default function BetaPage() {
       {/* ====================================================
           푸터 (랜딩페이지와 동일한 스타일)
           ==================================================== */}
-      <footer className="py-10 px-4 border-t border-neutral-800">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
+      <footer className="py-10 px-4 border-t border-gray-200">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-400">
           {/* 브랜드 */}
           <div className="flex items-center gap-2">
             <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
-            <span className="font-medium text-neutral-400">ArtRef Finder</span>
+            <span className="font-medium text-gray-500">ArtRef Finder</span>
           </div>
 
           {/* 슬로건 */}
@@ -380,8 +380,8 @@ export default function BetaPage() {
 
           {/* 링크 */}
           <div className="flex items-center gap-4 text-xs">
-            <Link href="/pricing" className="hover:text-neutral-300 transition-colors">가격</Link>
-            <a href="mailto:support@artref.app" className="hover:text-neutral-300 transition-colors">문의</a>
+            <Link href="/pricing" className="hover:text-gray-600 transition-colors">가격</Link>
+            <a href="mailto:support@artref.app" className="hover:text-gray-600 transition-colors">문의</a>
           </div>
         </div>
       </footer>

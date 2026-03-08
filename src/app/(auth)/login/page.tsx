@@ -10,7 +10,7 @@ import { Input } from '@/components/ui/input';
 // useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function LoginPage() {
   return (
-    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-neutral-400">로딩 중...</div></div>}>
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-pulse text-gray-500">로딩 중...</div></div>}>
       <LoginForm />
     </Suspense>
   );
@@ -47,13 +47,13 @@ function LoginForm() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold text-white">
               A
             </div>
             <span className="font-semibold text-xl">ArtRef</span>
           </Link>
           <h1 className="text-2xl font-bold mt-6 mb-2">로그인</h1>
-          <p className="text-neutral-400 text-sm">레퍼런스 검색을 시작하세요</p>
+          <p className="text-gray-500 text-sm">레퍼런스 검색을 시작하세요</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -85,7 +85,7 @@ function LoginForm() {
           </Button>
         </form>
 
-        <p className="text-center text-sm text-neutral-400 mt-6">
+        <p className="text-center text-sm text-gray-500 mt-6">
           아직 계정이 없으신가요?{' '}
           <Link href="/register" className="text-orange-400 hover:text-orange-300">
             회원가입

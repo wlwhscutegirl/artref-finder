@@ -60,10 +60,10 @@ export function ExportButton({ targetRef, fileName, disabled = false }: ExportBu
         disabled={disabled || isExporting}
         className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
           disabled
-            ? 'bg-neutral-800 text-neutral-600 cursor-not-allowed'
+            ? 'bg-gray-100 text-gray-300 cursor-not-allowed'
             : isExporting
               ? 'bg-emerald-600/20 text-emerald-400'
-              : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
         }`}
       >
         {isExporting ? '내보내는 중...' : 'Export'}
@@ -71,16 +71,16 @@ export function ExportButton({ targetRef, fileName, disabled = false }: ExportBu
 
       {/* 포맷 선택 드롭다운 */}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-1 w-32 bg-neutral-900 border border-neutral-700 rounded-lg shadow-xl overflow-hidden z-50">
+        <div className="absolute top-full right-0 mt-1 w-32 bg-gray-50 border border-gray-300 rounded-lg shadow-xl overflow-hidden z-50">
           <button
             onClick={() => handleExport('png')}
-            className="w-full px-3 py-2 text-xs text-left text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300 cursor-pointer transition-colors"
+            className="w-full px-3 py-2 text-xs text-left text-gray-500 hover:bg-gray-100 hover:text-gray-600 cursor-pointer transition-colors"
           >
             PNG (고화질)
           </button>
           <button
             onClick={() => handleExport('jpeg')}
-            className="w-full px-3 py-2 text-xs text-left text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300 cursor-pointer transition-colors"
+            className="w-full px-3 py-2 text-xs text-left text-gray-500 hover:bg-gray-100 hover:text-gray-600 cursor-pointer transition-colors"
           >
             JPEG (경량)
           </button>

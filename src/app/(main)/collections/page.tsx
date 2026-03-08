@@ -43,10 +43,10 @@ export default function CollectionsPage() {
   return (
     <div className="min-h-screen">
       {/* 상단 바 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold text-white">
               A
             </div>
             <span className="font-semibold">ArtRef</span>
@@ -54,7 +54,7 @@ export default function CollectionsPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/search"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
             >
               🔍 검색
             </Link>
@@ -67,7 +67,7 @@ export default function CollectionsPage() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold">내 컬렉션</h1>
-            <p className="text-sm text-neutral-500 mt-1">
+            <p className="text-sm text-gray-400 mt-1">
               {collections.length}개의 컬렉션
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function CollectionsPage() {
 
         {/* 새 컬렉션 생성 폼 */}
         {isCreating && (
-          <div className="mb-6 p-5 bg-neutral-900 border border-neutral-800 rounded-xl">
+          <div className="mb-6 p-5 bg-gray-50 border border-gray-200 rounded-xl">
             <h3 className="text-sm font-medium mb-3">새 컬렉션 만들기</h3>
             <div className="space-y-3">
               <Input
@@ -129,7 +129,7 @@ export default function CollectionsPage() {
               </button>
               <button
                 onClick={() => setConfirmDeleteId(null)}
-                className="px-3 py-1 text-xs bg-neutral-700 hover:bg-neutral-600 rounded-lg text-neutral-300 cursor-pointer transition-colors"
+                className="px-3 py-1 text-xs bg-neutral-700 hover:bg-gray-300 rounded-lg text-gray-600 cursor-pointer transition-colors"
               >
                 취소
               </button>
@@ -150,7 +150,7 @@ export default function CollectionsPage() {
           </div>
         ) : (
           // 빈 상태
-          <div className="flex flex-col items-center justify-center py-20 text-neutral-500">
+          <div className="flex flex-col items-center justify-center py-20 text-gray-400">
             <div className="text-5xl mb-4 opacity-50">📁</div>
             <p className="text-base font-medium mb-1">아직 컬렉션이 없습니다</p>
             <p className="text-sm mb-6">레퍼런스를 검색하고 컬렉션에 저장해보세요</p>

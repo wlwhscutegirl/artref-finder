@@ -17,7 +17,7 @@ export function Tag({ label, selected, onClick, removable, onRemove }: TagProps)
         ${
           selected
             ? 'bg-orange-600 text-white'
-            : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
+            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
         }
       `}
     >
@@ -28,7 +28,7 @@ export function Tag({ label, selected, onClick, removable, onRemove }: TagProps)
             e.stopPropagation();
             onRemove?.();
           }}
-          className="ml-0.5 hover:text-white"
+          className="ml-0.5 hover:text-orange-200"
         >
           &times;
         </button>

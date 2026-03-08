@@ -14,10 +14,10 @@ interface CollectionCardProps {
  */
 export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
   return (
-    <div className="group relative rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-orange-500/30 transition-colors">
+    <div className="group relative rounded-xl overflow-hidden bg-gray-50 border border-gray-200 hover:border-orange-500/30 transition-colors">
       {/* 커버 이미지 영역 */}
       <Link href={`/collections/${collection._id}`}>
-        <div className="aspect-[4/3] bg-neutral-800 relative overflow-hidden">
+        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
           {collection.coverImageUrl ? (
             <img
               src={collection.coverImageUrl}
@@ -33,7 +33,7 @@ export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
           )}
 
           {/* 이미지 개수 배지 */}
-          <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-neutral-300">
+          <div className="absolute bottom-2 right-2 px-2 py-0.5 bg-black/60 backdrop-blur-sm rounded-full text-xs text-white">
             {collection.imageIds.length}장
           </div>
         </div>
@@ -47,11 +47,11 @@ export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
           </h3>
         </Link>
         {collection.description && (
-          <p className="text-xs text-neutral-500 mt-1 line-clamp-2">
+          <p className="text-xs text-gray-400 mt-1 line-clamp-2">
             {collection.description}
           </p>
         )}
-        <p className="text-xs text-neutral-600 mt-2">
+        <p className="text-xs text-gray-300 mt-2">
           {new Date(collection.updatedAt).toLocaleDateString('ko-KR')}
         </p>
       </div>
@@ -63,7 +63,7 @@ export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
             e.stopPropagation();
             onDelete(collection._id);
           }}
-          className="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-neutral-400 hover:text-red-400 hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-all cursor-pointer text-sm"
+          className="absolute top-2 right-2 w-7 h-7 flex items-center justify-center rounded-full bg-black/50 text-gray-500 hover:text-red-400 hover:bg-black/70 opacity-0 group-hover:opacity-100 transition-all cursor-pointer text-sm"
           title="컬렉션 삭제"
         >
           &times;

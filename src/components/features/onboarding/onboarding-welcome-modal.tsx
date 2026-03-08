@@ -94,18 +94,18 @@ function Step1({
         <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-base font-bold text-white">
           A
         </div>
-        <h2 className="text-lg font-bold text-white">
+        <h2 className="text-lg font-bold text-gray-900">
           환영합니다!
         </h2>
-        <p className="text-[13px] text-neutral-400 mt-1">
+        <p className="text-[13px] text-gray-500 mt-1">
           ArtRef에 오신 걸 환영해요
         </p>
       </div>
 
       {/* 역할 선택 안내 */}
       <div>
-        <p className="text-xs text-neutral-400 text-center mb-3">
-          어떤 작업을 주로 하시나요? <span className="text-neutral-500">(여러 개 선택 가능)</span>
+        <p className="text-xs text-gray-500 text-center mb-3">
+          어떤 작업을 주로 하시나요? <span className="text-gray-400">(여러 개 선택 가능)</span>
         </p>
 
         {/* 역할 버튼 그리드 */}
@@ -121,7 +121,7 @@ function Step1({
                   border transition-all duration-150 cursor-pointer
                   ${isSelected
                     ? 'bg-orange-600 border-orange-500 text-white'
-                    : 'bg-neutral-800 border-neutral-700 text-neutral-300 hover:border-neutral-600 hover:text-neutral-200'
+                    : 'bg-gray-100 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700'
                   }
                 `}
               >
@@ -141,8 +141,8 @@ function Step2() {
     <div className="space-y-4">
       {/* 섹션 제목 */}
       <div className="text-center">
-        <h2 className="text-lg font-bold text-white">이런 기능이 있어요</h2>
-        <p className="text-[13px] text-neutral-400 mt-1">
+        <h2 className="text-lg font-bold text-gray-900">이런 기능이 있어요</h2>
+        <p className="text-[13px] text-gray-500 mt-1">
           ArtRef의 핵심 기능을 미리 살펴보세요
         </p>
       </div>
@@ -152,7 +152,7 @@ function Step2() {
         {FEATURES.map((feature) => (
           <div
             key={feature.id}
-            className="flex items-start gap-3 p-3 rounded-xl bg-neutral-800/50 border border-neutral-700/50"
+            className="flex items-start gap-3 p-3 rounded-xl bg-gray-100/50 border border-gray-300/50"
           >
             {/* 아이콘 배경 */}
             <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/15 flex items-center justify-center text-orange-400">
@@ -160,8 +160,8 @@ function Step2() {
             </div>
             {/* 텍스트 */}
             <div>
-              <p className="text-sm font-semibold text-white">{feature.title}</p>
-              <p className="text-[11px] text-neutral-400 mt-0.5 leading-relaxed">
+              <p className="text-sm font-semibold text-gray-900">{feature.title}</p>
+              <p className="text-[11px] text-gray-500 mt-0.5 leading-relaxed">
                 {feature.description}
               </p>
             </div>
@@ -190,10 +190,10 @@ function Step3({
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
-        <h2 className="text-lg font-bold text-white">
+        <h2 className="text-lg font-bold text-gray-900">
           준비됐어요!
         </h2>
-        <p className="text-[13px] text-neutral-400 mt-1 leading-relaxed">
+        <p className="text-[13px] text-gray-500 mt-1 leading-relaxed">
           첫 검색을 시작해볼까요?<br />
           마네킹 포즈를 설정하고 레퍼런스를 찾아보세요.
         </p>
@@ -212,7 +212,7 @@ function Step3({
         {/* 둘러보기 — 보조 CTA */}
         <button
           onClick={onClose}
-          className="w-full py-2.5 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 rounded-lg text-sm font-medium text-neutral-300 cursor-pointer transition-all duration-150"
+          className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 cursor-pointer transition-all duration-150"
         >
           둘러보기
         </button>
@@ -321,7 +321,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
 
       {/* 모달 카드 */}
       <div
-        className="relative w-[90%] max-w-md bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-[90%] max-w-md bg-gray-50 border border-gray-300 rounded-2xl shadow-2xl overflow-hidden"
         role="dialog"
         aria-modal="true"
         aria-label="온보딩 안내"
@@ -335,7 +335,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
             {/* 닫기 버튼 */}
             <button
               onClick={markDone}
-              className="text-[10px] text-neutral-600 hover:text-neutral-400 cursor-pointer transition-colors"
+              className="text-[10px] text-gray-300 hover:text-gray-500 cursor-pointer transition-colors"
               aria-label="온보딩 건너뛰기"
             >
               건너뛰기
@@ -362,7 +362,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
             </div>
 
             {/* 스텝 텍스트 */}
-            <span className="text-[10px] text-neutral-500 tabular-nums">
+            <span className="text-[10px] text-gray-400 tabular-nums">
               {step + 1} / {TOTAL_STEPS}
             </span>
           </div>
@@ -394,7 +394,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
               <button
                 onClick={handlePrev}
                 disabled={step === 0}
-                className="px-4 py-2 text-xs text-neutral-400 hover:text-neutral-200 disabled:opacity-0 disabled:pointer-events-none cursor-pointer transition-colors"
+                className="px-4 py-2 text-xs text-gray-500 hover:text-gray-700 disabled:opacity-0 disabled:pointer-events-none cursor-pointer transition-colors"
                 aria-label="이전 단계"
               >
                 이전

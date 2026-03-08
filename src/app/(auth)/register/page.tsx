@@ -44,13 +44,13 @@ export default function RegisterPage() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold text-white">
               A
             </div>
             <span className="font-semibold text-xl">ArtRef</span>
           </Link>
           <h1 className="text-2xl font-bold mt-6 mb-2">회원가입</h1>
-          <p className="text-neutral-400 text-sm">무료로 ArtRef를 시작하세요</p>
+          <p className="text-gray-500 text-sm">무료로 ArtRef를 시작하세요</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -98,7 +98,7 @@ export default function RegisterPage() {
           </Button>
         </form>
 
-        <p className="text-center text-sm text-neutral-400 mt-6">
+        <p className="text-center text-sm text-gray-500 mt-6">
           이미 계정이 있으신가요?{' '}
           <Link href="/login" className="text-orange-400 hover:text-orange-300">
             로그인

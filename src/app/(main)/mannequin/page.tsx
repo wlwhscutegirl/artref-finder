@@ -29,7 +29,7 @@ import { usePoseControls } from '@/hooks/usePoseControls';
 // Three.js는 SSR 불가 - dynamic import로 클라이언트에서만 로드
 const MannequinViewer = dynamic(
   () => import('@/components/features/mannequin/mannequin-viewer').then(m => ({ default: m.MannequinViewer })),
-  { ssr: false, loading: () => <div className="aspect-[4/5] bg-neutral-800 rounded-xl animate-pulse" /> }
+  { ssr: false, loading: () => <div className="aspect-[4/5] bg-gray-100 rounded-xl animate-pulse" /> }
 );
 
 export default function SearchPage() {
@@ -84,7 +84,7 @@ export default function SearchPage() {
       )}
 
       {/* 뷰어 하단 도구 바 */}
-      <div className="flex items-center gap-2 px-3 py-2 bg-neutral-900/80 border-t border-neutral-800">
+      <div className="flex items-center gap-2 px-3 py-2 bg-white/90 border-t border-gray-200">
         {/* 좌우반전 토글 */}
         <button
           onClick={presets.toggleFlip}
@@ -92,7 +92,7 @@ export default function SearchPage() {
           className={`px-2.5 py-1 rounded text-[11px] font-medium cursor-pointer transition-colors ${
             presets.isFlipped
               ? 'bg-orange-600 text-white'
-              : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
           }`}
         >
           ↔ 반전
@@ -106,7 +106,7 @@ export default function SearchPage() {
           className={`flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 ${
             controls.isAnatomyMode
               ? 'bg-orange-600 text-white'
-              : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300'
+              : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
           }`}
         >
           {/* 뼈 아이콘 (SVG) */}
@@ -126,7 +126,7 @@ export default function SearchPage() {
             className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
               presets.bodyType === 'male'
                 ? 'bg-blue-600 text-white'
-                : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
             }`}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -143,7 +143,7 @@ export default function SearchPage() {
             className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500/50 ${
               presets.bodyType === 'female'
                 ? 'bg-pink-600 text-white'
-                : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
             }`}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -167,7 +167,7 @@ export default function SearchPage() {
         <div>
           <button
             onClick={() => controls.setShowPerfSettings(!controls.showPerfSettings)}
-            className="flex items-center gap-1 text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider hover:text-neutral-300 cursor-pointer transition-colors w-full"
+            className="flex items-center gap-1 text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider hover:text-gray-600 cursor-pointer transition-colors w-full"
           >
             <span className={`transition-transform ${controls.showPerfSettings ? 'rotate-90' : ''}`}>
               ▸
@@ -175,7 +175,7 @@ export default function SearchPage() {
             성능 설정
           </button>
           {controls.showPerfSettings && (
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-2 mb-2">
+            <div className="bg-gray-50/80 border border-gray-200 rounded-lg p-2 mb-2">
               <PerformanceSettings />
             </div>
           )}
@@ -188,10 +188,10 @@ export default function SearchPage() {
       </div>
 
       {/* 프리셋 패널 영역 */}
-      <div className="p-3 space-y-3 border-t border-neutral-800">
+      <div className="p-3 space-y-3 border-t border-gray-200">
         {/* AI 포즈 추출 (Phase 4): 이미지 업로드 → 포즈 검색/마네킹 적용 */}
         <div>
-          <p className="text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider">
+          <p className="text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider">
             이미지에서 포즈 추출
           </p>
           <ImageUploadZone
@@ -206,7 +206,7 @@ export default function SearchPage() {
               <span className="text-[10px] text-emerald-400">이미지 포즈 검색 활성</span>
               <button
                 onClick={search.clearExtractedPose}
-                className="text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer"
+                className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer"
               >
                 해제
               </button>
@@ -288,7 +288,7 @@ export default function SearchPage() {
         <div>
           <button
             onClick={() => search.setShowFilters(!search.showFilters)}
-            className="flex items-center gap-1 text-[11px] font-medium text-neutral-400 mb-1.5 uppercase tracking-wider hover:text-neutral-300 cursor-pointer transition-colors w-full"
+            className="flex items-center gap-1 text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider hover:text-gray-600 cursor-pointer transition-colors w-full"
           >
             <span className={`transition-transform ${search.showFilters ? 'rotate-90' : ''}`}>
               ▸
@@ -296,7 +296,7 @@ export default function SearchPage() {
             태그 필터 {search.selectedTags.length > 0 && `(${search.selectedTags.length})`}
           </button>
           {search.showFilters && (
-            <div className="bg-neutral-900/50 border border-neutral-800 rounded-lg p-3 max-h-[40vh] overflow-y-auto">
+            <div className="bg-gray-50/80 border border-gray-200 rounded-lg p-3 max-h-[40vh] overflow-y-auto">
               <SearchFilters
                 selectedTags={search.selectedTags}
                 selectedCategory={search.selectedCategory}
@@ -321,7 +321,7 @@ export default function SearchPage() {
   const rightPanel = (
     <div className="h-full flex flex-col overflow-y-auto">
       {/* 결과 헤더 + 활성 태그 표시 */}
-      <div className="sticky top-0 z-10 bg-neutral-950/95 backdrop-blur-sm border-b border-neutral-800 px-4 py-3">
+      <div className="sticky top-0 z-10 bg-white/95 backdrop-blur-sm border-b border-gray-200 px-4 py-3">
         <div className="flex items-center justify-between mb-2">
           <h2 className="text-sm font-semibold">
             레퍼런스 <span className="text-orange-400">{search.displayImages.length}</span>건
@@ -362,7 +362,7 @@ export default function SearchPage() {
                   search.setSelectedTags([]);
                   presets.resetPresets();
                 }}
-                className="text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer"
+                className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer"
               >
                 초기화
               </button>
@@ -381,7 +381,7 @@ export default function SearchPage() {
                 #{tag}
                 <button
                   onClick={() => search.setSelectedTags(search.selectedTags.filter((t) => t !== tag))}
-                  className="hover:text-white cursor-pointer"
+                  className="hover:text-gray-900 cursor-pointer"
                 >
                   &times;
                 </button>
@@ -424,10 +424,10 @@ export default function SearchPage() {
       )}
 
       {/* 상단 바 */}
-      <header className="shrink-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1920px] mx-auto px-4 h-12 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
             <span className="text-sm font-semibold">ArtRef</span>
@@ -447,13 +447,13 @@ export default function SearchPage() {
           <div className="flex items-center gap-2">
             <Link
               href="/dashboard"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
             >
               대시보드
             </Link>
             <Link
               href="/collections"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
             >
               내 컬렉션
             </Link>
@@ -461,10 +461,10 @@ export default function SearchPage() {
             {/* 인증 버튼 */}
             {isAuthenticated && user ? (
               <div className="flex items-center gap-2">
-                <span className="text-[11px] text-neutral-400">{user.name}</span>
+                <span className="text-[11px] text-gray-500">{user.name}</span>
                 <button
                   onClick={() => logout()}
-                  className="px-2 py-1 rounded text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+                  className="px-2 py-1 rounded text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
                 >
                   로그아웃
                 </button>
@@ -534,13 +534,13 @@ function MobileTabView({
   return (
     <div className="flex flex-col h-full">
       {/* 탭 바 */}
-      <div className="flex border-b border-neutral-800 shrink-0">
+      <div className="flex border-b border-gray-200 shrink-0">
         <button
           onClick={() => setActiveTab('mannequin')}
           className={`flex-1 py-2.5 text-xs font-medium text-center cursor-pointer transition-colors ${
             activeTab === 'mannequin'
               ? 'text-orange-400 border-b-2 border-orange-500'
-              : 'text-neutral-500 hover:text-neutral-300'
+              : 'text-gray-400 hover:text-gray-600'
           }`}
         >
           포즈 설정
@@ -550,7 +550,7 @@ function MobileTabView({
           className={`flex-1 py-2.5 text-xs font-medium text-center cursor-pointer transition-colors ${
             activeTab === 'results'
               ? 'text-orange-400 border-b-2 border-orange-500'
-              : 'text-neutral-500 hover:text-neutral-300'
+              : 'text-gray-400 hover:text-gray-600'
           }`}
         >
           결과 ({resultCount})

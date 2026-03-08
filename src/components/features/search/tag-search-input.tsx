@@ -101,14 +101,14 @@ export function TagSearchInput({ selectedTags, onTagsChange }: TagSearchInputPro
         onKeyDown={handleKeyDown}
         onFocus={() => suggestions.length > 0 && setIsOpen(true)}
         placeholder="태그 검색... (예: 역광, 손, 드라마틱)"
-        className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
+        className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
       />
 
       {/* 자동완성 드롭다운 */}
       {isOpen && suggestions.length > 0 && (
         <div
           ref={dropdownRef}
-          className="absolute top-full left-0 right-0 mt-1 bg-neutral-900 border border-neutral-700 rounded-lg shadow-xl z-50 max-h-60 overflow-y-auto"
+          className="absolute top-full left-0 right-0 mt-1 bg-gray-50 border border-gray-300 rounded-lg shadow-xl z-50 max-h-60 overflow-y-auto"
         >
           {suggestions.slice(0, 10).map((tag, index) => (
             <button
@@ -116,12 +116,12 @@ export function TagSearchInput({ selectedTags, onTagsChange }: TagSearchInputPro
               onClick={() => selectTag(tag)}
               className={`w-full px-3 py-2 text-left text-sm flex items-center justify-between cursor-pointer transition-colors ${
                 index === highlightIndex
-                  ? 'bg-orange-600/20 text-white'
-                  : 'text-neutral-300 hover:bg-neutral-800'
+                  ? 'bg-orange-600/20 text-gray-900'
+                  : 'text-gray-600 hover:bg-gray-100'
               }`}
             >
               <span>#{tag}</span>
-              <span className="text-xs text-neutral-500 ml-2 truncate max-w-[200px]">
+              <span className="text-xs text-gray-400 ml-2 truncate max-w-[200px]">
                 {getTagTooltip(tag)}
               </span>
             </button>

@@ -9,12 +9,12 @@ interface LightControllerProps {
 
 export function LightController({ value, onChange }: LightControllerProps) {
   return (
-    <div className="absolute top-3 right-3 bg-neutral-900/90 backdrop-blur-sm rounded-lg border border-neutral-700 p-3 w-48">
-      <p className="text-xs font-medium text-neutral-300 mb-2">광원 조절</p>
+    <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-lg border border-gray-300 p-3 w-48">
+      <p className="text-xs font-medium text-gray-600 mb-2">광원 조절</p>
 
       <div className="space-y-2">
         <div>
-          <div className="flex justify-between text-xs text-neutral-500 mb-1">
+          <div className="flex justify-between text-xs text-gray-400 mb-1">
             <span>수평 각도</span>
             <span>{value.azimuth}°</span>
           </div>
@@ -29,7 +29,7 @@ export function LightController({ value, onChange }: LightControllerProps) {
         </div>
 
         <div>
-          <div className="flex justify-between text-xs text-neutral-500 mb-1">
+          <div className="flex justify-between text-xs text-gray-400 mb-1">
             <span>수직 각도</span>
             <span>{value.elevation}°</span>
           </div>
@@ -44,7 +44,7 @@ export function LightController({ value, onChange }: LightControllerProps) {
         </div>
 
         <div>
-          <div className="flex justify-between text-xs text-neutral-500 mb-1">
+          <div className="flex justify-between text-xs text-gray-400 mb-1">
             <span>강도</span>
             <span>{Math.round(value.intensity * 100)}%</span>
           </div>

@@ -87,7 +87,7 @@ export function MaterialFilterCards({
     <div className="space-y-3">
       {/* 퀵 필터 (인기 태그 조합) */}
       <div>
-        <p className="text-[10px] font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
+        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           퀵 필터
         </p>
         <div className="flex flex-wrap gap-1.5">
@@ -103,7 +103,7 @@ export function MaterialFilterCards({
                   transition-colors cursor-pointer border
                   ${isActive
                     ? 'bg-orange-600/20 border-orange-500/40 text-orange-300'
-                    : 'bg-neutral-800/50 border-neutral-700/50 text-neutral-400 hover:bg-neutral-700/50 hover:text-neutral-300'
+                    : 'bg-gray-100/50 border-gray-300/50 text-gray-500 hover:bg-gray-200/50 hover:text-gray-600'
                   }
                 `}
               >
@@ -117,7 +117,7 @@ export function MaterialFilterCards({
 
       {/* 소재/텍스처 카드 */}
       <div>
-        <p className="text-[10px] font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
+        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           소재 {selectedMaterialCount > 0 && <span className="text-orange-400">({selectedMaterialCount})</span>}
         </p>
         <div className="grid grid-cols-4 gap-1.5">
@@ -132,12 +132,12 @@ export function MaterialFilterCards({
                   transition-all cursor-pointer border
                   ${isSelected
                     ? `bg-gradient-to-b ${color} border-orange-500/40 ring-1 ring-orange-500/30`
-                    : 'bg-neutral-800/30 border-neutral-700/30 hover:bg-neutral-700/40'
+                    : 'bg-gray-100/30 border-gray-300/30 hover:bg-gray-200/40'
                   }
                 `}
               >
                 <span className="text-base">{icon}</span>
-                <span className={`text-[9px] font-medium ${isSelected ? 'text-orange-300' : 'text-neutral-400'}`}>
+                <span className={`text-[9px] font-medium ${isSelected ? 'text-orange-300' : 'text-gray-500'}`}>
                   {tag}
                 </span>
               </button>
@@ -148,7 +148,7 @@ export function MaterialFilterCards({
 
       {/* 배경 카드 */}
       <div>
-        <p className="text-[10px] font-medium text-neutral-500 uppercase tracking-wider mb-1.5">
+        <p className="text-[10px] font-medium text-gray-400 uppercase tracking-wider mb-1.5">
           배경 {selectedBgCount > 0 && <span className="text-orange-400">({selectedBgCount})</span>}
         </p>
         <div className="grid grid-cols-4 gap-1.5">
@@ -163,12 +163,12 @@ export function MaterialFilterCards({
                   transition-all cursor-pointer border
                   ${isSelected
                     ? `bg-gradient-to-b ${color} border-orange-500/40 ring-1 ring-orange-500/30`
-                    : 'bg-neutral-800/30 border-neutral-700/30 hover:bg-neutral-700/40'
+                    : 'bg-gray-100/30 border-gray-300/30 hover:bg-gray-200/40'
                   }
                 `}
               >
                 <span className="text-base">{icon}</span>
-                <span className={`text-[9px] font-medium ${isSelected ? 'text-orange-300' : 'text-neutral-400'}`}>
+                <span className={`text-[9px] font-medium ${isSelected ? 'text-orange-300' : 'text-gray-500'}`}>
                   {tag}
                 </span>
               </button>

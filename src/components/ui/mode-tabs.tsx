@@ -40,7 +40,7 @@ const MODES = [
 
 export function ModeTabs({ activeMode }: ModeTabsProps) {
   return (
-    <div className="flex items-center bg-neutral-800/50 rounded-lg p-0.5">
+    <div className="flex items-center bg-gray-100/50 rounded-lg p-0.5">
       {MODES.map((mode) => (
         <Link
           key={mode.id}
@@ -48,7 +48,7 @@ export function ModeTabs({ activeMode }: ModeTabsProps) {
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
             activeMode === mode.id
               ? 'bg-orange-600 text-white'
-              : 'text-neutral-400 hover:text-neutral-300'
+              : 'text-gray-500 hover:text-gray-600'
           }`}
         >
           <mode.Icon className="w-4 h-4" />

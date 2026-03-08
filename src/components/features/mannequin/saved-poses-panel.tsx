@@ -113,7 +113,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
       <div className="flex items-center justify-between">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center gap-1 text-[11px] font-medium text-neutral-400 uppercase tracking-wider hover:text-neutral-300 cursor-pointer transition-colors"
+          className="flex items-center gap-1 text-[11px] font-medium text-gray-500 uppercase tracking-wider hover:text-gray-600 cursor-pointer transition-colors"
         >
           <span className={`transition-transform ${isOpen ? 'rotate-90' : ''}`}>
             ▸
@@ -145,7 +145,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
             placeholder="포즈 이름 입력"
             maxLength={20}
             autoFocus
-            className="flex-1 px-2 py-1 bg-neutral-800 border border-neutral-700 rounded text-[11px] text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500"
+            className="flex-1 px-2 py-1 bg-gray-100 border border-gray-300 rounded text-[11px] text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500"
           />
           <button
             onClick={handleSave}
@@ -156,7 +156,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
           </button>
           <button
             onClick={() => { setShowSaveInput(false); setPoseName(''); }}
-            className="px-2 py-1 bg-neutral-700 rounded text-[10px] text-neutral-300 hover:bg-neutral-600 cursor-pointer"
+            className="px-2 py-1 bg-neutral-700 rounded text-[10px] text-gray-600 hover:bg-gray-300 cursor-pointer"
           >
             취소
           </button>
@@ -167,25 +167,25 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
       {isOpen && (
         <div className="mt-2 space-y-1 max-h-[30vh] overflow-y-auto">
           {poses.length === 0 ? (
-            <p className="text-[10px] text-neutral-500 py-2 text-center">
+            <p className="text-[10px] text-gray-400 py-2 text-center">
               저장된 포즈가 없습니다
             </p>
           ) : (
             poses.map((pose) => (
               <div
                 key={pose.id}
-                className="flex items-center gap-2 p-2 rounded-lg bg-neutral-800/50 border border-neutral-700 hover:border-neutral-600 group"
+                className="flex items-center gap-2 p-2 rounded-lg bg-gray-100/50 border border-gray-300 hover:border-gray-400 group"
               >
                 {/* 불러오기 클릭 영역 */}
                 <button
                   onClick={() => onLoad(pose)}
                   className="flex-1 text-left cursor-pointer"
                 >
-                  <p className="text-[11px] font-medium text-neutral-200">
+                  <p className="text-[11px] font-medium text-gray-700">
                     {pose.name}
                   </p>
                   <div className="flex items-center gap-1.5 mt-0.5">
-                    <span className="text-[9px] text-neutral-500">
+                    <span className="text-[9px] text-gray-400">
                       {formatDate(pose.savedAt)}
                     </span>
                     {/* 기즈모 조작 포즈 표시 */}
@@ -204,7 +204,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
                       </span>
                     ))}
                     {pose.tags.length > 3 && (
-                      <span className="text-[10px] text-neutral-500">
+                      <span className="text-[10px] text-gray-400">
                         +{pose.tags.length - 3}
                       </span>
                     )}
@@ -214,7 +214,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
                 {/* 삭제 버튼 */}
                 <button
                   onClick={() => handleDelete(pose.id)}
-                  className="opacity-0 group-hover:opacity-100 text-[10px] text-neutral-500 hover:text-red-400 cursor-pointer transition-opacity px-1"
+                  className="opacity-0 group-hover:opacity-100 text-[10px] text-gray-400 hover:text-red-400 cursor-pointer transition-opacity px-1"
                   title="삭제"
                 >
                   &times;

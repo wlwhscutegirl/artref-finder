@@ -271,9 +271,9 @@ export default function BatchExtractPage() {
   const progress = state.total > 0 ? Math.round((state.completed / state.total) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* 헤더 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
@@ -282,14 +282,14 @@ export default function BatchExtractPage() {
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
             </Link>
-            <span className="text-neutral-600">|</span>
-            <span className="text-sm text-neutral-400">벡터 추출</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-sm text-gray-500">벡터 추출</span>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/admin/pipeline" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/admin/pipeline" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               수집 파이프라인
             </Link>
-            <Link href="/mannequin" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/mannequin" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               검색
             </Link>
           </div>
@@ -299,20 +299,20 @@ export default function BatchExtractPage() {
       <main className="max-w-5xl mx-auto px-4 py-8 space-y-8">
         {/* 상태 카드 */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">미추출 이미지</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">미추출 이미지</p>
             <p className="text-2xl font-bold">{state.total}</p>
           </div>
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">추출 성공</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">추출 성공</p>
             <p className="text-2xl font-bold text-emerald-400">{state.success}</p>
           </div>
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">폴백 적용</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">폴백 적용</p>
             <p className="text-2xl font-bold text-amber-400">{state.fallback}</p>
           </div>
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">처리 속도</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">처리 속도</p>
             <p className="text-2xl font-bold">{state.speed} img/s</p>
           </div>
         </div>
@@ -330,7 +330,7 @@ export default function BatchExtractPage() {
               </button>
               <button
                 onClick={loadQueue}
-                className="px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 rounded-lg text-sm transition-colors"
+                className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
               >
                 새로고침
               </button>
@@ -361,7 +361,7 @@ export default function BatchExtractPage() {
               <span className="text-emerald-400 font-medium">추출 완료</span>
               <button
                 onClick={loadQueue}
-                className="px-4 py-2.5 bg-neutral-800 hover:bg-neutral-700 rounded-lg text-sm transition-colors"
+                className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
               >
                 다시 확인
               </button>
@@ -372,13 +372,13 @@ export default function BatchExtractPage() {
         {/* 진행률 바 */}
         {state.status !== 'idle' && (
           <div className="space-y-2">
-            <div className="flex items-center justify-between text-xs text-neutral-400">
+            <div className="flex items-center justify-between text-xs text-gray-500">
               <span>{progress}% ({state.completed}/{state.total})</span>
               {state.eta > 0 && (
                 <span>예상 남은 시간: {Math.floor(state.eta / 60)}분 {state.eta % 60}초</span>
               )}
             </div>
-            <div className="h-3 bg-neutral-800 rounded-full overflow-hidden">
+            <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
@@ -389,7 +389,7 @@ export default function BatchExtractPage() {
 
         {/* 현재 처리 중인 이미지 미리보기 */}
         {state.currentImage && (
-          <div className="flex items-center gap-4 p-4 bg-neutral-900 rounded-xl border border-neutral-800">
+          <div className="flex items-center gap-4 p-4 bg-gray-50 rounded-xl border border-gray-200">
             <img
               src={state.currentImage.thumbnailUrl}
               alt={state.currentImage.title}
@@ -397,7 +397,7 @@ export default function BatchExtractPage() {
             />
             <div>
               <p className="text-sm font-medium truncate max-w-md">{state.currentImage.title}</p>
-              <p className="text-xs text-neutral-500 mt-0.5">
+              <p className="text-xs text-gray-400 mt-0.5">
                 태그: {state.currentImage.tags.slice(0, 5).join(', ')}
                 {state.currentImage.tags.length > 5 && ` +${state.currentImage.tags.length - 5}`}
               </p>
@@ -409,7 +409,7 @@ export default function BatchExtractPage() {
         )}
 
         {/* 안내 */}
-        <div className="p-4 bg-neutral-900/50 rounded-xl border border-neutral-800 text-xs text-neutral-500 space-y-1">
+        <div className="p-4 bg-gray-50/80 rounded-xl border border-gray-200 text-xs text-gray-400 space-y-1">
           <p>• MediaPipe WASM을 사용하여 브라우저에서 포즈를 추출합니다 (서버 불필요)</p>
           <p>• 200장마다 메모리를 리셋하여 OOM을 방지합니다</p>
           <p>• 포즈 감지 실패 시 태그 기반 조명/카메라 휴리스틱을 폴백으로 적용합니다</p>

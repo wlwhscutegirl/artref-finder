@@ -163,7 +163,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
     return (
       <div className="w-full bg-orange-500/5 border-b border-orange-500/10">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-3">
-          <p className="text-xs text-neutral-400 truncate">
+          <p className="text-xs text-gray-500 truncate">
             <span className="text-orange-400 font-medium">Pro</span>로 업그레이드하면 무제한 검색!
           </p>
           <div className="flex items-center gap-2 shrink-0">
@@ -179,7 +179,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
             <button
               onClick={handleDismiss}
               aria-label="배너 닫기"
-              className="text-neutral-600 hover:text-neutral-400 transition-colors cursor-pointer"
+              className="text-gray-300 hover:text-gray-500 transition-colors cursor-pointer"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

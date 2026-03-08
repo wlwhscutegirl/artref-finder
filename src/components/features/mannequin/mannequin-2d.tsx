@@ -524,7 +524,7 @@ export function Mannequin2D({ className = '', bodyType = null }: Mannequin2DProp
   return (
     <div
       ref={containerRef}
-      className={`relative rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 ${className}`}
+      className={`relative rounded-xl overflow-hidden bg-gray-50 border border-gray-200 ${className}`}
     >
       <div className="aspect-[4/5] w-full">
         <canvas
@@ -550,7 +550,7 @@ export function Mannequin2D({ className = '', bodyType = null }: Mannequin2DProp
       </div>
 
       {/* 안내 */}
-      <div className="absolute bottom-3 left-3 text-[10px] text-neutral-500">
+      <div className="absolute bottom-3 left-3 text-[10px] text-gray-400">
         관절 드래그: 포즈 변경 | 클릭: 선택
       </div>
     </div>

@@ -173,7 +173,7 @@ export function OnboardingModal() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="onboarding-modal-title"
-        className="relative w-[90%] max-w-md bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
+        className="relative w-[90%] max-w-md bg-gray-50 border border-gray-300 rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* 상단 그라데이션 바 */}
         <div className="h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-pink-500" />
@@ -182,10 +182,10 @@ export function OnboardingModal() {
         <div className="p-6">
           {/* 스텝 표시 */}
           <div className="flex items-center justify-between mb-4">
-            <span className="text-[10px] text-neutral-500 uppercase tracking-wider font-medium">
+            <span className="text-[10px] text-gray-400 uppercase tracking-wider font-medium">
               시작 가이드
             </span>
-            <span className="text-[10px] text-neutral-500">
+            <span className="text-[10px] text-gray-400">
               {step + 1} / {STEPS.length}
             </span>
           </div>
@@ -195,11 +195,11 @@ export function OnboardingModal() {
             <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-orange-500/15 flex items-center justify-center text-orange-400">
               <StepIcon step={step} className="w-6 h-6" />
             </div>
-            <h2 id="onboarding-modal-title" className="text-lg font-bold text-white">{currentStep.title}</h2>
+            <h2 id="onboarding-modal-title" className="text-lg font-bold text-gray-900">{currentStep.title}</h2>
           </div>
 
           {/* 설명 */}
-          <p className="text-sm text-neutral-300 text-center whitespace-pre-line leading-relaxed mb-3">
+          <p className="text-sm text-gray-600 text-center whitespace-pre-line leading-relaxed mb-3">
             {currentStep.description}
           </p>
 
@@ -232,14 +232,14 @@ export function OnboardingModal() {
             <button
               onClick={handlePrev}
               disabled={step === 0}
-              className="px-4 py-2 text-xs text-neutral-400 hover:text-neutral-200 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
+              className="px-4 py-2 text-xs text-gray-500 hover:text-gray-700 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer transition-colors"
             >
               이전
             </button>
 
             <button
               onClick={handleClose}
-              className="text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+              className="text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             >
               건너뛰기
             </button>

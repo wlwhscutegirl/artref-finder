@@ -78,57 +78,57 @@ export const colorGradient = {
 /**
  * 배경 색상 (Surface)
  * globals.css: --background: #0a0a0a (neutral-950 계열)
- * pricing/page.tsx: bg-neutral-950
- * 컴포넌트들: bg-neutral-900, bg-neutral-800, bg-neutral-800/50
+ * pricing/page.tsx: bg-white
+ * 컴포넌트들: bg-gray-50, bg-gray-100, bg-gray-100/50
  */
 export const colorSurface = {
   /** 최하위 앱 배경 (body) */
-  base: 'bg-neutral-950',
+  base: 'bg-white',
   /** 페이지 레이아웃 배경 */
-  page: 'bg-neutral-900',
+  page: 'bg-gray-50',
   /** 카드, 패널 배경 */
-  panel: 'bg-neutral-900',
+  panel: 'bg-gray-50',
   /** 약간 밝은 패널 (모달, 팝오버 등) */
-  elevated: 'bg-neutral-800',
+  elevated: 'bg-gray-100',
   /** 반투명 오버레이 배경 (Nav, 슬라이더 패널 등) */
-  overlay: 'bg-neutral-900/80',
+  overlay: 'bg-white/90',
   /** 미묘한 섹션 구분 */
-  subtle: 'bg-neutral-800/50',
+  subtle: 'bg-gray-100/50',
 } as const;
 
 /**
  * 텍스트 색상 (Text)
  * globals.css: --foreground: #ededed
- * 기존 컴포넌트: text-white, text-neutral-200~600 계열
+ * 기존 컴포넌트: text-gray-900, text-gray-700~600 계열
  */
 export const colorText = {
   /** 최우선 텍스트 (제목, 중요 내용) */
-  primary: 'text-white',
+  primary: 'text-gray-900',
   /** 일반 본문 텍스트 */
-  default: 'text-neutral-200',
+  default: 'text-gray-700',
   /** 보조 텍스트 (설명, 레이블) */
-  secondary: 'text-neutral-300',
+  secondary: 'text-gray-600',
   /** 약한 텍스트 (힌트, placeholder) */
-  muted: 'text-neutral-400',
+  muted: 'text-gray-500',
   /** 비활성, 비중요 정보 */
-  disabled: 'text-neutral-500',
+  disabled: 'text-gray-400',
   /** 거의 보이지 않는 텍스트 (가이드, 경고 없는 안내) */
-  faint: 'text-neutral-600',
+  faint: 'text-gray-300',
   /** 입력 placeholder */
-  placeholder: 'placeholder-neutral-500',
+  placeholder: 'placeholder-gray-400',
 } as const;
 
 /**
  * 테두리 색상 (Border)
- * 기존 컴포넌트: border-neutral-700, border-neutral-800
+ * 기존 컴포넌트: border-gray-300, border-gray-200
  */
 export const colorBorder = {
   /** 기본 테두리 */
-  default: 'border-neutral-700',
+  default: 'border-gray-300',
   /** 약한 테두리 (섹션 구분선 등) */
-  subtle: 'border-neutral-800',
+  subtle: 'border-gray-200',
   /** 강조 테두리 (hover 상태) */
-  emphasis: 'border-neutral-600',
+  emphasis: 'border-gray-400',
 } as const;
 
 /**
@@ -380,15 +380,15 @@ export const transition = {
  */
 export const buttonVariants = {
   /** 주요 액션 (Submit, CTA 등) */
-  primary: 'bg-orange-600 hover:bg-orange-500 text-white',
+  primary: 'bg-orange-600 hover:bg-orange-700 text-white',
   /** 보조 액션 */
-  secondary: 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700',
+  secondary: 'bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200',
   /** 고스트 (아이콘 버튼, 인라인 액션) */
-  ghost: 'bg-transparent hover:bg-neutral-800 text-neutral-300',
+  ghost: 'bg-transparent hover:bg-gray-100 text-gray-600',
   /** 위험 / 삭제 */
   danger: 'bg-red-600 hover:bg-red-500 text-white',
   /** 브랜드 그라디언트 CTA */
-  gradient: 'bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white',
+  gradient: 'bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white',
 } as const;
 
 /**
@@ -407,13 +407,13 @@ export const buttonSizes = {
  */
 export const cardStyles = {
   /** 기본 카드 */
-  default: 'rounded-2xl bg-neutral-900 border border-neutral-800',
+  default: 'rounded-2xl bg-gray-50 border border-gray-200',
   /** 호버 시 보라 테두리 강조 */
   primaryHover: 'hover:border-orange-500/50',
   /** 호버 시 푸샤 테두리 강조 */
   secondaryHover: 'hover:border-amber-500/50',
   /** 강조 카드 (Pro 플랜 등) */
-  highlighted: 'bg-neutral-900/80 ring-1 ring-orange-500/20',
+  highlighted: 'bg-white/90 ring-1 ring-orange-500/20',
 } as const;
 
 /**
@@ -421,7 +421,7 @@ export const cardStyles = {
  * input.tsx 에서 추출
  */
 export const inputStyles = {
-  base: 'w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150',
+  base: 'w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150',
   error: 'border-red-500',
 } as const;
 
@@ -431,7 +431,7 @@ export const inputStyles = {
  */
 export const tagStyles = {
   base: 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-colors duration-150',
-  default: 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700',
+  default: 'bg-gray-100 text-gray-600 hover:bg-gray-200',
   selected: 'bg-orange-600 text-white',
   secondarySelected: 'bg-amber-500/10 text-amber-400',
 } as const;
@@ -441,7 +441,7 @@ export const tagStyles = {
  * search-filters.tsx 의 섹션 헤더 패턴
  */
 export const sectionLabelStyles = {
-  base: 'text-xs font-medium text-neutral-400 uppercase tracking-wider',
+  base: 'text-xs font-medium text-gray-500 uppercase tracking-wider',
 } as const;
 
 // ============================================================

@@ -276,9 +276,9 @@ export default function PipelineDashboardPage() {
   const progress = jobs.length > 0 ? Math.round((completedJobs / jobs.length) * 100) : 0;
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* 헤더 */}
-      <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
@@ -287,14 +287,14 @@ export default function PipelineDashboardPage() {
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
             </Link>
-            <span className="text-neutral-600">|</span>
-            <span className="text-sm text-neutral-400">수집 파이프라인</span>
+            <span className="text-gray-300">|</span>
+            <span className="text-sm text-gray-500">수집 파이프라인</span>
           </div>
           <div className="flex items-center gap-3">
-            <Link href="/admin/extract" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/admin/extract" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               벡터 추출
             </Link>
-            <Link href="/mannequin" className="text-xs text-neutral-400 hover:text-white transition-colors">
+            <Link href="/mannequin" className="text-xs text-gray-500 hover:text-gray-900 transition-colors">
               검색
             </Link>
           </div>
@@ -305,10 +305,10 @@ export default function PipelineDashboardPage() {
         {/* Rate Limit 상태 (Unsplash + Pexels 병렬 표시) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {/* Unsplash Rate Limit */}
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">Unsplash API (50 req/hour)</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">Unsplash API (50 req/hour)</p>
             <div className="flex items-center gap-3">
-              <div className="flex-1 h-2 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${
                     unsplashRate.remaining > 20 ? 'bg-emerald-500' :
@@ -324,10 +324,10 @@ export default function PipelineDashboardPage() {
           </div>
 
           {/* Pexels Rate Limit */}
-          <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-800">
-            <p className="text-xs text-neutral-500 mb-1">Pexels API (200 req/hour)</p>
+          <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
+            <p className="text-xs text-gray-400 mb-1">Pexels API (200 req/hour)</p>
             <div className="flex items-center gap-3">
-              <div className="flex-1 h-2 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${
                     pexelsRate.remaining > 80 ? 'bg-emerald-500' :
@@ -349,7 +349,7 @@ export default function PipelineDashboardPage() {
           <div className="flex flex-wrap gap-4">
             {/* 소스 선택 */}
             <div>
-              <label className="text-xs text-neutral-500 mb-1 block">수집 소스</label>
+              <label className="text-xs text-gray-400 mb-1 block">수집 소스</label>
               <div className="flex gap-1">
                 {(['unsplash', 'pexels', 'both'] as CollectSource[]).map((s) => (
                   <button
@@ -358,7 +358,7 @@ export default function PipelineDashboardPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       source === s
                         ? 'bg-orange-600 text-white'
-                        : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                     }`}
                   >
                     {s === 'unsplash' ? 'Unsplash' : s === 'pexels' ? 'Pexels' : 'Both'}
@@ -369,11 +369,11 @@ export default function PipelineDashboardPage() {
 
             {/* 카테고리 오버라이드 */}
             <div>
-              <label className="text-xs text-neutral-500 mb-1 block">카테고리 (자동 분류)</label>
+              <label className="text-xs text-gray-400 mb-1 block">카테고리 (자동 분류)</label>
               <select
                 value={category}
                 onChange={(e) => setCategory(e.target.value as ImageCategory | '')}
-                className="px-3 py-1.5 bg-neutral-900 border border-neutral-700 rounded-lg text-xs"
+                className="px-3 py-1.5 bg-gray-50 border border-gray-300 rounded-lg text-xs"
               >
                 <option value="">자동</option>
                 <option value="figure">인물</option>
@@ -388,14 +388,14 @@ export default function PipelineDashboardPage() {
 
             {/* 쿼리당 페이지 수 */}
             <div>
-              <label className="text-xs text-neutral-500 mb-1 block">쿼리당 페이지 수</label>
+              <label className="text-xs text-gray-400 mb-1 block">쿼리당 페이지 수</label>
               <input
                 type="number"
                 min={1}
                 max={10}
                 value={maxPages}
                 onChange={(e) => setMaxPages(Math.max(1, Math.min(10, parseInt(e.target.value) || 1)))}
-                className="w-20 px-3 py-1.5 bg-neutral-900 border border-neutral-700 rounded-lg text-xs"
+                className="w-20 px-3 py-1.5 bg-gray-50 border border-gray-300 rounded-lg text-xs"
               />
             </div>
           </div>
@@ -410,7 +410,7 @@ export default function PipelineDashboardPage() {
               value={customQuery}
               onChange={(e) => setCustomQuery(e.target.value)}
               placeholder="예: person portrait, yoga pose..."
-              className="flex-1 px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-sm focus:outline-none focus:border-orange-500"
+              className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-300 rounded-lg text-sm focus:outline-none focus:border-orange-500"
               onKeyDown={(e) => e.key === 'Enter' && handleCustomCollect()}
             />
             <button
@@ -428,7 +428,7 @@ export default function PipelineDashboardPage() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">배치 자동 수집</h2>
-              <p className="text-xs text-neutral-400 mt-1">
+              <p className="text-xs text-gray-500 mt-1">
                 30개 최적화된 쿼리 x {maxPages}페이지 = 최대 {30 * maxPages * 30}장 수집
                 {source === 'both' ? ' (Unsplash + Pexels)' : ` (${source})`}
               </p>
@@ -453,27 +453,27 @@ export default function PipelineDashboardPage() {
           {/* 배치 결과 표시 */}
           {batchResult && (
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
-              <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
+              <div className="p-3 bg-gray-50/60 rounded-lg text-center">
                 <p className="text-2xl font-bold text-emerald-400">{batchResult.totalSaved}</p>
-                <p className="text-xs text-neutral-500">새로 저장</p>
+                <p className="text-xs text-gray-400">새로 저장</p>
               </div>
-              <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
+              <div className="p-3 bg-gray-50/60 rounded-lg text-center">
                 <p className="text-2xl font-bold text-blue-400">{batchResult.totalRequests}</p>
-                <p className="text-xs text-neutral-500">총 요청</p>
+                <p className="text-xs text-gray-400">총 요청</p>
               </div>
-              <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
+              <div className="p-3 bg-gray-50/60 rounded-lg text-center">
                 <p className="text-2xl font-bold text-amber-400">
                   {batchResult.unsplash.saved + batchResult.pexels.saved}
                 </p>
-                <p className="text-xs text-neutral-500">
+                <p className="text-xs text-gray-400">
                   U:{batchResult.unsplash.saved} / P:{batchResult.pexels.saved}
                 </p>
               </div>
-              <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
-                <p className="text-2xl font-bold text-neutral-400">
+              <div className="p-3 bg-gray-50/60 rounded-lg text-center">
+                <p className="text-2xl font-bold text-gray-500">
                   {Math.round(batchResult.duration / 1000)}s
                 </p>
-                <p className="text-xs text-neutral-500">소요 시간</p>
+                <p className="text-xs text-gray-400">소요 시간</p>
               </div>
             </div>
           )}
@@ -497,7 +497,7 @@ export default function PipelineDashboardPage() {
                 key={query}
                 onClick={() => !isRunning && !batchRunning && startCollection([query])}
                 disabled={isRunning || batchRunning}
-                className="px-3 py-1.5 bg-neutral-800 hover:bg-neutral-700 disabled:opacity-50 rounded-lg text-xs transition-colors"
+                className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg text-xs transition-colors"
               >
                 {query}
               </button>
@@ -510,7 +510,7 @@ export default function PipelineDashboardPage() {
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">이미지 마이그레이션</h2>
-              <p className="text-xs text-neutral-400 mt-1">
+              <p className="text-xs text-gray-500 mt-1">
                 sample-data의 로컬 이미지를 bkend.ai 클라우드 DB로 업로드합니다.
                 중복 이미지는 자동으로 스킵됩니다.
               </p>
@@ -527,7 +527,7 @@ export default function PipelineDashboardPage() {
           {/* 마이그레이션 진행률 바 */}
           {(migrationRunning || migrationResult) && (
             <div className="space-y-2">
-              <div className="flex items-center justify-between text-xs text-neutral-400">
+              <div className="flex items-center justify-between text-xs text-gray-500">
                 <span>
                   {migrationRunning
                     ? `처리 중... ${migrationCurrent} / ${migrationTotal}`
@@ -535,7 +535,7 @@ export default function PipelineDashboardPage() {
                 </span>
                 <span>{migrationProgress}%</span>
               </div>
-              <div className="h-2.5 bg-neutral-800 rounded-full overflow-hidden">
+              <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-200"
                   style={{ width: `${migrationProgress}%` }}
@@ -549,21 +549,21 @@ export default function PipelineDashboardPage() {
             <div className="space-y-3">
               <div className="grid grid-cols-3 gap-3">
                 {/* 업로드 */}
-                <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
+                <div className="p-3 bg-gray-50/60 rounded-lg text-center">
                   <p className="text-2xl font-bold text-emerald-400">{migrationResult.migrated}</p>
-                  <p className="text-xs text-neutral-500">업로드 완료</p>
+                  <p className="text-xs text-gray-400">업로드 완료</p>
                 </div>
                 {/* 스킵 */}
-                <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
+                <div className="p-3 bg-gray-50/60 rounded-lg text-center">
                   <p className="text-2xl font-bold text-blue-400">{migrationResult.skipped}</p>
-                  <p className="text-xs text-neutral-500">중복 스킵</p>
+                  <p className="text-xs text-gray-400">중복 스킵</p>
                 </div>
                 {/* 실패 */}
-                <div className="p-3 bg-neutral-900/60 rounded-lg text-center">
-                  <p className={`text-2xl font-bold ${migrationResult.failed > 0 ? 'text-red-400' : 'text-neutral-500'}`}>
+                <div className="p-3 bg-gray-50/60 rounded-lg text-center">
+                  <p className={`text-2xl font-bold ${migrationResult.failed > 0 ? 'text-red-400' : 'text-gray-400'}`}>
                     {migrationResult.failed}
                   </p>
-                  <p className="text-xs text-neutral-500">실패</p>
+                  <p className="text-xs text-gray-400">실패</p>
                 </div>
               </div>
 
@@ -599,14 +599,14 @@ export default function PipelineDashboardPage() {
                     {isPaused ? '재개' : '일시정지'}
                   </button>
                 )}
-                <span className="text-sm text-neutral-400">
+                <span className="text-sm text-gray-500">
                   저장: {totalSaved} | 중복: {totalSkipped} | 진행: {progress}%
                 </span>
               </div>
             </div>
 
             {/* 프로그레스 바 */}
-            <div className="h-3 bg-neutral-800 rounded-full overflow-hidden">
+            <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
@@ -622,7 +622,7 @@ export default function PipelineDashboardPage() {
                     job.status === 'running' ? 'bg-orange-500/10 border border-orange-500/20' :
                     job.status === 'done' ? 'bg-emerald-500/5' :
                     job.status === 'error' ? 'bg-red-500/10' :
-                    'bg-neutral-900/50'
+                    'bg-gray-50/80'
                   }`}
                 >
                   <div className="flex items-center gap-2">
@@ -630,7 +630,7 @@ export default function PipelineDashboardPage() {
                       job.status === 'running' ? 'text-orange-400' :
                       job.status === 'done' ? 'text-emerald-400' :
                       job.status === 'error' ? 'text-red-400' :
-                      'text-neutral-500'
+                      'text-gray-400'
                     }>
                       {job.status === 'running' ? '~' :
                        job.status === 'done' ? 'v' :
@@ -638,15 +638,15 @@ export default function PipelineDashboardPage() {
                     </span>
                     {/* 소스 뱃지 */}
                     <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
-                      job.source === 'unsplash' ? 'bg-neutral-800 text-neutral-400' :
+                      job.source === 'unsplash' ? 'bg-gray-100 text-gray-500' :
                       'bg-orange-900/30 text-orange-400'
                     }`}>
                       {job.source === 'unsplash' ? 'U' : 'P'}
                     </span>
-                    <span className="text-neutral-300">{job.query}</span>
-                    <span className="text-neutral-600">p{job.page}</span>
+                    <span className="text-gray-600">{job.query}</span>
+                    <span className="text-gray-300">p{job.page}</span>
                   </div>
-                  <div className="text-neutral-500">
+                  <div className="text-gray-400">
                     {job.status === 'done' && `+${job.saved} / ~${job.skipped}`}
                     {job.status === 'error' && <span className="text-red-400">{job.error}</span>}
                     {job.status === 'running' && <span className="animate-pulse text-orange-400">수집 중...</span>}

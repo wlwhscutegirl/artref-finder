@@ -38,7 +38,7 @@ export function HdriSelector({
     <div className="space-y-2">
       {/* 헤더 + 토글 */}
       <div className="flex items-center justify-between">
-        <span className="text-[11px] font-medium text-neutral-400 uppercase tracking-wider">
+        <span className="text-[11px] font-medium text-gray-500 uppercase tracking-wider">
           환경맵 (HDRI)
         </span>
         <button
@@ -46,7 +46,7 @@ export function HdriSelector({
           className={`px-2 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors ${
             hdri.enabled
               ? 'bg-emerald-600 text-white'
-              : 'bg-neutral-800 text-neutral-500 hover:bg-neutral-700'
+              : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
           }`}
         >
           {hdri.enabled ? 'ON' : 'OFF'}
@@ -64,7 +64,7 @@ export function HdriSelector({
                 className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg text-center cursor-pointer transition-colors ${
                   hdri.preset === preset.id
                     ? 'bg-emerald-500/20 border border-emerald-500/40 text-emerald-300'
-                    : 'bg-neutral-800/50 border border-neutral-800 text-neutral-500 hover:bg-neutral-800 hover:text-neutral-400'
+                    : 'bg-gray-100/50 border border-gray-200 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
                 }`}
               >
                 <span className="text-sm">{PRESET_ICONS[preset.id]}</span>
@@ -75,7 +75,7 @@ export function HdriSelector({
 
           {/* 회전 슬라이더 */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 w-8 shrink-0">회전</span>
+            <span className="text-[10px] text-gray-400 w-8 shrink-0">회전</span>
             <input
               type="range"
               min={0}
@@ -88,14 +88,14 @@ export function HdriSelector({
                 background: `linear-gradient(to right, #10b981 ${(hdri.rotation / 360) * 100}%, #404040 ${(hdri.rotation / 360) * 100}%)`,
               }}
             />
-            <span className="text-[10px] text-neutral-400 w-10 text-right shrink-0">
+            <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">
               {Math.round(hdri.rotation)}°
             </span>
           </div>
 
           {/* 노출 슬라이더 */}
           <div className="flex items-center gap-2">
-            <span className="text-[10px] text-neutral-500 w-8 shrink-0">노출</span>
+            <span className="text-[10px] text-gray-400 w-8 shrink-0">노출</span>
             <input
               type="range"
               min={0}
@@ -108,7 +108,7 @@ export function HdriSelector({
                 background: `linear-gradient(to right, #10b981 ${(hdri.exposure / 2) * 100}%, #404040 ${(hdri.exposure / 2) * 100}%)`,
               }}
             />
-            <span className="text-[10px] text-neutral-400 w-10 text-right shrink-0">
+            <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">
               {hdri.exposure.toFixed(1)}
             </span>
           </div>

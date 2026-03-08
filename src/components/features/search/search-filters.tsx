@@ -54,7 +54,7 @@ function TagTooltipPopover({ text, children }: { text?: string; children: React.
         {children}
       </div>
       {isOpen && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2.5 py-1.5 bg-neutral-800 border border-neutral-700 rounded-lg text-[10px] text-neutral-300 whitespace-nowrap z-50 shadow-lg">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2.5 py-1.5 bg-gray-100 border border-gray-300 rounded-lg text-[10px] text-gray-600 whitespace-nowrap z-50 shadow-lg">
           {text}
           <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-neutral-700" />
         </div>
@@ -129,14 +129,14 @@ export function SearchFilters({
     <div className="space-y-4">
       {/* 카테고리 필터 */}
       <div>
-        <p className="text-xs font-medium text-neutral-400 mb-2 uppercase tracking-wider">카테고리</p>
+        <p className="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">카테고리</p>
         <div className="flex flex-wrap gap-2">
           <button
             onClick={() => onCategoryChange(null)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
               !selectedCategory
                 ? 'bg-orange-600 text-white'
-                : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
             }`}
           >
             전체
@@ -148,7 +148,7 @@ export function SearchFilters({
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                 selectedCategory === cat.value
                   ? 'bg-orange-600 text-white'
-                  : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
             >
               {cat.icon} {cat.label}
@@ -161,22 +161,22 @@ export function SearchFilters({
       {onLightFilterToggle && (
         <div>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider">조명 방향</p>
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">조명 방향</p>
             <button
               onClick={onLightFilterToggle}
               className={`text-[10px] px-2 py-0.5 rounded cursor-pointer transition-colors ${
                 lightFilterActive
                   ? 'bg-amber-600 text-white'
-                  : 'bg-neutral-800 text-neutral-500 hover:bg-neutral-700'
+                  : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
               }`}
             >
               {lightFilterActive ? '필터 ON' : '필터 OFF'}
             </button>
           </div>
           {lightDirection && (
-            <div className="flex items-center gap-3 text-[11px] text-neutral-400 bg-neutral-800/50 rounded-lg p-2">
+            <div className="flex items-center gap-3 text-[11px] text-gray-500 bg-gray-100/50 rounded-lg p-2">
               {/* 조명 방향 시각화 (간단한 화살표) */}
-              <div className="w-8 h-8 rounded-full border border-neutral-700 flex items-center justify-center relative">
+              <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center relative">
                 <div
                   className="w-1.5 h-1.5 bg-amber-400 rounded-full absolute"
                   style={{
@@ -201,7 +201,7 @@ export function SearchFilters({
 
       {/* 소재/배경 비주얼 필터 카드 (Phase 3) */}
       <div>
-        <p className="text-xs font-medium text-neutral-400 mb-2 uppercase tracking-wider">소재 / 배경</p>
+        <p className="text-xs font-medium text-gray-500 mb-2 uppercase tracking-wider">소재 / 배경</p>
         <MaterialFilterCards
           selectedTags={selectedTags}
           onTagsChange={onTagsChange}
@@ -211,8 +211,8 @@ export function SearchFilters({
       {/* 태그 그룹 (다중 펼침 + 툴팁) */}
       <div>
         <div className="flex items-center justify-between mb-2">
-          <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider">태그 필터</p>
-          <span className="text-[10px] text-neutral-600">같은 종류끼리는 하나만 맞으면 OK, 다른 종류는 모두 맞아야 검색돼요</span>
+          <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">태그 필터</p>
+          <span className="text-[10px] text-gray-300">같은 종류끼리는 하나만 맞으면 OK, 다른 종류는 모두 맞아야 검색돼요</span>
         </div>
         <div className="space-y-1">
           {Object.entries(TAG_GROUPS).map(([key, group]) => {
@@ -226,7 +226,7 @@ export function SearchFilters({
                 <div className="flex items-center justify-between">
                   <button
                     onClick={() => toggleGroup(key)}
-                    className="flex items-center gap-2 text-sm text-neutral-300 hover:text-white py-1 cursor-pointer"
+                    className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900 py-1 cursor-pointer"
                   >
                     <span className={`text-xs transition-transform duration-150 ${isExpanded ? 'rotate-90' : ''}`}>
                       ▶
@@ -240,7 +240,7 @@ export function SearchFilters({
                   {selectedInGroup.length > 0 && (
                     <button
                       onClick={() => clearGroupTags(key)}
-                      className="text-[10px] text-neutral-500 hover:text-red-400 cursor-pointer"
+                      className="text-[10px] text-gray-400 hover:text-red-400 cursor-pointer"
                     >
                       해제
                     </button>
@@ -261,7 +261,7 @@ export function SearchFilters({
                             ${
                               selectedTags.includes(tag.name)
                                 ? 'bg-orange-600 text-white'
-                                : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
+                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                             }
                           `}
                         >
@@ -281,11 +281,11 @@ export function SearchFilters({
       {onSafetyLevelChange && (
         <div>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider">콘텐츠 안전 필터</p>
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">콘텐츠 안전 필터</p>
           </div>
           <div className="flex gap-2">
             {([
-              { value: 'off' as SafetyLevel, label: '전체', color: 'bg-neutral-800 text-neutral-400' },
+              { value: 'off' as SafetyLevel, label: '전체', color: 'bg-gray-100 text-gray-500' },
               { value: 'moderate' as SafetyLevel, label: '일반', color: 'bg-blue-600 text-white' },
               { value: 'strict' as SafetyLevel, label: '교육 모드', color: 'bg-emerald-600 text-white' },
             ] as const).map((opt) => (
@@ -295,14 +295,14 @@ export function SearchFilters({
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                   safetyLevel === opt.value
                     ? opt.color
-                    : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
+                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
                 }`}
               >
                 {opt.label}
               </button>
             ))}
           </div>
-          <p className="text-[10px] text-neutral-600 mt-1.5">
+          <p className="text-[10px] text-gray-300 mt-1.5">
             {safetyLevel === 'strict' && '교육 모드: NSFW 점수 0.3 이하만 표시'}
             {safetyLevel === 'moderate' && '일반 모드: NSFW 점수 0.6 이하만 표시'}
             {safetyLevel === 'off' && '전체 이미지 표시 (필터 없음)'}
@@ -314,7 +314,7 @@ export function SearchFilters({
       {selectedTags.length > 0 && (
         <div>
           <div className="flex items-center justify-between mb-2">
-            <p className="text-xs font-medium text-neutral-400 uppercase tracking-wider">
+            <p className="text-xs font-medium text-gray-500 uppercase tracking-wider">
               선택된 태그 ({selectedTags.length})
             </p>
             <button

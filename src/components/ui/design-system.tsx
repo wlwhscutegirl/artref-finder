@@ -23,8 +23,8 @@ function Section({ title, children }: { title: string; children: React.ReactNode
   return (
     <section className="mb-12">
       {/* 섹션 제목 */}
-      <h2 className="text-xl font-bold mb-1 text-white">{title}</h2>
-      <div className="w-full h-px bg-neutral-800 mb-6" />
+      <h2 className="text-xl font-bold mb-1 text-gray-900">{title}</h2>
+      <div className="w-full h-px bg-gray-100 mb-6" />
       {children}
     </section>
   );
@@ -35,7 +35,7 @@ function SubSection({ title, children }: { title: string; children: React.ReactN
   return (
     <div className="mb-8">
       {/* 서브섹션 제목 */}
-      <h3 className="text-sm font-medium text-neutral-400 uppercase tracking-wider mb-3">
+      <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
         {title}
       </h3>
       {children}
@@ -47,7 +47,7 @@ function SubSection({ title, children }: { title: string; children: React.ReactN
 function ColorChip({
   label,
   colorClass,
-  textClass = 'text-white',
+  textClass = 'text-gray-900',
   borderClass,
 }: {
   label: string;
@@ -62,7 +62,7 @@ function ColorChip({
         className={`w-16 h-16 rounded-xl ${colorClass} ${borderClass ?? ''} flex items-end justify-end`}
       />
       {/* 토큰명 */}
-      <span className="text-[10px] text-neutral-500 text-center leading-tight">{label}</span>
+      <span className="text-[10px] text-gray-400 text-center leading-tight">{label}</span>
     </div>
   );
 }
@@ -104,11 +104,11 @@ function ColorPaletteSection() {
       {/* Surface */}
       <SubSection title="Surface (Background)">
         <div className="flex flex-wrap gap-4">
-          <ColorChip label="surface.base" colorClass="bg-neutral-950 border border-neutral-700" />
-          <ColorChip label="surface.page / panel" colorClass="bg-neutral-900 border border-neutral-700" />
-          <ColorChip label="surface.elevated" colorClass="bg-neutral-800 border border-neutral-700" />
-          <ColorChip label="surface.overlay" colorClass="bg-neutral-900/80 border border-neutral-700" />
-          <ColorChip label="surface.subtle" colorClass="bg-neutral-800/50 border border-neutral-700" />
+          <ColorChip label="surface.base" colorClass="bg-white border border-gray-300" />
+          <ColorChip label="surface.page / panel" colorClass="bg-gray-50 border border-gray-300" />
+          <ColorChip label="surface.elevated" colorClass="bg-gray-100 border border-gray-300" />
+          <ColorChip label="surface.overlay" colorClass="bg-white/90 border border-gray-300" />
+          <ColorChip label="surface.subtle" colorClass="bg-gray-100/50 border border-gray-300" />
         </div>
       </SubSection>
 
@@ -116,16 +116,16 @@ function ColorPaletteSection() {
       <SubSection title="Text">
         <div className="space-y-2">
           {[
-            { label: 'text.primary', cls: 'text-white', sample: '최우선 텍스트 (제목, 강조)' },
-            { label: 'text.default', cls: 'text-neutral-200', sample: '일반 본문 텍스트' },
-            { label: 'text.secondary', cls: 'text-neutral-300', sample: '보조 텍스트 (설명, 레이블)' },
-            { label: 'text.muted', cls: 'text-neutral-400', sample: '약한 텍스트 (힌트, 부연)' },
-            { label: 'text.disabled', cls: 'text-neutral-500', sample: '비활성 텍스트' },
-            { label: 'text.faint', cls: 'text-neutral-600', sample: '매우 약한 텍스트 (안내)' },
+            { label: 'text.primary', cls: 'text-gray-900', sample: '최우선 텍스트 (제목, 강조)' },
+            { label: 'text.default', cls: 'text-gray-700', sample: '일반 본문 텍스트' },
+            { label: 'text.secondary', cls: 'text-gray-600', sample: '보조 텍스트 (설명, 레이블)' },
+            { label: 'text.muted', cls: 'text-gray-500', sample: '약한 텍스트 (힌트, 부연)' },
+            { label: 'text.disabled', cls: 'text-gray-400', sample: '비활성 텍스트' },
+            { label: 'text.faint', cls: 'text-gray-300', sample: '매우 약한 텍스트 (안내)' },
           ].map((item) => (
             <div key={item.label} className="flex items-center gap-4">
               {/* 토큰 키 */}
-              <span className="w-36 text-[11px] text-neutral-600 font-mono flex-shrink-0">{item.label}</span>
+              <span className="w-36 text-[11px] text-gray-300 font-mono flex-shrink-0">{item.label}</span>
               {/* 샘플 텍스트 */}
               <span className={`text-sm ${item.cls}`}>{item.sample}</span>
             </div>
@@ -191,24 +191,24 @@ function TypographySection() {
       <SubSection title="Heading Scale">
         <div className="space-y-4">
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-1">heading.hero</span>
-            <p className="text-4xl font-bold leading-tight text-white">포즈, 조명, 앵글</p>
+            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.hero</span>
+            <p className="text-4xl font-bold leading-tight text-gray-900">포즈, 조명, 앵글</p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-1">heading.h1</span>
-            <p className="text-3xl font-bold text-white">페이지 제목</p>
+            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h1</span>
+            <p className="text-3xl font-bold text-gray-900">페이지 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-1">heading.h2</span>
-            <p className="text-2xl font-bold text-white">섹션 제목</p>
+            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h2</span>
+            <p className="text-2xl font-bold text-gray-900">섹션 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-1">heading.h3</span>
-            <p className="text-xl font-semibold text-white">카드/패널 제목</p>
+            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h3</span>
+            <p className="text-xl font-semibold text-gray-900">카드/패널 제목</p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-1">heading.h4</span>
-            <p className="text-lg font-semibold text-white">서브섹션 제목</p>
+            <span className="text-[10px] text-gray-300 font-mono block mb-1">heading.h4</span>
+            <p className="text-lg font-semibold text-gray-900">서브섹션 제목</p>
           </div>
         </div>
       </SubSection>
@@ -217,20 +217,20 @@ function TypographySection() {
       <SubSection title="Body Scale">
         <div className="space-y-3">
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-0.5">body.lg</span>
-            <p className="text-lg leading-relaxed text-neutral-400">
+            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.lg</span>
+            <p className="text-lg leading-relaxed text-gray-500">
               핀터레스트에서 끝없이 스크롤하지 마세요.
             </p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-0.5">body.default</span>
-            <p className="text-sm leading-relaxed text-neutral-400">
+            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.default</span>
+            <p className="text-sm leading-relaxed text-gray-500">
               3D 마네킹으로 원하는 포즈를 잡고, 조명 방향을 설정하면 정확히 일치하는 실사 레퍼런스를 찾아줍니다.
             </p>
           </div>
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-0.5">body.sm</span>
-            <p className="text-xs leading-relaxed text-neutral-400">
+            <span className="text-[10px] text-gray-300 font-mono block mb-0.5">body.sm</span>
+            <p className="text-xs leading-relaxed text-gray-500">
               초보자 / 빠른 검색이 필요할 때 추천
             </p>
           </div>
@@ -241,20 +241,20 @@ function TypographySection() {
       <SubSection title="Caption & Label">
         <div className="space-y-3">
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-neutral-600 font-mono w-36">label.section</span>
-            <span className="text-xs font-medium text-neutral-400 uppercase tracking-wider">카테고리</span>
+            <span className="text-[10px] text-gray-300 font-mono w-36">label.section</span>
+            <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">카테고리</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-neutral-600 font-mono w-36">label.input</span>
-            <span className="text-sm font-medium text-neutral-300">이메일</span>
+            <span className="text-[10px] text-gray-300 font-mono w-36">label.input</span>
+            <span className="text-sm font-medium text-gray-600">이메일</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-neutral-600 font-mono w-36">caption.default</span>
-            <span className="text-xs text-neutral-500">결제 시스템은 준비 중입니다</span>
+            <span className="text-[10px] text-gray-300 font-mono w-36">caption.default</span>
+            <span className="text-xs text-gray-400">결제 시스템은 준비 중입니다</span>
           </div>
           <div className="flex items-center gap-4">
-            <span className="text-[10px] text-neutral-600 font-mono w-36">caption.xs</span>
-            <span className="text-[10px] text-neutral-600">그림에 익숙한 중급+ 아티스트 추천</span>
+            <span className="text-[10px] text-gray-300 font-mono w-36">caption.xs</span>
+            <span className="text-[10px] text-gray-300">그림에 익숙한 중급+ 아티스트 추천</span>
           </div>
         </div>
       </SubSection>
@@ -282,7 +282,7 @@ function ButtonSection() {
         ).map((variant) => (
           <div key={variant.label} className="flex items-center gap-4 mb-4">
             {/* 변형 레이블 */}
-            <span className="text-[11px] text-neutral-600 font-mono w-20 flex-shrink-0">{variant.label}</span>
+            <span className="text-[11px] text-gray-300 font-mono w-20 flex-shrink-0">{variant.label}</span>
             {/* 사이즈별 버튼 */}
             <div className="flex items-center gap-3">
               <button
@@ -351,10 +351,10 @@ function TagSection() {
             전체
           </button>
           {/* 기본 필터 */}
-          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors">
+          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors">
             인물
           </button>
-          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 transition-colors">
+          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors">
             자연
           </button>
         </div>
@@ -394,27 +394,27 @@ function InputSection() {
         <div className="space-y-4 max-w-sm">
           {/* 기본 입력 */}
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-2">default</span>
+            <span className="text-[10px] text-gray-300 font-mono block mb-2">default</span>
             <div className="w-full">
-              <label className="block text-sm font-medium text-neutral-300 mb-1.5">이메일</label>
+              <label className="block text-sm font-medium text-gray-600 mb-1.5">이메일</label>
               <input
                 readOnly
                 value=""
                 placeholder="you@example.com"
-                className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
+                className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-gray-300 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
               />
             </div>
           </div>
 
           {/* 에러 상태 */}
           <div>
-            <span className="text-[10px] text-neutral-600 font-mono block mb-2">error state</span>
+            <span className="text-[10px] text-gray-300 font-mono block mb-2">error state</span>
             <div className="w-full">
-              <label className="block text-sm font-medium text-neutral-300 mb-1.5">비밀번호</label>
+              <label className="block text-sm font-medium text-gray-600 mb-1.5">비밀번호</label>
               <input
                 readOnly
                 value="wrongpassword"
-                className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-red-500 text-white placeholder-neutral-500 focus:outline-none transition-colors duration-150"
+                className="w-full px-3 py-2 rounded-lg text-sm bg-gray-50 border border-red-500 text-gray-900 placeholder-gray-400 focus:outline-none transition-colors duration-150"
               />
               <p className="mt-1 text-sm text-red-400">이메일 또는 비밀번호가 올바르지 않습니다.</p>
             </div>
@@ -435,25 +435,25 @@ function CardSection() {
       <SubSection title="Feature Card">
         <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
           {/* 기본 카드 */}
-          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 transition-colors">
+          <div className="p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-orange-500/50 transition-colors">
             <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-2xl mb-4">
               🦾
             </div>
             <h3 className="text-xl font-semibold mb-2">3D 포즈 매칭</h3>
-            <p className="text-neutral-400 text-sm leading-relaxed">
+            <p className="text-gray-500 text-sm leading-relaxed">
               웹에서 3D 마네킹의 관절을 직접 조작하세요.
             </p>
           </div>
 
           {/* 강조 카드 */}
-          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 transition-colors">
+          <div className="p-8 rounded-2xl bg-gray-50 border border-gray-200 hover:border-amber-500/50 transition-colors">
             <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl mb-4">
               ✏️
             </div>
             <h3 className="text-xl font-semibold mb-2 hover:text-amber-400 transition-colors">
               드로잉 모드
             </h3>
-            <p className="text-neutral-400 text-sm leading-relaxed">
+            <p className="text-gray-500 text-sm leading-relaxed">
               원하는 포즈를 직접 그리거나 스케치를 업로드하세요.
             </p>
           </div>
@@ -461,12 +461,12 @@ function CardSection() {
       </SubSection>
 
       <SubSection title="Panel / Tool Panel">
-        <div className="p-3 bg-neutral-900/80 border border-neutral-800 rounded-lg space-y-2 max-w-xs">
+        <div className="p-3 bg-white/90 border border-gray-200 rounded-lg space-y-2 max-w-xs">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
             <span className="text-xs font-semibold text-amber-300">왼쪽 어깨</span>
           </div>
-          <p className="text-xs text-neutral-500">관절 슬라이더 패널 패턴</p>
+          <p className="text-xs text-gray-400">관절 슬라이더 패널 패턴</p>
         </div>
       </SubSection>
     </Section>
@@ -495,7 +495,7 @@ function SpacingRadiusSection() {
                 className={`w-16 h-16 bg-orange-600/30 border border-orange-500/50 ${item.cls}`}
               />
               {/* 레이블 */}
-              <span className="text-[10px] text-neutral-600 text-center whitespace-pre-line font-mono">
+              <span className="text-[10px] text-gray-300 text-center whitespace-pre-line font-mono">
                 {item.label}
               </span>
             </div>
@@ -554,24 +554,24 @@ function BrandSection() {
         <div className="flex items-end gap-6">
           {/* 소형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
-            <span className="text-[10px] text-neutral-600">24px (Nav compact)</span>
+            <span className="text-[10px] text-gray-300">24px (Nav compact)</span>
           </div>
           {/* 중형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
               A
             </div>
-            <span className="text-[10px] text-neutral-600">32px (Nav default)</span>
+            <span className="text-[10px] text-gray-300">32px (Nav default)</span>
           </div>
           {/* 대형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold text-white">
               A
             </div>
-            <span className="text-[10px] text-neutral-600">40px (Auth)</span>
+            <span className="text-[10px] text-gray-300">40px (Auth)</span>
           </div>
         </div>
       </SubSection>
@@ -603,22 +603,22 @@ function BrandSection() {
  */
 export function DesignSystemDocs() {
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
+    <div className="min-h-screen bg-white text-gray-900">
       {/* 헤더 */}
-      <header className="border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md sticky top-0 z-50">
+      <header className="border-b border-gray-200 bg-white/80 backdrop-blur-md sticky top-0 z-50">
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* 브랜드 로고 */}
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold text-white">
               A
             </div>
             <div>
               <span className="font-semibold">ArtRef</span>
-              <span className="ml-2 text-xs text-neutral-500">Design System</span>
+              <span className="ml-2 text-xs text-gray-400">Design System</span>
             </div>
           </div>
           {/* 버전 뱃지 */}
-          <span className="text-[10px] text-neutral-600 font-mono">
+          <span className="text-[10px] text-gray-300 font-mono">
             Phase 5 — Dark Theme Only
           </span>
         </div>
@@ -629,14 +629,14 @@ export function DesignSystemDocs() {
         {/* 소개 */}
         <div className="mb-12">
           <h1 className="text-3xl font-bold mb-3">Design System</h1>
-          <p className="text-neutral-400 text-sm leading-relaxed max-w-xl">
+          <p className="text-gray-500 text-sm leading-relaxed max-w-xl">
             ArtRef Finder의 디자인 토큰과 컴포넌트 가이드라인.
             모든 토큰은 <code className="text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded text-xs font-mono">src/styles/design-tokens.ts</code>에 정의되어 있습니다.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="px-2 py-0.5 rounded bg-neutral-800 text-neutral-400 text-xs font-mono">Tailwind CSS 4</span>
-            <span className="px-2 py-0.5 rounded bg-neutral-800 text-neutral-400 text-xs font-mono">Dark Theme</span>
-            <span className="px-2 py-0.5 rounded bg-neutral-800 text-neutral-400 text-xs font-mono">TypeScript</span>
+            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">Tailwind CSS 4</span>
+            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">Dark Theme</span>
+            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">TypeScript</span>
           </div>
         </div>
 

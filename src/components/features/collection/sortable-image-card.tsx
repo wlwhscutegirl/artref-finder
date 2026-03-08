@@ -54,7 +54,7 @@ export function SortableImageCard({
     <div
       ref={setNodeRef}
       style={style}
-      className="relative group rounded-lg overflow-hidden bg-neutral-800 border border-neutral-700/50"
+      className="relative group rounded-lg overflow-hidden bg-gray-100 border border-gray-300/50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -112,9 +112,9 @@ export function SortableImageCard({
 
       {/* 어노테이션 표시 (메모가 있을 때) */}
       {annotation && (annotation.memo || annotation.customTags.length > 0) && (
-        <div className="p-2 bg-neutral-900/90 border-t border-neutral-700/50">
+        <div className="p-2 bg-white/90 border-t border-gray-300/50">
           {annotation.memo && (
-            <p className="text-[10px] text-neutral-300 line-clamp-2 mb-1">
+            <p className="text-[10px] text-gray-600 line-clamp-2 mb-1">
               {annotation.memo}
             </p>
           )}

@@ -45,7 +45,7 @@ function LightSlider({
 }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="text-[10px] text-neutral-500 w-8 shrink-0">{label}</span>
+      <span className="text-[10px] text-gray-400 w-8 shrink-0">{label}</span>
       <input
         type="range"
         min={min}
@@ -58,7 +58,7 @@ function LightSlider({
           background: `linear-gradient(to right, ${color} ${((value - min) / (max - min)) * 100}%, #404040 ${((value - min) / (max - min)) * 100}%)`,
         }}
       />
-      <span className="text-[10px] text-neutral-400 w-10 text-right shrink-0">{displayValue}</span>
+      <span className="text-[10px] text-gray-500 w-10 text-right shrink-0">{displayValue}</span>
     </div>
   );
 }
@@ -77,7 +77,7 @@ export function MultiLightController({
       {/* 헤더 */}
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="flex items-center gap-1 text-[11px] font-medium text-neutral-400 uppercase tracking-wider hover:text-neutral-300 cursor-pointer transition-colors w-full"
+        className="flex items-center gap-1 text-[11px] font-medium text-gray-500 uppercase tracking-wider hover:text-gray-600 cursor-pointer transition-colors w-full"
       >
         <span className={`transition-transform ${collapsed ? '' : 'rotate-90'}`}>▸</span>
         조명 조절 ({lights.length}/3)
@@ -92,7 +92,7 @@ export function MultiLightController({
               className={`p-2 rounded-lg border transition-colors ${
                 light.enabled
                   ? 'border-amber-500/30 bg-amber-500/5'
-                  : 'border-neutral-800 bg-neutral-900/30 opacity-50'
+                  : 'border-gray-200 bg-gray-50/30 opacity-50'
               }`}
             >
               {/* 라이트 헤더 (역할 + 토글 + 삭제) */}
@@ -112,7 +112,7 @@ export function MultiLightController({
                   </span>
                   {/* 색온도 미리보기 */}
                   <span
-                    className="w-3 h-3 rounded-full border border-neutral-700"
+                    className="w-3 h-3 rounded-full border border-gray-300"
                     style={{ backgroundColor: colorTempToHex(light.colorTemp) }}
                   />
                 </div>
@@ -124,7 +124,7 @@ export function MultiLightController({
                     className={`w-5 h-5 rounded-full text-[8px] font-bold cursor-pointer transition-colors ${
                       light.enabled
                         ? 'bg-amber-500 text-black'
-                        : 'bg-neutral-700 text-neutral-500'
+                        : 'bg-neutral-700 text-gray-400'
                     }`}
                   >
                     {light.enabled ? 'ON' : ''}
@@ -133,7 +133,7 @@ export function MultiLightController({
                   {light.role !== 'key' && (
                     <button
                       onClick={() => onRemoveLight(light.id)}
-                      className="text-[10px] text-neutral-600 hover:text-red-400 cursor-pointer transition-colors"
+                      className="text-[10px] text-gray-300 hover:text-red-400 cursor-pointer transition-colors"
                     >
                       ✕
                     </button>

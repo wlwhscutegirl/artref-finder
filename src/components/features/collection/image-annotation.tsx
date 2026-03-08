@@ -69,13 +69,13 @@ export function ImageAnnotationEditor({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
-      <div className="w-full max-w-sm bg-neutral-900 border border-neutral-700 rounded-xl shadow-2xl p-4 mx-4">
+      <div className="w-full max-w-sm bg-gray-50 border border-gray-300 rounded-xl shadow-2xl p-4 mx-4">
         {/* 헤더 */}
         <div className="flex items-center justify-between mb-3">
-          <h3 className="text-sm font-semibold text-neutral-200">메모 편집</h3>
+          <h3 className="text-sm font-semibold text-gray-700">메모 편집</h3>
           <button
             onClick={onClose}
-            className="text-neutral-500 hover:text-neutral-300 cursor-pointer text-lg"
+            className="text-gray-400 hover:text-gray-600 cursor-pointer text-lg"
           >
             ✕
           </button>
@@ -83,7 +83,7 @@ export function ImageAnnotationEditor({
 
         {/* 메모 텍스트 */}
         <div className="mb-3">
-          <label className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1 block">
+          <label className="text-[10px] text-gray-400 uppercase tracking-wider mb-1 block">
             메모 ({memo.length}/200)
           </label>
           <textarea
@@ -92,13 +92,13 @@ export function ImageAnnotationEditor({
             onChange={(e) => setMemo(e.target.value.slice(0, 200))}
             placeholder="이 레퍼런스에 대한 메모..."
             rows={3}
-            className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-neutral-200 placeholder:text-neutral-600 resize-none focus:outline-none focus:border-orange-500"
+            className="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 placeholder:text-gray-300 resize-none focus:outline-none focus:border-orange-500"
           />
         </div>
 
         {/* 커스텀 태그 */}
         <div className="mb-4">
-          <label className="text-[10px] text-neutral-500 uppercase tracking-wider mb-1 block">
+          <label className="text-[10px] text-gray-400 uppercase tracking-wider mb-1 block">
             태그 ({customTags.length}/5)
           </label>
           {/* 태그 목록 */}
@@ -112,7 +112,7 @@ export function ImageAnnotationEditor({
                   #{tag}
                   <button
                     onClick={() => removeTag(tag)}
-                    className="hover:text-white cursor-pointer"
+                    className="hover:text-gray-900 cursor-pointer"
                   >
                     ×
                   </button>
@@ -127,7 +127,7 @@ export function ImageAnnotationEditor({
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={handleTagKeyDown}
               placeholder="태그 입력 후 Enter"
-              className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-1.5 text-xs text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-orange-500"
+              className="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-1.5 text-xs text-gray-700 placeholder:text-gray-300 focus:outline-none focus:border-orange-500"
             />
           )}
         </div>
@@ -148,7 +148,7 @@ export function ImageAnnotationEditor({
           <div className="flex gap-2">
             <button
               onClick={onClose}
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-neutral-800 text-neutral-400 hover:bg-neutral-700 cursor-pointer transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 cursor-pointer transition-colors"
             >
               취소
             </button>

@@ -103,7 +103,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-950 text-white`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-gray-900`}
       >
         {/* 구조화된 데이터 (JSON-LD): SoftwareApplication 스키마 */}
         <JsonLd />

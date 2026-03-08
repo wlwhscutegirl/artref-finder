@@ -196,10 +196,10 @@ export function ImageUploadZone({
           className={`
             border-2 border-dashed rounded-xl p-4 text-center cursor-pointer transition-colors
             ${disabled
-              ? 'border-neutral-800 bg-neutral-900/50 cursor-not-allowed opacity-50'
+              ? 'border-gray-200 bg-gray-50/80 cursor-not-allowed opacity-50'
               : isDragOver
                 ? 'border-orange-500 bg-orange-500/10'
-                : 'border-neutral-700 bg-neutral-900/30 hover:border-neutral-600 hover:bg-neutral-800/30'
+                : 'border-gray-300 bg-gray-50/30 hover:border-gray-400 hover:bg-gray-100/30'
             }
           `}
         >
@@ -211,18 +211,18 @@ export function ImageUploadZone({
             className="hidden"
           />
           {/* 카메라 아이콘 (SVG) */}
-          <svg className="w-7 h-7 mx-auto mb-1 text-neutral-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg className="w-7 h-7 mx-auto mb-1 text-gray-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3Z" />
             <circle cx="12" cy="13" r="3" />
           </svg>
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-gray-500">
             사진을 드래그하거나 클릭하여 업로드
           </p>
-          <p className="text-[10px] text-neutral-600 mt-1">
+          <p className="text-[10px] text-gray-300 mt-1">
             JPG, PNG, WebP (최대 10MB)
           </p>
           {remainingExtractions !== undefined && remainingExtractions !== -1 && (
-            <p className="text-[10px] text-neutral-500 mt-1">
+            <p className="text-[10px] text-gray-400 mt-1">
               오늘 남은 횟수: {remainingExtractions}회
             </p>
           )}
@@ -238,9 +238,9 @@ export function ImageUploadZone({
 
       {/* === 로딩 === */}
       {(state === 'loading-engine' || state === 'extracting') && (
-        <div className="border border-neutral-700 rounded-xl p-6 text-center">
+        <div className="border border-gray-300 rounded-xl p-6 text-center">
           <div className="animate-spin w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full mx-auto mb-3" />
-          <p className="text-xs text-neutral-400">
+          <p className="text-xs text-gray-500">
             {state === 'loading-engine' ? '포즈 인식 엔진 로딩 중...' : '포즈 추출 중...'}
           </p>
         </div>
@@ -248,7 +248,7 @@ export function ImageUploadZone({
 
       {/* === 프리뷰 === */}
       {state === 'preview' && imageUrl && joints && (
-        <div className="border border-neutral-700 rounded-xl overflow-hidden">
+        <div className="border border-gray-300 rounded-xl overflow-hidden">
           {/* 이미지 + 오버레이 */}
           <div className="relative mx-auto" style={{ width: previewSize.width, height: previewSize.height }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -266,7 +266,7 @@ export function ImageUploadZone({
           </div>
 
           {/* 메타 정보 */}
-          <div className="px-3 py-2 bg-neutral-800/50 flex items-center justify-between text-[10px] text-neutral-500">
+          <div className="px-3 py-2 bg-gray-100/50 flex items-center justify-between text-[10px] text-gray-400">
             <span>신뢰도: {Math.round(confidence * 100)}%</span>
             <span>{processingTime}ms</span>
           </div>
@@ -282,7 +282,7 @@ export function ImageUploadZone({
             {onApplyToMannequin && (
               <button
                 onClick={handleApplyToMannequin}
-                className="flex-1 px-3 py-1.5 bg-neutral-700 hover:bg-neutral-600 rounded-lg text-xs font-medium text-neutral-300 cursor-pointer transition-colors"
+                className="flex-1 px-3 py-1.5 bg-neutral-700 hover:bg-gray-300 rounded-lg text-xs font-medium text-gray-600 cursor-pointer transition-colors"
               >
                 마네킹에 적용
               </button>
@@ -293,7 +293,7 @@ export function ImageUploadZone({
           <div className="px-3 pb-2">
             <button
               onClick={handleReset}
-              className="w-full text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+              className="w-full text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             >
               다른 사진 선택
             </button>

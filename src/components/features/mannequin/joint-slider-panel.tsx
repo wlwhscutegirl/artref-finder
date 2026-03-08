@@ -62,7 +62,7 @@ export function JointSliderPanel() {
   const jointLabel = JOINT_LABELS[selectedJoint];
 
   return (
-    <div className="p-3 bg-neutral-900/80 border border-neutral-800 rounded-lg space-y-2">
+    <div className="p-3 bg-white/90 border border-gray-200 rounded-lg space-y-2">
       {/* 헤더: 관절 이름 + 닫기/리셋 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
@@ -75,7 +75,7 @@ export function JointSliderPanel() {
           {/* 이 관절만 초기화 */}
           <button
             onClick={handleResetJoint}
-            className="px-1.5 py-0.5 text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="이 관절 회전 초기화"
           >
             리셋
@@ -83,7 +83,7 @@ export function JointSliderPanel() {
           {/* 전체 초기화 */}
           <button
             onClick={resetPose}
-            className="px-1.5 py-0.5 text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="전체 포즈 초기화"
           >
             전체 리셋
@@ -91,7 +91,7 @@ export function JointSliderPanel() {
           {/* 관절 선택 해제 */}
           <button
             onClick={() => selectJoint(null)}
-            className="px-1.5 py-0.5 text-[10px] text-neutral-500 hover:text-neutral-300 cursor-pointer transition-colors"
+            className="px-1.5 py-0.5 text-[10px] text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
             title="관절 선택 해제 (ESC)"
           >
             닫기
@@ -123,7 +123,7 @@ export function JointSliderPanel() {
             />
 
             {/* 각도 수치 표시 */}
-            <span className="w-10 text-right text-[10px] text-neutral-400 tabular-nums">
+            <span className="w-10 text-right text-[10px] text-gray-500 tabular-nums">
               {deg}°
             </span>
           </div>
