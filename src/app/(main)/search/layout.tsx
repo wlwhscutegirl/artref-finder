@@ -7,11 +7,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "레퍼런스 검색",
   description:
-    "AI 기반 실사 레퍼런스 검색. 포즈, 조명, 카메라 앵글 조건으로 원하는 사진을 정밀하게 찾아보세요.",
+    "자동 매칭 실사 레퍼런스 검색. 포즈, 조명, 카메라 앵글 조건으로 원하는 사진을 정밀하게 찾아보세요.",
   openGraph: {
     title: "레퍼런스 검색 | ArtRef",
     description:
-      "AI 기반 실사 레퍼런스 검색. 포즈, 조명, 카메라 앵글 조건으로 원하는 사진을 찾아보세요.",
+      "자동 매칭 실사 레퍼런스 검색. 포즈, 조명, 카메라 앵글 조건으로 원하는 사진을 찾아보세요.",
   },
   // 리다이렉트 페이지 — canonical을 mannequin으로 지정
   alternates: {

@@ -30,7 +30,7 @@ export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
     dailySearches: 100,
     maxCollections: 5,
     maxSavedPoses: 10,
-    aiSearch: false,
+    autoSearch: false,
     teamSharing: false,
     hdDownload: false,
     priceMonthly: 0,
@@ -40,7 +40,7 @@ export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
     dailySearches: -1,
     maxCollections: 20,
     maxSavedPoses: 50,
-    aiSearch: true,
+    autoSearch: true,
     teamSharing: false,
     hdDownload: false,
     priceMonthly: 4900,
@@ -50,7 +50,7 @@ export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
     dailySearches: -1,
     maxCollections: -1,
     maxSavedPoses: -1,
-    aiSearch: true,
+    autoSearch: true,
     teamSharing: false,
     hdDownload: false,
     priceMonthly: 2900,
@@ -60,7 +60,7 @@ export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
     dailySearches: -1,
     maxCollections: -1,
     maxSavedPoses: -1,
-    aiSearch: true,
+    autoSearch: true,
     teamSharing: false,
     hdDownload: true,
     priceMonthly: 9900,
@@ -70,7 +70,7 @@ export const PLAN_LIMITS: Record<SubscriptionPlan, PlanLimits> = {
     dailySearches: -1,
     maxCollections: -1,
     maxSavedPoses: -1,
-    aiSearch: true,
+    autoSearch: true,
     teamSharing: true,
     hdDownload: true,
     priceMonthly: 29900,
@@ -352,11 +352,11 @@ export async function checkLimit(userId: string, feature: FeatureKey): Promise<L
       }
     }
 
-    case 'aiSearch':
+    case 'autoSearch':
       return {
-        allowed: limits.aiSearch,
-        limit: limits.aiSearch ? -1 : 0,
-        reason: limits.aiSearch ? undefined : 'AI 검색은 Lite 플랜 이상에서 사용할 수 있습니다.',
+        allowed: limits.autoSearch,
+        limit: limits.autoSearch ? -1 : 0,
+        reason: limits.autoSearch ? undefined : '자동 매칭은 Lite 플랜 이상에서 사용할 수 있습니다.',
       };
 
     case 'teamSharing':

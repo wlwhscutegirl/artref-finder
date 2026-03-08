@@ -45,7 +45,7 @@ export function UpgradeBanner({
   const upgradeLabel = isFreePlan ? 'Lite 플랜 (₩4,900/월)' : 'Pro 플랜 (₩9,900/월)';
   const upgradeDescription = isFreePlan
     ? '무제한 검색 + 고급 필터가 ₩4,900/월!'
-    : '무제한 컬렉션 + AI 추출 무제한!';
+    : '무제한 컬렉션 + 자동 추출 무제한!';
 
   // 제한 도달 (차단 상태)
   if (isBlocked) {

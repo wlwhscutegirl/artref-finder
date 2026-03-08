@@ -182,7 +182,7 @@ export default function BetaPage() {
 
           {/* 서브 카피 */}
           <p className="text-lg text-gray-500 max-w-2xl mx-auto leading-relaxed">
-            AI 기반 실사 레퍼런스 검색 엔진의 첫 번째 사용자가 되어주세요.
+            자동 매칭 실사 레퍼런스 검색 엔진의 첫 번째 사용자가 되어주세요.
             <br className="hidden sm:block" />
             여러분의 피드백으로 <span className="text-gray-700 font-medium">더 나은 도구</span>를 함께 만들어갑니다.
           </p>

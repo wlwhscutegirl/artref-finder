@@ -205,8 +205,8 @@ export interface PlanLimits {
   maxCollections: number;
   /** 최대 저장 포즈 개수 (-1은 무제한) */
   maxSavedPoses: number;
-  /** AI 검색 사용 가능 여부 */
-  aiSearch: boolean;
+  /** 자동 매칭 사용 가능 여부 */
+  autoSearch: boolean;
   /** 팀 공유 기능 사용 가능 여부 */
   teamSharing: boolean;
   /** 고화질 다운로드 가능 여부 */
@@ -250,7 +250,7 @@ export type FeatureKey =
   | 'dailySearch'
   | 'createCollection'
   | 'savePose'
-  | 'aiSearch'
+  | 'autoSearch'
   | 'teamSharing'
   | 'hdDownload';
 

@@ -36,7 +36,7 @@ export const STORAGE_KEYS = {
 
   /** 일일 검색 카운터 (플랜 제한용) */
   DAILY_SEARCH: 'artref-daily-search',
-  /** 일일 AI 포즈 추출 카운터 (플랜 제한용) */
+  /** 일일 자동 포즈 추출 카운터 (플랜 제한용) */
   DAILY_EXTRACTION: 'artref-daily-extraction',
 } as const;
 

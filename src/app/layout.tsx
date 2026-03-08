@@ -25,12 +25,12 @@ const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://artref.app";
 export const metadata: Metadata = {
   // 제목: 기본값 + 하위 페이지 템플릿
   title: {
-    default: "ArtRef - AI 실사 레퍼런스 검색",
+    default: "ArtRef - 스마트 실사 레퍼런스 검색",
     template: "%s | ArtRef",
   },
   // 설명: 검색 엔진 스니펫용
   description:
-    "3D 포즈, 조명, 카메라 조건으로 실사 레퍼런스를 검색하세요. 웹툰 작가, 일러스트레이터를 위한 AI 기반 검색 엔진.",
+    "3D 포즈, 조명, 카메라 조건으로 실사 레퍼런스를 검색하세요. 웹툰 작가, 일러스트레이터를 위한 자동 매칭 검색 엔진.",
   // SEO 키워드
   keywords: [
     "레퍼런스",
@@ -66,22 +66,22 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     url: SITE_URL,
     siteName: "ArtRef",
-    title: "ArtRef - AI 실사 레퍼런스 검색",
+    title: "ArtRef - 스마트 실사 레퍼런스 검색",
     description:
-      "3D 포즈, 조명, 카메라 조건으로 실사 레퍼런스를 검색하세요. 웹툰 작가, 일러스트레이터를 위한 AI 기반 검색 엔진.",
+      "3D 포즈, 조명, 카메라 조건으로 실사 레퍼런스를 검색하세요. 웹툰 작가, 일러스트레이터를 위한 자동 매칭 검색 엔진.",
     images: [
       {
         url: `${SITE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: "ArtRef - AI 실사 레퍼런스 검색 엔진",
+        alt: "ArtRef - 스마트 실사 레퍼런스 검색 엔진",
       },
     ],
   },
   // Twitter Card 메타태그 — 트위터/X 공유 시 표시
   twitter: {
     card: "summary_large_image",
-    title: "ArtRef - AI 실사 레퍼런스 검색",
+    title: "ArtRef - 스마트 실사 레퍼런스 검색",
     description:
       "3D 포즈, 조명, 카메라 조건으로 실사 레퍼런스를 검색하세요.",
     images: [`${SITE_URL}/og-image.png`],

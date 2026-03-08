@@ -131,8 +131,8 @@ export const useSubscriptionStore = create<SubscriptionState>()(
             // 저장 포즈 1개 이상 허용하면 사용 가능 (free는 3개)
             return planLimits.maxSavedPoses !== 0;
 
-          case 'aiSearch':
-            return planLimits.aiSearch;
+          case 'autoSearch':
+            return planLimits.autoSearch;
 
           case 'teamSharing':
             return planLimits.teamSharing;
@@ -192,7 +192,7 @@ export const usePlanLimits = () =>
  * 횟수 기반 한도 확인이 필요하면 checkLimit을 직접 호출할 것
  *
  * @example
- * const canUseAI = useFeatureAvailable('aiSearch');
+ * const canUseAI = useFeatureAvailable('autoSearch');
  */
 export const useFeatureAvailable = (feature: FeatureKey): boolean =>
   useSubscriptionStore((state) => state.isFeatureAvailable(feature));

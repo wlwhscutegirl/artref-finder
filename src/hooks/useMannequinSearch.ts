@@ -154,7 +154,7 @@ export interface MannequinSearchState {
   /** 카메라 앵글 벡터 변경 */
   setCurrentCameraAngle: (angle: CameraAngle | null) => void;
 
-  // === AI 포즈 추출 ===
+  // === 자동 포즈 추출 ===
   /** 추출된 포즈 벡터 */
   extractedPoseVector: number[] | null;
   /** 추출된 관절 가중치 */
@@ -242,7 +242,7 @@ export function useMannequinSearch(
   const [similarityThreshold, setSimilarityThreshold] = useState(0);
   const [currentCameraAngle, setCurrentCameraAngle] = useState<CameraAngle | null>(null);
 
-  // === AI 포즈 추출 (Phase 4) ===
+  // === 자동 포즈 추출 (Phase 4) ===
   const [extractedPoseVector, setExtractedPoseVector] = useState<number[] | null>(null);
   const [extractedWeights, setExtractedWeights] = useState<number[] | null>(null);
 
@@ -298,7 +298,7 @@ export function useMannequinSearch(
     setSelectedTags([...withoutCam, ...cameraAngleTags]);
   }, [selectedTags, cameraAngleTags]);
 
-  // AI 포즈 추출 콜백 (Phase 4)
+  // 자동 포즈 추출 콜백 (Phase 4)
   const handlePoseExtracted = useCallback((result: { poseVector: number[]; jointWeights: number[] }) => {
     const limitResult = checkExtractionLimit();
     if (!limitResult.allowed) {

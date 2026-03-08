@@ -23,7 +23,7 @@ export interface PoseControlsState {
   joints: Record<JointId, [number, number, number]>;
   /** 관절 선택 함수 */
   selectJoint: (joint: JointId | null) => void;
-  /** 외부 포즈 적용 (AI 추출 등) */
+  /** 외부 포즈 적용 (자동 추출 등) */
   applyExternalPose: (rotations: Record<JointId, [number, number, number]>) => void;
 
   // === 해부학 오버레이 ===

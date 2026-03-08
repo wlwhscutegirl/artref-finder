@@ -58,7 +58,7 @@ export default function SearchPage() {
     );
   }, [presets.cameraPosition, presets.cameraTarget, controls, search]);
 
-  // AI 포즈 추출 → 마네킹에 적용하는 핸들러
+  // 자동 포즈 추출 → 마네킹에 적용하는 핸들러
   const handleApplyToMannequin = (rotations: Record<string, [number, number, number]>) => {
     controls.applyExternalPose(rotations as any);
     // 마네킹 적용 시 외부 벡터는 초기화 (마네킹 FK 모드로 전환)
@@ -189,7 +189,7 @@ export default function SearchPage() {
 
       {/* 프리셋 패널 영역 */}
       <div className="p-3 space-y-3 border-t border-gray-200">
-        {/* AI 포즈 추출 (Phase 4): 이미지 업로드 → 포즈 검색/마네킹 적용 */}
+        {/* 자동 포즈 추출 (Phase 4): 이미지 업로드 → 포즈 검색/마네킹 적용 */}
         <div>
           <p className="text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider">
             이미지에서 포즈 추출

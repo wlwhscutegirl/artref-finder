@@ -19,7 +19,7 @@ const FEATURE_LABELS: Record<FeatureKey, string> = {
   dailySearch: '일일 검색',
   createCollection: '컬렉션 생성',
   savePose: '포즈 저장',
-  aiSearch: 'AI 검색',
+  autoSearch: '자동 매칭',
   teamSharing: '팀 공유',
   hdDownload: '고화질 다운로드',
 };
@@ -57,8 +57,8 @@ const PLAN_DISPLAY_NAMES: Record<SubscriptionPlan, string> = {
 // ============================================
 const PLAN_HIGHLIGHTS: Record<SubscriptionPlan, string[]> = {
   free: ['일일 검색 10회', '컬렉션 1개', '포즈 저장 3개'],
-  lite: ['일일 검색 50회', '컬렉션 5개', 'AI 검색 지원', '₩4,900/월'],
-  student: ['일일 검색 50회', '컬렉션 5개', 'AI 검색 지원', '₩4,900/월'],
+  lite: ['일일 검색 50회', '컬렉션 5개', '자동 매칭 지원', '₩4,900/월'],
+  student: ['일일 검색 50회', '컬렉션 5개', '자동 매칭 지원', '₩4,900/월'],
   pro: ['검색 무제한', '컬렉션 무제한', '고화질 다운로드', '₩9,900/월'],
   team: ['검색 무제한', '팀 공유 기능', '고화질 다운로드', '₩29,900/월'],
 };

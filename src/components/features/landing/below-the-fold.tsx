@@ -53,7 +53,7 @@ const FEATURES = [
     title: 'AI가 실사 매칭',
     before: '구글에서 비슷한 사진 찾다가 결국 타협',
     after: '마네킹 포즈와 가장 유사한 실사 사진을 AI가 자동 매칭',
-    details: 'AI 벡터 검색이 포즈 유사도를 계산해서, 가장 가까운 사진부터 보여줍니다.',
+    details: '자동 매칭이 포즈 유사도를 계산해서, 가장 가까운 사진부터 보여줍니다.',
     accentBorder: 'hover:border-amber-500/40',
     accentText: 'group-hover:text-amber-300',
     tagColor: 'bg-amber-500/10 text-amber-400',
@@ -203,7 +203,7 @@ export default function BelowTheFold() {
                   '일일 검색 100회',
                   '컬렉션 5개',
                   '저장 포즈 10개',
-                  'AI 포즈 추출 5회/일',
+                  '자동 포즈 추출 5회/일',
                   '태그 기반 검색',
                   '포즈 벡터 매칭',
                 ].map((item) => (
@@ -256,7 +256,7 @@ export default function BelowTheFold() {
                   '일일 검색 무제한',
                   '컬렉션 무제한',
                   '저장 포즈 무제한',
-                  'AI 포즈 추출 무제한',
+                  '자동 포즈 추출 무제한',
                   '태그 기반 검색',
                   '포즈 벡터 매칭',
                   '카메라 앵글 벡터 매칭',
@@ -302,7 +302,7 @@ export default function BelowTheFold() {
             그림에 쓰세요
           </h2>
           <p className="text-gray-500 mb-10 leading-relaxed">
-            3D 마네킹 → AI 매칭 → 실사 레퍼런스.
+            3D 마네킹 → 자동 매칭 → 실사 레퍼런스.
             <br className="hidden sm:block" />
             가입하고 바로 사용해보세요.
           </p>

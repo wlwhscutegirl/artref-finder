@@ -67,7 +67,7 @@ function incrementDailySearch(): number {
 }
 
 /**
- * 오늘의 AI 포즈 추출 카운터 가져오기
+ * 오늘의 자동 포즈 추출 카운터 가져오기
  */
 function getDailyExtractionCount(): number {
   if (typeof window === 'undefined') return 0;
@@ -84,7 +84,7 @@ function getDailyExtractionCount(): number {
 }
 
 /**
- * AI 포즈 추출 카운터 증가
+ * 자동 포즈 추출 카운터 증가
  */
 function incrementDailyExtraction(): number {
   if (typeof window === 'undefined') return 0;
@@ -115,9 +115,9 @@ interface PlanLimitsResult {
   dailySearchCount: number;
   /** 플랜별 히스토리 보관 제한 수 */
   historyLimit: number;
-  /** AI 포즈 추출 제한 체크 */
+  /** 자동 포즈 추출 제한 체크 */
   checkExtractionLimit: () => LimitCheckResult;
-  /** AI 포즈 추출 카운터 증가 */
+  /** 자동 포즈 추출 카운터 증가 */
   recordExtraction: () => number;
   /** 오늘 남은 추출 횟수 (-1 = 무제한) */
   remainingExtractions: number;
@@ -157,7 +157,7 @@ export function usePlanLimits(): PlanLimitsResult {
     return incrementDailySearch();
   }, []);
 
-  // AI 포즈 추출 제한 체크
+  // 자동 포즈 추출 제한 체크
   const checkExtractionLimit = useCallback((): LimitCheckResult => {
     const count = getDailyExtractionCount();
     return checkLimit(plan, 'dailyExtraction', count);

@@ -17,7 +17,7 @@ interface PlanConfig {
   teamSharing: boolean;
   /** 검색 히스토리 보관 수 */
   historyLimit: number;
-  /** 일일 AI 포즈 추출 횟수 제한 (-1 = 무제한) */
+  /** 일일 자동 포즈 추출 횟수 제한 (-1 = 무제한) */
   dailyExtractionLimit: number;
   /** 한 번에 처리 가능한 최대 이미지 수 (배치) */
   maxBatchSize: number;
