@@ -468,10 +468,10 @@ export default function PricingPage() {
                     className={`
                       w-full py-2 rounded-xl text-xs font-semibold transition-all
                       ${isDisabled
-                        ? 'bg-gray-100 text-gray-400 cursor-default'
+                        ? 'bg-orange-50 text-gray-400 cursor-default'
                         : plan.highlighted
                           ? 'bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-500 hover:to-amber-500 cursor-pointer'
-                          : 'bg-gray-100 text-gray-600 hover:bg-gray-200 cursor-pointer'
+                          : 'bg-orange-50 text-gray-600 hover:bg-orange-100 cursor-pointer'
                       }
                       ${isThisLoading && !isDisabled ? 'opacity-70 cursor-wait' : ''}
                     `}
@@ -505,7 +505,7 @@ export default function PricingPage() {
             {/* 구독 상세 정보 */}
             <div className="grid grid-cols-3 gap-4 mb-6">
               {/* 현재 플랜 */}
-              <div className="p-3 rounded-xl bg-gray-100/50">
+              <div className="p-3 rounded-xl bg-orange-50/50">
                 <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">현재 플랜</p>
                 <p className="text-sm font-semibold text-gray-900 capitalize">
                   {subscription.plan}
@@ -516,7 +516,7 @@ export default function PricingPage() {
               </div>
 
               {/* 구독 상태 */}
-              <div className="p-3 rounded-xl bg-gray-100/50">
+              <div className="p-3 rounded-xl bg-orange-50/50">
                 <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">구독 상태</p>
                 <p className={`text-sm font-semibold ${isCanceled ? 'text-amber-400' : 'text-green-400'}`}>
                   {isCanceled ? '취소 예약됨' : '활성'}
@@ -524,7 +524,7 @@ export default function PricingPage() {
               </div>
 
               {/* 다음 결제일 / 만료일 */}
-              <div className="p-3 rounded-xl bg-gray-100/50">
+              <div className="p-3 rounded-xl bg-orange-50/50">
                 <p className="text-[10px] text-gray-400 uppercase tracking-wider mb-1">
                   {isCanceled ? '서비스 종료일' : '다음 결제일'}
                 </p>

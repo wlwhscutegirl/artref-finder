@@ -55,7 +55,7 @@ const FEATURES = [
     after: '마네킹 포즈와 가장 유사한 실사 사진을 AI가 자동 매칭',
     details: '자동 매칭이 포즈 유사도를 계산해서, 가장 가까운 사진부터 보여줍니다.',
     accentBorder: 'hover:border-amber-500/40',
-    accentText: 'group-hover:text-amber-300',
+    accentText: 'group-hover:text-amber-600',
     tagColor: 'bg-amber-500/10 text-amber-400',
     tags: ['벡터 검색', '유사도 정렬'],
   },
@@ -75,7 +75,7 @@ const FEATURES = [
     after: '프로젝트별 컬렉션 + 포즈 프리셋 클라우드 저장',
     details: '마음에 드는 레퍼런스를 컬렉션으로 분류하고, 어디서든 불러오세요.',
     accentBorder: 'hover:border-amber-500/40',
-    accentText: 'group-hover:text-amber-300',
+    accentText: 'group-hover:text-amber-600',
     tagColor: 'bg-amber-500/10 text-amber-400',
     tags: ['컬렉션 관리', '클라우드 동기화'],
   },
@@ -226,7 +226,7 @@ export default function BelowTheFold() {
               {/* CTA */}
               <Link
                 href="/register"
-                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-orange-50 hover:bg-orange-100 text-gray-600 transition-colors"
               >
                 무료로 시작하기
               </Link>

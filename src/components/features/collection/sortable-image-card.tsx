@@ -54,7 +54,7 @@ export function SortableImageCard({
     <div
       ref={setNodeRef}
       style={style}
-      className="relative group rounded-lg overflow-hidden bg-gray-100 border border-gray-300/50"
+      className="relative group rounded-lg overflow-hidden bg-orange-50 border border-gray-300/50"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >

@@ -29,7 +29,7 @@ export function CameraPresetBar({ selectedId, onSelect }: CameraPresetBarProps) 
             className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer ${
               selectedId === preset.id
                 ? 'bg-orange-600 text-white'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
+                : 'bg-orange-50 text-gray-500 hover:bg-orange-100 hover:text-gray-600'
             }`}
           >
             {preset.label}

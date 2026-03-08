@@ -53,8 +53,8 @@ export function ShareButton({
           copied
             ? 'bg-emerald-600/20 text-emerald-400'
             : disabled
-              ? 'bg-gray-100 text-gray-300'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              ? 'bg-orange-50 text-gray-300'
+              : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
         }`}
       >
         {copied ? '링크 복사됨!' : 'Share'}
@@ -62,7 +62,7 @@ export function ShareButton({
 
       {/* 비활성 툴팁 */}
       {showTooltip && disabled && (
-        <div className="absolute top-full right-0 mt-1 px-2 py-1 bg-gray-100 border border-gray-300 rounded text-[10px] text-gray-500 whitespace-nowrap z-50">
+        <div className="absolute top-full right-0 mt-1 px-2 py-1 bg-orange-50 border border-gray-300 rounded text-[10px] text-gray-500 whitespace-nowrap z-50">
           {disabledMessage}
         </div>
       )}

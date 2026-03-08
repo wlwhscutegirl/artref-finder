@@ -46,7 +46,7 @@ export function HdriSelector({
           className={`px-2 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors ${
             hdri.enabled
               ? 'bg-emerald-600 text-white'
-              : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+              : 'bg-orange-50 text-gray-400 hover:bg-orange-100'
           }`}
         >
           {hdri.enabled ? 'ON' : 'OFF'}
@@ -64,7 +64,7 @@ export function HdriSelector({
                 className={`flex-1 flex flex-col items-center gap-0.5 py-1.5 rounded-lg text-center cursor-pointer transition-colors ${
                   hdri.preset === preset.id
                     ? 'bg-emerald-500/20 border border-emerald-500/40 text-emerald-300'
-                    : 'bg-gray-100/50 border border-gray-200 text-gray-400 hover:bg-gray-100 hover:text-gray-500'
+                    : 'bg-orange-50/50 border border-gray-200 text-gray-400 hover:bg-orange-50 hover:text-gray-500'
                 }`}
               >
                 <span className="text-sm">{PRESET_ICONS[preset.id]}</span>

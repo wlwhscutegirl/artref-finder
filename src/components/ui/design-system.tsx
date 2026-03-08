@@ -24,7 +24,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
     <section className="mb-12">
       {/* 섹션 제목 */}
       <h2 className="text-xl font-bold mb-1 text-gray-900">{title}</h2>
-      <div className="w-full h-px bg-gray-100 mb-6" />
+      <div className="w-full h-px bg-orange-50 mb-6" />
       {children}
     </section>
   );
@@ -106,9 +106,9 @@ function ColorPaletteSection() {
         <div className="flex flex-wrap gap-4">
           <ColorChip label="surface.base" colorClass="bg-white border border-gray-300" />
           <ColorChip label="surface.page / panel" colorClass="bg-gray-50 border border-gray-300" />
-          <ColorChip label="surface.elevated" colorClass="bg-gray-100 border border-gray-300" />
+          <ColorChip label="surface.elevated" colorClass="bg-orange-50 border border-gray-300" />
           <ColorChip label="surface.overlay" colorClass="bg-white/90 border border-gray-300" />
-          <ColorChip label="surface.subtle" colorClass="bg-gray-100/50 border border-gray-300" />
+          <ColorChip label="surface.subtle" colorClass="bg-orange-50/50 border border-gray-300" />
         </div>
       </SubSection>
 
@@ -351,10 +351,10 @@ function TagSection() {
             전체
           </button>
           {/* 기본 필터 */}
-          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors">
+          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors">
             인물
           </button>
-          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors">
+          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors">
             자연
           </button>
         </div>
@@ -464,7 +464,7 @@ function CardSection() {
         <div className="p-3 bg-white/90 border border-gray-200 rounded-lg space-y-2 max-w-xs">
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-            <span className="text-xs font-semibold text-amber-300">왼쪽 어깨</span>
+            <span className="text-xs font-semibold text-amber-600">왼쪽 어깨</span>
           </div>
           <p className="text-xs text-gray-400">관절 슬라이더 패널 패턴</p>
         </div>
@@ -523,7 +523,7 @@ function StatusBannerSection() {
 
           {/* 경고 배너 */}
           <div className="p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
-            <p className="text-xs font-medium text-amber-300">오늘 검색 5회 남았습니다</p>
+            <p className="text-xs font-medium text-amber-600">오늘 검색 5회 남았습니다</p>
             <p className="text-[10px] text-amber-400/70 mt-0.5">무제한 검색 + 고급 필터가 ₩4,900/월!</p>
           </div>
 
@@ -634,9 +634,9 @@ export function DesignSystemDocs() {
             모든 토큰은 <code className="text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded text-xs font-mono">src/styles/design-tokens.ts</code>에 정의되어 있습니다.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
-            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">Tailwind CSS 4</span>
-            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">Dark Theme</span>
-            <span className="px-2 py-0.5 rounded bg-gray-100 text-gray-500 text-xs font-mono">TypeScript</span>
+            <span className="px-2 py-0.5 rounded bg-orange-50 text-gray-500 text-xs font-mono">Tailwind CSS 4</span>
+            <span className="px-2 py-0.5 rounded bg-orange-50 text-gray-500 text-xs font-mono">Dark Theme</span>
+            <span className="px-2 py-0.5 rounded bg-orange-50 text-gray-500 text-xs font-mono">TypeScript</span>
           </div>
         </div>
 

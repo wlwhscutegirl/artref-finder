@@ -55,7 +55,7 @@ export const colorSecondary = {
   default: 'bg-amber-500',
   hover: 'hover:bg-amber-400',
   text: 'text-amber-400',
-  textHover: 'hover:text-amber-300',
+  textHover: 'hover:text-amber-600',
   subtle: 'bg-amber-500/10',
   border: 'border-amber-500',
   borderSubtle: 'border-amber-500/50',
@@ -79,7 +79,7 @@ export const colorGradient = {
  * 배경 색상 (Surface)
  * globals.css: --background: #0a0a0a (neutral-950 계열)
  * pricing/page.tsx: bg-white
- * 컴포넌트들: bg-gray-50, bg-gray-100, bg-gray-100/50
+ * 컴포넌트들: bg-gray-50, bg-orange-50, bg-orange-50/50
  */
 export const colorSurface = {
   /** 최하위 앱 배경 (body) */
@@ -89,11 +89,11 @@ export const colorSurface = {
   /** 카드, 패널 배경 */
   panel: 'bg-gray-50',
   /** 약간 밝은 패널 (모달, 팝오버 등) */
-  elevated: 'bg-gray-100',
+  elevated: 'bg-orange-50',
   /** 반투명 오버레이 배경 (Nav, 슬라이더 패널 등) */
   overlay: 'bg-white/90',
   /** 미묘한 섹션 구분 */
-  subtle: 'bg-gray-100/50',
+  subtle: 'bg-orange-50/50',
 } as const;
 
 /**
@@ -155,7 +155,7 @@ export const colorStatus = {
     bg: 'bg-amber-600',
     bgSubtle: 'bg-amber-500/10',
     text: 'text-amber-400',
-    textStrong: 'text-amber-300',
+    textStrong: 'text-amber-600',
     border: 'border-amber-500',
     borderSubtle: 'border-amber-500/20',
     hover: 'hover:bg-amber-500',
@@ -384,7 +384,7 @@ export const buttonVariants = {
   /** 보조 액션 */
   secondary: 'bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200',
   /** 고스트 (아이콘 버튼, 인라인 액션) */
-  ghost: 'bg-transparent hover:bg-gray-100 text-gray-600',
+  ghost: 'bg-transparent hover:bg-orange-50 text-gray-600',
   /** 위험 / 삭제 */
   danger: 'bg-red-600 hover:bg-red-500 text-white',
   /** 브랜드 그라디언트 CTA */
@@ -431,7 +431,7 @@ export const inputStyles = {
  */
 export const tagStyles = {
   base: 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-colors duration-150',
-  default: 'bg-gray-100 text-gray-600 hover:bg-gray-200',
+  default: 'bg-orange-50 text-gray-600 hover:bg-orange-100',
   selected: 'bg-orange-600 text-white',
   secondarySelected: 'bg-amber-500/10 text-amber-400',
 } as const;

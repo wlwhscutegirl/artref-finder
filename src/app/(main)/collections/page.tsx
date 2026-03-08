@@ -54,7 +54,7 @@ export default function CollectionsPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/search"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               🔍 검색
             </Link>
@@ -129,7 +129,7 @@ export default function CollectionsPage() {
               </button>
               <button
                 onClick={() => setConfirmDeleteId(null)}
-                className="px-3 py-1 text-xs bg-neutral-700 hover:bg-gray-300 rounded-lg text-gray-600 cursor-pointer transition-colors"
+                className="px-3 py-1 text-xs bg-neutral-700 hover:bg-orange-200 rounded-lg text-gray-600 cursor-pointer transition-colors"
               >
                 취소
               </button>

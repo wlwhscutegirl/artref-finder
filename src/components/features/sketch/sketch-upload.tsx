@@ -96,7 +96,7 @@ export function SketchUpload({ onUpload }: SketchUploadProps) {
         className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg border-2 border-dashed cursor-pointer transition-colors ${
           isDragging
             ? 'border-amber-400 bg-amber-500/10'
-            : 'border-gray-300 hover:border-neutral-500 bg-gray-100/50'
+            : 'border-gray-300 hover:border-neutral-500 bg-orange-50/50'
         }`}
       >
         <span className="text-2xl">📷</span>

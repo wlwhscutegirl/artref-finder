@@ -40,7 +40,7 @@ const MODES = [
 
 export function ModeTabs({ activeMode }: ModeTabsProps) {
   return (
-    <div className="flex items-center bg-gray-100/50 rounded-lg p-0.5">
+    <div className="flex items-center bg-orange-50/50 rounded-lg p-0.5">
       {MODES.map((mode) => (
         <Link
           key={mode.id}

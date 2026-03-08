@@ -308,7 +308,7 @@ export default function PipelineDashboardPage() {
           <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
             <p className="text-xs text-gray-400 mb-1">Unsplash API (50 req/hour)</p>
             <div className="flex items-center gap-3">
-              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div className="flex-1 h-2 bg-orange-50 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${
                     unsplashRate.remaining > 20 ? 'bg-emerald-500' :
@@ -327,7 +327,7 @@ export default function PipelineDashboardPage() {
           <div className="p-4 bg-gray-50 rounded-xl border border-gray-200">
             <p className="text-xs text-gray-400 mb-1">Pexels API (200 req/hour)</p>
             <div className="flex items-center gap-3">
-              <div className="flex-1 h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div className="flex-1 h-2 bg-orange-50 rounded-full overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all ${
                     pexelsRate.remaining > 80 ? 'bg-emerald-500' :
@@ -358,7 +358,7 @@ export default function PipelineDashboardPage() {
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       source === s
                         ? 'bg-orange-600 text-white'
-                        : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                        : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
                     }`}
                   >
                     {s === 'unsplash' ? 'Unsplash' : s === 'pexels' ? 'Pexels' : 'Both'}
@@ -497,7 +497,7 @@ export default function PipelineDashboardPage() {
                 key={query}
                 onClick={() => !isRunning && !batchRunning && startCollection([query])}
                 disabled={isRunning || batchRunning}
-                className="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg text-xs transition-colors"
+                className="px-3 py-1.5 bg-orange-50 hover:bg-orange-100 disabled:opacity-50 rounded-lg text-xs transition-colors"
               >
                 {query}
               </button>
@@ -535,7 +535,7 @@ export default function PipelineDashboardPage() {
                 </span>
                 <span>{migrationProgress}%</span>
               </div>
-              <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+              <div className="h-2.5 bg-orange-50 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full transition-all duration-200"
                   style={{ width: `${migrationProgress}%` }}
@@ -606,7 +606,7 @@ export default function PipelineDashboardPage() {
             </div>
 
             {/* 프로그레스 바 */}
-            <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-3 bg-orange-50 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
@@ -638,7 +638,7 @@ export default function PipelineDashboardPage() {
                     </span>
                     {/* 소스 뱃지 */}
                     <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
-                      job.source === 'unsplash' ? 'bg-gray-100 text-gray-500' :
+                      job.source === 'unsplash' ? 'bg-orange-50 text-gray-500' :
                       'bg-orange-900/30 text-orange-400'
                     }`}>
                       {job.source === 'unsplash' ? 'U' : 'P'}

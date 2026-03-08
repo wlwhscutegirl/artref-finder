@@ -92,7 +92,7 @@ export function ImageAnnotationEditor({
             onChange={(e) => setMemo(e.target.value.slice(0, 200))}
             placeholder="이 레퍼런스에 대한 메모..."
             rows={3}
-            className="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 placeholder:text-gray-300 resize-none focus:outline-none focus:border-orange-500"
+            className="w-full bg-orange-50 border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-700 placeholder:text-gray-300 resize-none focus:outline-none focus:border-orange-500"
           />
         </div>
 
@@ -127,7 +127,7 @@ export function ImageAnnotationEditor({
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={handleTagKeyDown}
               placeholder="태그 입력 후 Enter"
-              className="w-full bg-gray-100 border border-gray-300 rounded-lg px-3 py-1.5 text-xs text-gray-700 placeholder:text-gray-300 focus:outline-none focus:border-orange-500"
+              className="w-full bg-orange-50 border border-gray-300 rounded-lg px-3 py-1.5 text-xs text-gray-700 placeholder:text-gray-300 focus:outline-none focus:border-orange-500"
             />
           )}
         </div>
@@ -148,7 +148,7 @@ export function ImageAnnotationEditor({
           <div className="flex gap-2">
             <button
               onClick={onClose}
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 cursor-pointer transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 cursor-pointer transition-colors"
             >
               취소
             </button>

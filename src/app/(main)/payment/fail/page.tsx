@@ -94,7 +94,7 @@ function PaymentFailContent() {
             {/* 홈으로 버튼 */}
             <button
               onClick={() => router.push('/')}
-              className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-gray-500 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg border border-gray-300 px-6 py-3 text-sm font-medium text-gray-500 transition-colors hover:bg-orange-50 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             >
               홈으로 돌아가기
             </button>

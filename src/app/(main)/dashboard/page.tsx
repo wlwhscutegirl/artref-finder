@@ -173,7 +173,7 @@ export default function DashboardPage() {
                   <Link
                     key={entry.id}
                     href={`/search?tags=${encodeURIComponent(entry.tags.join(','))}`}
-                    className="block p-2 rounded-lg bg-gray-100/30 hover:bg-gray-100/60 transition-colors group"
+                    className="block p-2 rounded-lg bg-orange-50/30 hover:bg-orange-50/60 transition-colors group"
                   >
                     <div className="flex items-center justify-between mb-1">
                       <div className="flex flex-wrap gap-1">

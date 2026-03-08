@@ -78,7 +78,7 @@ export function LayoutSwitcher({
       {/* 트리거 버튼 */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors cursor-pointer"
+        className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors cursor-pointer"
       >
         <span>{currentLabel}</span>
         <span className="text-[10px]">▾</span>
@@ -101,7 +101,7 @@ export function LayoutSwitcher({
                     ? 'bg-orange-600/20 text-orange-300'
                     : isDisabled
                       ? 'text-gray-300 cursor-not-allowed'
-                      : 'text-gray-500 hover:bg-gray-100 hover:text-gray-600'
+                      : 'text-gray-500 hover:bg-orange-50 hover:text-gray-600'
                 }`}
               >
                 <span className="text-sm">{option.icon}</span>

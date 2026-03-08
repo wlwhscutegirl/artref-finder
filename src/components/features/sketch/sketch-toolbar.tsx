@@ -58,7 +58,7 @@ export function SketchToolbar({
   onClear,
 }: SketchToolbarProps) {
   return (
-    <div className="flex flex-wrap items-center gap-3 p-3 bg-gray-100/80 rounded-lg border border-gray-300">
+    <div className="flex flex-wrap items-center gap-3 p-3 bg-orange-50/80 rounded-lg border border-gray-300">
       {/* 도구 선택: 펜 / 지우개 */}
       <div className="flex items-center bg-gray-50 rounded-md p-0.5">
         <button
@@ -128,7 +128,7 @@ export function SketchToolbar({
         <button
           onClick={onUndo}
           disabled={!canUndo}
-          className="px-2 py-1 text-xs rounded hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-2 py-1 text-xs rounded hover:bg-orange-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           title="되돌리기 (Ctrl+Z)"
         >
           ↩
@@ -136,7 +136,7 @@ export function SketchToolbar({
         <button
           onClick={onRedo}
           disabled={!canRedo}
-          className="px-2 py-1 text-xs rounded hover:bg-gray-200 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          className="px-2 py-1 text-xs rounded hover:bg-orange-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
           title="다시 실행 (Ctrl+Y)"
         >
           ↪

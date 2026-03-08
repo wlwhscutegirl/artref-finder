@@ -118,7 +118,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
               <div className="flex-1 min-w-0">
                 {/* 사용량 텍스트 */}
                 <div className="flex items-center justify-between mb-1">
-                  <span className="text-xs text-amber-300 font-medium">
+                  <span className="text-xs text-amber-600 font-medium">
                     오늘 검색 {dailyUsage}/{dailyLimit}회 사용
                   </span>
                   <span className="text-[10px] text-amber-400/60 ml-2">
@@ -138,14 +138,14 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
             <div className="flex items-center gap-2 shrink-0">
               <Link
                 href="/pricing"
-                className="px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-500/30 transition-colors"
+                className="px-2.5 py-1 rounded-lg text-[10px] font-semibold bg-amber-500/20 hover:bg-amber-500/30 text-amber-600 border border-amber-500/30 transition-colors"
               >
                 업그레이드
               </Link>
               <button
                 onClick={handleDismiss}
                 aria-label="배너 닫기"
-                className="text-amber-400/40 hover:text-amber-300 transition-colors cursor-pointer"
+                className="text-amber-400/40 hover:text-amber-600 transition-colors cursor-pointer"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />

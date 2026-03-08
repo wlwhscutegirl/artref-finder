@@ -65,7 +65,7 @@ const BENEFIT_STYLES: Record<string, { iconBg: string; hoverBorder: string; titl
   amber: {
     iconBg: 'bg-amber-500/10',
     hoverBorder: 'hover:border-amber-500/40',
-    titleHover: 'group-hover:text-amber-300',
+    titleHover: 'group-hover:text-amber-600',
   },
   pink: {
     iconBg: 'bg-pink-500/10',
@@ -259,7 +259,7 @@ export default function BetaPage() {
               {/* 홈으로 돌아가기 */}
               <Link
                 href="/"
-                className="inline-block px-6 py-2.5 rounded-xl text-sm font-semibold bg-gray-100 hover:bg-gray-200 text-gray-600 transition-colors"
+                className="inline-block px-6 py-2.5 rounded-xl text-sm font-semibold bg-orange-50 hover:bg-orange-100 text-gray-600 transition-colors"
               >
                 홈으로 돌아가기
               </Link>

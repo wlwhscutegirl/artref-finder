@@ -17,7 +17,7 @@ export function Tag({ label, selected, onClick, removable, onRemove }: TagProps)
         ${
           selected
             ? 'bg-orange-600 text-white'
-            : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+            : 'bg-orange-50 text-gray-600 hover:bg-orange-100'
         }
       `}
     >

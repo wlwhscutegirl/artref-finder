@@ -57,7 +57,7 @@ function getSimilarityBadge(score: number | undefined): {
   if (percent >= 40) return {
     text: `${percent}%`,
     bgColor: 'bg-amber-500/20',
-    textColor: 'text-amber-300',
+    textColor: 'text-amber-600',
     ringColor: 'ring-amber-500/30',
     tier: 'moderate',
   };
@@ -201,7 +201,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
     return (
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
         {Array.from({ length: 6 }).map((_, i) => (
-          <div key={i} className="aspect-[3/4] rounded-xl bg-gray-100 animate-pulse" />
+          <div key={i} className="aspect-[3/4] rounded-xl bg-orange-50 animate-pulse" />
         ))}
       </div>
     );
@@ -232,7 +232,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
             onClick={() => openModal(index)}
             draggable={true}
             onDragStart={(e) => handleDragStart(e, image)}
-            className={`group relative aspect-[3/4] rounded-xl overflow-hidden bg-gray-100 cursor-pointer transition-all duration-200
+            className={`group relative aspect-[3/4] rounded-xl overflow-hidden bg-orange-50 cursor-pointer transition-all duration-200
               ${(() => {
                 const badge = getSimilarityBadge((image as ScoredImage).similarityScore);
                 if (!badge) return '';
@@ -440,7 +440,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                       <span
                         key={tag}
                         title={getTagTooltip(tag)}
-                        className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 cursor-help"
+                        className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-orange-50 text-gray-600 cursor-help"
                       >
                         #{tag}
                       </span>
@@ -469,7 +469,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                             <span className="text-orange-400">포즈</span>
                             <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).poseSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-orange-50 rounded-full overflow-hidden">
                             <div className="h-full bg-orange-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).poseSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -480,7 +480,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                             <span className="text-blue-400">카메라</span>
                             <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).cameraSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-orange-50 rounded-full overflow-hidden">
                             <div className="h-full bg-blue-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).cameraSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -491,7 +491,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                             <span className="text-amber-400">조명</span>
                             <span className="text-gray-500 tabular-nums">{Math.round((selectedImage as ScoredImage).lightSimilarity! * 100)}%</span>
                           </div>
-                          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                          <div className="h-1.5 bg-orange-50 rounded-full overflow-hidden">
                             <div className="h-full bg-amber-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).lightSimilarity! * 100}%` }} />
                           </div>
                         </div>
@@ -522,7 +522,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                   <button
                     onClick={handleDownload}
                     disabled={isDownloading}
-                    className="w-full py-2 px-3 bg-gray-100 hover:bg-gray-200 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors cursor-pointer text-gray-600"
+                    className="w-full py-2 px-3 bg-orange-50 hover:bg-orange-100 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors cursor-pointer text-gray-600"
                   >
                     {isDownloading ? '다운로드 중...' : '이미지 다운로드'}
                   </button>

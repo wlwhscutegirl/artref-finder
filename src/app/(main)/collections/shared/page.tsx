@@ -101,7 +101,7 @@ function SharedCollectionContent() {
               return (
                 <div
                   key={img._id}
-                  className="rounded-lg overflow-hidden bg-gray-100 border border-gray-300/50"
+                  className="rounded-lg overflow-hidden bg-orange-50 border border-gray-300/50"
                 >
                   <div className="aspect-[4/5]">
                     <img

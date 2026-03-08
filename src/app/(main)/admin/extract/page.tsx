@@ -330,7 +330,7 @@ export default function BatchExtractPage() {
               </button>
               <button
                 onClick={loadQueue}
-                className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                className="px-4 py-2.5 bg-orange-50 hover:bg-orange-100 rounded-lg text-sm transition-colors"
               >
                 새로고침
               </button>
@@ -361,7 +361,7 @@ export default function BatchExtractPage() {
               <span className="text-emerald-400 font-medium">추출 완료</span>
               <button
                 onClick={loadQueue}
-                className="px-4 py-2.5 bg-gray-100 hover:bg-gray-200 rounded-lg text-sm transition-colors"
+                className="px-4 py-2.5 bg-orange-50 hover:bg-orange-100 rounded-lg text-sm transition-colors"
               >
                 다시 확인
               </button>
@@ -378,7 +378,7 @@ export default function BatchExtractPage() {
                 <span>예상 남은 시간: {Math.floor(state.eta / 60)}분 {state.eta % 60}초</span>
               )}
             </div>
-            <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-3 bg-orange-50 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}

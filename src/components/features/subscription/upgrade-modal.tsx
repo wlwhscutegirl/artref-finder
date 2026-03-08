@@ -217,7 +217,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           {/* 플랜 비교 카드 */}
           <div className="grid grid-cols-2 gap-3 mb-5">
             {/* 현재 플랜 */}
-            <div className="p-3.5 rounded-xl bg-gray-100 border border-gray-300">
+            <div className="p-3.5 rounded-xl bg-orange-50 border border-gray-300">
               <div className="flex items-center gap-1.5 mb-2">
                 <span className="text-xs font-medium text-gray-500 uppercase tracking-wider">현재</span>
                 <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-neutral-700 text-gray-600">
@@ -273,7 +273,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
             {/* 나중에 버튼 */}
             <button
               onClick={onClose}
-              className="flex-1 py-2.5 rounded-lg text-sm font-medium text-gray-500 bg-gray-100 hover:bg-gray-200 border border-gray-300 hover:text-gray-700 transition-colors cursor-pointer"
+              className="flex-1 py-2.5 rounded-lg text-sm font-medium text-gray-500 bg-orange-50 hover:bg-orange-100 border border-gray-300 hover:text-gray-700 transition-colors cursor-pointer"
             >
               나중에
             </button>

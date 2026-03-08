@@ -103,7 +103,7 @@ export function MaterialFilterCards({
                   transition-colors cursor-pointer border
                   ${isActive
                     ? 'bg-orange-600/20 border-orange-500/40 text-orange-300'
-                    : 'bg-gray-100/50 border-gray-300/50 text-gray-500 hover:bg-gray-200/50 hover:text-gray-600'
+                    : 'bg-orange-50/50 border-gray-300/50 text-gray-500 hover:bg-orange-100/50 hover:text-gray-600'
                   }
                 `}
               >
@@ -132,7 +132,7 @@ export function MaterialFilterCards({
                   transition-all cursor-pointer border
                   ${isSelected
                     ? `bg-gradient-to-b ${color} border-orange-500/40 ring-1 ring-orange-500/30`
-                    : 'bg-gray-100/30 border-gray-300/30 hover:bg-gray-200/40'
+                    : 'bg-orange-50/30 border-gray-300/30 hover:bg-orange-100/40'
                   }
                 `}
               >
@@ -163,7 +163,7 @@ export function MaterialFilterCards({
                   transition-all cursor-pointer border
                   ${isSelected
                     ? `bg-gradient-to-b ${color} border-orange-500/40 ring-1 ring-orange-500/30`
-                    : 'bg-gray-100/30 border-gray-300/30 hover:bg-gray-200/40'
+                    : 'bg-orange-50/30 border-gray-300/30 hover:bg-orange-100/40'
                   }
                 `}
               >

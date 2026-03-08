@@ -85,7 +85,7 @@ export function UpgradeBanner({
             <Link
               href="/pricing"
               className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold
-                bg-gray-100 text-gray-600 hover:bg-gray-200 transition-all"
+                bg-orange-50 text-gray-600 hover:bg-orange-100 transition-all"
             >
               Pro 플랜 보기
             </Link>
@@ -105,7 +105,7 @@ export function UpgradeBanner({
     <div className="mx-4 mt-3 p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-xl">
       <div className="flex items-center justify-between">
         <div className="flex-1">
-          <p className="text-xs font-medium text-amber-300">
+          <p className="text-xs font-medium text-amber-600">
             오늘 검색 {remaining}회 남았습니다
           </p>
           <p className="text-[10px] text-amber-400/70 mt-0.5">
@@ -124,7 +124,7 @@ export function UpgradeBanner({
           {onDismiss && (
             <button
               onClick={onDismiss}
-              className="text-amber-400/40 hover:text-amber-300 cursor-pointer text-sm"
+              className="text-amber-400/40 hover:text-amber-600 cursor-pointer text-sm"
             >
               &times;
             </button>

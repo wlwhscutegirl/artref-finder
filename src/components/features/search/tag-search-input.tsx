@@ -117,7 +117,7 @@ export function TagSearchInput({ selectedTags, onTagsChange }: TagSearchInputPro
               className={`w-full px-3 py-2 text-left text-sm flex items-center justify-between cursor-pointer transition-colors ${
                 index === highlightIndex
                   ? 'bg-orange-600/20 text-gray-900'
-                  : 'text-gray-600 hover:bg-gray-100'
+                  : 'text-gray-600 hover:bg-orange-50'
               }`}
             >
               <span>#{tag}</span>

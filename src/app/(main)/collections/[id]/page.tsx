@@ -156,13 +156,13 @@ export default function CollectionDetailPage() {
           <div className="flex items-center gap-3">
             <Link
               href="/search"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               검색
             </Link>
             <Link
               href="/collections"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               내 컬렉션
             </Link>

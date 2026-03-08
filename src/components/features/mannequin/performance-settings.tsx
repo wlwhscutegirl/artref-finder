@@ -69,7 +69,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
             detectedGrade && qualityLevel === detectedGrade
               ? 'bg-orange-600 text-white'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+              : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
           }`}
         >
           자동
@@ -85,7 +85,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
               }`}
             >
               {info.label}
@@ -105,7 +105,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
                   ? 'bg-orange-600 text-white'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
               }`}
             >
               {mode === '3d' ? '3D 뷰어' : '2D 뷰어'}

@@ -149,7 +149,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="이름을 입력하세요"
                   required
-                  className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                  className="w-full px-3 py-2 bg-orange-50 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
             )}
@@ -165,7 +165,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email@example.com"
                 required
-                className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full px-3 py-2 bg-orange-50 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
 
@@ -181,7 +181,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 placeholder="••••••••"
                 required
                 minLength={8}
-                className="w-full px-3 py-2 bg-gray-100 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
+                className="w-full px-3 py-2 bg-orange-50 border border-gray-300 rounded-lg text-sm text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500 transition-colors"
               />
               {/* 회원가입 시 비밀번호 요구사항 안내 */}
               {mode === 'signup' && (

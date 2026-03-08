@@ -216,7 +216,7 @@ function PaymentSuccessContent() {
             {/* 다시 시도 버튼 */}
             <button
               onClick={() => router.push('/pricing')}
-              className="inline-flex items-center justify-center rounded-lg bg-gray-100 px-6 py-3 text-sm font-medium text-gray-900 transition-colors hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-orange-50 px-6 py-3 text-sm font-medium text-gray-900 transition-colors hover:bg-orange-100 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
             >
               다시 시도하기
             </button>

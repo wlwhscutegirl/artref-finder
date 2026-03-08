@@ -29,7 +29,7 @@ import { usePoseControls } from '@/hooks/usePoseControls';
 // Three.js는 SSR 불가 - dynamic import로 클라이언트에서만 로드
 const MannequinViewer = dynamic(
   () => import('@/components/features/mannequin/mannequin-viewer').then(m => ({ default: m.MannequinViewer })),
-  { ssr: false, loading: () => <div className="aspect-[4/5] bg-gray-100 rounded-xl animate-pulse" /> }
+  { ssr: false, loading: () => <div className="aspect-[4/5] bg-orange-50 rounded-xl animate-pulse" /> }
 );
 
 export default function SearchPage() {
@@ -92,7 +92,7 @@ export default function SearchPage() {
           className={`px-2.5 py-1 rounded text-[11px] font-medium cursor-pointer transition-colors ${
             presets.isFlipped
               ? 'bg-orange-600 text-white'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
+              : 'bg-orange-50 text-gray-500 hover:bg-orange-100 hover:text-gray-600'
           }`}
         >
           ↔ 반전
@@ -106,7 +106,7 @@ export default function SearchPage() {
           className={`flex items-center gap-1 px-2.5 py-1 rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50 ${
             controls.isAnatomyMode
               ? 'bg-orange-600 text-white'
-              : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
+              : 'bg-orange-50 text-gray-500 hover:bg-orange-100 hover:text-gray-600'
           }`}
         >
           {/* 뼈 아이콘 (SVG) */}
@@ -126,7 +126,7 @@ export default function SearchPage() {
             className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 ${
               presets.bodyType === 'male'
                 ? 'bg-blue-600 text-white'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
             }`}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -143,7 +143,7 @@ export default function SearchPage() {
             className={`min-w-[36px] min-h-[36px] flex items-center justify-center rounded text-[11px] font-medium cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pink-500/50 ${
               presets.bodyType === 'female'
                 ? 'bg-pink-600 text-white'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
             }`}
           >
             <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -234,7 +234,7 @@ export default function SearchPage() {
             <p className="text-[10px] text-amber-400 font-medium mb-1">포즈 기반 추천 태그</p>
             <div className="flex flex-wrap gap-1">
               {search.gizmoSuggestedTags.map((tag) => (
-                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-amber-500/20 rounded-full text-amber-300">
+                <span key={tag} className="text-[10px] px-1.5 py-0.5 bg-amber-500/20 rounded-full text-amber-600">
                   #{tag}
                 </span>
               ))}
@@ -447,13 +447,13 @@ export default function SearchPage() {
           <div className="flex items-center gap-2">
             <Link
               href="/dashboard"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               대시보드
             </Link>
             <Link
               href="/collections"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-gray-100 text-gray-500 hover:bg-gray-200 transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               내 컬렉션
             </Link>

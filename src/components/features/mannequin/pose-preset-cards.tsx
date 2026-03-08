@@ -47,7 +47,7 @@ export function PosePresetCards({
               className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                 selectedPoseId === preset.id
                   ? 'border-orange-500 bg-orange-500/15 text-orange-300'
-                  : 'border-gray-300 bg-gray-100/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
+                  : 'border-gray-300 bg-orange-50/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
               }`}
             >
               {/* 실루엣 아이콘 */}
@@ -87,7 +87,7 @@ export function PosePresetCards({
                 className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                   selectedHandId === preset.id
                     ? 'border-orange-500 bg-orange-500/15 text-orange-300'
-                    : 'border-gray-300 bg-gray-100/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
+                    : 'border-gray-300 bg-orange-50/50 text-gray-500 hover:border-gray-400 hover:text-gray-600'
                 }`}
               >
                 <svg

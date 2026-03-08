@@ -145,7 +145,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
             placeholder="포즈 이름 입력"
             maxLength={20}
             autoFocus
-            className="flex-1 px-2 py-1 bg-gray-100 border border-gray-300 rounded text-[11px] text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500"
+            className="flex-1 px-2 py-1 bg-orange-50 border border-gray-300 rounded text-[11px] text-gray-700 placeholder:text-gray-400 focus:outline-none focus:border-orange-500"
           />
           <button
             onClick={handleSave}
@@ -156,7 +156,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
           </button>
           <button
             onClick={() => { setShowSaveInput(false); setPoseName(''); }}
-            className="px-2 py-1 bg-neutral-700 rounded text-[10px] text-gray-600 hover:bg-gray-300 cursor-pointer"
+            className="px-2 py-1 bg-neutral-700 rounded text-[10px] text-gray-600 hover:bg-orange-200 cursor-pointer"
           >
             취소
           </button>
@@ -174,7 +174,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
             poses.map((pose) => (
               <div
                 key={pose.id}
-                className="flex items-center gap-2 p-2 rounded-lg bg-gray-100/50 border border-gray-300 hover:border-gray-400 group"
+                className="flex items-center gap-2 p-2 rounded-lg bg-orange-50/50 border border-gray-300 hover:border-gray-400 group"
               >
                 {/* 불러오기 클릭 영역 */}
                 <button

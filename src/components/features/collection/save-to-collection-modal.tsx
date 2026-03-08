@@ -117,7 +117,7 @@ export function SaveToCollectionModal({
           <h3 id="save-collection-modal-title" className="font-semibold">컬렉션에 저장</h3>
           <button
             onClick={onClose}
-            className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors cursor-pointer text-gray-500"
+            className="w-7 h-7 flex items-center justify-center rounded-full hover:bg-orange-50 transition-colors cursor-pointer text-gray-500"
           >
             &times;
           </button>
@@ -140,7 +140,7 @@ export function SaveToCollectionModal({
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors cursor-pointer ${
                   isInCollection
                     ? 'bg-orange-600/20 border border-orange-500/30'
-                    : 'hover:bg-gray-100 border border-transparent'
+                    : 'hover:bg-orange-50 border border-transparent'
                 }`}
               >
                 {/* 체크박스 */}

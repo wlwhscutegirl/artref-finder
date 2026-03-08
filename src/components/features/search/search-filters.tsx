@@ -54,7 +54,7 @@ function TagTooltipPopover({ text, children }: { text?: string; children: React.
         {children}
       </div>
       {isOpen && (
-        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2.5 py-1.5 bg-gray-100 border border-gray-300 rounded-lg text-[10px] text-gray-600 whitespace-nowrap z-50 shadow-lg">
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1.5 px-2.5 py-1.5 bg-orange-50 border border-gray-300 rounded-lg text-[10px] text-gray-600 whitespace-nowrap z-50 shadow-lg">
           {text}
           <div className="absolute top-full left-1/2 -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-l-transparent border-r-transparent border-t-neutral-700" />
         </div>
@@ -136,7 +136,7 @@ export function SearchFilters({
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
               !selectedCategory
                 ? 'bg-orange-600 text-white'
-                : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
             }`}
           >
             전체
@@ -148,7 +148,7 @@ export function SearchFilters({
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                 selectedCategory === cat.value
                   ? 'bg-orange-600 text-white'
-                  : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
               }`}
             >
               {cat.icon} {cat.label}
@@ -167,14 +167,14 @@ export function SearchFilters({
               className={`text-[10px] px-2 py-0.5 rounded cursor-pointer transition-colors ${
                 lightFilterActive
                   ? 'bg-amber-600 text-white'
-                  : 'bg-gray-100 text-gray-400 hover:bg-gray-200'
+                  : 'bg-orange-50 text-gray-400 hover:bg-orange-100'
               }`}
             >
               {lightFilterActive ? '필터 ON' : '필터 OFF'}
             </button>
           </div>
           {lightDirection && (
-            <div className="flex items-center gap-3 text-[11px] text-gray-500 bg-gray-100/50 rounded-lg p-2">
+            <div className="flex items-center gap-3 text-[11px] text-gray-500 bg-orange-50/50 rounded-lg p-2">
               {/* 조명 방향 시각화 (간단한 화살표) */}
               <div className="w-8 h-8 rounded-full border border-gray-300 flex items-center justify-center relative">
                 <div
@@ -261,7 +261,7 @@ export function SearchFilters({
                             ${
                               selectedTags.includes(tag.name)
                                 ? 'bg-orange-600 text-white'
-                                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                                : 'bg-orange-50 text-gray-600 hover:bg-orange-100'
                             }
                           `}
                         >
@@ -285,7 +285,7 @@ export function SearchFilters({
           </div>
           <div className="flex gap-2">
             {([
-              { value: 'off' as SafetyLevel, label: '전체', color: 'bg-gray-100 text-gray-500' },
+              { value: 'off' as SafetyLevel, label: '전체', color: 'bg-orange-50 text-gray-500' },
               { value: 'moderate' as SafetyLevel, label: '일반', color: 'bg-blue-600 text-white' },
               { value: 'strict' as SafetyLevel, label: '교육 모드', color: 'bg-emerald-600 text-white' },
             ] as const).map((opt) => (
@@ -295,7 +295,7 @@ export function SearchFilters({
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                   safetyLevel === opt.value
                     ? opt.color
-                    : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                    : 'bg-orange-50 text-gray-500 hover:bg-orange-100'
                 }`}
               >
                 {opt.label}

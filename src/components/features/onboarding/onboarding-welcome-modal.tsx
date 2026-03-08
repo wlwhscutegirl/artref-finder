@@ -121,7 +121,7 @@ function Step1({
                   border transition-all duration-150 cursor-pointer
                   ${isSelected
                     ? 'bg-orange-600 border-orange-500 text-white'
-                    : 'bg-gray-100 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700'
+                    : 'bg-orange-50 border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-700'
                   }
                 `}
               >
@@ -152,7 +152,7 @@ function Step2() {
         {FEATURES.map((feature) => (
           <div
             key={feature.id}
-            className="flex items-start gap-3 p-3 rounded-xl bg-gray-100/50 border border-gray-300/50"
+            className="flex items-start gap-3 p-3 rounded-xl bg-orange-50/50 border border-gray-300/50"
           >
             {/* 아이콘 배경 */}
             <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/15 flex items-center justify-center text-orange-400">
@@ -212,7 +212,7 @@ function Step3({
         {/* 둘러보기 — 보조 CTA */}
         <button
           onClick={onClose}
-          className="w-full py-2.5 bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 cursor-pointer transition-all duration-150"
+          className="w-full py-2.5 bg-orange-50 hover:bg-orange-100 border border-gray-300 rounded-lg text-sm font-medium text-gray-600 cursor-pointer transition-all duration-150"
         >
           둘러보기
         </button>

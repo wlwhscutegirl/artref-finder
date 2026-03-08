@@ -17,7 +17,7 @@ export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
     <div className="group relative rounded-xl overflow-hidden bg-gray-50 border border-gray-200 hover:border-orange-500/30 transition-colors">
       {/* 커버 이미지 영역 */}
       <Link href={`/collections/${collection._id}`}>
-        <div className="aspect-[4/3] bg-gray-100 relative overflow-hidden">
+        <div className="aspect-[4/3] bg-orange-50 relative overflow-hidden">
           {collection.coverImageUrl ? (
             <img
               src={collection.coverImageUrl}

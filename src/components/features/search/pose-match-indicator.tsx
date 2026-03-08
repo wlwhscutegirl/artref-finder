@@ -85,7 +85,7 @@ export function PoseMatchIndicator({
           focus:outline-none focus:ring-2 focus:ring-amber-500/50
           ${enabled
             ? 'bg-amber-600 text-white hover:bg-amber-500'
-            : 'bg-gray-100 text-gray-500 hover:bg-gray-200 hover:text-gray-600'
+            : 'bg-orange-50 text-gray-500 hover:bg-orange-100 hover:text-gray-600'
           }
         `}
       >
@@ -101,14 +101,14 @@ export function PoseMatchIndicator({
       {isActive && (
         <div className="flex items-center gap-2">
           {/* 매칭 결과 수 */}
-          <span className="text-xs text-amber-300 font-medium tabular-nums">
+          <span className="text-xs text-amber-600 font-medium tabular-nums">
             {matchedCount}<span className="text-gray-400">/{totalCount}</span>
           </span>
 
           {/* 유사도 분포 미니 바 */}
           {total > 0 && (
             <div
-              className="flex h-2 w-16 rounded-full overflow-hidden bg-gray-100"
+              className="flex h-2 w-16 rounded-full overflow-hidden bg-orange-50"
               title={`우수 ${dist.excellent} | 양호 ${dist.good} | 보통 ${dist.moderate} | 낮음 ${dist.low}`}
               role="img"
               aria-label={`유사도 분포: 우수 ${dist.excellent}건, 양호 ${dist.good}건, 보통 ${dist.moderate}건, 낮음 ${dist.low}건`}
@@ -139,7 +139,7 @@ export function PoseMatchIndicator({
                   className={`px-1.5 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors duration-150
                     focus:outline-none focus:ring-1 focus:ring-amber-500/50
                     ${threshold === preset.value
-                      ? 'bg-amber-600/30 text-amber-300'
+                      ? 'bg-amber-100 text-amber-600'
                       : 'text-gray-400 hover:text-gray-600'
                     }
                   `}
