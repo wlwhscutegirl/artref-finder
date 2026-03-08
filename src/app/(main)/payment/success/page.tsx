@@ -6,7 +6,7 @@
 
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useSubscriptionStore } from '@/stores/subscription-store';
 import { STORAGE_KEYS } from '@/lib/constants';
@@ -27,7 +27,16 @@ interface PaymentResult {
 // 결제 성공 페이지 컴포넌트
 // ============================================
 
+// useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function PaymentSuccessPage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-violet-500" /></div>}>
+      <PaymentSuccessContent />
+    </Suspense>
+  );
+}
+
+function PaymentSuccessContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const setSubscription = useSubscriptionStore((state) => state.setSubscription);

@@ -6,6 +6,7 @@
 
 'use client';
 
+import { Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 
 // ============================================
@@ -26,7 +27,16 @@ const ERROR_MESSAGES: Record<string, string> = {
 // 결제 실패 페이지 컴포넌트
 // ============================================
 
+// useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function PaymentFailPage() {
+  return (
+    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="animate-pulse text-neutral-400">로딩 중...</div></div>}>
+      <PaymentFailContent />
+    </Suspense>
+  );
+}
+
+function PaymentFailContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
