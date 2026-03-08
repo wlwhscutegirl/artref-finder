@@ -11,7 +11,7 @@ const PROTECTED_PATHS = [
 // 인증 완료 시 접근 불필요한 경로 (로그인/회원가입)
 const AUTH_PATHS = ['/login', '/register'];
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   // 인증 상태를 쿠키로 간접 확인 (UX 가드 용도)
@@ -44,7 +44,7 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // 정적 파일과 API 경로는 미들웨어에서 제외
+  // 정적 파일과 API 경로는 proxy에서 제외
   matcher: [
     '/((?!api|_next/static|_next/image|favicon.ico|.*\\..*$).*)',
   ],
