@@ -136,12 +136,17 @@ export async function loadPexelsImages(): Promise<ReferenceImage[]> {
     const allImages: ReferenceImage[] = [];
     const seenIds = new Set<string>();
 
-    // 스마트 키워드: 카테고리별 균형 잡힌 8개 쿼리
-    const smartQueries = getBalancedQueries(8);
+    // 스마트 키워드: 카테고리별 균형 잡힌 20개 쿼리 (이미지 풀 확장)
+    const smartQueries = getBalancedQueries(20);
 
-    // 8개 쿼리 순차 실행 (SearchQuery 메타데이터 포함)
-    for (const searchQuery of smartQueries) {
-      const photos = await fetchFromProxy(searchQuery.query, 15);
+    // 20개 쿼리 병렬 실행 (SearchQuery 메타데이터 포함, 쿼리당 30장)
+    const queryResults = await Promise.allSettled(
+      smartQueries.map((sq) => fetchFromProxy(sq.query, 30).then((photos) => ({ photos, sq })))
+    );
+
+    for (const result of queryResults) {
+      if (result.status !== 'fulfilled') continue;
+      const { photos, sq: searchQuery } = result.value;
 
       for (const photo of photos) {
         const id = `pexels-${photo.id}`;
@@ -151,7 +156,7 @@ export async function loadPexelsImages(): Promise<ReferenceImage[]> {
         // 스마트 태그 병합: Pexels alt에서 추출한 태그 + SearchQuery 메타 태그
         allImages.push(pexelsToRef(photo, searchQuery.query, searchQuery));
       }
-    }
+    }  // queryResults loop end
 
     pexelsImages = allImages;
     pexelsLoaded = true;
