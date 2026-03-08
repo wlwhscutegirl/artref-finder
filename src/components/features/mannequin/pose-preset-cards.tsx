@@ -46,7 +46,7 @@ export function PosePresetCards({
               title={`${preset.label} — 태그: ${preset.tags.map((t) => `#${t}`).join(' ')}`}
               className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                 selectedPoseId === preset.id
-                  ? 'border-violet-500 bg-violet-500/15 text-violet-300'
+                  ? 'border-orange-500 bg-orange-500/15 text-orange-300'
                   : 'border-neutral-700 bg-neutral-800/50 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
               }`}
             >
@@ -86,7 +86,7 @@ export function PosePresetCards({
                 title={`${preset.label} — 태그: ${preset.tags.map((t) => `#${t}`).join(' ')}`}
                 className={`flex flex-col items-center gap-1 p-1.5 rounded-lg border transition-all cursor-pointer ${
                   selectedHandId === preset.id
-                    ? 'border-violet-500 bg-violet-500/15 text-violet-300'
+                    ? 'border-orange-500 bg-orange-500/15 text-orange-300'
                     : 'border-neutral-700 bg-neutral-800/50 text-neutral-400 hover:border-neutral-600 hover:text-neutral-300'
                 }`}
               >

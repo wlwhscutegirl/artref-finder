@@ -36,7 +36,7 @@ export function AnatomyLegend() {
           <p className="text-[11px] font-medium text-neutral-300 uppercase tracking-wider">
             근육 그룹
             {selectedMuscles.size > 0 && (
-              <span className="text-violet-400 ml-1">({selectedMuscles.size}개 선택)</span>
+              <span className="text-orange-400 ml-1">({selectedMuscles.size}개 선택)</span>
             )}
           </p>
           <div className="flex items-center gap-2">
@@ -101,7 +101,7 @@ export function AnatomyLegend() {
               근육 그룹
             </span>
             {selectedMuscles.size > 0 && (
-              <span className="text-[10px] text-violet-400">
+              <span className="text-[10px] text-orange-400">
                 {selectedMuscles.size}개
               </span>
             )}

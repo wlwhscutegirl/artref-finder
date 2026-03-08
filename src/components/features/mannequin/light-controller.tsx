@@ -24,7 +24,7 @@ export function LightController({ value, onChange }: LightControllerProps) {
             max={360}
             value={value.azimuth}
             onChange={(e) => onChange({ ...value, azimuth: Number(e.target.value) })}
-            className="w-full h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+            className="w-full h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
           />
         </div>
 
@@ -39,7 +39,7 @@ export function LightController({ value, onChange }: LightControllerProps) {
             max={90}
             value={value.elevation}
             onChange={(e) => onChange({ ...value, elevation: Number(e.target.value) })}
-            className="w-full h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-fuchsia-500"
+            className="w-full h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-amber-500"
           />
         </div>
 

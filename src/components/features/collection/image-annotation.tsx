@@ -92,7 +92,7 @@ export function ImageAnnotationEditor({
             onChange={(e) => setMemo(e.target.value.slice(0, 200))}
             placeholder="이 레퍼런스에 대한 메모..."
             rows={3}
-            className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-neutral-200 placeholder:text-neutral-600 resize-none focus:outline-none focus:border-violet-500"
+            className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-2 text-sm text-neutral-200 placeholder:text-neutral-600 resize-none focus:outline-none focus:border-orange-500"
           />
         </div>
 
@@ -107,7 +107,7 @@ export function ImageAnnotationEditor({
               {customTags.map((tag) => (
                 <span
                   key={tag}
-                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-violet-500/20 text-violet-300"
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-medium bg-orange-500/20 text-orange-300"
                 >
                   #{tag}
                   <button
@@ -127,7 +127,7 @@ export function ImageAnnotationEditor({
               onChange={(e) => setTagInput(e.target.value)}
               onKeyDown={handleTagKeyDown}
               placeholder="태그 입력 후 Enter"
-              className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-1.5 text-xs text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-violet-500"
+              className="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-3 py-1.5 text-xs text-neutral-200 placeholder:text-neutral-600 focus:outline-none focus:border-orange-500"
             />
           )}
         </div>
@@ -154,7 +154,7 @@ export function ImageAnnotationEditor({
             </button>
             <button
               onClick={handleSave}
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-violet-600 text-white hover:bg-violet-500 cursor-pointer transition-colors"
+              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-600 text-white hover:bg-orange-500 cursor-pointer transition-colors"
             >
               저장
             </button>

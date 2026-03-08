@@ -148,7 +148,7 @@ export default function CollectionDetailPage() {
       <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
               A
             </div>
             <span className="font-semibold">ArtRef</span>
@@ -198,7 +198,7 @@ export default function CollectionDetailPage() {
             ) : (
               <div>
                 <h1
-                  className="text-2xl font-bold cursor-pointer hover:text-violet-400 transition-colors"
+                  className="text-2xl font-bold cursor-pointer hover:text-orange-400 transition-colors"
                   onClick={startEditing}
                   title="클릭하여 이름 수정"
                 >

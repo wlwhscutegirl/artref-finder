@@ -86,7 +86,7 @@ function PaymentFailContent() {
             {/* /pricing 이동 버튼 */}
             <button
               onClick={() => router.push('/pricing')}
-              className="inline-flex items-center justify-center rounded-lg bg-violet-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               플랜 다시 선택하기
             </button>

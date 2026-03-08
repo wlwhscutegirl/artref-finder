@@ -123,7 +123,7 @@ export function SortableImageCard({
               {annotation.customTags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-[9px] px-1.5 py-0.5 bg-violet-500/20 rounded-full text-violet-300"
+                  className="text-[9px] px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-300"
                 >
                   #{tag}
                 </span>

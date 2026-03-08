@@ -91,7 +91,7 @@ function Step1({
       {/* 환영 메시지 */}
       <div className="text-center">
         {/* 브랜드 로고 아이콘 */}
-        <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-base font-bold text-white">
+        <div className="w-12 h-12 mx-auto mb-3 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-base font-bold text-white">
           A
         </div>
         <h2 className="text-lg font-bold text-white">
@@ -120,7 +120,7 @@ function Step1({
                   px-3 py-1.5 rounded-full text-xs font-medium
                   border transition-all duration-150 cursor-pointer
                   ${isSelected
-                    ? 'bg-violet-600 border-violet-500 text-white'
+                    ? 'bg-orange-600 border-orange-500 text-white'
                     : 'bg-neutral-800 border-neutral-700 text-neutral-300 hover:border-neutral-600 hover:text-neutral-200'
                   }
                 `}
@@ -155,7 +155,7 @@ function Step2() {
             className="flex items-start gap-3 p-3 rounded-xl bg-neutral-800/50 border border-neutral-700/50"
           >
             {/* 아이콘 배경 */}
-            <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-violet-500/15 flex items-center justify-center text-violet-400">
+            <div className="flex-shrink-0 w-9 h-9 rounded-lg bg-orange-500/15 flex items-center justify-center text-orange-400">
               {feature.icon}
             </div>
             {/* 텍스트 */}
@@ -185,8 +185,8 @@ function Step3({
       {/* 완료 아이콘 + 메시지 */}
       <div className="text-center">
         {/* 체크 아이콘 */}
-        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-violet-500/15 flex items-center justify-center">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-violet-400">
+        <div className="w-12 h-12 mx-auto mb-3 rounded-full bg-orange-500/15 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-orange-400">
             <path d="M20 6 9 17l-5-5" />
           </svg>
         </div>
@@ -204,7 +204,7 @@ function Step3({
         {/* 검색하러 가기 — 주요 CTA */}
         <button
           onClick={onStart}
-          className="w-full py-2.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 rounded-lg text-sm font-semibold text-white cursor-pointer transition-all duration-150"
+          className="w-full py-2.5 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 rounded-lg text-sm font-semibold text-white cursor-pointer transition-all duration-150"
         >
           검색하러 가기
         </button>
@@ -327,7 +327,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
         aria-label="온보딩 안내"
       >
         {/* 상단 그라디언트 바 */}
-        <div className="h-1 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500" />
+        <div className="h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-pink-500" />
 
         <div className="p-6">
           {/* 스텝 인디케이터 */}
@@ -350,9 +350,9 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
                   className={`
                     rounded-full transition-all duration-200 cursor-pointer
                     ${i === step
-                      ? 'w-4 h-2 bg-violet-500'
+                      ? 'w-4 h-2 bg-orange-500'
                       : i < step
-                      ? 'w-2 h-2 bg-violet-500/40'
+                      ? 'w-2 h-2 bg-orange-500/40'
                       : 'w-2 h-2 bg-neutral-700'
                     }
                   `}
@@ -403,7 +403,7 @@ export function OnboardingWelcomeModal({ onClose }: OnboardingWelcomeModalProps)
               {/* 다음 버튼 */}
               <button
                 onClick={handleNext}
-                className="px-5 py-2 bg-violet-600 hover:bg-violet-500 rounded-lg text-xs font-semibold text-white cursor-pointer transition-colors"
+                className="px-5 py-2 bg-orange-600 hover:bg-orange-500 rounded-lg text-xs font-semibold text-white cursor-pointer transition-colors"
                 aria-label="다음 단계"
               >
                 다음

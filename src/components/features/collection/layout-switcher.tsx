@@ -98,7 +98,7 @@ export function LayoutSwitcher({
                 disabled={isDisabled}
                 className={`w-full flex items-center gap-2 px-3 py-2 text-xs text-left transition-colors cursor-pointer ${
                   isSelected
-                    ? 'bg-violet-600/20 text-violet-300'
+                    ? 'bg-orange-600/20 text-orange-300'
                     : isDisabled
                       ? 'text-neutral-600 cursor-not-allowed'
                       : 'text-neutral-400 hover:bg-neutral-800 hover:text-neutral-300'
@@ -106,7 +106,7 @@ export function LayoutSwitcher({
               >
                 <span className="text-sm">{option.icon}</span>
                 <span>{option.label}</span>
-                {isSelected && <span className="ml-auto text-violet-400">✓</span>}
+                {isSelected && <span className="ml-auto text-orange-400">✓</span>}
                 {isDisabled && <span className="ml-auto text-[9px] text-neutral-600">PRO</span>}
               </button>
             );

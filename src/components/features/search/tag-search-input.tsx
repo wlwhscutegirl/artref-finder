@@ -101,7 +101,7 @@ export function TagSearchInput({ selectedTags, onTagsChange }: TagSearchInputPro
         onKeyDown={handleKeyDown}
         onFocus={() => suggestions.length > 0 && setIsOpen(true)}
         placeholder="태그 검색... (예: 역광, 손, 드라마틱)"
-        className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors"
+        className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
       />
 
       {/* 자동완성 드롭다운 */}
@@ -116,7 +116,7 @@ export function TagSearchInput({ selectedTags, onTagsChange }: TagSearchInputPro
               onClick={() => selectTag(tag)}
               className={`w-full px-3 py-2 text-left text-sm flex items-center justify-between cursor-pointer transition-colors ${
                 index === highlightIndex
-                  ? 'bg-violet-600/20 text-white'
+                  ? 'bg-orange-600/20 text-white'
                   : 'text-neutral-300 hover:bg-neutral-800'
               }`}
             >

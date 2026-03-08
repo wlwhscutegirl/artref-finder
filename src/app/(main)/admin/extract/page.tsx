@@ -277,7 +277,7 @@ export default function BatchExtractPage() {
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
                 A
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
@@ -324,7 +324,7 @@ export default function BatchExtractPage() {
               <button
                 onClick={startExtraction}
                 disabled={state.total === 0}
-                className="px-6 py-2.5 bg-violet-600 hover:bg-violet-500 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors"
+                className="px-6 py-2.5 bg-orange-600 hover:bg-orange-500 disabled:opacity-50 rounded-lg text-sm font-medium transition-colors"
               >
                 추출 시작 ({state.total}장)
               </button>
@@ -380,7 +380,7 @@ export default function BatchExtractPage() {
             </div>
             <div className="h-3 bg-neutral-800 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full transition-all duration-300"
+                className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -403,7 +403,7 @@ export default function BatchExtractPage() {
               </p>
             </div>
             <div className="ml-auto">
-              <span className="w-5 h-5 border-2 border-violet-400/30 border-t-violet-400 rounded-full animate-spin inline-block" />
+              <span className="w-5 h-5 border-2 border-orange-400/30 border-t-orange-400 rounded-full animate-spin inline-block" />
             </div>
           </div>
         )}

@@ -47,7 +47,7 @@ export function ModeTabs({ activeMode }: ModeTabsProps) {
           href={mode.href}
           className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
             activeMode === mode.id
-              ? 'bg-violet-600 text-white'
+              ? 'bg-orange-600 text-white'
               : 'text-neutral-400 hover:text-neutral-300'
           }`}
         >

@@ -21,44 +21,44 @@
 // ============================================================
 
 /**
- * 브랜드 컬러 (Primary — violet)
- * button.tsx: bg-violet-600, hover:bg-violet-500
- * mode-tabs.tsx: bg-violet-600 (active)
- * tag.tsx: bg-violet-600 (selected)
- * search-filters.tsx: bg-violet-600 (selected category/tag)
- * input.tsx: focus:border-violet-500, focus:ring-violet-500
+ * 브랜드 컬러 (Primary — orange)
+ * button.tsx: bg-orange-600, hover:bg-orange-500
+ * mode-tabs.tsx: bg-orange-600 (active)
+ * tag.tsx: bg-orange-600 (selected)
+ * search-filters.tsx: bg-orange-600 (selected category/tag)
+ * input.tsx: focus:border-orange-500, focus:ring-orange-500
  */
 export const colorPrimary = {
   /** 포인트: 주요 버튼, 활성 탭, 선택된 태그 */
-  default: 'bg-violet-600',
-  hover: 'hover:bg-violet-500',
+  default: 'bg-orange-600',
+  hover: 'hover:bg-orange-500',
   /** 텍스트 강조: 링크, 선택된 항목 레이블 */
-  text: 'text-violet-400',
-  textHover: 'hover:text-violet-300',
+  text: 'text-orange-400',
+  textHover: 'hover:text-orange-300',
   /** 연한 배경: 뱃지, 칩, 배경 강조 */
-  subtle: 'bg-violet-500/10',
+  subtle: 'bg-orange-500/10',
   /** 테두리 */
-  border: 'border-violet-500',
-  borderSubtle: 'border-violet-500/20',
+  border: 'border-orange-500',
+  borderSubtle: 'border-orange-500/20',
   /** 포커스 링 */
-  ring: 'focus:ring-violet-500',
-  ringSubtle: 'focus:ring-violet-500/50',
+  ring: 'focus:ring-orange-500',
+  ringSubtle: 'focus:ring-orange-500/50',
 } as const;
 
 /**
- * 보조 브랜드 컬러 (Secondary — fuchsia)
- * page.tsx: 드로잉 모드 카드 hover:border-fuchsia-500/50
- * joint-slider-panel.tsx: bg-fuchsia-500 (관절 선택 표시 점)
- * pricing/page.tsx: Pro 플랜 그라디언트 to-fuchsia-600
+ * 보조 브랜드 컬러 (Secondary — amber)
+ * page.tsx: 드로잉 모드 카드 hover:border-amber-500/50
+ * joint-slider-panel.tsx: bg-amber-500 (관절 선택 표시 점)
+ * pricing/page.tsx: Pro 플랜 그라디언트 to-amber-600
  */
 export const colorSecondary = {
-  default: 'bg-fuchsia-500',
-  hover: 'hover:bg-fuchsia-400',
-  text: 'text-fuchsia-400',
-  textHover: 'hover:text-fuchsia-300',
-  subtle: 'bg-fuchsia-500/10',
-  border: 'border-fuchsia-500',
-  borderSubtle: 'border-fuchsia-500/50',
+  default: 'bg-amber-500',
+  hover: 'hover:bg-amber-400',
+  text: 'text-amber-400',
+  textHover: 'hover:text-amber-300',
+  subtle: 'bg-amber-500/10',
+  border: 'border-amber-500',
+  borderSubtle: 'border-amber-500/50',
 } as const;
 
 /**
@@ -66,13 +66,13 @@ export const colorSecondary = {
  * 브랜드 로고, CTA 버튼, Pro 플랜 배지 등 핵심 강조 요소에 사용
  */
 export const colorGradient = {
-  /** 브랜드 시그니처 그라디언트 (violet → fuchsia) */
-  brand: 'bg-gradient-to-r from-violet-600 to-fuchsia-600',
-  brandHover: 'hover:from-violet-500 hover:to-fuchsia-500',
-  /** 히어로 텍스트용 그라디언트 (violet → fuchsia → pink) */
-  heroText: 'bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400',
+  /** 브랜드 시그니처 그라디언트 (orange → amber) */
+  brand: 'bg-gradient-to-r from-orange-600 to-amber-600',
+  brandHover: 'hover:from-orange-500 hover:to-amber-500',
+  /** 히어로 텍스트용 그라디언트 (orange → amber → pink) */
+  heroText: 'bg-gradient-to-r from-orange-400 via-amber-400 to-pink-400',
   /** 로고 아이콘 그라디언트 */
-  logo: 'bg-gradient-to-br from-violet-500 to-fuchsia-500',
+  logo: 'bg-gradient-to-br from-orange-500 to-amber-500',
 } as const;
 
 /**
@@ -348,7 +348,7 @@ export const shadow = {
   /** 팝오버, 드롭다운, 모달 */
   lg: 'shadow-lg',
   /** 글로우 효과 (브랜드 강조) */
-  glow: 'shadow-violet-500/20',
+  glow: 'shadow-orange-500/20',
 } as const;
 
 // ============================================================
@@ -380,7 +380,7 @@ export const transition = {
  */
 export const buttonVariants = {
   /** 주요 액션 (Submit, CTA 등) */
-  primary: 'bg-violet-600 hover:bg-violet-500 text-white',
+  primary: 'bg-orange-600 hover:bg-orange-500 text-white',
   /** 보조 액션 */
   secondary: 'bg-neutral-800 hover:bg-neutral-700 text-neutral-200 border border-neutral-700',
   /** 고스트 (아이콘 버튼, 인라인 액션) */
@@ -388,7 +388,7 @@ export const buttonVariants = {
   /** 위험 / 삭제 */
   danger: 'bg-red-600 hover:bg-red-500 text-white',
   /** 브랜드 그라디언트 CTA */
-  gradient: 'bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white',
+  gradient: 'bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white',
 } as const;
 
 /**
@@ -409,11 +409,11 @@ export const cardStyles = {
   /** 기본 카드 */
   default: 'rounded-2xl bg-neutral-900 border border-neutral-800',
   /** 호버 시 보라 테두리 강조 */
-  primaryHover: 'hover:border-violet-500/50',
+  primaryHover: 'hover:border-orange-500/50',
   /** 호버 시 푸샤 테두리 강조 */
-  secondaryHover: 'hover:border-fuchsia-500/50',
+  secondaryHover: 'hover:border-amber-500/50',
   /** 강조 카드 (Pro 플랜 등) */
-  highlighted: 'bg-neutral-900/80 ring-1 ring-violet-500/20',
+  highlighted: 'bg-neutral-900/80 ring-1 ring-orange-500/20',
 } as const;
 
 /**
@@ -421,7 +421,7 @@ export const cardStyles = {
  * input.tsx 에서 추출
  */
 export const inputStyles = {
-  base: 'w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150',
+  base: 'w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150',
   error: 'border-red-500',
 } as const;
 
@@ -432,8 +432,8 @@ export const inputStyles = {
 export const tagStyles = {
   base: 'inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium transition-colors duration-150',
   default: 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700',
-  selected: 'bg-violet-600 text-white',
-  secondarySelected: 'bg-fuchsia-500/10 text-fuchsia-400',
+  selected: 'bg-orange-600 text-white',
+  secondarySelected: 'bg-amber-500/10 text-amber-400',
 } as const;
 
 /**

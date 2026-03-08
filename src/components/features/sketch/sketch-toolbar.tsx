@@ -65,7 +65,7 @@ export function SketchToolbar({
           onClick={() => onToolChange('pen')}
           className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${
             tool === 'pen'
-              ? 'bg-fuchsia-600 text-white'
+              ? 'bg-amber-600 text-white'
               : 'text-neutral-400 hover:text-neutral-200'
           }`}
           title="펜 도구"
@@ -76,7 +76,7 @@ export function SketchToolbar({
           onClick={() => onToolChange('eraser')}
           className={`px-3 py-1.5 rounded text-xs font-medium transition-colors ${
             tool === 'eraser'
-              ? 'bg-fuchsia-600 text-white'
+              ? 'bg-amber-600 text-white'
               : 'text-neutral-400 hover:text-neutral-200'
           }`}
           title="지우개 도구"
@@ -97,7 +97,7 @@ export function SketchToolbar({
           max={20}
           value={lineWidth}
           onChange={(e) => onLineWidthChange(Number(e.target.value))}
-          className="w-20 h-1 accent-fuchsia-500"
+          className="w-20 h-1 accent-amber-500"
         />
         <span className="text-xs text-neutral-400 w-6 text-center">{lineWidth}</span>
       </div>
@@ -112,7 +112,7 @@ export function SketchToolbar({
             key={c}
             onClick={() => onColorChange(c)}
             className={`w-5 h-5 rounded-full border-2 transition-transform ${
-              color === c ? 'border-fuchsia-400 scale-125' : 'border-neutral-600'
+              color === c ? 'border-amber-400 scale-125' : 'border-neutral-600'
             }`}
             style={{ backgroundColor: c }}
             title={c}

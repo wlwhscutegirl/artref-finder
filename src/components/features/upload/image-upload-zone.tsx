@@ -198,7 +198,7 @@ export function ImageUploadZone({
             ${disabled
               ? 'border-neutral-800 bg-neutral-900/50 cursor-not-allowed opacity-50'
               : isDragOver
-                ? 'border-violet-500 bg-violet-500/10'
+                ? 'border-orange-500 bg-orange-500/10'
                 : 'border-neutral-700 bg-neutral-900/30 hover:border-neutral-600 hover:bg-neutral-800/30'
             }
           `}
@@ -239,7 +239,7 @@ export function ImageUploadZone({
       {/* === 로딩 === */}
       {(state === 'loading-engine' || state === 'extracting') && (
         <div className="border border-neutral-700 rounded-xl p-6 text-center">
-          <div className="animate-spin w-8 h-8 border-2 border-violet-500 border-t-transparent rounded-full mx-auto mb-3" />
+          <div className="animate-spin w-8 h-8 border-2 border-orange-500 border-t-transparent rounded-full mx-auto mb-3" />
           <p className="text-xs text-neutral-400">
             {state === 'loading-engine' ? '포즈 인식 엔진 로딩 중...' : '포즈 추출 중...'}
           </p>
@@ -275,7 +275,7 @@ export function ImageUploadZone({
           <div className="px-3 py-2 flex gap-2">
             <button
               onClick={handleSearch}
-              className="flex-1 px-3 py-1.5 bg-violet-600 hover:bg-violet-500 rounded-lg text-xs font-medium text-white cursor-pointer transition-colors"
+              className="flex-1 px-3 py-1.5 bg-orange-600 hover:bg-orange-500 rounded-lg text-xs font-medium text-white cursor-pointer transition-colors"
             >
               비슷한 포즈 찾기
             </button>

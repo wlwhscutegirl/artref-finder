@@ -66,8 +66,8 @@ export function JointSliderPanel() {
       {/* 헤더: 관절 이름 + 닫기/리셋 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse" />
-          <span className="text-xs font-semibold text-fuchsia-300">
+          <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+          <span className="text-xs font-semibold text-amber-300">
             {jointLabel}
           </span>
         </div>

@@ -109,7 +109,7 @@ export default function SketchSearchPage() {
           <div className="flex items-center gap-4">
             {/* 로고 */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
                 A
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
@@ -137,7 +137,7 @@ export default function SketchSearchPage() {
           <div className="space-y-4">
             {/* 안내 문구 */}
             <div className="text-center">
-              <h1 className="text-lg font-bold text-fuchsia-400">드로잉 모드</h1>
+              <h1 className="text-lg font-bold text-amber-400">드로잉 모드</h1>
               <p className="text-xs text-neutral-500 mt-1">
                 원하는 포즈를 그리면 AI가 유사한 실사 레퍼런스를 찾아줍니다
               </p>
@@ -176,7 +176,7 @@ export default function SketchSearchPage() {
             <button
               onClick={() => handleSearch()}
               disabled={isExtracting}
-              className="w-full py-3 bg-gradient-to-r from-fuchsia-600 to-violet-600 hover:from-fuchsia-500 hover:to-violet-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all"
+              className="w-full py-3 bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-500 hover:to-orange-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg font-semibold text-sm transition-all"
             >
               {isExtracting ? (
                 <span className="flex items-center justify-center gap-2">
@@ -195,7 +195,7 @@ export default function SketchSearchPage() {
               </div>
             )}
             {confidence !== null && (
-              <div className="p-3 bg-fuchsia-500/10 border border-fuchsia-500/20 rounded-lg text-xs text-fuchsia-400 text-center">
+              <div className="p-3 bg-amber-500/10 border border-amber-500/20 rounded-lg text-xs text-amber-400 text-center">
                 포즈 인식 완료 · 신뢰도 {Math.round(confidence * 100)}%
               </div>
             )}
@@ -211,7 +211,7 @@ export default function SketchSearchPage() {
                   : '캔버스에 포즈를 그리고 검색해보세요'}
               </h2>
               {isActive && confidence !== null && (
-                <span className="text-[10px] px-2 py-0.5 bg-fuchsia-500/10 text-fuchsia-400 rounded-full">
+                <span className="text-[10px] px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-full">
                   포즈 매칭 활성
                 </span>
               )}

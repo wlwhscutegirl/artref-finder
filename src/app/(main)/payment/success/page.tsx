@@ -30,7 +30,7 @@ interface PaymentResult {
 // useSearchParams는 Suspense 바운더리 필요 (Next.js 16 프리렌더 요구사항)
 export default function PaymentSuccessPage() {
   return (
-    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-violet-500" /></div>}>
+    <Suspense fallback={<div className="flex min-h-[60vh] items-center justify-center"><div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-orange-500" /></div>}>
       <PaymentSuccessContent />
     </Suspense>
   );
@@ -130,7 +130,7 @@ function PaymentSuccessContent() {
           <div className="space-y-4">
             {/* 로딩 스피너 */}
             {/* 다크 테마 로딩 스피너 */}
-            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-violet-500" />
+            <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-700 border-t-orange-500" />
             <h1 className="text-xl font-semibold text-neutral-100">
               {result.message}
             </h1>
@@ -173,7 +173,7 @@ function PaymentSuccessContent() {
             {/* 마네킹 페이지 이동 버튼 */}
             <button
               onClick={() => router.push('/mannequin')}
-              className="inline-flex items-center justify-center rounded-lg bg-violet-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-violet-700 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+              className="inline-flex items-center justify-center rounded-lg bg-orange-600 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-orange-500 focus:ring-offset-2"
             >
               마네킹 시작하기
             </button>

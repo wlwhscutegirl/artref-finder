@@ -95,7 +95,7 @@ export function SketchUpload({ onUpload }: SketchUploadProps) {
         onClick={() => inputRef.current?.click()}
         className={`flex flex-col items-center justify-center gap-2 p-4 rounded-lg border-2 border-dashed cursor-pointer transition-colors ${
           isDragging
-            ? 'border-fuchsia-400 bg-fuchsia-500/10'
+            ? 'border-amber-400 bg-amber-500/10'
             : 'border-neutral-700 hover:border-neutral-500 bg-neutral-800/50'
         }`}
       >
@@ -103,7 +103,7 @@ export function SketchUpload({ onUpload }: SketchUploadProps) {
         <p className="text-xs text-neutral-400 text-center">
           스케치 이미지를 드래그하거나
           <br />
-          <span className="text-fuchsia-400 underline">클릭하여 업로드</span>
+          <span className="text-amber-400 underline">클릭하여 업로드</span>
         </p>
         <p className="text-[10px] text-neutral-600">PNG, JPEG, WebP · 최대 5MB</p>
 

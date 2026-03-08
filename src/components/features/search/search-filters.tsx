@@ -135,7 +135,7 @@ export function SearchFilters({
             onClick={() => onCategoryChange(null)}
             className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
               !selectedCategory
-                ? 'bg-violet-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
             }`}
           >
@@ -147,7 +147,7 @@ export function SearchFilters({
               onClick={() => onCategoryChange(cat.value as ImageCategory)}
               className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors cursor-pointer ${
                 selectedCategory === cat.value
-                  ? 'bg-violet-600 text-white'
+                  ? 'bg-orange-600 text-white'
                   : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
               }`}
             >
@@ -233,7 +233,7 @@ export function SearchFilters({
                     </span>
                     {group.label}
                     {selectedInGroup.length > 0 && (
-                      <span className="text-xs text-violet-400">({selectedInGroup.length})</span>
+                      <span className="text-xs text-orange-400">({selectedInGroup.length})</span>
                     )}
                   </button>
                   {/* 그룹 단위 해제 버튼 */}
@@ -260,7 +260,7 @@ export function SearchFilters({
                             transition-colors duration-150 cursor-pointer
                             ${
                               selectedTags.includes(tag.name)
-                                ? 'bg-violet-600 text-white'
+                                ? 'bg-orange-600 text-white'
                                 : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700'
                             }
                           `}
@@ -328,12 +328,12 @@ export function SearchFilters({
             {selectedTags.map((tag) => (
               <span
                 key={tag}
-                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-violet-600 text-white"
+                className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-orange-600 text-white"
               >
                 #{tag}
                 <button
                   onClick={() => toggleTag(tag)}
-                  className="ml-0.5 hover:text-violet-200 cursor-pointer"
+                  className="ml-0.5 hover:text-orange-200 cursor-pointer"
                 >
                   &times;
                 </button>

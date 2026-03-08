@@ -33,7 +33,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* 로고 */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
               A
             </div>
             <span className="font-semibold text-lg">ArtRef</span>
@@ -56,7 +56,7 @@ export default function LandingPage() {
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 text-sm bg-violet-600 hover:bg-violet-500 rounded-lg font-medium transition-colors"
+              className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-500 rounded-lg font-medium transition-colors"
             >
               무료로 시작
             </Link>
@@ -75,7 +75,7 @@ export default function LandingPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 flex items-center justify-center"
         >
-          <div className="w-[500px] h-[500px] rounded-full bg-violet-600/8 blur-[140px]" />
+          <div className="w-[500px] h-[500px] rounded-full bg-orange-600/8 blur-[140px]" />
         </div>
 
         <div className="relative max-w-4xl mx-auto text-center">
@@ -85,7 +85,7 @@ export default function LandingPage() {
             <span className="text-white">원하는 포즈를</span>
             <br />
             {/* 강조 — 그라디언트는 핵심 키워드에만 사용 */}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 to-fuchsia-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-amber-400">
               3초 만에 찾으세요
             </span>
           </h1>
@@ -102,7 +102,7 @@ export default function LandingPage() {
             {/* Primary CTA — 구체적 행동 유도 */}
             <Link
               href="/mannequin"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base bg-violet-600 hover:bg-violet-500 transition-colors"
+              className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base bg-orange-600 hover:bg-orange-500 transition-colors"
             >
               마네킹 움직여보기
             </Link>

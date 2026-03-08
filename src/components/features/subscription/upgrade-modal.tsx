@@ -184,7 +184,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
       >
 
         {/* 상단 브랜드 그라디언트 바 */}
-        <div className="h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
+        <div className="h-1 bg-gradient-to-r from-orange-500 to-amber-500" />
 
         <div className="p-6">
           {/* 닫기 버튼 */}
@@ -201,8 +201,8 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           {/* 아이콘 + 제목 */}
           <div className="text-center mb-5">
             {/* 잠금 아이콘 (그라디언트 배경) */}
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-violet-500/20 to-fuchsia-500/20 border border-violet-500/30 flex items-center justify-center mx-auto mb-3">
-              <svg className="w-6 h-6 text-violet-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-500/20 to-amber-500/20 border border-orange-500/30 flex items-center justify-center mx-auto mb-3">
+              <svg className="w-6 h-6 text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5}
                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                 />
@@ -235,23 +235,23 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
             </div>
 
             {/* 추천 플랜 — 강조 스타일 */}
-            <div className="p-3.5 rounded-xl bg-violet-500/10 border border-violet-500/30 relative overflow-hidden">
+            <div className="p-3.5 rounded-xl bg-orange-500/10 border border-orange-500/30 relative overflow-hidden">
               {/* 추천 뱃지 */}
               <div className="absolute top-2 right-2">
-                <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white">
+                <span className="px-1.5 py-0.5 rounded-full text-[9px] font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
                   추천
                 </span>
               </div>
               <div className="flex items-center gap-1.5 mb-2">
-                <span className="text-xs font-medium text-violet-400 uppercase tracking-wider">업그레이드</span>
-                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-violet-500/20 text-violet-300">
+                <span className="text-xs font-medium text-orange-400 uppercase tracking-wider">업그레이드</span>
+                <span className="px-1.5 py-0.5 rounded-full text-[10px] font-semibold bg-orange-500/20 text-orange-300">
                   {PLAN_DISPLAY_NAMES[recommendedPlan]}
                 </span>
               </div>
               <ul className="space-y-1">
                 {PLAN_HIGHLIGHTS[recommendedPlan].map((item) => (
-                  <li key={item} className="text-[11px] text-violet-300 flex items-center gap-1">
-                    <svg className="w-2.5 h-2.5 text-fuchsia-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <li key={item} className="text-[11px] text-orange-300 flex items-center gap-1">
+                    <svg className="w-2.5 h-2.5 text-amber-400 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                     </svg>
                     {item}
@@ -264,7 +264,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
           {/* 기능 차이 강조 문구 */}
           <p className="text-xs text-center text-neutral-400 mb-4">
             {PLAN_DISPLAY_NAMES[recommendedPlan]} 플랜으로 업그레이드하면{' '}
-            <span className="text-violet-400 font-medium">{featureLabel} {recommendedLimitText}</span>
+            <span className="text-orange-400 font-medium">{featureLabel} {recommendedLimitText}</span>
             {feature === 'dailySearch' ? ' 이용 가능' : '으로 확장'}합니다
           </p>
 
@@ -280,7 +280,7 @@ export function UpgradeModal({ feature, current, limit, onClose }: UpgradeModalP
             {/* 업그레이드 버튼 — 그라디언트 CTA */}
             <button
               onClick={handleUpgrade}
-              className="flex-1 py-2.5 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all cursor-pointer"
+              className="flex-1 py-2.5 rounded-lg text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 transition-all cursor-pointer"
             >
               업그레이드
             </button>

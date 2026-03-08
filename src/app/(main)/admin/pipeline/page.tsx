@@ -282,7 +282,7 @@ export default function PipelineDashboardPage() {
         <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
+              <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
                 A
               </div>
               <span className="font-semibold text-sm">ArtRef</span>
@@ -357,7 +357,7 @@ export default function PipelineDashboardPage() {
                     onClick={() => setSource(s)}
                     className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
                       source === s
-                        ? 'bg-violet-600 text-white'
+                        ? 'bg-orange-600 text-white'
                         : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
                     }`}
                   >
@@ -410,13 +410,13 @@ export default function PipelineDashboardPage() {
               value={customQuery}
               onChange={(e) => setCustomQuery(e.target.value)}
               placeholder="예: person portrait, yoga pose..."
-              className="flex-1 px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-sm focus:outline-none focus:border-violet-500"
+              className="flex-1 px-4 py-2.5 bg-neutral-900 border border-neutral-700 rounded-lg text-sm focus:outline-none focus:border-orange-500"
               onKeyDown={(e) => e.key === 'Enter' && handleCustomCollect()}
             />
             <button
               onClick={handleCustomCollect}
               disabled={isRunning || batchRunning || !customQuery.trim()}
-              className="px-6 py-2.5 bg-violet-600 hover:bg-violet-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-medium transition-colors"
+              className="px-6 py-2.5 bg-orange-600 hover:bg-orange-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-medium transition-colors"
             >
               수집
             </button>
@@ -424,7 +424,7 @@ export default function PipelineDashboardPage() {
         </div>
 
         {/* 배치 자동 수집 (서버 사이드 — 30개 쿼리 대량 처리) */}
-        <div className="p-5 bg-gradient-to-br from-violet-500/10 to-fuchsia-500/10 border border-violet-500/20 rounded-xl space-y-3">
+        <div className="p-5 bg-gradient-to-br from-orange-500/10 to-amber-500/10 border border-orange-500/20 rounded-xl space-y-3">
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg font-semibold">배치 자동 수집</h2>
@@ -436,7 +436,7 @@ export default function PipelineDashboardPage() {
             <button
               onClick={startBatchCollect}
               disabled={isRunning || batchRunning}
-              className="px-5 py-2.5 bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-bold transition-all"
+              className="px-5 py-2.5 bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 disabled:opacity-50 disabled:cursor-not-allowed rounded-lg text-sm font-bold transition-all"
             >
               {batchRunning ? '수집 중...' : '대량 수집 시작'}
             </button>
@@ -445,8 +445,8 @@ export default function PipelineDashboardPage() {
           {/* 배치 진행 표시 */}
           {batchRunning && (
             <div className="flex items-center gap-3 py-2">
-              <div className="w-4 h-4 border-2 border-violet-500 border-t-transparent rounded-full animate-spin" />
-              <span className="text-sm text-violet-300">서버에서 대량 수집 처리 중... (수 분 소요될 수 있습니다)</span>
+              <div className="w-4 h-4 border-2 border-orange-500 border-t-transparent rounded-full animate-spin" />
+              <span className="text-sm text-orange-300">서버에서 대량 수집 처리 중... (수 분 소요될 수 있습니다)</span>
             </div>
           )}
 
@@ -486,7 +486,7 @@ export default function PipelineDashboardPage() {
             <button
               onClick={handleBatchCollect}
               disabled={isRunning || batchRunning}
-              className="px-4 py-2 bg-fuchsia-600 hover:bg-fuchsia-500 disabled:opacity-50 rounded-lg text-xs font-medium transition-colors"
+              className="px-4 py-2 bg-amber-600 hover:bg-amber-500 disabled:opacity-50 rounded-lg text-xs font-medium transition-colors"
             >
               전체 일괄 수집 ({source === 'pexels' ? PEXELS_RECOMMENDED_QUERIES.length : RECOMMENDED_QUERIES.length}개 x {maxPages}p)
             </button>
@@ -608,7 +608,7 @@ export default function PipelineDashboardPage() {
             {/* 프로그레스 바 */}
             <div className="h-3 bg-neutral-800 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded-full transition-all duration-300"
+                className="h-full bg-gradient-to-r from-orange-500 to-amber-500 rounded-full transition-all duration-300"
                 style={{ width: `${progress}%` }}
               />
             </div>
@@ -619,7 +619,7 @@ export default function PipelineDashboardPage() {
                 <div
                   key={`${job.query}-${job.page}-${job.source}-${i}`}
                   className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs ${
-                    job.status === 'running' ? 'bg-violet-500/10 border border-violet-500/20' :
+                    job.status === 'running' ? 'bg-orange-500/10 border border-orange-500/20' :
                     job.status === 'done' ? 'bg-emerald-500/5' :
                     job.status === 'error' ? 'bg-red-500/10' :
                     'bg-neutral-900/50'
@@ -627,7 +627,7 @@ export default function PipelineDashboardPage() {
                 >
                   <div className="flex items-center gap-2">
                     <span className={
-                      job.status === 'running' ? 'text-violet-400' :
+                      job.status === 'running' ? 'text-orange-400' :
                       job.status === 'done' ? 'text-emerald-400' :
                       job.status === 'error' ? 'text-red-400' :
                       'text-neutral-500'
@@ -649,7 +649,7 @@ export default function PipelineDashboardPage() {
                   <div className="text-neutral-500">
                     {job.status === 'done' && `+${job.saved} / ~${job.skipped}`}
                     {job.status === 'error' && <span className="text-red-400">{job.error}</span>}
-                    {job.status === 'running' && <span className="animate-pulse text-violet-400">수집 중...</span>}
+                    {job.status === 'running' && <span className="animate-pulse text-orange-400">수집 중...</span>}
                   </div>
                 </div>
               ))}

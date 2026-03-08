@@ -45,7 +45,7 @@ export default function DashboardPage() {
       <header className="border-b border-neutral-800">
         <div className="max-w-5xl mx-auto px-4 h-12 flex items-center justify-between">
           <Link href="/search" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
               A
             </div>
             <span className="text-sm font-semibold">ArtRef</span>
@@ -85,7 +85,7 @@ export default function DashboardPage() {
             label="총 검색 수"
             value={stats.totalSearches}
             icon="🔍"
-            color="from-violet-500/20 to-violet-600/10"
+            color="from-orange-500/20 to-orange-600/10"
           />
           <StatCard
             label="오늘 검색"
@@ -97,7 +97,7 @@ export default function DashboardPage() {
             label="저장된 포즈"
             value={savedPoseCount}
             icon="🎭"
-            color="from-fuchsia-500/20 to-fuchsia-600/10"
+            color="from-amber-500/20 to-amber-600/10"
           />
           <StatCard
             label="컬렉션"
@@ -130,13 +130,13 @@ export default function DashboardPage() {
                       <div className="flex-1 relative">
                         {/* 바 차트 배경 */}
                         <div
-                          className="absolute inset-y-0 left-0 bg-violet-500/10 rounded"
+                          className="absolute inset-y-0 left-0 bg-orange-500/10 rounded"
                           style={{ width: `${ratio}%` }}
                         />
                         <div className="relative flex items-center justify-between px-2 py-1">
                           <Link
                             href={`/search?tag=${encodeURIComponent(item.tag)}`}
-                            className="text-xs text-neutral-300 hover:text-violet-300 transition-colors"
+                            className="text-xs text-neutral-300 hover:text-orange-300 transition-colors"
                           >
                             #{item.tag}
                           </Link>
@@ -180,7 +180,7 @@ export default function DashboardPage() {
                         {entry.tags.slice(0, 5).map((tag) => (
                           <span
                             key={tag}
-                            className="text-[10px] px-1.5 py-0.5 rounded-full bg-violet-500/15 text-violet-300"
+                            className="text-[10px] px-1.5 py-0.5 rounded-full bg-orange-500/15 text-orange-300"
                           >
                             #{tag}
                           </span>
@@ -198,7 +198,7 @@ export default function DashboardPage() {
                     <div className="flex items-center gap-2 text-[10px] text-neutral-500">
                       <span>{formatTimestamp(entry.timestamp)}</span>
                       {entry.poseMatchUsed && (
-                        <span className="text-fuchsia-400/60">포즈매칭</span>
+                        <span className="text-amber-400/60">포즈매칭</span>
                       )}
                       {entry.category && (
                         <span className="text-cyan-400/60">{entry.category}</span>
@@ -215,7 +215,7 @@ export default function DashboardPage() {
         <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-3">
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-center">
             <p className="text-xs text-neutral-500 mb-1">사용한 고유 태그</p>
-            <p className="text-xl font-bold text-violet-400">{stats.uniqueTagsUsed}</p>
+            <p className="text-xl font-bold text-orange-400">{stats.uniqueTagsUsed}</p>
           </div>
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-center">
             <p className="text-xs text-neutral-500 mb-1">평균 검색 결과</p>
@@ -223,7 +223,7 @@ export default function DashboardPage() {
           </div>
           <div className="bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-center">
             <p className="text-xs text-neutral-500 mb-1">현재 플랜</p>
-            <p className="text-xl font-bold text-fuchsia-400 capitalize">
+            <p className="text-xl font-bold text-amber-400 capitalize">
               {user?.plan || 'Free'}
             </p>
           </div>

@@ -28,7 +28,7 @@ export function CameraPresetBar({ selectedId, onSelect }: CameraPresetBarProps) 
             title={`${preset.label} — 태그: ${preset.tags.map((t) => `#${t}`).join(' ')}`}
             className={`px-2.5 py-1 rounded-md text-[11px] font-medium transition-all cursor-pointer ${
               selectedId === preset.id
-                ? 'bg-violet-600 text-white'
+                ? 'bg-orange-600 text-white'
                 : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300'
             }`}
           >

@@ -18,12 +18,12 @@ const TARGET_USERS = [
   {
     title: '웹툰 작가',
     description: '매 회차 수십 개 포즈가 필요한데, 핀터레스트 뒤지는 시간이 아까운 분',
-    accent: 'border-violet-500/30',
+    accent: 'border-orange-500/30',
   },
   {
     title: '일러스트레이터',
     description: '특정 앵글·조명의 레퍼런스를 찾다가 타협해본 적 있는 분',
-    accent: 'border-fuchsia-500/30',
+    accent: 'border-amber-500/30',
   },
   {
     title: '미대생',
@@ -44,9 +44,9 @@ const FEATURES = [
     before: '핀터레스트에서 "앉은 포즈 측면" 검색 → 스크롤 30분',
     after: '마네킹 관절 드래그 → 원하는 포즈 즉시 완성',
     details: '관절 하나하나 직접 조작하거나, 60개 프리셋 중 골라서 시작하세요.',
-    accentBorder: 'hover:border-violet-500/40',
-    accentText: 'group-hover:text-violet-300',
-    tagColor: 'bg-violet-500/10 text-violet-400',
+    accentBorder: 'hover:border-orange-500/40',
+    accentText: 'group-hover:text-orange-300',
+    tagColor: 'bg-orange-500/10 text-orange-400',
     tags: ['관절 조작', '60개 프리셋'],
   },
   {
@@ -54,9 +54,9 @@ const FEATURES = [
     before: '구글에서 비슷한 사진 찾다가 결국 타협',
     after: '마네킹 포즈와 가장 유사한 실사 사진을 AI가 자동 매칭',
     details: 'AI 벡터 검색이 포즈 유사도를 계산해서, 가장 가까운 사진부터 보여줍니다.',
-    accentBorder: 'hover:border-fuchsia-500/40',
-    accentText: 'group-hover:text-fuchsia-300',
-    tagColor: 'bg-fuchsia-500/10 text-fuchsia-400',
+    accentBorder: 'hover:border-amber-500/40',
+    accentText: 'group-hover:text-amber-300',
+    tagColor: 'bg-amber-500/10 text-amber-400',
     tags: ['벡터 검색', '유사도 정렬'],
   },
   {
@@ -119,7 +119,7 @@ export default function BelowTheFold() {
                     <span className="text-neutral-500 line-through decoration-neutral-700">{feature.before}</span>
                   </div>
                   <div className="flex items-start gap-2 text-sm">
-                    <span className="text-violet-400 shrink-0 font-mono text-xs mt-0.5">후</span>
+                    <span className="text-orange-400 shrink-0 font-mono text-xs mt-0.5">후</span>
                     <span className="text-neutral-200">{feature.after}</span>
                   </div>
                 </div>
@@ -233,14 +233,14 @@ export default function BelowTheFold() {
             </div>
 
             {/* Pro 플랜 — 강조 */}
-            <div className="relative rounded-2xl bg-neutral-900/80 border border-violet-500/60 p-7 flex flex-col ring-1 ring-violet-500/15">
+            <div className="relative rounded-2xl bg-neutral-900/80 border border-orange-500/60 p-7 flex flex-col ring-1 ring-orange-500/15">
               {/* 추천 뱃지 */}
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-violet-600 text-white">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-orange-600 text-white">
                 추천
               </div>
 
               {/* 플랜명 */}
-              <h3 className="text-lg font-bold text-violet-400 mb-1">
+              <h3 className="text-lg font-bold text-orange-400 mb-1">
                 Pro
               </h3>
               {/* 가격 */}
@@ -273,7 +273,7 @@ export default function BelowTheFold() {
               {/* CTA */}
               <Link
                 href="/register"
-                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-violet-600 hover:bg-violet-500 text-white transition-colors"
+                className="block text-center py-2.5 rounded-xl text-sm font-semibold bg-orange-600 hover:bg-orange-500 text-white transition-colors"
               >
                 Pro 시작하기
               </Link>
@@ -283,7 +283,7 @@ export default function BelowTheFold() {
           {/* 전체 가격 페이지 링크 */}
           <p className="text-center mt-6 text-sm text-neutral-500">
             Student · Team 플랜이 궁금하신가요?{' '}
-            <Link href="/pricing" className="text-violet-400 hover:text-violet-300 transition-colors underline underline-offset-2">
+            <Link href="/pricing" className="text-orange-400 hover:text-orange-300 transition-colors underline underline-offset-2">
               전체 가격표 보기
             </Link>
           </p>
@@ -310,7 +310,7 @@ export default function BelowTheFold() {
           {/* CTA 버튼 — 과도한 그라디언트 shadow 제거 */}
           <Link
             href="/register"
-            className="inline-block px-10 py-4 rounded-xl font-semibold text-base bg-violet-600 hover:bg-violet-500 transition-colors"
+            className="inline-block px-10 py-4 rounded-xl font-semibold text-base bg-orange-600 hover:bg-orange-500 transition-colors"
           >
             무료 계정 만들기
           </Link>
@@ -327,7 +327,7 @@ export default function BelowTheFold() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
           {/* 브랜드 */}
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold text-white">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
             <span className="font-medium text-neutral-400">ArtRef Finder</span>

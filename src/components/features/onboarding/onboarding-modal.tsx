@@ -176,7 +176,7 @@ export function OnboardingModal() {
         className="relative w-[90%] max-w-md bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* 상단 그라데이션 바 */}
-        <div className="h-1 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500" />
+        <div className="h-1 bg-gradient-to-r from-orange-500 via-amber-500 to-pink-500" />
 
         {/* 콘텐츠 */}
         <div className="p-6">
@@ -192,7 +192,7 @@ export function OnboardingModal() {
 
           {/* 아이콘 + 제목 */}
           <div className="text-center mb-4">
-            <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-violet-500/15 flex items-center justify-center text-violet-400">
+            <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-orange-500/15 flex items-center justify-center text-orange-400">
               <StepIcon step={step} className="w-6 h-6" />
             </div>
             <h2 id="onboarding-modal-title" className="text-lg font-bold text-white">{currentStep.title}</h2>
@@ -204,8 +204,8 @@ export function OnboardingModal() {
           </p>
 
           {/* 팁 */}
-          <div className="bg-violet-500/10 border border-violet-500/20 rounded-lg px-3 py-2 mb-6">
-            <p className="text-[11px] text-violet-300 text-center">
+          <div className="bg-orange-500/10 border border-orange-500/20 rounded-lg px-3 py-2 mb-6">
+            <p className="text-[11px] text-orange-300 text-center">
               {currentStep.tip}
             </p>
           </div>
@@ -218,9 +218,9 @@ export function OnboardingModal() {
                 onClick={() => setStep(i)}
                 className={`w-2 h-2 rounded-full transition-colors cursor-pointer ${
                   i === step
-                    ? 'bg-violet-500'
+                    ? 'bg-orange-500'
                     : i < step
-                    ? 'bg-violet-500/40'
+                    ? 'bg-orange-500/40'
                     : 'bg-neutral-700'
                 }`}
               />
@@ -246,7 +246,7 @@ export function OnboardingModal() {
 
             <button
               onClick={handleNext}
-              className="px-4 py-2 bg-violet-600 hover:bg-violet-500 rounded-lg text-xs font-medium text-white cursor-pointer transition-colors"
+              className="px-4 py-2 bg-orange-600 hover:bg-orange-500 rounded-lg text-xs font-medium text-white cursor-pointer transition-colors"
             >
               {step === STEPS.length - 1 ? '시작하기' : '다음'}
             </button>

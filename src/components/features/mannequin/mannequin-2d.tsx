@@ -539,7 +539,7 @@ export function Mannequin2D({ className = '', bodyType = null }: Mannequin2DProp
 
       {/* 선택된 관절 표시 */}
       {selectedJoint && (
-        <div className="absolute top-3 right-3 px-2 py-1 bg-fuchsia-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 right-3 px-2 py-1 bg-amber-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
           {JOINT_LABELS[selectedJoint]}
         </div>
       )}

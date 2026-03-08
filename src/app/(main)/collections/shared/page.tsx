@@ -62,12 +62,12 @@ function SharedCollectionContent() {
       <header className="sticky top-0 z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
         <div className="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-xs font-bold">
+            <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-xs font-bold">
               A
             </div>
             <span className="font-semibold">ArtRef</span>
           </Link>
-          <span className="text-[10px] px-2 py-1 bg-violet-600/20 text-violet-300 rounded-full">
+          <span className="text-[10px] px-2 py-1 bg-orange-600/20 text-orange-300 rounded-full">
             공유된 무드보드
           </span>
         </div>
@@ -123,7 +123,7 @@ function SharedCollectionContent() {
                           {annotation.customTags.map((tag) => (
                             <span
                               key={tag}
-                              className="text-[9px] px-1.5 py-0.5 bg-violet-500/20 rounded-full text-violet-300"
+                              className="text-[9px] px-1.5 py-0.5 bg-orange-500/20 rounded-full text-orange-300"
                             >
                               #{tag}
                             </span>

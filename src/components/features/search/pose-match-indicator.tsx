@@ -82,9 +82,9 @@ export function PoseMatchIndicator({
         className={`
           flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
           transition-colors duration-200 cursor-pointer
-          focus:outline-none focus:ring-2 focus:ring-fuchsia-500/50
+          focus:outline-none focus:ring-2 focus:ring-amber-500/50
           ${enabled
-            ? 'bg-fuchsia-600 text-white hover:bg-fuchsia-500'
+            ? 'bg-amber-600 text-white hover:bg-amber-500'
             : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700 hover:text-neutral-300'
           }
         `}
@@ -101,7 +101,7 @@ export function PoseMatchIndicator({
       {isActive && (
         <div className="flex items-center gap-2">
           {/* 매칭 결과 수 */}
-          <span className="text-xs text-fuchsia-300 font-medium tabular-nums">
+          <span className="text-xs text-amber-300 font-medium tabular-nums">
             {matchedCount}<span className="text-neutral-500">/{totalCount}</span>
           </span>
 
@@ -137,9 +137,9 @@ export function PoseMatchIndicator({
                   onClick={() => onThresholdChange(preset.value)}
                   aria-label={`최소 유사도 ${preset.label}`}
                   className={`px-1.5 py-0.5 rounded text-[10px] font-medium cursor-pointer transition-colors duration-150
-                    focus:outline-none focus:ring-1 focus:ring-fuchsia-500/50
+                    focus:outline-none focus:ring-1 focus:ring-amber-500/50
                     ${threshold === preset.value
-                      ? 'bg-fuchsia-600/30 text-fuchsia-300'
+                      ? 'bg-amber-600/30 text-amber-300'
                       : 'text-neutral-500 hover:text-neutral-300'
                     }
                   `}

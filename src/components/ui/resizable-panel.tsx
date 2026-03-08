@@ -96,10 +96,10 @@ export function ResizablePanel({
       {/* 드래그 핸들 */}
       <div
         onMouseDown={handleMouseDown}
-        className="w-1.5 flex-shrink-0 bg-neutral-800 hover:bg-violet-500/60 active:bg-violet-500 cursor-col-resize transition-colors relative group"
+        className="w-1.5 flex-shrink-0 bg-neutral-800 hover:bg-orange-500/60 active:bg-orange-500 cursor-col-resize transition-colors relative group"
       >
         {/* 핸들 중앙 인디케이터 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-8 rounded-full bg-neutral-600 group-hover:bg-violet-400 transition-colors" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-1 h-8 rounded-full bg-neutral-600 group-hover:bg-orange-400 transition-colors" />
       </div>
 
       {/* 우측 패널 */}

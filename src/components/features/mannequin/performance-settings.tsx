@@ -68,7 +68,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
           title="감지된 등급으로 자동 설정"
           className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
             detectedGrade && qualityLevel === detectedGrade
-              ? 'bg-violet-600 text-white'
+              ? 'bg-orange-600 text-white'
               : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
           }`}
         >
@@ -84,7 +84,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               title={info.desc}
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
-                  ? 'bg-violet-600 text-white'
+                  ? 'bg-orange-600 text-white'
                   : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
               }`}
             >
@@ -104,7 +104,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
               onClick={() => setRenderMode(mode)}
               className={`flex-1 px-2 py-1.5 rounded text-[10px] font-medium transition-colors cursor-pointer ${
                 isActive
-                  ? 'bg-violet-600 text-white'
+                  ? 'bg-orange-600 text-white'
                   : 'bg-neutral-800 text-neutral-400 hover:bg-neutral-700'
               }`}
             >
@@ -123,7 +123,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
             <button
               onClick={toggleShadows}
               className={`w-8 h-4 rounded-full transition-colors ${
-                shadows ? 'bg-violet-600' : 'bg-neutral-700'
+                shadows ? 'bg-orange-600' : 'bg-neutral-700'
               }`}
             >
               <div
@@ -140,7 +140,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
             <button
               onClick={toggleHdri}
               className={`w-8 h-4 rounded-full transition-colors ${
-                hdri ? 'bg-violet-600' : 'bg-neutral-700'
+                hdri ? 'bg-orange-600' : 'bg-neutral-700'
               }`}
             >
               <div
@@ -162,7 +162,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
                 step="0.25"
                 value={dpr}
                 onChange={(e) => setDpr(parseFloat(e.target.value))}
-                className="w-16 h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-violet-500"
+                className="w-16 h-1 bg-neutral-700 rounded-lg appearance-none cursor-pointer accent-orange-500"
               />
               <span className="text-neutral-500 w-6 text-right tabular-nums">{dpr}x</span>
             </div>
@@ -174,7 +174,7 @@ export function PerformanceSettings({ currentFps, collapsed = false }: Performan
             <button
               onClick={toggleAutoDowngrade}
               className={`w-8 h-4 rounded-full transition-colors ${
-                autoDowngrade ? 'bg-violet-600' : 'bg-neutral-700'
+                autoDowngrade ? 'bg-orange-600' : 'bg-neutral-700'
               }`}
             >
               <div

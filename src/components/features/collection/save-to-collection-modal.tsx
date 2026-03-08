@@ -139,7 +139,7 @@ export function SaveToCollectionModal({
                 onClick={() => toggleCollection(col._id)}
                 className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-colors cursor-pointer ${
                   isInCollection
-                    ? 'bg-violet-600/20 border border-violet-500/30'
+                    ? 'bg-orange-600/20 border border-orange-500/30'
                     : 'hover:bg-neutral-800 border border-transparent'
                 }`}
               >
@@ -147,7 +147,7 @@ export function SaveToCollectionModal({
                 <div
                   className={`w-5 h-5 rounded border-2 flex items-center justify-center shrink-0 transition-colors ${
                     isInCollection
-                      ? 'bg-violet-600 border-violet-600'
+                      ? 'bg-orange-600 border-orange-600'
                       : 'border-neutral-600'
                   }`}
                 >
@@ -196,7 +196,7 @@ export function SaveToCollectionModal({
           ) : (
             <button
               onClick={() => setIsCreating(true)}
-              className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-violet-400 hover:bg-violet-600/10 transition-colors cursor-pointer"
+              className="w-full flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-orange-400 hover:bg-orange-600/10 transition-colors cursor-pointer"
             >
               <span className="text-lg">+</span>
               새 컬렉션 만들기

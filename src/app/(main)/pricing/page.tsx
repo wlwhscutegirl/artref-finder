@@ -120,8 +120,8 @@ const PLANS: PlanInfo[] = [
     annualPrice: 7920,
     priceNote: '/월',
     description: '프로 작가를 위한 무제한 플랜',
-    color: 'from-violet-600 to-fuchsia-600',
-    borderColor: 'border-violet-500',
+    color: 'from-orange-600 to-amber-600',
+    borderColor: 'border-orange-500',
     highlighted: true,
     features: {
       '일일 검색': '무제한',
@@ -320,7 +320,7 @@ export default function PricingPage() {
       <header className="border-b border-neutral-800">
         <div className="max-w-6xl mx-auto px-4 h-12 flex items-center justify-between">
           <Link href="/search" className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
               A
             </div>
             <span className="text-sm font-semibold">ArtRef</span>
@@ -357,7 +357,7 @@ export default function PricingPage() {
             onClick={() => setBillingCycle(billingCycle === 'monthly' ? 'annual' : 'monthly')}
             className={`
               relative w-12 h-6 rounded-full transition-colors cursor-pointer
-              ${billingCycle === 'annual' ? 'bg-violet-600' : 'bg-neutral-700'}
+              ${billingCycle === 'annual' ? 'bg-orange-600' : 'bg-neutral-700'}
             `}
             aria-label="결제 주기 전환"
           >
@@ -373,7 +373,7 @@ export default function PricingPage() {
             className={`text-sm ${billingCycle === 'annual' ? 'text-white font-semibold' : 'text-neutral-500'}`}
           >
             연간
-            <span className="ml-1 text-xs text-violet-400 font-semibold">20% 할인</span>
+            <span className="ml-1 text-xs text-orange-400 font-semibold">20% 할인</span>
           </span>
         </div>
 
@@ -401,14 +401,14 @@ export default function PricingPage() {
                   className={`
                     relative rounded-2xl border p-5 flex flex-col
                     ${plan.highlighted
-                      ? `${plan.borderColor} bg-neutral-900/80 ring-1 ring-violet-500/20`
+                      ? `${plan.borderColor} bg-neutral-900/80 ring-1 ring-orange-500/20`
                       : `${plan.borderColor} bg-neutral-900/40`
                     }
                   `}
                 >
                   {/* 추천 뱃지 */}
                   {plan.highlighted && (
-                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white">
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
                       추천
                     </div>
                   )}
@@ -470,7 +470,7 @@ export default function PricingPage() {
                       ${isDisabled
                         ? 'bg-neutral-800 text-neutral-500 cursor-default'
                         : plan.highlighted
-                          ? 'bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white hover:from-violet-500 hover:to-fuchsia-500 cursor-pointer'
+                          ? 'bg-gradient-to-r from-orange-600 to-amber-600 text-white hover:from-orange-500 hover:to-amber-500 cursor-pointer'
                           : 'bg-neutral-800 text-neutral-300 hover:bg-neutral-700 cursor-pointer'
                       }
                       ${isThisLoading && !isDisabled ? 'opacity-70 cursor-wait' : ''}
@@ -510,7 +510,7 @@ export default function PricingPage() {
                 <p className="text-sm font-semibold text-white capitalize">
                   {subscription.plan}
                   {subscription.billingCycle === 'annual' && (
-                    <span className="ml-1.5 text-[10px] text-violet-400 font-normal">연간</span>
+                    <span className="ml-1.5 text-[10px] text-orange-400 font-normal">연간</span>
                   )}
                 </p>
               </div>
@@ -581,7 +581,7 @@ export default function PricingPage() {
             학생 인증은 대학교 이메일(.ac.kr, .edu) 또는 학생증 사본으로 가능합니다
           </p>
           <p className="mt-1">
-            문의: <span className="text-violet-400">support@artref.app</span>
+            문의: <span className="text-orange-400">support@artref.app</span>
           </p>
         </div>
       </main>

@@ -128,7 +128,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
         {/* 현재 포즈 저장 버튼 */}
         <button
           onClick={() => setShowSaveInput(!showSaveInput)}
-          className="text-[10px] px-2 py-0.5 bg-violet-600 rounded text-white hover:bg-violet-500 cursor-pointer"
+          className="text-[10px] px-2 py-0.5 bg-orange-600 rounded text-white hover:bg-orange-500 cursor-pointer"
         >
           + 저장
         </button>
@@ -145,12 +145,12 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
             placeholder="포즈 이름 입력"
             maxLength={20}
             autoFocus
-            className="flex-1 px-2 py-1 bg-neutral-800 border border-neutral-700 rounded text-[11px] text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-violet-500"
+            className="flex-1 px-2 py-1 bg-neutral-800 border border-neutral-700 rounded text-[11px] text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500"
           />
           <button
             onClick={handleSave}
             disabled={!poseName.trim() || isSaving}
-            className="px-2 py-1 bg-violet-600 rounded text-[10px] text-white hover:bg-violet-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
+            className="px-2 py-1 bg-orange-600 rounded text-[10px] text-white hover:bg-orange-500 disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer"
           >
             {isSaving ? '...' : '확인'}
           </button>
@@ -190,7 +190,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
                     </span>
                     {/* 기즈모 조작 포즈 표시 */}
                     {pose.jointRotations && (
-                      <span className="text-[10px] px-1 py-0.5 bg-fuchsia-500/15 rounded text-fuchsia-400">
+                      <span className="text-[10px] px-1 py-0.5 bg-amber-500/15 rounded text-amber-400">
                         기즈모
                       </span>
                     )}
@@ -198,7 +198,7 @@ export function SavedPosesPanel({ currentPose, onLoad }: SavedPosesPanelProps) {
                     {pose.tags.slice(0, 3).map((tag) => (
                       <span
                         key={tag}
-                        className="text-[10px] px-1 py-0.5 bg-violet-500/10 rounded text-violet-400"
+                        className="text-[10px] px-1 py-0.5 bg-orange-500/10 rounded text-orange-400"
                       >
                         #{tag}
                       </span>

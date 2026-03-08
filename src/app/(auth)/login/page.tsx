@@ -47,7 +47,7 @@ function LoginForm() {
         {/* Logo */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-lg font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold">
               A
             </div>
             <span className="font-semibold text-xl">ArtRef</span>
@@ -87,7 +87,7 @@ function LoginForm() {
 
         <p className="text-center text-sm text-neutral-400 mt-6">
           아직 계정이 없으신가요?{' '}
-          <Link href="/register" className="text-violet-400 hover:text-violet-300">
+          <Link href="/register" className="text-orange-400 hover:text-orange-300">
             회원가입
           </Link>
         </p>

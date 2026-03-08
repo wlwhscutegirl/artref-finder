@@ -75,8 +75,8 @@ export function UpgradeBanner({
           <Link
             href="/pricing"
             className="inline-flex items-center px-3 py-1.5 rounded-lg text-xs font-semibold
-              bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white
-              hover:from-violet-500 hover:to-fuchsia-500 transition-all"
+              bg-gradient-to-r from-orange-600 to-amber-600 text-white
+              hover:from-orange-500 hover:to-amber-500 transition-all"
           >
             {upgradeLabel}
           </Link>

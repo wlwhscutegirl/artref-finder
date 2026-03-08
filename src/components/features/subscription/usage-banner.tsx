@@ -80,7 +80,7 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
           <div className="flex items-center gap-2 shrink-0">
             <Link
               href="/pricing"
-              className="px-3 py-1 rounded-lg text-xs font-semibold bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 text-white transition-all"
+              className="px-3 py-1 rounded-lg text-xs font-semibold bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 text-white transition-all"
             >
               업그레이드
             </Link>
@@ -161,15 +161,15 @@ export function UsageBanner({ dailyUsage, dailyLimit }: UsageBannerProps) {
   // 3. Free 유저 기본 업그레이드 유도 배너 (80% 미만인 경우)
   if (isFreePlan) {
     return (
-      <div className="w-full bg-violet-500/5 border-b border-violet-500/10">
+      <div className="w-full bg-orange-500/5 border-b border-orange-500/10">
         <div className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between gap-3">
           <p className="text-xs text-neutral-400 truncate">
-            <span className="text-violet-400 font-medium">Pro</span>로 업그레이드하면 무제한 검색!
+            <span className="text-orange-400 font-medium">Pro</span>로 업그레이드하면 무제한 검색!
           </p>
           <div className="flex items-center gap-2 shrink-0">
             <Link
               href="/pricing"
-              className="flex items-center gap-1 text-xs text-violet-400 hover:text-violet-300 font-medium transition-colors"
+              className="flex items-center gap-1 text-xs text-orange-400 hover:text-orange-300 font-medium transition-colors"
             >
               지금 업그레이드
               <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">

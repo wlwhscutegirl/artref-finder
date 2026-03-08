@@ -286,7 +286,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
           {isFetchingNextPage && (
             <div className="flex items-center gap-2 text-neutral-500">
               {/* 스피너 애니메이션 */}
-              <div className="w-5 h-5 border-2 border-neutral-700 border-t-violet-500 rounded-full animate-spin" />
+              <div className="w-5 h-5 border-2 border-neutral-700 border-t-orange-500 rounded-full animate-spin" />
               <span className="text-sm">이미지 불러오는 중...</span>
             </div>
           )}
@@ -329,7 +329,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <button
                   onClick={goToPrev}
                   aria-label="이전 이미지"
-                  className="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white z-10 cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500/50"
+                  className="absolute left-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white z-10 cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m15 18-6-6 6-6" />
@@ -354,7 +354,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <button
                   onClick={goToNext}
                   aria-label="다음 이미지"
-                  className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white z-10 cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-violet-500/50"
+                  className="absolute right-2 top-1/2 -translate-y-1/2 w-11 h-11 flex items-center justify-center rounded-full bg-black/60 hover:bg-black/80 text-white z-10 cursor-pointer transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-orange-500/50"
                 >
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="m9 18 6-6-6-6" />
@@ -369,7 +369,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                   onClick={() => setIsFlipped(!isFlipped)}
                   title="좌우 반전 (F키)"
                   className={`px-2 py-1 rounded text-xs cursor-pointer transition-colors ${
-                    isFlipped ? 'bg-violet-600 text-white' : 'text-neutral-400 hover:text-white'
+                    isFlipped ? 'bg-orange-600 text-white' : 'text-neutral-400 hover:text-white'
                   }`}
                 >
                   ↔ 반전
@@ -427,7 +427,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 {/* 카테고리 */}
                 <div>
                   <p className="text-xs text-neutral-500 mb-1.5">카테고리</p>
-                  <span className="px-2 py-1 bg-violet-500/10 text-violet-400 rounded text-xs">
+                  <span className="px-2 py-1 bg-orange-500/10 text-orange-400 rounded text-xs">
                     {selectedImage.category}
                   </span>
                 </div>
@@ -466,11 +466,11 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                       {(selectedImage as ScoredImage).poseSimilarity !== undefined && (
                         <div>
                           <div className="flex items-center justify-between text-[11px] mb-0.5">
-                            <span className="text-violet-400">포즈</span>
+                            <span className="text-orange-400">포즈</span>
                             <span className="text-neutral-400 tabular-nums">{Math.round((selectedImage as ScoredImage).poseSimilarity! * 100)}%</span>
                           </div>
                           <div className="h-1.5 bg-neutral-800 rounded-full overflow-hidden">
-                            <div className="h-full bg-violet-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).poseSimilarity! * 100}%` }} />
+                            <div className="h-full bg-orange-500 rounded-full transition-all" style={{ width: `${(selectedImage as ScoredImage).poseSimilarity! * 100}%` }} />
                           </div>
                         </div>
                       )}
@@ -514,7 +514,7 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                 <div className="pt-3 border-t border-neutral-800 space-y-2">
                   <button
                     onClick={() => setShowSaveModal(true)}
-                    className="w-full py-2 px-3 bg-violet-600 hover:bg-violet-500 rounded-lg text-sm font-medium transition-colors cursor-pointer"
+                    className="w-full py-2 px-3 bg-orange-600 hover:bg-orange-500 rounded-lg text-sm font-medium transition-colors cursor-pointer"
                   >
                     컬렉션에 저장
                   </button>

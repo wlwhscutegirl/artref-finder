@@ -14,7 +14,7 @@ interface CollectionCardProps {
  */
 export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
   return (
-    <div className="group relative rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-violet-500/30 transition-colors">
+    <div className="group relative rounded-xl overflow-hidden bg-neutral-900 border border-neutral-800 hover:border-orange-500/30 transition-colors">
       {/* 커버 이미지 영역 */}
       <Link href={`/collections/${collection._id}`}>
         <div className="aspect-[4/3] bg-neutral-800 relative overflow-hidden">
@@ -42,7 +42,7 @@ export function CollectionCard({ collection, onDelete }: CollectionCardProps) {
       {/* 정보 영역 */}
       <div className="p-4">
         <Link href={`/collections/${collection._id}`}>
-          <h3 className="font-medium text-sm truncate hover:text-violet-400 transition-colors">
+          <h3 className="font-medium text-sm truncate hover:text-orange-400 transition-colors">
             {collection.name}
           </h3>
         </Link>

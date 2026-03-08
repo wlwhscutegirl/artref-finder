@@ -263,14 +263,14 @@ export function MannequinViewer({
 
       {/* 좌우반전 표시 */}
       {isFlipped && (
-        <div className="absolute top-3 left-3 px-2 py-1 bg-violet-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 left-3 px-2 py-1 bg-orange-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
           반전됨
         </div>
       )}
 
       {/* 선택된 관절 표시 */}
       {selectedJoint && (
-        <div className="absolute top-3 right-3 px-2 py-1 bg-fuchsia-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
+        <div className="absolute top-3 right-3 px-2 py-1 bg-amber-600/80 backdrop-blur-sm rounded text-[10px] font-medium text-white">
           {JOINT_LABELS[selectedJoint]}
         </div>
       )}

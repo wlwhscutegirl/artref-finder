@@ -37,14 +37,14 @@ const BENEFITS = [
     title: 'Pro 플랜 3개월 무료',
     description:
       '베타 테스터에게 Pro 플랜의 모든 기능을 3개월간 무료로 제공합니다. 무제한 검색, 컬렉션, 포즈 프리셋을 마음껏 사용하세요.',
-    color: 'violet',
+    color: 'orange',
   },
   {
     icon: '💬',
     title: '피드백 반영 우선순위',
     description:
       '베타 테스터의 피드백은 최우선으로 검토하여 제품에 반영합니다. 여러분이 원하는 기능을 직접 만들어갑니다.',
-    color: 'fuchsia',
+    color: 'amber',
   },
   {
     icon: '💰',
@@ -57,15 +57,15 @@ const BENEFITS = [
 
 /** 혜택 카드별 컬러 매핑 (Tailwind 동적 클래스 방지용) */
 const BENEFIT_STYLES: Record<string, { iconBg: string; hoverBorder: string; titleHover: string }> = {
-  violet: {
-    iconBg: 'bg-violet-500/10',
-    hoverBorder: 'hover:border-violet-500/40',
-    titleHover: 'group-hover:text-violet-300',
+  orange: {
+    iconBg: 'bg-orange-500/10',
+    hoverBorder: 'hover:border-orange-500/40',
+    titleHover: 'group-hover:text-orange-300',
   },
-  fuchsia: {
-    iconBg: 'bg-fuchsia-500/10',
-    hoverBorder: 'hover:border-fuchsia-500/40',
-    titleHover: 'group-hover:text-fuchsia-300',
+  amber: {
+    iconBg: 'bg-amber-500/10',
+    hoverBorder: 'hover:border-amber-500/40',
+    titleHover: 'group-hover:text-amber-300',
   },
   pink: {
     iconBg: 'bg-pink-500/10',
@@ -123,7 +123,7 @@ export default function BetaPage() {
         <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
           {/* 로고 — 홈으로 이동 */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
               A
             </div>
             <span className="font-semibold text-lg">ArtRef</span>
@@ -139,7 +139,7 @@ export default function BetaPage() {
             </Link>
             <Link
               href="/register"
-              className="px-4 py-2 text-sm bg-violet-600 hover:bg-violet-500 rounded-lg font-medium transition-colors"
+              className="px-4 py-2 text-sm bg-orange-600 hover:bg-orange-500 rounded-lg font-medium transition-colors"
             >
               무료로 시작
             </Link>
@@ -157,23 +157,23 @@ export default function BetaPage() {
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 flex items-center justify-center"
         >
-          <div className="w-[500px] h-[500px] rounded-full bg-violet-600/10 blur-[120px]" />
+          <div className="w-[500px] h-[500px] rounded-full bg-orange-600/10 blur-[120px]" />
         </div>
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute top-20 right-1/4 w-[250px] h-[250px] rounded-full bg-fuchsia-600/8 blur-[100px]"
+          className="pointer-events-none absolute top-20 right-1/4 w-[250px] h-[250px] rounded-full bg-amber-600/8 blur-[100px]"
         />
 
         <div className="relative max-w-3xl mx-auto text-center">
           {/* 베타 배지 */}
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm mb-8">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" aria-hidden="true" />
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm mb-8">
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" aria-hidden="true" />
             Beta Tester Recruitment
           </div>
 
           {/* 메인 헤드라인 */}
           <h1 className="text-4xl sm:text-6xl font-bold leading-tight tracking-tight mb-6">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-pink-400">
               ArtRef 베타 테스터를
             </span>
             <br />
@@ -282,7 +282,7 @@ export default function BetaPage() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="홍길동"
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 />
               </div>
 
@@ -298,7 +298,7 @@ export default function BetaPage() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="artist@example.com"
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 />
               </div>
 
@@ -312,7 +312,7 @@ export default function BetaPage() {
                   required
                   value={occupation}
                   onChange={(e) => setOccupation(e.target.value)}
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
                 >
                   {OCCUPATION_OPTIONS.map((opt) => (
                     <option key={opt.value} value={opt.value} disabled={opt.value === ''}>
@@ -333,7 +333,7 @@ export default function BetaPage() {
                   value={introduction}
                   onChange={(e) => setIntroduction(e.target.value)}
                   placeholder="어떤 작업을 주로 하시나요? ArtRef에 기대하는 점이 있다면 알려주세요."
-                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150 resize-none"
+                  className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150 resize-none"
                 />
               </div>
 
@@ -348,7 +348,7 @@ export default function BetaPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-3 rounded-xl font-semibold text-base bg-gradient-to-r from-violet-600 to-fuchsia-600 hover:from-violet-500 hover:to-fuchsia-500 transition-all shadow-lg shadow-violet-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full py-3 rounded-xl font-semibold text-base bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-500 hover:to-amber-500 transition-all shadow-lg shadow-orange-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? '신청 중...' : '베타 테스터 신청하기'}
               </button>
@@ -369,7 +369,7 @@ export default function BetaPage() {
         <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500">
           {/* 브랜드 */}
           <div className="flex items-center gap-2">
-            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold text-white">
+            <div className="w-6 h-6 rounded-md bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold text-white">
               A
             </div>
             <span className="font-medium text-neutral-400">ArtRef Finder</span>

@@ -110,12 +110,12 @@ export function AuthModal({ onClose }: AuthModalProps) {
         className="relative w-[90%] max-w-sm bg-neutral-900 border border-neutral-700 rounded-2xl shadow-2xl overflow-hidden"
       >
         {/* 상단 그라데이션 */}
-        <div className="h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500" />
+        <div className="h-1 bg-gradient-to-r from-orange-500 to-amber-500" />
 
         <div className="p-6">
           {/* 로고 + 제목 */}
           <div className="text-center mb-6">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold mx-auto mb-3">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold mx-auto mb-3">
               A
             </div>
             <h2 id="auth-modal-title" className="text-lg font-bold text-white">
@@ -149,7 +149,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                   onChange={(e) => setName(e.target.value)}
                   placeholder="이름을 입력하세요"
                   required
-                  className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-violet-500 transition-colors"
+                  className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
                 />
               </div>
             )}
@@ -165,7 +165,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="email@example.com"
                 required
-                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-violet-500 transition-colors"
+                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
               />
             </div>
 
@@ -181,7 +181,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
                 placeholder="••••••••"
                 required
                 minLength={8}
-                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-violet-500 transition-colors"
+                className="w-full px-3 py-2 bg-neutral-800 border border-neutral-700 rounded-lg text-sm text-neutral-200 placeholder:text-neutral-500 focus:outline-none focus:border-orange-500 transition-colors"
               />
               {/* 회원가입 시 비밀번호 요구사항 안내 */}
               {mode === 'signup' && (
@@ -195,7 +195,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-2.5 bg-violet-600 hover:bg-violet-500 disabled:bg-neutral-700 disabled:cursor-not-allowed rounded-lg text-sm font-medium text-white cursor-pointer transition-colors"
+              className="w-full py-2.5 bg-orange-600 hover:bg-orange-500 disabled:bg-neutral-700 disabled:cursor-not-allowed rounded-lg text-sm font-medium text-white cursor-pointer transition-colors"
             >
               {isLoading
                 ? '처리 중...'
@@ -209,7 +209,7 @@ export function AuthModal({ onClose }: AuthModalProps) {
           <div className="mt-4 text-center">
             <button
               onClick={toggleMode}
-              className="text-[11px] text-neutral-500 hover:text-violet-400 cursor-pointer transition-colors"
+              className="text-[11px] text-neutral-500 hover:text-orange-400 cursor-pointer transition-colors"
             >
               {mode === 'signin'
                 ? '계정이 없으신가요? 회원가입'

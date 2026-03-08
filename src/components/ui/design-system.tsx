@@ -77,27 +77,27 @@ function ColorPaletteSection() {
       {/* Primary */}
       <SubSection title="Primary (Violet)">
         <div className="flex flex-wrap gap-4">
-          <ColorChip label="primary.default" colorClass="bg-violet-600" />
-          <ColorChip label="primary.hover" colorClass="bg-violet-500" />
-          <ColorChip label="primary.subtle" colorClass="bg-violet-500/10 border border-violet-500/20" />
-          <ColorChip label="ring" colorClass="bg-transparent border-2 border-violet-500" />
+          <ColorChip label="primary.default" colorClass="bg-orange-600" />
+          <ColorChip label="primary.hover" colorClass="bg-orange-500" />
+          <ColorChip label="primary.subtle" colorClass="bg-orange-500/10 border border-orange-500/20" />
+          <ColorChip label="ring" colorClass="bg-transparent border-2 border-orange-500" />
         </div>
       </SubSection>
 
       {/* Secondary */}
       <SubSection title="Secondary (Fuchsia)">
         <div className="flex flex-wrap gap-4">
-          <ColorChip label="secondary.default" colorClass="bg-fuchsia-500" />
-          <ColorChip label="secondary.subtle" colorClass="bg-fuchsia-500/10 border border-fuchsia-500/50" />
+          <ColorChip label="secondary.default" colorClass="bg-amber-500" />
+          <ColorChip label="secondary.subtle" colorClass="bg-amber-500/10 border border-amber-500/50" />
         </div>
       </SubSection>
 
       {/* Gradient */}
       <SubSection title="Gradient">
         <div className="flex flex-wrap gap-4">
-          <ColorChip label="gradient.brand" colorClass="bg-gradient-to-r from-violet-600 to-fuchsia-600" />
-          <ColorChip label="gradient.heroText" colorClass="bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400" />
-          <ColorChip label="gradient.logo" colorClass="bg-gradient-to-br from-violet-500 to-fuchsia-500" />
+          <ColorChip label="gradient.brand" colorClass="bg-gradient-to-r from-orange-600 to-amber-600" />
+          <ColorChip label="gradient.heroText" colorClass="bg-gradient-to-r from-orange-400 via-amber-400 to-pink-400" />
+          <ColorChip label="gradient.logo" colorClass="bg-gradient-to-br from-orange-500 to-amber-500" />
         </div>
       </SubSection>
 
@@ -339,7 +339,7 @@ function TagSection() {
           {/* 제거 가능한 태그 */}
           <span className={`${tokens.composite.tagStyles.base} ${tokens.composite.tagStyles.selected}`}>
             #비단
-            <button className="ml-0.5 hover:text-violet-200">&times;</button>
+            <button className="ml-0.5 hover:text-orange-200">&times;</button>
           </span>
         </div>
       </SubSection>
@@ -347,7 +347,7 @@ function TagSection() {
       <SubSection title="Filter Chip (Category)">
         <div className="flex flex-wrap gap-2">
           {/* 선택된 필터 */}
-          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-violet-600 text-white transition-colors">
+          <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-600 text-white transition-colors">
             전체
           </button>
           {/* 기본 필터 */}
@@ -363,7 +363,7 @@ function TagSection() {
       <SubSection title="Status Badge">
         <div className="flex flex-wrap gap-2">
           {/* 브랜드 뱃지 */}
-          <span className="px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-violet-600 to-fuchsia-600 text-white">
+          <span className="px-3 py-0.5 rounded-full text-[10px] font-bold bg-gradient-to-r from-orange-600 to-amber-600 text-white">
             추천
           </span>
           {/* 경고 뱃지 */}
@@ -371,10 +371,10 @@ function TagSection() {
             학생 인증
           </span>
           {/* 정보 칩 */}
-          <span className="px-2 py-0.5 bg-violet-500/10 text-violet-400 rounded-full text-xs">
+          <span className="px-2 py-0.5 bg-orange-500/10 text-orange-400 rounded-full text-xs">
             포즈 매칭
           </span>
-          <span className="px-2 py-0.5 bg-fuchsia-500/10 text-fuchsia-400 rounded-full text-xs">
+          <span className="px-2 py-0.5 bg-amber-500/10 text-amber-400 rounded-full text-xs">
             스케치 검색
           </span>
         </div>
@@ -401,7 +401,7 @@ function InputSection() {
                 readOnly
                 value=""
                 placeholder="you@example.com"
-                className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-violet-500 focus:ring-1 focus:ring-violet-500 transition-colors duration-150"
+                className="w-full px-3 py-2 rounded-lg text-sm bg-neutral-900 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors duration-150"
               />
             </div>
           </div>
@@ -435,8 +435,8 @@ function CardSection() {
       <SubSection title="Feature Card">
         <div className="grid sm:grid-cols-2 gap-4 max-w-2xl">
           {/* 기본 카드 */}
-          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-violet-500/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-violet-500/10 flex items-center justify-center text-2xl mb-4">
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-orange-500/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-orange-500/10 flex items-center justify-center text-2xl mb-4">
               🦾
             </div>
             <h3 className="text-xl font-semibold mb-2">3D 포즈 매칭</h3>
@@ -446,11 +446,11 @@ function CardSection() {
           </div>
 
           {/* 강조 카드 */}
-          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-fuchsia-500/50 transition-colors">
-            <div className="w-12 h-12 rounded-xl bg-fuchsia-500/10 flex items-center justify-center text-2xl mb-4">
+          <div className="p-8 rounded-2xl bg-neutral-900 border border-neutral-800 hover:border-amber-500/50 transition-colors">
+            <div className="w-12 h-12 rounded-xl bg-amber-500/10 flex items-center justify-center text-2xl mb-4">
               ✏️
             </div>
-            <h3 className="text-xl font-semibold mb-2 hover:text-fuchsia-400 transition-colors">
+            <h3 className="text-xl font-semibold mb-2 hover:text-amber-400 transition-colors">
               드로잉 모드
             </h3>
             <p className="text-neutral-400 text-sm leading-relaxed">
@@ -463,8 +463,8 @@ function CardSection() {
       <SubSection title="Panel / Tool Panel">
         <div className="p-3 bg-neutral-900/80 border border-neutral-800 rounded-lg space-y-2 max-w-xs">
           <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-fuchsia-500 animate-pulse" />
-            <span className="text-xs font-semibold text-fuchsia-300">왼쪽 어깨</span>
+            <div className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+            <span className="text-xs font-semibold text-amber-300">왼쪽 어깨</span>
           </div>
           <p className="text-xs text-neutral-500">관절 슬라이더 패널 패턴</p>
         </div>
@@ -492,7 +492,7 @@ function SpacingRadiusSection() {
             <div key={item.label} className="flex flex-col items-center gap-2">
               {/* 반경 시각화 */}
               <div
-                className={`w-16 h-16 bg-violet-600/30 border border-violet-500/50 ${item.cls}`}
+                className={`w-16 h-16 bg-orange-600/30 border border-orange-500/50 ${item.cls}`}
               />
               {/* 레이블 */}
               <span className="text-[10px] text-neutral-600 text-center whitespace-pre-line font-mono">
@@ -528,8 +528,8 @@ function StatusBannerSection() {
           </div>
 
           {/* 정보 인라인 */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-violet-500/10 border border-violet-500/20 text-violet-400 text-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-400 animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-500/10 border border-orange-500/20 text-orange-400 text-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-orange-400 animate-pulse" />
             아티스트를 위한 레퍼런스 검색 엔진
           </div>
 
@@ -554,21 +554,21 @@ function BrandSection() {
         <div className="flex items-end gap-6">
           {/* 소형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-[10px] font-bold">
+            <div className="w-6 h-6 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-[10px] font-bold">
               A
             </div>
             <span className="text-[10px] text-neutral-600">24px (Nav compact)</span>
           </div>
           {/* 중형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
               A
             </div>
             <span className="text-[10px] text-neutral-600">32px (Nav default)</span>
           </div>
           {/* 대형 */}
           <div className="flex flex-col items-center gap-2">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-lg font-bold">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-lg font-bold">
               A
             </div>
             <span className="text-[10px] text-neutral-600">40px (Auth)</span>
@@ -578,7 +578,7 @@ function BrandSection() {
 
       <SubSection title="Gradient Text (Hero)">
         <h1 className="text-4xl font-bold">
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-violet-400 via-fuchsia-400 to-pink-400">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 via-amber-400 to-pink-400">
             포즈, 조명, 앵글
           </span>
         </h1>
@@ -609,7 +609,7 @@ export function DesignSystemDocs() {
         <div className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">
             {/* 브랜드 로고 */}
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-violet-500 to-fuchsia-500 flex items-center justify-center text-sm font-bold">
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-amber-500 flex items-center justify-center text-sm font-bold">
               A
             </div>
             <div>
@@ -631,7 +631,7 @@ export function DesignSystemDocs() {
           <h1 className="text-3xl font-bold mb-3">Design System</h1>
           <p className="text-neutral-400 text-sm leading-relaxed max-w-xl">
             ArtRef Finder의 디자인 토큰과 컴포넌트 가이드라인.
-            모든 토큰은 <code className="text-violet-400 bg-violet-500/10 px-1.5 py-0.5 rounded text-xs font-mono">src/styles/design-tokens.ts</code>에 정의되어 있습니다.
+            모든 토큰은 <code className="text-orange-400 bg-orange-500/10 px-1.5 py-0.5 rounded text-xs font-mono">src/styles/design-tokens.ts</code>에 정의되어 있습니다.
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
             <span className="px-2 py-0.5 rounded bg-neutral-800 text-neutral-400 text-xs font-mono">Tailwind CSS 4</span>
