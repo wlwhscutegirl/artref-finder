@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Logo } from '@/components/ui/logo';
+import { Logo, LogoIcon } from '@/components/ui/logo';
 import { ModeTabs } from '@/components/ui/mode-tabs';
 import { ResizablePanel } from '@/components/ui/resizable-panel';
 import { SearchFilters } from '@/components/features/search/search-filters';
@@ -37,6 +37,8 @@ export default function SearchPage() {
   // === 인증 상태 ===
   const { user, isAuthenticated, logout } = useAuthStore();
   const [showAuthModal, setShowAuthModal] = useState(false);
+  // 모바일 검색창 토글 상태
+  const [showMobileSearch, setShowMobileSearch] = useState(false);
 
   // === 멀티 라이트 스토어 연동 (Phase 5) ===
   const getKeyLightDirection = useLightStore((s) => s.getKeyLightDirection);
@@ -430,32 +432,50 @@ export default function SearchPage() {
       {/* 상단 바 */}
       <header className="shrink-0 z-40 bg-white/95 backdrop-blur-md border-b border-gray-200">
         <div className="max-w-[1920px] mx-auto px-4 h-12 flex items-center justify-between">
-          {/* 로고 컴포넌트 (h-12 헤더용 size=28) */}
+          {/* 로고: 모바일에서 아이콘만, 데스크탑에서 전체 */}
           <Link href="/" className="flex items-center">
-            <Logo size={28} />
+            <span className="md:hidden">
+              <LogoIcon size={28} />
+            </span>
+            <span className="hidden md:block">
+              <Logo size={28} />
+            </span>
           </Link>
 
           {/* 모드 전환 탭 */}
           <ModeTabs activeMode="mannequin" />
 
-          {/* 텍스트 검색바 (헤더에 배치) */}
-          <div className="flex-1 max-w-sm mx-4">
+          {/* 텍스트 검색바: 데스크탑에서 표시 */}
+          <div className="hidden md:block flex-1 max-w-sm mx-4">
             <TagSearchInput
               selectedTags={search.selectedTags}
               onTagsChange={search.setSelectedTags}
             />
           </div>
 
+          {/* 모바일 검색 토글 버튼 (돋보기 아이콘) */}
+          <button
+            onClick={() => setShowMobileSearch(!showMobileSearch)}
+            aria-label="검색 열기"
+            className="md:hidden min-w-[44px] min-h-[44px] flex items-center justify-center text-gray-500 hover:text-gray-700 cursor-pointer transition-colors"
+          >
+            <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <path d="m21 21-4.3-4.3" />
+            </svg>
+          </button>
+
           <div className="flex items-center gap-2">
+            {/* 대시보드/컬렉션: 모바일에서 숨김 */}
             <Link
               href="/dashboard"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
+              className="hidden md:flex px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               대시보드
             </Link>
             <Link
               href="/collections"
-              className="px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
+              className="hidden md:flex px-3 py-1.5 rounded-lg text-xs font-medium bg-orange-50 text-gray-500 hover:bg-orange-100 transition-colors"
             >
               내 컬렉션
             </Link>
@@ -463,7 +483,7 @@ export default function SearchPage() {
             {/* 인증 버튼 */}
             {isAuthenticated && user ? (
               <div className="flex items-center gap-2">
-                <span className="text-[11px] text-gray-500">{user.name}</span>
+                <span className="text-[11px] text-gray-500 hidden sm:inline">{user.name}</span>
                 <button
                   onClick={() => logout()}
                   className="px-2 py-1 rounded text-xs text-gray-400 hover:text-gray-600 cursor-pointer transition-colors"
@@ -481,6 +501,16 @@ export default function SearchPage() {
             )}
           </div>
         </div>
+
+        {/* 모바일 검색창 (토글로 열림) */}
+        {showMobileSearch && (
+          <div className="md:hidden px-4 pb-2">
+            <TagSearchInput
+              selectedTags={search.selectedTags}
+              onTagsChange={search.setSelectedTags}
+            />
+          </div>
+        )}
       </header>
 
       {/* 데스크탑 (1024px+): 리사이즈 가능 좌우 분할, 관절 선택 시 자동 축소 */}

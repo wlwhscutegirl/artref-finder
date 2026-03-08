@@ -510,8 +510,8 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
                   </div>
                 </div>
 
-                {/* 컬렉션 저장 + 다운로드 */}
-                <div className="pt-3 border-t border-gray-200 space-y-2">
+                {/* 컬렉션 저장 + 다운로드 — 모바일에서 하단 고정 */}
+                <div className="pt-3 border-t border-gray-200 space-y-2 sticky bottom-0 bg-gray-50 pb-2">
                   <button
                     onClick={() => setShowSaveModal(true)}
                     className="w-full py-2 px-3 bg-orange-600 hover:bg-orange-500 rounded-lg text-sm font-medium transition-colors cursor-pointer"
@@ -530,10 +530,11 @@ export function ImageGrid({ images, isLoading, hasNextPage, isFetchingNextPage, 
               </div>
             </div>
 
-            {/* 닫기 버튼 */}
+            {/* 닫기 버튼 — 터치 타겟 48px 확보 */}
             <button
               onClick={closeModal}
-              className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-colors cursor-pointer text-lg"
+              aria-label="닫기"
+              className="absolute top-2 right-2 w-12 h-12 flex items-center justify-center rounded-full bg-black/50 hover:bg-black/70 transition-colors cursor-pointer text-xl focus:outline-none focus:ring-2 focus:ring-orange-500/50"
             >
               &times;
             </button>

@@ -38,7 +38,8 @@ export function PosePresetCards({
         <p className="text-[11px] font-medium text-gray-500 mb-1.5 uppercase tracking-wider">
           전신 포즈
         </p>
-        <div className="grid grid-cols-4 gap-1.5">
+        {/* 반응형 그리드: 모바일 2열 → 태블릿 3열 → 데스크탑 4열 */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
           {POSE_PRESETS.map((preset) => (
             <button
               key={preset.id}
@@ -77,8 +78,9 @@ export function PosePresetCards({
           </span>
           손 포즈
         </button>
+        {/* 반응형 그리드: 모바일 3열 → 태블릿 4열 → 데스크탑 5열 */}
         {showHand && (
-          <div className="grid grid-cols-5 gap-1.5">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-2">
             {HAND_PRESETS.map((preset) => (
               <button
                 key={preset.id}

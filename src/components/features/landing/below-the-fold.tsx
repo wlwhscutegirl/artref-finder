@@ -87,7 +87,8 @@ export default function BelowTheFold() {
       {/* ====================================================
           3. 핵심 기능 소개 — 구체적 시나리오 중심
           ==================================================== */}
-      <section id="features" className="py-24 px-4 border-t border-gray-200">
+      {/* 모바일에서 섹션 여백 축소 */}
+      <section id="features" className="py-12 sm:py-24 px-4 border-t border-gray-200">
         <div className="max-w-6xl mx-auto">
 
           {/* 섹션 헤더 */}
@@ -146,7 +147,7 @@ export default function BelowTheFold() {
       {/* ====================================================
           4. 이런 분들에게 추천 — 타겟 유저 명시
           ==================================================== */}
-      <section id="for-who" className="py-24 px-4 border-t border-gray-200">
+      <section id="for-who" className="py-12 sm:py-24 px-4 border-t border-gray-200">
         <div className="max-w-4xl mx-auto">
 
           {/* 섹션 헤더 */}
@@ -175,7 +176,7 @@ export default function BelowTheFold() {
       {/* ====================================================
           5. 가격 비교 섹션 — Free / Pro (정직한 표현)
           ==================================================== */}
-      <section id="pricing" className="py-24 px-4 border-t border-gray-200">
+      <section id="pricing" className="py-12 sm:py-24 px-4 border-t border-gray-200">
         <div className="max-w-3xl mx-auto">
 
           {/* 섹션 헤더 */}
@@ -293,7 +294,7 @@ export default function BelowTheFold() {
       {/* ====================================================
           6. 최종 CTA 섹션 — 절제된 디자인
           ==================================================== */}
-      <section className="py-24 px-4 border-t border-gray-200">
+      <section className="py-12 sm:py-24 px-4 border-t border-gray-200">
         <div className="max-w-2xl mx-auto text-center">
 
           {/* 헤드라인 — 구체적 가치 */}

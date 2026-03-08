@@ -102,10 +102,10 @@ export default function LandingPage() {
             >
               마네킹 움직여보기
             </Link>
-            {/* Ghost CTA — 가입 유도 */}
+            {/* Ghost CTA — 가입 유도 (모바일에서 숨김: 버튼 1개만 표시) */}
             <Link
               href="/register"
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base border border-gray-300 hover:border-neutral-500 hover:bg-gray-50 transition-all text-gray-600"
+              className="hidden sm:inline-flex w-full sm:w-auto px-8 py-3.5 rounded-xl font-semibold text-base border border-gray-300 hover:border-neutral-500 hover:bg-gray-50 transition-all text-gray-600"
             >
               무료 계정 만들기
             </Link>
