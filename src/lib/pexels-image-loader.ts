@@ -90,6 +90,31 @@ function pexelsToRef(
 }
 
 /**
+ * 아티스트 레퍼런스로 부적절한 이미지 필터링
+ * 텍스트 이미지, 상품 사진, 클로즈업 부위 등 제외
+ */
+function isValidReference(photo: PexelsPhotoResult): boolean {
+  const alt = (photo.alt || '').toLowerCase();
+
+  // 제외 키워드: 텍스트/타이포그래피, 상품, 음식, 동물(단독), 추상
+  const excludePatterns = [
+    /\b(text|quote|typography|font|letter|word|sign|logo|banner|poster|flyer)\b/,
+    /\b(product|shoe|sneaker|boot|sandal|heel|footwear|watch|jewelry|ring|necklace)\b/,
+    /\b(food|meal|dish|coffee|tea|cake|pizza|burger|fruit|vegetable|cooking)\b/,
+    /\b(cat|dog|bird|fish|pet|puppy|kitten)\b/,
+    /\b(abstract|pattern|texture|wallpaper|background|gradient|geometric)\b/,
+    /\b(laptop|phone|computer|screen|monitor|keyboard|desk|office supplies)\b/,
+    /\b(car|vehicle|motorcycle|bicycle|bike|truck)\b/,
+    /\b(flower|plant|tree|leaf|garden|nature|landscape|mountain|ocean|sunset)\b/,
+  ];
+
+  // alt가 비어있으면 통과 (판단 불가)
+  if (!alt) return true;
+
+  return !excludePatterns.some((p) => p.test(alt));
+}
+
+/**
  * /api/pexels-search 프록시를 통해 Pexels 검색
  * 브라우저에서 Pexels API 직접 호출 불가 (CORS) → Next.js 프록시 사용
  */
@@ -151,6 +176,8 @@ export async function loadPexelsImages(): Promise<ReferenceImage[]> {
       for (const photo of photos) {
         const id = `pexels-${photo.id}`;
         if (seenIds.has(id)) continue;
+        // 아티스트 레퍼런스로 부적절한 이미지 제외
+        if (!isValidReference(photo)) continue;
         seenIds.add(id);
 
         // 스마트 태그 병합: Pexels alt에서 추출한 태그 + SearchQuery 메타 태그
@@ -199,6 +226,7 @@ export async function searchPexelsByTags(
     for (const photo of photos) {
       const id = `pexels-${photo.id}`;
       if (seenIds.has(id)) continue;
+      if (!isValidReference(photo)) continue;
       seenIds.add(id);
 
       results.push(pexelsToRef(photo, sq.query, sq));

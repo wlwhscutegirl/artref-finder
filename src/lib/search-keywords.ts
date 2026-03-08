@@ -48,7 +48,7 @@ export const POSE_SEARCH_QUERIES: Record<string, SearchQuery[]> = {
   // --- 액션/동작 (10개) ---
   action: [
     { query: 'dancer jumping full body studio', shotType: '풀샷', poseTags: ['점프', '1인'] },
-    { query: 'athlete running side view outdoor', shotType: '풀샷', poseTags: ['달리기', '1인'] },
+    { query: 'athlete running side view full body photography', shotType: '풀샷', poseTags: ['달리기', '1인'] },
     { query: 'martial arts kick studio lighting', shotType: '풀샷', poseTags: ['격투', '1인'] },
     { query: 'ballet dancer pose studio', shotType: '풀샷', poseTags: ['서있기', '1인'] },
     { query: 'person jumping midair white background', shotType: '풀샷', poseTags: ['점프', '1인', '스튜디오'] },
@@ -56,7 +56,7 @@ export const POSE_SEARCH_QUERIES: Record<string, SearchQuery[]> = {
     { query: 'sprinter running track action', shotType: '풀샷', poseTags: ['달리기', '1인', '스포츠웨어'] },
     { query: 'yoga warrior pose studio', shotType: '풀샷', poseTags: ['서있기', '1인'] },
     { query: 'gymnast acrobatic pose', shotType: '풀샷', poseTags: ['점프', '1인'] },
-    { query: 'person walking street fashion', shotType: '풀샷', poseTags: ['걷기', '1인', '캐주얼'] },
+    { query: 'person walking street fashion full body photography', shotType: '풀샷', poseTags: ['걷기', '1인', '캐주얼'] },
   ],
 
   // --- 포트레이트/얼굴 (8개) ---
